@@ -1,0 +1,54 @@
+{
+  "name": "flowai-js-templates",
+  "version": "1.0.0",
+  "description": "Message response templates for flow.ai",
+  "main": "index.js",
+  "scripts": {
+    "preexample": "npm run build",
+    "example": "DEBUG=flowai:* node ./example/node/index.js",
+    "prebuild": "npm run docs",
+    "build:dist": "NODE_ENV=production webpack --display-error-details --config ./webpack.config.js",
+    "build:lib": "NODE_ENV=production babel ./src --out-dir ./lib",
+    "build": "npm run build:dist && npm run build:lib",
+    "test": "npm run build:lib && mocha --recursive --reporter spec --compilers js:babel-core/register --require babel-polyfill --watch",
+    "eslint": "eslint ./src --fix",
+    "prepublish": "npm run build",
+    "docs": "jsdoc2md -c .jsdoc ./src/**/*.js --template ./src/README.hbs > README.md"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flow-ai/flowai-js-templates.git"
+  },
+  "keywords": [
+    "flow.ai",
+    "templates",
+    "widgets"
+  ],
+  "author": "Gijs van de Nieuwegiessen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flow-ai/flowai-js-templates/issues"
+  },
+  "homepage": "https://github.com/flow-ai/flowai-js-templates#readme",
+  "dependencies": {
+    "debug": "^2.4.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-core": "^6.23.1",
+    "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.3.2",
+    "babel-preset-env": "^1.1.11",
+    "chai": "^3.5.0",
+    "eslint": "^3.10.2",
+    "eslint-loader": "^1.6.1",
+    "eslint-plugin-import": "^2.2.0",
+    "jsdoc-strip-async-await": "^0.1.0",
+    "jsdoc-to-markdown": "^2.0.1",
+    "mocha": "^3.1.2",
+    "sinon": "^1.17.7",
+    "uglify-js": "^2.7.4",
+    "webpack": "^2.2.1",
+    "webpack-node-externals": "^1.5.4"
+  }
+}
