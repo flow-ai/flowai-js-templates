@@ -58,7 +58,5 @@ describe("Template Card", () => {
     card.addButton(button)
 
     const output = JSON.stringify(card)
-
-    console.log(output)
   })
 })

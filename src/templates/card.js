@@ -1,20 +1,21 @@
 import Template from './template'
-import Button from './button'
-import Media from './media'
+import Button from '../components/button'
+import Media from '../components/media'
 
 /**
- * Composed of an image attachment, short description and buttons to request input from the user.
- * @property {string} type - Type of button
- * @property {string} label - Label of the button
- * @property {string} value - Value of the button
+ * Template composed of an image attachment, short description and buttons to request input from the user.
+ * @property {string} title - Main title of the card
+ * @property {string} subtitle - Optional subtitle
+ * @property {Media} image - Optional Media
+ * @property {Button[]} buttons - Optional set of buttons
+ * @property {Action} action - Optional Action that is triggered when a user interacts with the card
  **/
 class Card extends Template {
 
   /**
-   * @param {string} type - Enum, url, postback etc
-   * @param {string} label - Label of the label
-   * @param {string} value - URL, value tom postback
-   * @constructor
+   * @param {string} opts.title - Required
+   * @param {string} opts.subtitle - Optional
+   * @param {string} opts.image - Optional
    **/
   constructor({ title, subtitle, image }) {
     super()
@@ -40,9 +41,13 @@ class Card extends Template {
     return this._image
   }
 
+  /**
+   * Add a button to the card
+   * @param {Button} - button
+   **/
   addButton(button) {
     if(!(button instanceof Button)) {
-      throw new Error('addButton must be an instance of a Button')
+      throw new Error('addButton argument must be an instance of a Button')
     }
 
     if(!this.buttons) {

@@ -1,17 +1,14 @@
-
 /**
- * Button used in Card, Buttons templates etc.
- * @class
- * @property {string} type - Type of button
+ * Component used in Card, Buttons templates
+ * @property {string} type - Type of button (url, postback etc)
  * @property {string} label - Label of the button
  * @property {string} value - Value of the button
  **/
 class Button {
   /**
-   * @param {string} type - Enum, url, postback etc
-   * @param {string} label - Label of the label
-   * @param {string} value - URL, value tom postback
-   * @constructor
+   * @param {string} opts.type - Requiresd
+   * @param {string} opts.label - Requiresd
+   * @param {string} opts.value - Requiresd
    **/
   constructor({ type, label, value }) {
 
