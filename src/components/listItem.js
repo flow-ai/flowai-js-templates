@@ -79,13 +79,13 @@ class ListItem {
       buttons
     } = this
 
-    return JSON.stringify({
+    return {
       title,
       subtitle,
       image,
       action,
       buttons
-    })
+    }
   }
 }
 

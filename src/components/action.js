@@ -22,6 +22,18 @@ class Action {
 
     this.type = type
   }
+
+  toJSON() {
+    const {
+      type,
+      value
+    } = this
+
+    return {
+      type,
+      value
+    }
+  }
 }
 
 export default Action

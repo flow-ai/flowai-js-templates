@@ -52,12 +52,15 @@ class Image extends Template {
       quickReplies
     } = this
 
-    return JSON.stringify({
-      title,
-      url,
-      action,
-      quickReplies
-    })
+    return {
+      type: 'image',
+      payload: {
+        title,
+        url,
+        action,
+        quickReplies
+      }
+    }
   }
 }
 

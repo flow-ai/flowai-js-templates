@@ -32,6 +32,18 @@ class Message {
 
     this.responses.push(response)
   }
+
+  toJSON() {
+    const {
+      fallback,
+      responses
+    } = this
+
+    return {
+      fallback,
+      responses
+    }
+  }
 }
 
 export default Message

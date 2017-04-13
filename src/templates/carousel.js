@@ -29,10 +29,13 @@ class Carousel extends Template {
       quickReplies
     } = this
 
-    return JSON.stringify({
-      cards,
-      quickReplies
-    })
+    return {
+      type: 'carousel',
+      payload: {
+        cards,
+        quickReplies
+      }
+    }
   }
 }
 

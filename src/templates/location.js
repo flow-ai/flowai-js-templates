@@ -61,13 +61,16 @@ class Location extends Template {
       quickReplies
     } = this
 
-    return JSON.stringify({
-      title,
-      lat,
-      long,
-      action,
-      quickReplies
-    })
+    return {
+      type: 'location',
+      payload: {
+        title,
+        lat,
+        long,
+        action,
+        quickReplies
+      }
+    }
   }
 }
 

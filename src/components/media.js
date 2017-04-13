@@ -13,6 +13,14 @@ class Media {
     }
     this.url = url
   }
+
+  toJSON() {
+    const {
+      url
+    } = this
+
+    return url
+  }
 }
 
 export default Media

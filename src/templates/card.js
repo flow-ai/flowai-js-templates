@@ -83,14 +83,17 @@ class Card extends Template {
       quickReplies
     } = this
 
-    return JSON.stringify({
-      title,
-      subtitle,
-      image,
-      action,
-      buttons,
-      quickReplies
-    })
+    return {
+      type: 'card',
+      payload: {
+        title,
+        subtitle,
+        image,
+        action,
+        buttons,
+        quickReplies
+      }
+    }
   }
 }
 

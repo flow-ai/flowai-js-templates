@@ -45,11 +45,14 @@ class Buttons extends Template {
       quickReplies
     } = this
 
-    return JSON.stringify({
-      title,
-      buttons,
-      quickReplies
-    })
+    return {
+      type: 'buttons',
+      payload: {
+        title,
+        buttons,
+        quickReplies
+      }
+    }
   }
 }
 

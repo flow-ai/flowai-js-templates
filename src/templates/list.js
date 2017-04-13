@@ -29,10 +29,13 @@ class List extends Template {
       quickReplies
     } = this
 
-    return JSON.stringify({
-      items,
-      quickReplies
-    })
+    return {
+      type: 'list',
+      payload: {
+        items,
+        quickReplies
+      }
+    }
   }
 }
 

@@ -30,10 +30,13 @@ class Text extends Template {
       quickReplies
     } = this
 
-    return JSON.stringify({
-      text,
-      quickReplies
-    })
+    return {
+      type: 'text',
+      payload: {
+        text,
+        quickReplies
+      }
+    }
   }
 }
 
