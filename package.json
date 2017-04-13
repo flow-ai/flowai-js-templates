@@ -1,8 +1,8 @@
 {
   "name": "flowai-js-templates",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Message response templates for flow.ai",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "preexample": "npm run build",
     "example": "DEBUG=flowai:* node ./example/node/index.js",
