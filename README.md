@@ -55,6 +55,9 @@ When writing a Cloud function there is no need to require or import anything.
 <dt><a href="#List">List</a></dt>
 <dd><p>Template that displays a set of list items</p>
 </dd>
+<dt><a href="#Location">Location</a></dt>
+<dd><p>Template with a location</p>
+</dd>
 <dt><a href="#Template">Template</a></dt>
 <dd><p>Base class of all response templates</p>
 </dd>
@@ -345,6 +348,32 @@ Add a item to the items
 | Param | Type | Description |
 | --- | --- | --- |
 | item | <code>[ListItem](#ListItem)</code> | item |
+
+<a name="Location"></a>
+
+## Location
+Template with a location
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Describes the image |
+| lat | <code>string</code> | Latitude |
+| long | <code>string</code> | Longitude |
+| action | <code>[Action](#Action)</code> | Optional Action |
+
+<a name="new_Location_new"></a>
+
+### new Location()
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.title | <code>string</code> | Required |
+| opts.lat | <code>string</code> | Required |
+| opts.long | <code>string</code> | Required |
+| opts.action | <code>string</code> | Optional |
 
 <a name="Template"></a>
 
