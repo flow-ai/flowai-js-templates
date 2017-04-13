@@ -20,6 +20,9 @@ class Carousel extends Template {
       this.cards = []
     }
 
+    // Simple way to hack
+    card.isShallow = true
+    
     this.cards.push(card)
   }
 

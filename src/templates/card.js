@@ -83,6 +83,17 @@ class Card extends Template {
       quickReplies
     } = this
 
+    if( this.isShallow )  {
+      return {
+        title,
+        subtitle,
+        image,
+        action,
+        buttons,
+        quickReplies
+      }
+    }
+
     return {
       type: 'card',
       payload: {
