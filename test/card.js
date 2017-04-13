@@ -1,5 +1,5 @@
 import chai, { expect, assert } from 'chai'
-import { Card, Button, Media } from '../src'
+import { Card, Button, Media, Action } from '../src'
 
 describe("Template Card", () => {
   it("Throws error without a title", () => {
@@ -41,10 +41,30 @@ describe("Template Card", () => {
     const button = new Button({
       label: "Label",
       type: "url",
-      value: "vaslue"
+      value: "value"
     })
     card.addButton(button)
     expect(card.buttons.length).to.equal(1)
+  })
+
+  it("can have action", () => {
+    const card = new Card({ title: "Awesome title"})
+    const action = new Action({
+      type: "url",
+      value: "value"
+    })
+    card.action = action
+    expect(card.action).to.equal(action)
+  })
+
+  it("cannot add invalid action", () => {
+    expect(() => new Card({
+      title: "Awesome title",
+      action: "Awesome action"
+    })).to.throw(Error)
+
+    const card = new Card({ title: "Awesome title"})
+    expect(() => card.action = "Awesome action").to.throw(Error)
   })
 
   it("can convert to JSON", () => {
@@ -53,7 +73,7 @@ describe("Template Card", () => {
     const button = new Button({
       label: "Label",
       type: "url",
-      value: "vaslue"
+      value: "value"
     })
     card.addButton(button)
 

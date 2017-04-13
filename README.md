@@ -1,15 +1,27 @@
 # The flow.ai Javascript Response Templates
-Easy helper to create [flow.ai](https://flow.ai) templates like cards, buttons and locations.
+Easy helper classes to create rich [flow.ai](https://flow.ai) response templates like cards, buttons and locations.
 
-Templates allow developers to render widgets at channels that support this like Facebook Messenger or the flow.ai Web client.
+Reponse templates allow developers to render widgets at channels that support this like Facebook Messenger or the flow.ai Web client.
 
 ## What can you do?
 
-*	Reduce code and formatting errors
+* No need to write error prone JSON
 * Full support for all template types
-* No need to use JSON
 
-# Reference
+## Getting started
+All classes are available for usage with Flow.ai Cloud functions.
+
+### Install
+When you want to send rich responses using a webhook, install the library with NPM.
+
+```bash
+npm install --save flowai-js-templates
+```
+
+### Usage
+When writing a Cloud function there is no need to require or import anything.
+
+# Class Reference
 ## Classes
 
 <dl>
@@ -30,6 +42,9 @@ Templates allow developers to render widgets at channels that support this like 
 </dd>
 <dt><a href="#Template">Template</a></dt>
 <dd><p>Base class of all response templates</p>
+</dd>
+<dt><a href="#Text">Text</a></dt>
+<dd><p>Template with a piece of text</p>
 </dd>
 </dl>
 
@@ -53,9 +68,9 @@ Component used in Card, Buttons templates
 
 | Param | Type | Description |
 | --- | --- | --- |
-| opts.type | <code>string</code> | Requiresd |
-| opts.label | <code>string</code> | Requiresd |
-| opts.value | <code>string</code> | Requiresd |
+| opts.type | <code>string</code> | Required |
+| opts.label | <code>string</code> | Required |
+| opts.value | <code>string</code> | Required |
 
 <a name="Media"></a>
 
@@ -201,3 +216,22 @@ Add a quick reply to the template
 | --- | --- | --- |
 | quickReply | <code>[QuickReply](#QuickReply)</code> | Required |
 
+<a name="Text"></a>
+
+## Text
+Template with a piece of text
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| text | <code>string</code> | Text to show |
+
+<a name="new_Text_new"></a>
+
+### new Text()
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.title | <code>string</code> | Required |

@@ -6,9 +6,9 @@
  **/
 class Button {
   /**
-   * @param {string} opts.type - Requiresd
-   * @param {string} opts.label - Requiresd
-   * @param {string} opts.value - Requiresd
+   * @param {string} opts.type - Required
+   * @param {string} opts.label - Required
+   * @param {string} opts.value - Required
    **/
   constructor({ type, label, value }) {
 

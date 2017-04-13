@@ -1,4 +1,5 @@
 import Template from './template'
+import Action from '../components/action'
 import Button from '../components/button'
 import Media from '../components/media'
 
@@ -7,6 +8,7 @@ import Media from '../components/media'
  * @property {string} title - Main title of the card
  * @property {string} subtitle - Optional subtitle
  * @property {Media} image - Optional Media
+ * @property {Action} action - Optional Action
  * @property {Button[]} buttons - Optional set of buttons
  * @property {Action} action - Optional Action that is triggered when a user interacts with the card
  **/
@@ -16,8 +18,9 @@ class Card extends Template {
    * @param {string} opts.title - Required
    * @param {string} opts.subtitle - Optional
    * @param {string} opts.image - Optional
+   * @param {string} opts.action - Optional
    **/
-  constructor({ title, subtitle, image }) {
+  constructor({ title, subtitle, image, action }) {
     super()
 
     if(typeof title !== 'string' || title.length === 0) {
@@ -27,6 +30,7 @@ class Card extends Template {
     this.title = title
     this.subtitle = subtitle || undefined
     this.image = image || undefined
+    this.action = action || undefined
   }
 
   set image(image) {
@@ -39,6 +43,18 @@ class Card extends Template {
 
   get image() {
     return this._image
+  }
+
+  set action(action) {
+    if(action && !(action instanceof Action)) {
+      throw new Error('action must be an instance of Action')
+    }
+
+    this._action = action
+  }
+
+  get action() {
+    return this._action
   }
 
   /**
