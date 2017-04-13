@@ -60,6 +60,7 @@ class Card extends Template {
   /**
    * Add a button to the card
    * @param {Button} - button
+   * @return {Card}
    **/
   addButton(button) {
     if(!(button instanceof Button)) {
@@ -71,6 +72,8 @@ class Card extends Template {
     }
 
     this.buttons.push(button)
+
+    return this
   }
 
   toJSON() {

@@ -57,6 +57,7 @@ class ListItem {
   /**
    * Add a button to the list item
    * @param {Button} - button
+   * @return {ListItem}
    **/
   addButton(button) {
     if(!(button instanceof Button)) {
@@ -68,6 +69,8 @@ class ListItem {
     }
 
     this.buttons.push(button)
+
+    return this
   }
 
   toJSON() {

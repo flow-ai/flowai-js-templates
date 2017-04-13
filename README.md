@@ -132,7 +132,7 @@ Item within a List
 
 * [ListItem](#ListItem)
     * [new ListItem()](#new_ListItem_new)
-    * [.addButton(button)](#ListItem+addButton)
+    * [.addButton(button)](#ListItem+addButton) ⇒ <code>[ListItem](#ListItem)</code>
 
 <a name="new_ListItem_new"></a>
 
@@ -147,7 +147,7 @@ Item within a List
 
 <a name="ListItem+addButton"></a>
 
-### listItem.addButton(button)
+### listItem.addButton(button) ⇒ <code>[ListItem](#ListItem)</code>
 Add a button to the list item
 
 **Kind**: instance method of <code>[ListItem](#ListItem)</code>  
@@ -214,7 +214,7 @@ Template with a short description and buttons to request input from the user.
 
 * [Buttons](#Buttons)
     * [new Buttons()](#new_Buttons_new)
-    * [.addButton(button)](#Buttons+addButton)
+    * [.addButton(button)](#Buttons+addButton) ⇒ <code>[Button](#Button)</code>
 
 <a name="new_Buttons_new"></a>
 
@@ -226,7 +226,7 @@ Template with a short description and buttons to request input from the user.
 
 <a name="Buttons+addButton"></a>
 
-### buttons.addButton(button)
+### buttons.addButton(button) ⇒ <code>[Button](#Button)</code>
 Add a button to the buttons
 
 **Kind**: instance method of <code>[Buttons](#Buttons)</code>  
@@ -255,7 +255,7 @@ Template composed of an image attachment, short description and buttons to reque
 
 * [Card](#Card)
     * [new Card()](#new_Card_new)
-    * [.addButton(button)](#Card+addButton)
+    * [.addButton(button)](#Card+addButton) ⇒ <code>[Card](#Card)</code>
 
 <a name="new_Card_new"></a>
 
@@ -270,7 +270,7 @@ Template composed of an image attachment, short description and buttons to reque
 
 <a name="Card+addButton"></a>
 
-### card.addButton(button)
+### card.addButton(button) ⇒ <code>[Card](#Card)</code>
 Add a button to the card
 
 **Kind**: instance method of <code>[Card](#Card)</code>  
@@ -293,7 +293,7 @@ Template that displays a set of cards
 
 <a name="Carousel+addCard"></a>
 
-### carousel.addCard(card)
+### carousel.addCard(card) ⇒ <code>[Carousel](#Carousel)</code>
 Add a card to the cards
 
 **Kind**: instance method of <code>[Carousel](#Carousel)</code>  
@@ -340,7 +340,7 @@ Template that displays a set of list items
 
 <a name="List+addItem"></a>
 
-### list.addItem(item)
+### list.addItem(item) ⇒ <code>[List](#List)</code>
 Add a item to the items
 
 **Kind**: instance method of <code>[List](#List)</code>  

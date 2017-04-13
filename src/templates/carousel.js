@@ -10,6 +10,7 @@ class Carousel extends Template {
   /**
    * Add a card to the cards
    * @param {Card} - card
+   * @return {Carousel}
    **/
   addCard(card) {
     if(!(card instanceof Card)) {
@@ -22,8 +23,10 @@ class Carousel extends Template {
 
     // Simple way to hack
     card.isShallow = true
-    
+
     this.cards.push(card)
+
+    return this
   }
 
   toJSON() {

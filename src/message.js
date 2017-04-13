@@ -20,6 +20,7 @@ class Message {
   /**
    * Add a response
    * @param {Template} - response
+   * @return {Message}
    **/
   addResponse(response) {
     if(!(response instanceof Template)) {
@@ -31,6 +32,8 @@ class Message {
     }
 
     this.responses.push(response)
+
+    return this
   }
 
   toJSON() {

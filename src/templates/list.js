@@ -10,6 +10,7 @@ class List extends Template {
   /**
    * Add a item to the items
    * @param {ListItem} - item
+   * @return {List}
    **/
   addItem(item) {
     if(!(item instanceof ListItem)) {
@@ -21,6 +22,8 @@ class List extends Template {
     }
 
     this.items.push(item)
+
+    return this
   }
 
   toJSON() {

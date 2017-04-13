@@ -25,6 +25,7 @@ class Buttons extends Template {
   /**
    * Add a button to the buttons
    * @param {Button} - button
+   * @return {Button}
    **/
   addButton(button) {
     if(!(button instanceof Button)) {
@@ -36,6 +37,8 @@ class Buttons extends Template {
     }
 
     this.buttons.push(button)
+
+    return this
   }
 
   toJSON() {
