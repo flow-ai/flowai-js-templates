@@ -40,6 +40,24 @@ describe("Template Card", () => {
     expect(card.buttons.length).to.equal(1)
   })
 
+  it("can add chained buttons", () => {
+
+    const button1 = new Button({
+      label: "Label",
+      type: "url",
+      value: "value"
+    })
+
+    const button2 = new Button({
+      label: "Label",
+      type: "url",
+      value: "value"
+    })
+
+    const card = new Card({ title: "Awesome title"}).addButton(button1).addButton(button2)
+    expect(card.buttons.length).to.equal(2)
+  })
+
   it("can have action", () => {
     const card = new Card({ title: "Awesome title"})
     const action = new Action({
