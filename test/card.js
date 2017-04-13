@@ -13,13 +13,6 @@ describe("Template Card", () => {
     expect(card.image).to.equal(undefined)
   })
 
-  it("can create with title", () => {
-    const card = new Card({ title: "Awesome title"})
-    expect(card.title).to.equal("Awesome title")
-    expect(card.subtitle).to.equal(undefined)
-    expect(card.image).to.equal(undefined)
-  })
-
   it("cannot add invalid image", () => {
     expect(() => new Card({
       title: "Awesome title",
