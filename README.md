@@ -9,17 +9,37 @@ Reponse templates allow developers to render widgets at channels that support th
 * Full support for all template types
 
 ## Getting started
-All classes are available for usage with Flow.ai Cloud functions.
+All classes are available for usage with Flow.ai Cloud functions. When you want to send rich responses using a webhook, install the library with NPM.
 
 ### Install
-When you want to send rich responses using a webhook, install the library with NPM.
 
 ```bash
 npm install --save flowai-js-templates
 ```
 
 ### Usage
-When writing a Cloud function there is no need to require or import anything.
+When writing a Cloud function there is no need to require or import anything. With a webhook you'll need to include the library.
+
+```js
+const Template = require('flowai-js-templates')
+
+const card = new Template.Card({
+  title: "Cookie factory",
+  subtitle: "Infinite lane 23"
+})
+```
+
+### Sending back rich messages
+You can send back rich messages in 3 different ways
+
+#### 1. Cloud function return
+Read more about [cloud functions](https://docs.flow.ai/features/cloud-functions.html) how they work.
+
+Within a cloud function you can directly send back response templates by returning them from your function.
+
+```
+
+```
 
 # Class Reference
 ## Classes
