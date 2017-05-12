@@ -19,15 +19,15 @@ class QuickReply {
     this.label = label
     this.value = value
   }
-  
+
   toJSON() {
     const {
-      type,
+      label,
       value
     } = this
 
     return {
-      type,
+      label,
       value
     }
   }
