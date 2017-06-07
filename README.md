@@ -32,13 +32,14 @@ const card = new Template.Card({
 ### Sending back rich messages
 You can send back rich messages in 3 different ways
 
-#### 1. Cloud function return
-Read more about [cloud functions](https://docs.flow.ai/features/cloud-functions.html) how they work.
+#### Cloud code
+Read more about [cloud code](https://docs.flow.ai/features/cloud-functions.html) how they work.
 
 Within a cloud function you can directly send back response templates by returning them from your function.
 
-```
-// Sending a single message with a single response
+##### Sending a single message with a single response
+
+```js
 (function(payload,originator,done) {
 
   // Create a speech bubble
@@ -52,8 +53,8 @@ Within a cloud function you can directly send back response templates by returni
 })
 ```
 
-```
-// Sending a single message with multiple responses
+##### Sending a single message with multiple responses
+```js
 (function(payload,originator,done) {
 
   // Create a speech bubble
@@ -71,8 +72,8 @@ Within a cloud function you can directly send back response templates by returni
 })
 ```
 
-```
-// Sending back multiple messages
+##### Sending back multiple messages
+```js
 (function(payload,originator,done) {
 
   // Create a speech bubble
