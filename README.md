@@ -157,6 +157,16 @@ Default action used in Card, List and Buttons templates
 | opts.type | <code>string</code> | Required |
 | opts.value | <code>string</code> | Required |
 
+**Example**  
+```js
+const image = new Image({
+  ...
+  action: new Action({
+    type: 'url',
+    value: 'https://...'
+  })
+})
+```
 <a name="Button"></a>
 
 ## Button
@@ -181,6 +191,14 @@ Component used in Card, Buttons templates
 | opts.label | <code>string</code> | Required |
 | opts.value | <code>string</code> | Required |
 
+**Example**  
+```js
+new Button({
+ type: 'webview',
+ label: 'More info'
+ value: 'https://...'
+})
+```
 <a name="ListItem"></a>
 
 ## ListItem

@@ -3,6 +3,12 @@
  * @property {string} type - Type of button (url, postback, webview)
  * @property {string} label - Label of the button
  * @property {string} value - Value of the button
+ * @example
+ * new Button({
+ *  type: 'webview',
+ *  label: 'More info'
+ *  value: 'https://...'
+ * })
  **/
 class Button {
   /**

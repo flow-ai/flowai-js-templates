@@ -7,6 +7,14 @@ class Action {
   /**
    * @param {string} opts.type - Required
    * @param {string} opts.value - Required
+   * @example
+   * const image = new Image({
+   *   ...
+   *   action: new Action({
+   *     type: 'url',
+   *     value: 'https://...'
+   *   })
+   * })
    **/
   constructor({ type, value }) {
 
