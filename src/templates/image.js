@@ -26,13 +26,13 @@ class Image extends Template {
   constructor( { title, url, action }) {
     super()
 
-    if(typeof title !== 'string' || title.length === 0) {
+    if(typeof title !== 'string' || !title.length) {
       throw new Error('Title is mandatory')
     }
 
     this.title = title
 
-    if(typeof url !== 'string' || url.length === 0) {
+    if(typeof url !== 'string' || !url.length) {
       throw new Error('URL is mandatory')
     }
 

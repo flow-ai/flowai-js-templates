@@ -27,7 +27,7 @@ class Text extends Template {
       text = opts.text
     }
 
-    if(typeof text !== 'string' || text.length === 0) {
+    if(typeof text !== 'string' || !text.length) {
       throw new Error('Text is mandatory')
     }
 

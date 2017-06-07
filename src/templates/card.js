@@ -43,7 +43,7 @@ class Card extends Template {
   constructor({ title, subtitle, image, action }) {
     super()
 
-    if(typeof title !== 'string' || title.length === 0) {
+    if(typeof title !== 'string' || !title.length) {
       throw new Error('Title is mandatory')
     }
 

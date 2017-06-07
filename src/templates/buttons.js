@@ -24,10 +24,10 @@ class Buttons extends Template {
   /**
    * @param {string} opts.title - Required
    **/
-  constructor({ title }) {
+  constructor(title) {
     super()
 
-    if(typeof title !== 'string' || title.length === 0) {
+    if(typeof title !== 'string' || !title.length) {
       throw new Error('Title is mandatory')
     }
 
