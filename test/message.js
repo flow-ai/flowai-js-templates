@@ -17,8 +17,7 @@ describe("Message", () => {
 
     const response = new Template()
 
-    const message = new Message("Awesome")
-    message.addResponse(response)
+    const message = new Message("Awesome").addResponse(response)
 
     expect(message.responses.length).to.equal(1)
   })

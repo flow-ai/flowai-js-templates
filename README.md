@@ -38,7 +38,57 @@ Read more about [cloud functions](https://docs.flow.ai/features/cloud-functions.
 Within a cloud function you can directly send back response templates by returning them from your function.
 
 ```
+// Sending a single message with a single response
+(function(payload,originator,done) {
 
+  // Create a speech bubble
+  const text = new Text("Hi there!")
+
+  // Create a message with fallback text
+  const message = new Message("Hi, there")
+  message.addResponse(text)
+
+  return message
+})
+```
+
+```
+// Sending a single message with multiple responses
+(function(payload,originator,done) {
+
+  // Create a speech bubble
+  const text = new Text("Hi there!")
+
+  // Create a card
+  const card = new Card({
+    title: "Cookie factory",
+    subtitle: "Infinite lane 23"
+  })
+
+  return new Message("Hi, the address of the Cookie factory is Infinite lane 23")
+          .addResponse(text)
+          .addResponse(card)
+})
+```
+
+```
+// Sending back multiple messages
+(function(payload,originator,done) {
+
+  // Create a speech bubble
+  const text = new Text("Hi there!")
+
+  // Create a card
+  const card = new Card({
+    title: "Cookie factory",
+    subtitle: "Infinite lane 23"
+  })
+
+  return [
+    new Message("Hi, there").addResponse(text),
+    new Message("the address of the Cookie factory is Infinite lane 23").addResponse(card)
+  ]
+})
 ```
 
 # Class Reference
@@ -437,4 +487,3 @@ Template with a piece of text
 | Param | Type | Description |
 | --- | --- | --- |
 | opts.text | <code>string</code> | Required |
-
