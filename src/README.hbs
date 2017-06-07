@@ -18,12 +18,12 @@ npm install --save flowai-js-templates
 ```
 
 ### Usage
-When writing a Cloud function there is no need to require or import anything. With a webhook you'll need to include the library.
+When using Flow.ai [cloud code](https://docs.flow.ai/features/cloud-functions.html) there is no need to require or import anything.
 
 ```js
-const Template = require('flowai-js-templates')
+const { Card } = require('flowai-js-templates')
 
-const card = new Template.Card({
+const card = new Card({
   title: "Cookie factory",
   subtitle: "Infinite lane 23"
 })
@@ -33,9 +33,7 @@ const card = new Template.Card({
 You can send back rich messages in 3 different ways
 
 #### Cloud code
-Read more about [cloud code](https://docs.flow.ai/features/cloud-functions.html) how they work.
-
-Within a cloud function you can directly send back response templates by returning them from your function.
+Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) function you can directly send back messages by returning them from your function.
 
 ##### Sending a single message with a single response
 
