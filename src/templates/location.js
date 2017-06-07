@@ -7,6 +7,16 @@ import Action from '../components/action'
  * @property {string} lat - Latitude
  * @property {string} long - Longitude
  * @property {Action} action - Optional Action
+ * @example
+ * const location = new Location({
+ *   title: "Infinite Loop 1",
+ *   lat: "37.331860",
+ *   long: "-122.030248",
+ *   action: new Action({
+ *     type: 'url',
+ *     value: 'https://...'
+ *   })
+ * })
  **/
 class Location extends Template {
 

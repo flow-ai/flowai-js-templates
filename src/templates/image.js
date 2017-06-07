@@ -6,6 +6,15 @@ import Action from '../components/action'
  * @property {string} title - Describes the image
  * @property {string} url - URL to the image
  * @property {Action} action - Optional Action
+ * @example
+ * const image = new Image({
+ *   title: "Awesome title",
+ *   url: "https://...",
+ *   action: new Action({
+ *     type: 'url',
+ *     value: 'https://...'
+ *   })
+ * })
  **/
 class Image extends Template {
 

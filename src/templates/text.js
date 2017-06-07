@@ -3,6 +3,16 @@ import Template from './template'
 /**
  * Template with a piece of text
  * @property {string} text - Text to show
+ * @example
+ * const text = new Text('Want a free soda?')
+ * text.addQuickReply(new QuickReply({
+ *   label: 'Yes',
+ *   value: 'yes'
+ * }))
+ * text.addQuickReply(new QuickReply({
+ *   label: 'No',
+ *   value: 'no'
+ * }))
  **/
 class Text extends Template {
 

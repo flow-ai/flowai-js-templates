@@ -4,6 +4,30 @@ import ListItem from '../components/listItem'
 /**
  * Template that displays a set of list items
  * @property {ListItem[]} items - Set of list items
+ * @example
+ * const item1 = new ListItem({
+ *   title: "40" LED TV",
+ *   subtitle: "Crystal clear screen",
+ *   image: new Media("https://..."),
+ *   action: new Action({
+ *     type: 'webview',
+ *     value: 'https://..'
+ *   })
+ * })
+ *
+ * const item2 = new ListItem({
+ *   title: "50" LED TV",
+ *   subtitle: "Big, bad and bold",
+ *   image: new Media("https://..."),
+ *   action: new Action({
+ *     type: 'webview',
+ *     value: 'https://..'
+ *   })
+ * })
+ *
+ * const list = new List()
+ * list.addItem(item1)
+ * list.addItem(item2)
  **/
 class List extends Template {
 

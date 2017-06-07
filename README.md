@@ -167,7 +167,7 @@ Component used in Card, Buttons templates
 
 | Name | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | Type of button (url, postback etc) |
+| type | <code>string</code> | Type of button (url, postback, webview) |
 | label | <code>string</code> | Label of the button |
 | value | <code>string</code> | Value of the button |
 
@@ -293,6 +293,20 @@ Template with a short description and buttons to request input from the user.
 | --- | --- | --- |
 | opts.title | <code>string</code> | Required |
 
+**Example**  
+```js
+const buttons = new Buttons("Vintage bikes and more")
+buttons.addButton(new Button(
+ label: "View website",
+ type: "url",
+ value: "..."
+))
+buttons.addButton(new Button(
+ label: "Special offers",
+ type: "postback",
+ value: "Show me special offers"
+))
+```
 <a name="Buttons+addButton"></a>
 
 ### buttons.addButton(button) ⇒ <code>[Button](#Button)</code>
@@ -337,6 +351,28 @@ Template composed of an image attachment, short description and buttons to reque
 | opts.image | <code>string</code> | Optional |
 | opts.action | <code>string</code> | Optional |
 
+**Example**  
+```js
+const button1 = new Button({
+  label: "Label",
+  type: "url",
+  value: "https://..."
+})
+
+const button2 = new Button({
+  label: "Label",
+  type: "url",
+  value: "https://..."
+ })
+
+const card = new Card({
+  title: "Awesome title",
+  subtitle: "Some subtitle",
+  image: new Media("https://...")
+})
+card.addButton(button1)
+card.addButton(button2)
+```
 <a name="Card+addButton"></a>
 
 ### card.addButton(button) ⇒ <code>[Card](#Card)</code>
@@ -395,6 +431,17 @@ Template with a image
 | opts.url | <code>string</code> | Required |
 | opts.action | <code>string</code> | Optional |
 
+**Example**  
+```js
+const image = new Image({
+  title: "Awesome title",
+  url: "https://...",
+  action: new Action({
+    type: 'url',
+    value: 'https://...'
+  })
+})
+```
 <a name="List"></a>
 
 ## List
@@ -444,6 +491,18 @@ Template with a location
 | opts.long | <code>string</code> | Required |
 | opts.action | <code>string</code> | Optional |
 
+**Example**  
+```js
+const location = new Location({
+  title: "Infinite Loop 1",
+  lat: "37.331860",
+  long: "-122.030248",
+  action: new Action({
+    type: 'url',
+    value: 'https://...'
+  })
+})
+```
 <a name="Template"></a>
 
 ## *Template*
@@ -487,3 +546,15 @@ Template with a piece of text
 | --- | --- | --- |
 | opts.text | <code>string</code> | Required |
 
+**Example**  
+```js
+const text = new Text('Want a free soda?')
+text.addQuickReply(new QuickReply({
+  label: 'Yes',
+  value: 'yes'
+}))
+text.addQuickReply(new QuickReply({
+  label: 'No',
+  value: 'no'
+}))
+```

@@ -1,6 +1,6 @@
 /**
  * Component used in Card, Buttons templates
- * @property {string} type - Type of button (url, postback etc)
+ * @property {string} type - Type of button (url, postback, webview)
  * @property {string} label - Label of the button
  * @property {string} value - Value of the button
  **/

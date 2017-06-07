@@ -6,6 +6,18 @@ import Media from '../components/media'
  * Template with a short description and buttons to request input from the user.
  * @property {string} title - Main title of the buttons
  * @property {Button[]} buttons - Optional set of buttons
+ * @example
+ * const buttons = new Buttons("Vintage bikes and more")
+ * buttons.addButton(new Button(
+ *  label: "View website",
+ *  type: "url",
+ *  value: "..."
+ * ))
+ * buttons.addButton(new Button(
+ *  label: "Special offers",
+ *  type: "postback",
+ *  value: "Show me special offers"
+ * ))
  **/
 class Buttons extends Template {
 

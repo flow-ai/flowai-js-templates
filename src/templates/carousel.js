@@ -4,6 +4,22 @@ import Card from './card'
 /**
  * Template that displays a set of cards
  * @property {Card[]} cards - Set of cards
+ * @example
+ * const card1 = new Card({
+ *   title: "Awesome title 1",
+ *   subtitle: "Some subtitle 1",
+ *   image: new Media("https://...")
+ * })
+ *
+ * const card2 = new Card({
+ *   title: "Awesome title 2",
+ *   subtitle: "Some subtitle 2",
+ *   image: new Media("https://...")
+ * })
+ *
+ * const carousel = new Carousel()
+ * carousel.addCard(card1)
+ * carousel.addCard(card2)
  **/
 class Carousel extends Template {
 

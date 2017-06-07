@@ -11,6 +11,26 @@ import Media from '../components/media'
  * @property {Action} action - Optional Action
  * @property {Button[]} buttons - Optional set of buttons
  * @property {Action} action - Optional Action that is triggered when a user interacts with the card
+ * @example
+ * const button1 = new Button({
+ *   label: "Label",
+ *   type: "url",
+ *   value: "https://..."
+ * })
+ *
+ * const button2 = new Button({
+ *   label: "Label",
+ *   type: "url",
+ *   value: "https://..."
+ *  })
+ *
+ * const card = new Card({
+ *   title: "Awesome title",
+ *   subtitle: "Some subtitle",
+ *   image: new Media("https://...")
+ * })
+ * card.addButton(button1)
+ * card.addButton(button2)
  **/
 class Card extends Template {
 
