@@ -1,9 +1,15 @@
 import Template from './templates/template'
+import Text from './templates/text'
 
 /**
  * Representation of a message to a user. Contains a pronounceable fallback message and optional rich template responses.
  * @property {string} fallback - Pronounceable and represents the responses as a whole
  * @property {Template[]} responses - List of rich template responses
+ * @example
+ * // Create a message without responses
+ * // this will create a response
+ * // when converted to JSON
+ * const message = new Message('Hi there')
  **/
 class Message {
 
@@ -41,6 +47,13 @@ class Message {
       fallback,
       responses
     } = this
+
+    if(!Array.isArray(responses) || !responses.length) {
+      return {
+        fallback,
+        responses: [new Text(fallback)]
+      }
+    }
 
     return {
       fallback,

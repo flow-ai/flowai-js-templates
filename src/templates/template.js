@@ -20,6 +20,8 @@ class Template {
       this.quickReplies = []
     }
     this.quickReplies.push(quickReply)
+
+    return this
   }
 }
 

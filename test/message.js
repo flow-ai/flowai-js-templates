@@ -21,4 +21,28 @@ describe("Message", () => {
 
     expect(message.responses.length).to.equal(1)
   })
+
+  it("can convert to JSON with response", () => {
+    const response = new Template()
+    const message = new Message("Awesome").addResponse(response)
+
+    const parsed = JSON.parse(JSON.stringify(message))
+    expect(parsed.responses.length === 1)
+  })
+
+  it("can convert to JSON with responses", () => {
+    const response1 = new Template()
+    const response2 = new Template()
+    const message = new Message("Awesome").addResponse(response1).addResponse(response2)
+
+    const parsed = JSON.parse(JSON.stringify(message))
+    expect(parsed.responses.length === 2)
+  })
+
+  it("to JSON without response will add one", () => {
+    const message = new Message("Awesome")
+
+    const parsed = JSON.parse(JSON.stringify(message))
+    expect(parsed.responses.length === 1)
+  })
 })
