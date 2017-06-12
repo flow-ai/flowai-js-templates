@@ -27,7 +27,10 @@ import Media from '../components/media'
  * const card = new Card({
  *   title: "Awesome title",
  *   subtitle: "Some subtitle",
- *   media: new Media("https://...")
+ *   media: new Media({
+ *    url: "https://...",
+ *    type: "image"
+ *   })
  * })
  * card.addButton(button1)
  * card.addButton(button2)
