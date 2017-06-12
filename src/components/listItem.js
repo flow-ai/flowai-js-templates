@@ -16,8 +16,8 @@ class ListItem {
   /**
    * @param {string} opts.title - Required
    * @param {string} opts.subtitle - Optional
-   * @param {string} opts.media - Optional
-   * @param {string} opts.action - Optional
+   * @param {Media} opts.media - Optional
+   * @param {Action} opts.action - Optional
    **/
   constructor({ title, subtitle, media, action }) {
     if(typeof title !== 'string' || title.length === 0) {

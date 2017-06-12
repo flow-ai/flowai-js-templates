@@ -232,8 +232,8 @@ Item within a List
 | --- | --- | --- |
 | opts.title | <code>string</code> | Required |
 | opts.subtitle | <code>string</code> | Optional |
-| opts.media | <code>string</code> | Optional |
-| opts.action | <code>string</code> | Optional |
+| opts.media | <code>[Media](#Media)</code> | Optional |
+| opts.action | <code>[Action](#Action)</code> | Optional |
 
 <a name="ListItem+addButton"></a>
 
@@ -370,8 +370,8 @@ Template composed of a media attachment, short description and buttons to reques
 | --- | --- | --- |
 | opts.title | <code>string</code> | Required |
 | opts.subtitle | <code>string</code> | Optional |
-| opts.media | <code>string</code> | Optional |
-| opts.action | <code>string</code> | Optional |
+| opts.media | <code>[Media](#Media)</code> | Optional |
+| opts.action | <code>[Action](#Action)</code> | Optional |
 
 **Example**  
 ```js
