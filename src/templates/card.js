@@ -4,10 +4,10 @@ import Button from '../components/button'
 import Media from '../components/media'
 
 /**
- * Template composed of an image attachment, short description and buttons to request input from the user.
+ * Template composed of a media attachment, short description and buttons to request input from the user.
  * @property {string} title - Main title of the card
  * @property {string} subtitle - Optional subtitle
- * @property {Media} image - Optional Media
+ * @property {Media} media - Optional Media
  * @property {Action} action - Optional Action
  * @property {Button[]} buttons - Optional set of buttons
  * @property {Action} action - Optional Action that is triggered when a user interacts with the card
@@ -27,7 +27,7 @@ import Media from '../components/media'
  * const card = new Card({
  *   title: "Awesome title",
  *   subtitle: "Some subtitle",
- *   image: new Media("https://...")
+ *   media: new Media("https://...")
  * })
  * card.addButton(button1)
  * card.addButton(button2)
@@ -37,10 +37,10 @@ class Card extends Template {
   /**
    * @param {string} opts.title - Required
    * @param {string} opts.subtitle - Optional
-   * @param {string} opts.image - Optional
+   * @param {string} opts.media - Optional
    * @param {string} opts.action - Optional
    **/
-  constructor({ title, subtitle, image, action }) {
+  constructor({ title, subtitle, media, action }) {
     super()
 
     if(typeof title !== 'string' || !title.length) {
@@ -49,20 +49,20 @@ class Card extends Template {
 
     this.title = title
     this.subtitle = subtitle || undefined
-    this.image = image || undefined
+    this.media = media || undefined
     this.action = action || undefined
   }
 
-  set image(image) {
-    if(image && !(image instanceof Media)) {
-      throw new Error('image must be an instance of Media')
+  set media(media) {
+    if(media && !(media instanceof Media)) {
+      throw new Error('media must be an instance of Media')
     }
 
-    this._image = image
+    this._media = media
   }
 
-  get image() {
-    return this._image
+  get media() {
+    return this._media
   }
 
   set action(action) {
@@ -100,7 +100,7 @@ class Card extends Template {
     const {
       title,
       subtitle,
-      image,
+      media,
       action,
       buttons,
       quickReplies
@@ -110,7 +110,7 @@ class Card extends Template {
       return {
         title,
         subtitle,
-        image,
+        media,
         action,
         buttons,
         quickReplies
@@ -122,7 +122,7 @@ class Card extends Template {
       payload: {
         title,
         subtitle,
-        image,
+        media,
         action,
         buttons,
         quickReplies

@@ -24,17 +24,17 @@ describe("Template List", () => {
     const item = new ListItem({ title: "Awesome title"})
     expect(item.title).to.equal("Awesome title")
     expect(item.subtitle).to.equal(undefined)
-    expect(item.image).to.equal(undefined)
+    expect(item.media).to.equal(undefined)
   })
 
-  it("ListItem cannot add invalid image", () => {
+  it("ListItem cannot add invalid media", () => {
     expect(() => new ListItem({
       title: "Awesome title",
-      image: "Awesome image url"
+      media: "Awesome media url"
     })).to.throw(Error)
 
     const item = new ListItem({ title: "Awesome title"})
-    expect(() => item.image = "Awesome image url").to.throw(Error)
+    expect(() => item.media = "Awesome media url").to.throw(Error)
   })
 
   it("ListItem cannot add invalid button", () => {
@@ -76,7 +76,10 @@ describe("Template List", () => {
 
   it("ListItem can convert to JSON", () => {
     const item = new ListItem({ title: "Awesome title"})
-    item.image = new Media("Awesome image")
+    item.media = new Media({
+      url: "Awesome media",
+      type: "image"
+    })
     const button = new Button({
       label: "Label",
       type: "url",

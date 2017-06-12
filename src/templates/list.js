@@ -8,7 +8,7 @@ import ListItem from '../components/listItem'
  * const item1 = new ListItem({
  *   title: "40" LED TV",
  *   subtitle: "Crystal clear screen",
- *   image: new Media("https://..."),
+ *   media: new Media("https://..."),
  *   action: new Action({
  *     type: 'webview',
  *     value: 'https://..'
@@ -18,7 +18,7 @@ import ListItem from '../components/listItem'
  * const item2 = new ListItem({
  *   title: "50" LED TV",
  *   subtitle: "Big, bad and bold",
- *   image: new Media("https://..."),
+ *   media: new Media("https://..."),
  *   action: new Action({
  *     type: 'webview',
  *     value: 'https://..'

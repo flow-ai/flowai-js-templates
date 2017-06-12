@@ -113,7 +113,7 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
 <dd><p>Template with a short description and buttons to request input from the user.</p>
 </dd>
 <dt><a href="#Card">Card</a></dt>
-<dd><p>Template composed of an image attachment, short description and buttons to request input from the user.</p>
+<dd><p>Template composed of a media attachment, short description and buttons to request input from the user.</p>
 </dd>
 <dt><a href="#Carousel">Carousel</a></dt>
 <dd><p>Template that displays a set of cards</p>
@@ -132,6 +132,9 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
 </dd>
 <dt><a href="#Text">Text</a></dt>
 <dd><p>Template with a piece of text</p>
+</dd>
+<dt><a href="#Video">Video</a></dt>
+<dd><p>Template with a video</p>
 </dd>
 </dl>
 
@@ -211,7 +214,7 @@ Item within a List
 | --- | --- | --- |
 | title | <code>string</code> | Title of the list item |
 | subtitle | <code>string</code> | Optional subtitle |
-| image | <code>[Media](#Media)</code> | Optional Media |
+| media | <code>[Media](#Media)</code> | Optional Media |
 | action | <code>[Action](#Action)</code> | Optional Action |
 | buttons | <code>[Array.&lt;Button&gt;](#Button)</code> | Optional set of buttons |
 | action | <code>[Action](#Action)</code> | Optional Action that is triggered when a user interacts with the list item |
@@ -229,7 +232,7 @@ Item within a List
 | --- | --- | --- |
 | opts.title | <code>string</code> | Required |
 | opts.subtitle | <code>string</code> | Optional |
-| opts.image | <code>string</code> | Optional |
+| opts.media | <code>string</code> | Optional |
 | opts.action | <code>string</code> | Optional |
 
 <a name="ListItem+addButton"></a>
@@ -257,11 +260,12 @@ Component that represents a URL to an image, video or audio file. Used on Templa
 
 <a name="new_Media_new"></a>
 
-### new Media(url)
+### new Media()
 
 | Param | Type | Description |
 | --- | --- | --- |
-| url | <code>string</code> | Required |
+| opts.url | <code>string</code> | Required |
+| opts.type | <code>string</code> | Required |
 
 <a name="QuickReply"></a>
 
@@ -339,7 +343,7 @@ Add a button to the buttons
 <a name="Card"></a>
 
 ## Card
-Template composed of an image attachment, short description and buttons to request input from the user.
+Template composed of a media attachment, short description and buttons to request input from the user.
 
 **Kind**: global class  
 **Properties**
@@ -348,7 +352,7 @@ Template composed of an image attachment, short description and buttons to reque
 | --- | --- | --- |
 | title | <code>string</code> | Main title of the card |
 | subtitle | <code>string</code> | Optional subtitle |
-| image | <code>[Media](#Media)</code> | Optional Media |
+| media | <code>[Media](#Media)</code> | Optional Media |
 | action | <code>[Action](#Action)</code> | Optional Action |
 | buttons | <code>[Array.&lt;Button&gt;](#Button)</code> | Optional set of buttons |
 | action | <code>[Action](#Action)</code> | Optional Action that is triggered when a user interacts with the card |
@@ -366,7 +370,7 @@ Template composed of an image attachment, short description and buttons to reque
 | --- | --- | --- |
 | opts.title | <code>string</code> | Required |
 | opts.subtitle | <code>string</code> | Optional |
-| opts.image | <code>string</code> | Optional |
+| opts.media | <code>string</code> | Optional |
 | opts.action | <code>string</code> | Optional |
 
 **Example**  
@@ -386,7 +390,7 @@ const button2 = new Button({
 const card = new Card({
   title: "Awesome title",
   subtitle: "Some subtitle",
-  image: new Media("https://...")
+  media: new Media("https://...")
 })
 card.addButton(button1)
 card.addButton(button2)
@@ -575,4 +579,39 @@ text.addQuickReply(new QuickReply({
   label: 'No',
   value: 'no'
 }))
+```
+<a name="Video"></a>
+
+## Video
+Template with a video
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Describes the video |
+| url | <code>string</code> | URL to the video |
+| action | <code>[Action](#Action)</code> | Optional Action |
+
+<a name="new_Video_new"></a>
+
+### new Video()
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.title | <code>string</code> | Required |
+| opts.url | <code>string</code> | Required |
+| opts.action | <code>string</code> | Optional |
+
+**Example**  
+```js
+const video = new Video({
+  title: "Awesome title",
+  url: "https://...",
+  action: new Action({
+    type: 'url',
+    value: 'https://...'
+  })
+})
 ```

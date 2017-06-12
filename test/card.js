@@ -10,17 +10,17 @@ describe("Template Card", () => {
     const card = new Card({ title: "Awesome title"})
     expect(card.title).to.equal("Awesome title")
     expect(card.subtitle).to.equal(undefined)
-    expect(card.image).to.equal(undefined)
+    expect(card.media).to.equal(undefined)
   })
 
-  it("cannot add invalid image", () => {
+  it("cannot add invalid media", () => {
     expect(() => new Card({
       title: "Awesome title",
-      image: "Awesome image url"
+      media: "Awesome media url"
     })).to.throw(Error)
 
     const card = new Card({ title: "Awesome title"})
-    expect(() => card.image = "Awesome image url").to.throw(Error)
+    expect(() => card.media = "Awesome media url").to.throw(Error)
   })
 
   it("cannot add invalid button", () => {
@@ -80,7 +80,10 @@ describe("Template Card", () => {
 
   it("can convert to JSON", () => {
     const card = new Card({ title: "Awesome title"})
-    card.image = new Media("Awesome image")
+    card.media = new Media({
+      url: "Awesome media",
+      type: "image"
+    })
     const button = new Button({
       label: "Label",
       type: "url",

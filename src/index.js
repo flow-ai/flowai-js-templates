@@ -4,6 +4,7 @@ import Message from './message'
 import Card from './templates/card'
 import Text from './templates/text'
 import Image from './templates/image'
+import Video from './templates/video'
 import Buttons from './templates/buttons'
 import Carousel from './templates/carousel'
 import List from './templates/list'
@@ -21,6 +22,7 @@ export {
   Text,
   Card,
   Image,
+  Video,
   Buttons,
   Carousel,
   List,

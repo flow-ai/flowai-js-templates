@@ -8,13 +8,13 @@ import Card from './card'
  * const card1 = new Card({
  *   title: "Awesome title 1",
  *   subtitle: "Some subtitle 1",
- *   image: new Media("https://...")
+ *   media: new Media("https://...")
  * })
  *
  * const card2 = new Card({
  *   title: "Awesome title 2",
  *   subtitle: "Some subtitle 2",
- *   image: new Media("https://...")
+ *   media: new Media("https://...")
  * })
  *
  * const carousel = new Carousel()

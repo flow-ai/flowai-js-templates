@@ -6,7 +6,7 @@ import Media from './media'
  * Item within a List
  * @property {string} title - Title of the list item
  * @property {string} subtitle - Optional subtitle
- * @property {Media} image - Optional Media
+ * @property {Media} media - Optional Media
  * @property {Action} action - Optional Action
  * @property {Button[]} buttons - Optional set of buttons
  * @property {Action} action - Optional Action that is triggered when a user interacts with the list item
@@ -16,30 +16,30 @@ class ListItem {
   /**
    * @param {string} opts.title - Required
    * @param {string} opts.subtitle - Optional
-   * @param {string} opts.image - Optional
+   * @param {string} opts.media - Optional
    * @param {string} opts.action - Optional
    **/
-  constructor({ title, subtitle, image, action }) {
+  constructor({ title, subtitle, media, action }) {
     if(typeof title !== 'string' || title.length === 0) {
       throw new Error('Title is mandatory')
     }
 
     this.title = title
     this.subtitle = subtitle || undefined
-    this.image = image || undefined
+    this.media = media || undefined
     this.action = action || undefined
   }
 
-  set image(image) {
-    if(image && !(image instanceof Media)) {
-      throw new Error('image must be an instance of Media')
+  set media(media) {
+    if(media && !(media instanceof Media)) {
+      throw new Error('media must be an instance of Media')
     }
 
-    this._image = image
+    this._media = media
   }
 
-  get image() {
-    return this._image
+  get media() {
+    return this._media
   }
 
   set action(action) {
@@ -77,7 +77,7 @@ class ListItem {
     const {
       title,
       subtitle,
-      image,
+      media,
       action,
       buttons
     } = this
@@ -85,7 +85,7 @@ class ListItem {
     return {
       title,
       subtitle,
-      image,
+      media,
       action,
       buttons
     }

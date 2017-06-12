@@ -5,21 +5,41 @@
  **/
 class Media {
   /**
-   * @param {string} url - Required
+   * @param {string} opts.url - Required
+   * @param {string} opts.type - Required
    **/
-  constructor(url) {
+  constructor(opts) {
+    if(typeof opts === 'string') {
+      throw new Error(`You should provide an url and type not a string`)
+    }
+
+    const {
+      url,
+      type
+    } = opts
+
     if(typeof url !== 'string' || url.length === 0) {
       throw new Error(`url is mandatory ${url}`)
     }
+
+    if(typeof type !== 'string' || type.length === 0) {
+      throw new Error(`type is mandatory ${type}`)
+    }
+
     this.url = url
+    this.type = type
   }
 
   toJSON() {
     const {
-      url
+      url,
+      type
     } = this
 
-    return url
+    return {
+      url,
+      type
+    }
   }
 }
 
