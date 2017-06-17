@@ -118,6 +118,9 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
 <dt><a href="#Carousel">Carousel</a></dt>
 <dd><p>Template that displays a set of cards</p>
 </dd>
+<dt><a href="#Custom">Custom</a></dt>
+<dd><p>Template composed with your own data. Use this to create specific UI widgets or components to your app or web ui. Do remmember we cannot convert these type of templates to channels like Messenger.</p>
+</dd>
 <dt><a href="#Image">Image</a></dt>
 <dd><p>Template with a image</p>
 </dd>
@@ -432,6 +435,44 @@ Add a card to the cards
 | --- | --- | --- |
 | card | <code>[Card](#Card)</code> | card |
 
+<a name="Custom"></a>
+
+## Custom
+Template composed with your own data. Use this to create specific UI widgets or components to your app or web ui. Do remmember we cannot convert these type of templates to channels like Messenger.
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| data | <code>object</code> | Data tailored to your use case |
+
+<a name="new_Custom_new"></a>
+
+### new Custom(data)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| data | <code>object</code> | Required |
+
+**Example**  
+```js
+const custom = new Custom({
+  title: 'Big screen TV',
+  brand: 'Awesome Elec.',
+  catId: 35633123322,
+  prices: [
+    'EURO': 1800,
+    'DOLLAR': '2400'
+  ]
+})
+// You can still add quick replies
+// to these type of componentz
+custom.addQuickReply(new QuickReply({
+  label: 'Order now',
+  value: 'order 35633123322'
+}))
+```
 <a name="Image"></a>
 
 ## Image
