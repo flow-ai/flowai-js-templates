@@ -10,6 +10,30 @@ describe("Template List", () => {
     expect(list.items.length).to.equal(1)
   })
 
+  it("can create with featured ListItem", () => {
+
+    const item1 = new ListItem({
+      title: "Awesome title 1"
+    })
+
+    const item2 = new ListItem({
+      title: "Awesome title 2",
+      featured: true
+    })
+
+    const item3 = new ListItem({
+      title: "Awesome title 3"
+    })
+
+    const list = new List()
+      .addItem(item1)
+      .addItem(item2)
+      .addItem(item3)
+
+    expect(list.items.length).to.equal(3)
+    expect(list.items[0]).to.equal(item2)
+  })
+
   it("can add button", () => {
     const button = new Button({
       label: "Label",

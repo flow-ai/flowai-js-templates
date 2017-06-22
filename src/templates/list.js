@@ -52,7 +52,11 @@ class List extends Template {
       this.items = []
     }
 
-    this.items.push(item)
+    if(item.featured) {
+      this.items.splice(0, 0, item)
+    } else {
+      this.items.push(item)
+    }
 
     return this
   }

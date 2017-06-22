@@ -9,16 +9,17 @@ import Media from './media'
  * @property {Media} media - Optional Media
  * @property {Button[]} buttons - Optional set of buttons
  * @property {Action} action - Optional Action that is triggered when a user interacts with the list item
+ * @property {bool} featured - Optional set this element to be featured in the List (default false)
  **/
 class ListItem {
-
   /**
    * @param {string} opts.title - Required
    * @param {string} opts.subtitle - Optional
    * @param {Media} opts.media - Optional
    * @param {Action} opts.action - Optional
+   * @param {bool} opts.featured - Optional
    **/
-  constructor({ title, subtitle, media, action }) {
+  constructor({ title, subtitle, media, action, featured }) {
     if(typeof title !== 'string' || title.length === 0) {
       throw new Error('Title is mandatory')
     }
@@ -27,6 +28,7 @@ class ListItem {
     this.subtitle = subtitle || undefined
     this.media = media || undefined
     this.action = action || undefined
+    this.featured = featured || undefined
   }
 
   set media(media) {
@@ -78,7 +80,8 @@ class ListItem {
       subtitle,
       media,
       action,
-      buttons
+      buttons,
+      featured
     } = this
 
     return {
@@ -86,7 +89,8 @@ class ListItem {
       subtitle,
       media,
       action,
-      buttons
+      buttons,
+      featured
     }
   }
 }
