@@ -119,7 +119,7 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
 <dd><p>Template that displays a set of cards</p>
 </dd>
 <dt><a href="#Custom">Custom</a></dt>
-<dd><p>Template composed with your own data. Use this to create specific UI widgets or components to your app or web ui. Do remmember we cannot convert these type of templates to channels like Messenger.</p>
+<dd><p>Template composed with your own data. Use this to create specific UI widgets or components to your app or web ui. Do remember we cannot convert these type of templates to channels like Messenger.</p>
 </dd>
 <dt><a href="#Image">Image</a></dt>
 <dd><p>Template with a image</p>
@@ -218,7 +218,6 @@ Item within a List
 | title | <code>string</code> | Title of the list item |
 | subtitle | <code>string</code> | Optional subtitle |
 | media | <code>[Media](#Media)</code> | Optional Media |
-| action | <code>[Action](#Action)</code> | Optional Action |
 | buttons | <code>[Array.&lt;Button&gt;](#Button)</code> | Optional set of buttons |
 | action | <code>[Action](#Action)</code> | Optional Action that is triggered when a user interacts with the list item |
 
@@ -438,7 +437,7 @@ Add a card to the cards
 <a name="Custom"></a>
 
 ## Custom
-Template composed with your own data. Use this to create specific UI widgets or components to your app or web ui. Do remmember we cannot convert these type of templates to channels like Messenger.
+Template composed with your own data. Use this to create specific UI widgets or components to your app or web ui. Do remember we cannot convert these type of templates to channels like Messenger.
 
 **Kind**: global class  
 **Properties**
@@ -520,6 +519,11 @@ Template that displays a set of list items
 | --- | --- | --- |
 | items | <code>[Array.&lt;ListItem&gt;](#ListItem)</code> | Set of list items |
 
+
+* [List](#List)
+    * [.addItem(item)](#List+addItem) ⇒ <code>[List](#List)</code>
+    * [.addButton(button)](#List+addButton) ⇒ <code>[ListItem](#ListItem)</code>
+
 <a name="List+addItem"></a>
 
 ### list.addItem(item) ⇒ <code>[List](#List)</code>
@@ -530,6 +534,17 @@ Add a item to the items
 | Param | Type | Description |
 | --- | --- | --- |
 | item | <code>[ListItem](#ListItem)</code> | item |
+
+<a name="List+addButton"></a>
+
+### list.addButton(button) ⇒ <code>[ListItem](#ListItem)</code>
+Add a button to the list item
+
+**Kind**: instance method of <code>[List](#List)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| button | <code>[Button](#Button)</code> | button |
 
 <a name="Location"></a>
 

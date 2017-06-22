@@ -7,7 +7,6 @@ import Media from './media'
  * @property {string} title - Title of the list item
  * @property {string} subtitle - Optional subtitle
  * @property {Media} media - Optional Media
- * @property {Action} action - Optional Action
  * @property {Button[]} buttons - Optional set of buttons
  * @property {Action} action - Optional Action that is triggered when a user interacts with the list item
  **/

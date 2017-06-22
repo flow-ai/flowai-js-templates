@@ -10,6 +10,18 @@ describe("Template List", () => {
     expect(list.items.length).to.equal(1)
   })
 
+  it("can add button", () => {
+    const button = new Button({
+      label: "Label",
+      type: "url",
+      value: "value"
+    })
+
+    const list = new List()
+    list.addButton(button)
+    expect(list.buttons.length).to.equal(1)
+  })
+
   it("cannot add invalid list item", () => {
     const list = new List()
     expect(() => list.addItem("fake item")).to.throw(Error)

@@ -1,5 +1,6 @@
 import Template from './template'
 import ListItem from '../components/listItem'
+import Button from '../components/button'
 
 /**
  * Template that displays a set of list items
@@ -56,9 +57,29 @@ class List extends Template {
     return this
   }
 
+  /**
+   * Add a button to the list item
+   * @param {Button} - button
+   * @return {ListItem}
+   **/
+  addButton(button) {
+    if(!(button instanceof Button)) {
+      throw new Error('addButton argument must be an instance of a Button')
+    }
+
+    if(!this.buttons) {
+      this.buttons = []
+    }
+
+    this.buttons.push(button)
+
+    return this
+  }
+
   toJSON() {
     const {
       items,
+      buttons,
       quickReplies
     } = this
 
@@ -66,6 +87,7 @@ class List extends Template {
       type: 'list',
       payload: {
         items,
+        buttons,
         quickReplies
       }
     }
