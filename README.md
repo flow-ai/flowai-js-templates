@@ -220,6 +220,7 @@ Item within a List
 | media | <code>[Media](#Media)</code> | Optional Media |
 | buttons | <code>[Array.&lt;Button&gt;](#Button)</code> | Optional set of buttons |
 | action | <code>[Action](#Action)</code> | Optional Action that is triggered when a user interacts with the list item |
+| featured | <code>bool</code> | Optional set this element to be featured in the List (default false) |
 
 
 * [ListItem](#ListItem)
@@ -236,6 +237,7 @@ Item within a List
 | opts.subtitle | <code>string</code> | Optional |
 | opts.media | <code>[Media](#Media)</code> | Optional |
 | opts.action | <code>[Action](#Action)</code> | Optional |
+| opts.featured | <code>bool</code> | Optional |
 
 <a name="ListItem+addButton"></a>
 

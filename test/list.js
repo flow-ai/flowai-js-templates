@@ -34,6 +34,32 @@ describe("Template List", () => {
     expect(list.items[0]).to.equal(item2)
   })
 
+  it("set featured ListItem after adding", () => {
+
+    const item1 = new ListItem({
+      title: "Awesome title 1"
+    })
+
+    const item2 = new ListItem({
+      title: "Awesome title 2"
+    })
+
+    const item3 = new ListItem({
+      title: "Awesome title 3"
+    })
+
+    const list = new List()
+      .addItem(item1)
+      .addItem(item2)
+      .addItem(item3)
+
+    item2.featured = true
+
+    expect(list.items[0]).to.equal(item2)
+    expect(list.items[1]).to.equal(item1)
+    expect(list.items[2]).to.equal(item3)
+  })
+
   it("can add button", () => {
     const button = new Button({
       label: "Label",

@@ -48,10 +48,6 @@ class List extends Template {
       throw new Error('addListItem argument must be an instance of a ListItem')
     }
 
-    if(!this.items) {
-      this.items = []
-    }
-
     if(item.featured) {
       this.items.splice(0, 0, item)
     } else {
@@ -59,6 +55,25 @@ class List extends Template {
     }
 
     return this
+  }
+
+  get items() {
+    if(!this._items) {
+      this._items = []
+    }
+
+    this._items = this._items.sort((a,b) => {
+      if(a.featured && !b.featured) {
+        return -1
+      }
+      if(!a.featured && b.featured) {
+        return 1
+      }
+
+      return 0
+    })
+
+    return this._items
   }
 
   /**
