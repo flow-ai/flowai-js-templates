@@ -1,4 +1,4 @@
-# The flow.ai Javascript Response Templates
+# The Flow.ai JavaScript Response Templates
 Easy helper classes to create rich [flow.ai](https://flow.ai) response templates like cards, buttons and locations.
 
 Reponse templates allow developers to render widgets at channels that support this like Facebook Messenger or the flow.ai Web client.
@@ -109,6 +109,9 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
 <dt><a href="#QuickReply">QuickReply</a></dt>
 <dd><p>Component placed on any Template. Represents a shortcut for a user to reply with. Ideal for yes / no type of questions.</p>
 </dd>
+<dt><a href="#Audio">Audio</a></dt>
+<dd><p>Template with audio</p>
+</dd>
 <dt><a href="#Buttons">Buttons</a></dt>
 <dd><p>Template with a short description and buttons to request input from the user.</p>
 </dd>
@@ -120,6 +123,9 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
 </dd>
 <dt><a href="#Custom">Custom</a></dt>
 <dd><p>Template composed with your own data. Use this to create specific UI widgets or components to your app or web ui. Do remember we cannot convert these type of templates to channels like Messenger.</p>
+</dd>
+<dt><a href="#File">File</a></dt>
+<dd><p>Template with a file</p>
 </dd>
 <dt><a href="#Image">Image</a></dt>
 <dd><p>Template with a image</p>
@@ -293,6 +299,41 @@ Component placed on any Template. Represents a shortcut for a user to reply with
 | opts.label | <code>string</code> | Required |
 | opts.value | <code>string</code> | Required |
 
+<a name="Audio"></a>
+
+## Audio
+Template with audio
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Describes the audio |
+| url | <code>string</code> | URL to the audio file |
+| action | <code>[Action](#Action)</code> | Optional Action |
+
+<a name="new_Audio_new"></a>
+
+### new Audio()
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.title | <code>string</code> | Required |
+| opts.url | <code>string</code> | Required |
+| opts.action | <code>string</code> | Optional |
+
+**Example**  
+```js
+const audio = new Audio({
+  title: "Awesome title",
+  url: "https://...",
+  action: new Action({
+    type: 'url',
+    value: 'https://...'
+  })
+})
+```
 <a name="Buttons"></a>
 
 ## Buttons
@@ -473,6 +514,41 @@ custom.addQuickReply(new QuickReply({
   label: 'Order now',
   value: 'order 35633123322'
 }))
+```
+<a name="File"></a>
+
+## File
+Template with a file
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Describes the file |
+| url | <code>string</code> | URL to the file |
+| action | <code>[Action](#Action)</code> | Optional Action |
+
+<a name="new_File_new"></a>
+
+### new File()
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.title | <code>string</code> | Required |
+| opts.url | <code>string</code> | Required |
+| opts.action | <code>string</code> | Optional |
+
+**Example**  
+```js
+const file = new File({
+  title: "Awesome title",
+  url: "https://...",
+  action: new Action({
+    type: 'url',
+    value: 'https://...'
+  })
+})
 ```
 <a name="Image"></a>
 

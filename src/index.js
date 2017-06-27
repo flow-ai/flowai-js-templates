@@ -5,6 +5,8 @@ import Card from './templates/card'
 import Text from './templates/text'
 import Image from './templates/image'
 import Video from './templates/video'
+import Audio from './templates/audio'
+import File from './templates/file'
 import Buttons from './templates/buttons'
 import Carousel from './templates/carousel'
 import List from './templates/list'
@@ -24,6 +26,8 @@ export {
   Card,
   Image,
   Video,
+  Audio,
+  File,
   Buttons,
   Carousel,
   List,
