@@ -1,7 +1,8 @@
 /**
  * Component placed on any Template. Represents a shortcut for a user to reply with. Ideal for yes / no type of questions.
- * @property {string} label - UI label
- * @property {string} value
+ * @property {string} label - Label that is shown as a quick reply
+ * @property {string} value - Value that is being send as the quick reply, empty if type is location
+ * @property {string} type - Type of quick reply, default is text
  **/
 class QuickReply {
   /**
@@ -31,12 +32,14 @@ class QuickReply {
   toJSON() {
     const {
       label,
-      value
+      value,
+      type
     } = this
 
     return {
       label,
-      value
+      value,
+      type
     }
   }
 }

@@ -287,8 +287,9 @@ Component placed on any Template. Represents a shortcut for a user to reply with
 
 | Name | Type | Description |
 | --- | --- | --- |
-| label | <code>string</code> | UI label |
-| value | <code>string</code> |  |
+| label | <code>string</code> | Label that is shown as a quick reply |
+| value | <code>string</code> | Value that is being send as the quick reply, empty if type is location |
+| type | <code>string</code> | Type of quick reply, default is text |
 
 <a name="new_QuickReply_new"></a>
 
