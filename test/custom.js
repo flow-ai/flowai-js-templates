@@ -17,7 +17,7 @@ describe("Template Custom", () => {
     expect(custom.data.something).to.equal("Awesome text")
   })
 
-  it("can create with quick reply", () => {
+  it("can create with quick reply without type", () => {
     const custom = new Custom({
       something: 'Awesome text'
     })
@@ -25,6 +25,21 @@ describe("Template Custom", () => {
       label: 'test',
       value: 'test'
     }))
+    expect(custom.quickReplies[0].type).to.equal("text")
+    expect(custom.data.something).to.equal("Awesome text")
+  })
+
+  it("can create with quick reply with a type", () => {
+    const custom = new Custom({
+      something: 'Awesome text'
+    })
+    custom.addQuickReply(new QuickReply({
+      label: 'test',
+      type: 'location'
+    }))
+
+    expect(custom.quickReplies[0].type).to.equal("location")
+    expect(custom.quickReplies[0].value).to.be.undefined
     expect(custom.data.something).to.equal("Awesome text")
   })
 
@@ -35,6 +50,6 @@ describe("Template Custom", () => {
       value: 'test'
     }))
     const output = JSON.stringify(custom)
-    console.log(output)
+    // console.log(output)
   })
 })

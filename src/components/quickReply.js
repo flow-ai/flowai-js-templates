@@ -6,18 +6,26 @@
 class QuickReply {
   /**
    * @param {string} opts.label - Required
-   * @param {string} opts.value - Required
+   * @param {string} opts.type - Optional type, default is text (or location)
+   * @param {string} opts.value - Required, ignored if type is location
    **/
-  constructor({ label, value }) {
+  constructor({ label, type, value }) {
     if(typeof label !== 'string' || label.length === 0) {
       throw new Error('label is mandatory')
     }
-    if(typeof value !== 'string' || value.length === 0) {
+
+    if((typeof value !== 'string' || value.length === 0) && type !== 'location') {
       throw new Error('value is mandatory')
     }
 
-    this.label = label
+    if(typeof type !== 'string' || type.length === 0) {
+      this.type = 'text'
+    } else {
+      this.type = type
+    }
+
     this.value = value
+    this.label = label
   }
 
   toJSON() {
