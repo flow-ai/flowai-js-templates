@@ -22,10 +22,10 @@ describe("Template Custom", () => {
       something: 'Awesome text'
     })
     custom.addQuickReply(new QuickReply({
-      label: 'test',
-      value: 'test'
+      label: 'test'
     }))
     expect(custom.quickReplies[0].type).to.equal("text")
+    expect(custom.quickReplies[0].value).to.equal("test")
     expect(custom.data.something).to.equal("Awesome text")
   })
 
@@ -39,7 +39,6 @@ describe("Template Custom", () => {
     }))
 
     expect(custom.quickReplies[0].type).to.equal("location")
-    expect(custom.quickReplies[0].value).to.be.undefined
     expect(custom.data.something).to.equal("Awesome text")
   })
 
@@ -47,8 +46,9 @@ describe("Template Custom", () => {
     const custom = new Custom({ something: "Awesome title"})
     custom.addQuickReply(new QuickReply({
       label: 'test',
-      value: 'test'
+      value: 'test 2'
     }))
+    expect(custom.quickReplies[0].value).to.equal("test 2")
     const output = JSON.stringify(custom)
     // console.log(output)
   })

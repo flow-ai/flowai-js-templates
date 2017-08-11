@@ -15,8 +15,8 @@ class QuickReply {
       throw new Error('label is mandatory')
     }
 
-    if((typeof value !== 'string' || value.length === 0) && type !== 'location') {
-      throw new Error('value is mandatory')
+    if(value && typeof value !== 'string') {
+      throw new Error('value must be as string')
     }
 
     if(typeof type !== 'string' || type.length === 0) {
@@ -25,7 +25,7 @@ class QuickReply {
       this.type = type
     }
 
-    this.value = value
+    this.value = value || label
     this.label = label
   }
 
