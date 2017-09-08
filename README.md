@@ -674,7 +674,24 @@ Base class of all response templates
 
 | Name | Type | Description |
 | --- | --- | --- |
+| delay | <code>Number</code> | Optional delay in miliseconds for sending the response |
 | quickReplies | <code>[Array.&lt;QuickReply&gt;](#QuickReply)</code> | Optional list of QuickReplies |
+
+
+* *[Template](#Template)*
+    * *[.delay](#Template+delay)*
+    * *[.addQuickReply(quickReply)](#Template+addQuickReply)*
+
+<a name="Template+delay"></a>
+
+### *template.delay*
+Define a delay for the response in miliseconds
+
+**Kind**: instance property of <code>[Template](#Template)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| delay | <code>Number</code> | Required |
 
 <a name="Template+addQuickReply"></a>
 

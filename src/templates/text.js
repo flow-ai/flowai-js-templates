@@ -37,7 +37,8 @@ class Text extends Template {
   toJSON() {
     const {
       text,
-      quickReplies
+      quickReplies,
+      delay
     } = this
 
     return {
@@ -45,7 +46,8 @@ class Text extends Template {
       payload: {
         text,
         quickReplies
-      }
+      },
+      delay
     }
   }
 }

@@ -106,7 +106,8 @@ class Card extends Template {
       media,
       action,
       buttons,
-      quickReplies
+      quickReplies,
+      delay
     } = this
 
     if( this.isShallow )  {
@@ -129,7 +130,8 @@ class Card extends Template {
         action,
         buttons,
         quickReplies
-      }
+      },
+      delay
     }
   }
 }

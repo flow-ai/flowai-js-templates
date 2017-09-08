@@ -45,4 +45,36 @@ describe("Message", () => {
     const parsed = JSON.parse(JSON.stringify(message))
     expect(parsed.responses.length === 1)
   })
+
+  it("by default delay is 0", () => {
+    const message = new Message("Awesome")
+    const response1 = new Template()
+    message.addResponse(response1)
+    expect(message.responses[0].delay === 0)
+  })
+
+  it("can define a delay with addResponse", () => {
+    const message = new Message("Awesome")
+    const response1 = new Template()
+    message.addResponse(response1, 2000)
+    expect(message.responses[0].delay === 2000)
+  })
+
+  it("can define a delay inside response", () => {
+    const message = new Message("Awesome")
+    const response1 = new Template()
+    response1.delay = 2000
+    message.addResponse(response1)
+
+    expect(message.responses[0].delay === 2000)
+  })
+
+  it("cannot define a negative delay", () => {
+    const message = new Message("Awesome")
+
+    const response1 = new Template()
+    message.addResponse(response1)
+
+    expect(() => message.responses[0].delay = -2000).to.throw(Error)
+  })
 })

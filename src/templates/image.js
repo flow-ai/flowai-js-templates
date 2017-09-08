@@ -58,7 +58,8 @@ class Image extends Template {
       title,
       url,
       action,
-      quickReplies
+      quickReplies,
+      delay
     } = this
 
     return {
@@ -68,7 +69,8 @@ class Image extends Template {
         url,
         action,
         quickReplies
-      }
+      },
+      delay
     }
   }
 }

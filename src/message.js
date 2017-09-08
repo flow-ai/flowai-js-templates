@@ -26,11 +26,16 @@ class Message {
   /**
    * Add a response
    * @param {Template} - response
+   * @param {Number} delay - Optional delay in miliseconds for sending the response
    * @return {Message}
    **/
-  addResponse(response) {
+  addResponse(response, delay) {
     if(!(response instanceof Template)) {
       throw new Error('addResponse argument must be an instance of a Template')
+    }
+
+    if(typeof d === 'number') {
+      response.delay = delay
     }
 
     if(!this.responses) {

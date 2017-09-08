@@ -2,10 +2,32 @@ import QuickReply from '../components/quickReply'
 
 /**
  * Base class of all response templates
+ * @property {Number} delay - Optional delay in miliseconds for sending the response
  * @property {QuickReply[]} quickReplies - Optional list of QuickReplies
  * @abstract
  **/
 class Template {
+
+
+  /**
+   * Define a delay for the response in miliseconds
+   * @param {Number} delay - Required
+   **/
+  set delay(delay) {
+    if(!(typeof delay === 'number')) {
+      throw new Error('Delay must be a number')
+    }
+
+    if(delay < 0) {
+      throw new Error('Delay must be positive number')
+    }
+
+    this._delay = delay
+  }
+
+  get delay() {
+    return this._delay || 0
+  }
 
   /**
    * Add a quick reply to the template

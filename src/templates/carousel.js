@@ -54,7 +54,8 @@ class Carousel extends Template {
   toJSON() {
     const {
       cards,
-      quickReplies
+      quickReplies,
+      delay
     } = this
 
     return {
@@ -62,7 +63,8 @@ class Carousel extends Template {
       payload: {
         cards,
         quickReplies
-      }
+      },
+      delay
     }
   }
 }

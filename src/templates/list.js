@@ -99,7 +99,8 @@ class List extends Template {
     const {
       items,
       buttons,
-      quickReplies
+      quickReplies,
+      delay
     } = this
 
     return {
@@ -108,7 +109,8 @@ class List extends Template {
         items,
         buttons,
         quickReplies
-      }
+      },
+      delay
     }
   }
 }

@@ -57,7 +57,8 @@ class Buttons extends Template {
     const {
       title,
       buttons,
-      quickReplies
+      quickReplies,
+      delay
     } = this
 
     return {
@@ -66,7 +67,8 @@ class Buttons extends Template {
         title,
         buttons,
         quickReplies
-      }
+      },
+      delay
     }
   }
 }

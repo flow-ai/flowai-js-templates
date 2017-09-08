@@ -38,14 +38,16 @@ class Custom extends Template {
   toJSON() {
     const {
       data,
-      quickReplies
+      quickReplies,
+      delay
     } = this
 
     return {
       type: 'custom',
       payload: Object.assign(data, {
         quickReplies
-      })
+      }),
+      delay
     }
   }
 }
