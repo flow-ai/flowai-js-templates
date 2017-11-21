@@ -5,7 +5,7 @@ Reponse templates allow developers to render widgets at channels that support th
 
 ## What can you do?
 
-* No need to write error prone JSON
+* No need to write error prone [JSON](JSON.md)
 * Full support for all template types
 
 ## Getting started
@@ -365,16 +365,16 @@ Template with a short description and buttons to request input from the user.
 **Example**  
 ```js
 const buttons = new Buttons("Vintage bikes and more")
-buttons.addButton(new Button(
+buttons.addButton(new Button({
  label: "View website",
  type: "url",
  value: "..."
-))
-buttons.addButton(new Button(
+}))
+buttons.addButton(new Button({
  label: "Special offers",
  type: "postback",
  value: "Show me special offers"
-))
+}))
 ```
 <a name="Buttons+addButton"></a>
 
@@ -505,10 +505,10 @@ const custom = new Custom({
   title: 'Big screen TV',
   brand: 'Awesome Elec.',
   catId: 35633123322,
-  prices: [
+  prices: {
     'EURO': 1800,
     'DOLLAR': '2400'
-  ]
+  }
 })
 // You can still add quick replies
 // to these type of componentz

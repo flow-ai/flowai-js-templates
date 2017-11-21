@@ -8,10 +8,10 @@ import Template from './template'
  *   title: 'Big screen TV',
  *   brand: 'Awesome Elec.',
  *   catId: 35633123322,
- *   prices: [
+ *   prices: {
  *     'EURO': 1800,
  *     'DOLLAR': '2400'
- *   ]
+ *   }
  * })
  * // You can still add quick replies
  * // to these type of componentz

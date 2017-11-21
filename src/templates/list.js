@@ -7,7 +7,7 @@ import Button from '../components/button'
  * @property {ListItem[]} items - Set of list items
  * @example
  * const item1 = new ListItem({
- *   title: "40" LED TV",
+ *   title: "40\" LED TV",
  *   subtitle: "Crystal clear screen",
  *   media: new Media({
  *    url: "https://...",
@@ -20,7 +20,7 @@ import Button from '../components/button'
  * })
  *
  * const item2 = new ListItem({
- *   title: "50" LED TV",
+ *   title: "50\" LED TV",
  *   subtitle: "Big, bad and bold",
  *   media: new Media({
  *    url: "https://...",

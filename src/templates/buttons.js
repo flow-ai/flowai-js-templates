@@ -8,16 +8,16 @@ import Media from '../components/media'
  * @property {Button[]} buttons - Optional set of buttons
  * @example
  * const buttons = new Buttons("Vintage bikes and more")
- * buttons.addButton(new Button(
+ * buttons.addButton(new Button({
  *  label: "View website",
  *  type: "url",
  *  value: "..."
- * ))
- * buttons.addButton(new Button(
+ * }))
+ * buttons.addButton(new Button({
  *  label: "Special offers",
  *  type: "postback",
  *  value: "Show me special offers"
- * ))
+ * }))
  **/
 class Buttons extends Template {
 

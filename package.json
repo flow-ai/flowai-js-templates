@@ -1,6 +1,6 @@
 {
   "name": "flowai-js-templates",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Message response templates for flow.ai",
   "main": "./lib/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "test": "npm run build:lib && mocha --recursive --reporter spec --compilers js:babel-core/register --require babel-polyfill --watch",
     "eslint": "eslint ./src --fix",
     "prepublish": "npm run build",
-    "docs": "jsdoc2md -c .jsdoc ./src/**/*.js --template ./src/README.hbs > README.md"
+    "docs": "jsdoc2md -c .jsdoc ./src/**/*.js --example-lang js --template ./docs/README.hbs > README.md && node ./docs/json.js"
   },
   "repository": {
     "type": "git",
