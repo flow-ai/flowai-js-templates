@@ -46,6 +46,28 @@ describe("Message", () => {
     expect(parsed.responses.length === 1)
   })
 
+  it("create with array results in responses", () => {
+    const message = new Message(["Awesome", "Stuff"])
+
+    const parsed = JSON.parse(JSON.stringify(message))
+
+    expect(parsed.responses.length === 2)
+    expect(parsed.fallback).to.equal("Awesome, Stuff")
+  })
+
+  it("no join with ',' if ending period, exclamation mark, or question mark ", () => {
+    const message = new Message(["Awesome?", "Stuff"])
+
+    const parsed = JSON.parse(JSON.stringify(message))
+
+    expect(parsed.responses.length === 2)
+    expect(parsed.fallback).to.equal("Awesome? Stuff")
+  })
+
+  it("must be a string array", () => {
+    expect(() => new Message([null, undefined, "string"])).to.throw(Error)
+  })
+
   it("by default delay is 0", () => {
     const message = new Message("Awesome")
     const response1 = new Template()

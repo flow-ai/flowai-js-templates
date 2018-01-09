@@ -10,6 +10,9 @@ import Text from './templates/text'
  * // this will create a response
  * // when converted to JSON
  * const message = new Message('Hi there')
+ *
+ * // This also works for multiple text responses by adding an array of strings
+ * const message = new Message(['Hi there', 'How can I help?'])
  **/
 class Message {
 
@@ -17,9 +20,18 @@ class Message {
    * @param {string} fallback - Required
    **/
   constructor(fallback){
-    if(typeof fallback !== 'string' || fallback.length === 0) {
-      throw new Error('fallback is mandatory and must be a string')
+    if((typeof fallback !== 'string' && !Array.isArray(fallback)) || fallback.length === 0) {
+      throw new Error('fallback is mandatory and must be a string or string array')
     }
+
+    if(Array.isArray(fallback)) {
+      for (var i = 0; i < fallback.length; i++) {
+        if(typeof fallback[i] !== 'string') {
+          throw new Error('fallback array argument can only contain strings')
+        }
+      }
+    }
+
     this.fallback = fallback
   }
 
@@ -53,15 +65,29 @@ class Message {
       responses
     } = this
 
+    const isFallbackArray = Array.isArray(fallback)
+
+    let parsedFallback = fallback
+    if(isFallbackArray) {
+      let combine = ', '
+      for (let i = 0; i < fallback.length; i++) {
+        if(/[.!?]$/.test(fallback[i])) {
+          combine = ' '
+          break
+        }
+      }
+      parsedFallback = fallback.join(combine)
+    }
+
     if(!Array.isArray(responses) || !responses.length) {
       return {
-        fallback,
-        responses: [new Text(fallback)]
+        fallback: parsedFallback,
+        responses: (isFallbackArray) ? fallback.map(text => new Text(text)) : [new Text(fallback)]
       }
     }
 
     return {
-      fallback,
+      fallback: parsedFallback,
       responses
     }
   }
