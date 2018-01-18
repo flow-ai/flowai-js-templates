@@ -30,19 +30,19 @@ class Location extends Template {
     super()
 
     if(typeof title !== 'string' || !title.length) {
-      throw new Error('Title is mandatory')
+      throw new Error('Location title is mandatory')
     }
 
     this.title = title
 
     if(!lat) {
-      throw new Error('Latitude is mandatory')
+      throw new Error('Location latitude is mandatory')
     }
 
     this.lat = lat
 
     if(!long) {
-      throw new Error('Longitude is mandatory')
+      throw new Error('Location longitude is mandatory')
     }
 
     this.long = long
@@ -52,7 +52,7 @@ class Location extends Template {
 
   set action(action) {
     if(action && !(action instanceof Action)) {
-      throw new Error('action must be an instance of Action')
+      throw new Error('Location action must be an instance of Action')
     }
 
     this._action = action

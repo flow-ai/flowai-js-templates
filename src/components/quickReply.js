@@ -12,11 +12,11 @@ class QuickReply {
    **/
   constructor({ label, type, value }) {
     if(typeof label !== 'string' || label.length === 0) {
-      throw new Error('label is mandatory')
+      throw new Error('QuickReply label is mandatory')
     }
 
     if(value && typeof value !== 'string') {
-      throw new Error('value must be as string')
+      throw new Error('QuickReply value must be as string')
     }
 
     if(typeof type !== 'string' || type.length === 0) {

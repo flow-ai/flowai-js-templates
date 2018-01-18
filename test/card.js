@@ -23,6 +23,20 @@ describe("Template Card", () => {
     expect(() => card.media = "Awesome media url").to.throw(Error)
   })
 
+  it("cannot add  media", () => {
+    const media = new Media({
+      type: 'image',
+      url: 'htpp://fakeurl'
+    })
+    const card = new Card({
+      title: "Awesome title",
+      media
+    })
+    expect(card.title).to.equal("Awesome title")
+    expect(card.subtitle).to.equal(undefined)
+    expect(card.media).to.equal(media)
+  })
+
   it("cannot add invalid button", () => {
     const card = new Card({ title: "Awesome title"})
     expect(() => card.addButton()).to.throw(Error)

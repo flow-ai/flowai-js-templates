@@ -9,8 +9,11 @@ class Media {
    * @param {string} opts.type - Required
    **/
   constructor(opts) {
+    if(!opts) {
+      throw new Error(`You should provide an url and type for a Media component`)
+    }
     if(typeof opts === 'string') {
-      throw new Error(`You should provide an url and type not a string`)
+      throw new Error(`You should provide an url and type not a string for a Media component`)
     }
 
     const {
@@ -19,11 +22,11 @@ class Media {
     } = opts
 
     if(typeof url !== 'string' || url.length === 0) {
-      throw new Error(`url is mandatory ${url}`)
+      throw new Error(`url is mandatory for a Media component`)
     }
 
     if(typeof type !== 'string' || type.length === 0) {
-      throw new Error(`type is mandatory ${type}`)
+      throw new Error(`type is mandatory for a Media component`)
     }
 
     this.url = url

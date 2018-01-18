@@ -28,7 +28,7 @@ class Buttons extends Template {
     super()
 
     if(typeof title !== 'string' || !title.length) {
-      throw new Error('Title is mandatory')
+      throw new Error('Buttons title is mandatory')
     }
 
     this.title = title
@@ -41,7 +41,7 @@ class Buttons extends Template {
    **/
   addButton(button) {
     if(!(button instanceof Button)) {
-      throw new Error('addButton argument must be an instance of a Button')
+      throw new Error('Buttons addButton argument must be an instance of a Button')
     }
 
     if(!this.buttons) {

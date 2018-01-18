@@ -36,7 +36,7 @@ class Carousel extends Template {
    **/
   addCard(card) {
     if(!(card instanceof Card)) {
-      throw new Error('addCard argument must be an instance of a Card')
+      throw new Error('Carousel addCard argument must be an instance of a Card')
     }
 
     if(!this.cards) {

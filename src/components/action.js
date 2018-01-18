@@ -19,13 +19,13 @@ class Action {
   constructor({ type, value }) {
 
     if(typeof value !== 'string' || value.length === 0) {
-      throw new Error('Value is mandatory')
+      throw new Error('Action value is mandatory')
     }
 
     this.value = value
 
     if(typeof type !== 'string' || type.length === 0) {
-      throw new Error('type is mandatory')
+      throw new Error('Action type is mandatory')
     }
 
     this.type = type

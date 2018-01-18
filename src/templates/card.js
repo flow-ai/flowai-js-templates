@@ -47,7 +47,7 @@ class Card extends Template {
     super()
 
     if(typeof title !== 'string' || !title.length) {
-      throw new Error('Title is mandatory')
+      throw new Error('Card title is mandatory')
     }
 
     this.title = title
@@ -58,7 +58,7 @@ class Card extends Template {
 
   set media(media) {
     if(media && !(media instanceof Media)) {
-      throw new Error('media must be an instance of Media')
+      throw new Error('Card media must be an instance of Media')
     }
 
     this._media = media
@@ -70,7 +70,7 @@ class Card extends Template {
 
   set action(action) {
     if(action && !(action instanceof Action)) {
-      throw new Error('action must be an instance of Action')
+      throw new Error('Card action must be an instance of Action')
     }
 
     this._action = action
@@ -87,7 +87,7 @@ class Card extends Template {
    **/
   addButton(button) {
     if(!(button instanceof Button)) {
-      throw new Error('addButton argument must be an instance of a Button')
+      throw new Error('Card addButton argument must be an instance of a Button')
     }
 
     if(!this.buttons) {

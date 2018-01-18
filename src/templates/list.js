@@ -45,7 +45,7 @@ class List extends Template {
    **/
   addItem(item) {
     if(!(item instanceof ListItem)) {
-      throw new Error('addListItem argument must be an instance of a ListItem')
+      throw new Error('List addListItem argument must be an instance of a ListItem')
     }
 
     if(item.featured) {
@@ -83,7 +83,7 @@ class List extends Template {
    **/
   addButton(button) {
     if(!(button instanceof Button)) {
-      throw new Error('addButton argument must be an instance of a Button')
+      throw new Error('List addButton argument must be an instance of a Button')
     }
 
     if(!this.buttons) {

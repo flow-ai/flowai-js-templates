@@ -19,13 +19,13 @@ class Button {
   constructor({ type, label, value }) {
 
     if(typeof type !== 'string' || type.length === 0) {
-      throw new Error('type is mandatory')
+      throw new Error('Button type is mandatory')
     }
     if(typeof label !== 'string' || label.length === 0) {
-      throw new Error('label is mandatory')
+      throw new Error('Button label is mandatory')
     }
     if(typeof value !== 'string' || value.length === 0) {
-      throw new Error('value is mandatory')
+      throw new Error('Button value is mandatory')
     }
 
     this.type = type

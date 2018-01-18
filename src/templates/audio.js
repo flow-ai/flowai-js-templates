@@ -27,13 +27,13 @@ class Audio extends Template {
     super()
 
     if(typeof title !== 'string' || !title.length) {
-      throw new Error('Title is mandatory')
+      throw new Error('Audio title is mandatory')
     }
 
     this.title = title
 
     if(typeof url !== 'string' || !url.length) {
-      throw new Error('URL is mandatory')
+      throw new Error('Audio url is mandatory')
     }
 
     this.url = url
@@ -43,7 +43,7 @@ class Audio extends Template {
 
   set action(action) {
     if(action && !(action instanceof Action)) {
-      throw new Error('action must be an instance of Action')
+      throw new Error('Audio action must be an instance of Action')
     }
 
     this._action = action

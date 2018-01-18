@@ -27,13 +27,13 @@ class Image extends Template {
     super()
 
     if(typeof title !== 'string' || !title.length) {
-      throw new Error('Title is mandatory')
+      throw new Error('Image title is mandatory')
     }
 
     this.title = title
 
     if(typeof url !== 'string' || !url.length) {
-      throw new Error('URL is mandatory')
+      throw new Error('Image url is mandatory')
     }
 
     this.url = url

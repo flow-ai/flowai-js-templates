@@ -21,7 +21,7 @@ class ListItem {
    **/
   constructor({ title, subtitle, media, action, featured }) {
     if(typeof title !== 'string' || title.length === 0) {
-      throw new Error('Title is mandatory')
+      throw new Error('ListItem title is mandatory')
     }
 
     this.title = title
@@ -33,7 +33,7 @@ class ListItem {
 
   set media(media) {
     if(media && !(media instanceof Media)) {
-      throw new Error('media must be an instance of Media')
+      throw new Error('ListItem media must be an instance of Media')
     }
 
     this._media = media
@@ -45,7 +45,7 @@ class ListItem {
 
   set action(action) {
     if(action && !(action instanceof Action)) {
-      throw new Error('action must be an instance of Action')
+      throw new Error('ListItem action must be an instance of Action')
     }
 
     this._action = action
@@ -62,7 +62,7 @@ class ListItem {
    **/
   addButton(button) {
     if(!(button instanceof Button)) {
-      throw new Error('addButton argument must be an instance of a Button')
+      throw new Error('ListItem addButton argument must be an instance of a Button')
     }
 
     if(!this.buttons) {
