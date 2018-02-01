@@ -39,7 +39,8 @@ class Custom extends Template {
     const {
       data,
       quickReplies,
-      delay
+      delay,
+      fallback
     } = this
 
     return {
@@ -47,7 +48,8 @@ class Custom extends Template {
       payload: Object.assign(data, {
         quickReplies
       }),
-      delay
+      delay,
+      fallback
     }
   }
 }

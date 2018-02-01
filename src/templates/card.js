@@ -107,7 +107,8 @@ class Card extends Template {
       action,
       buttons,
       quickReplies,
-      delay
+      delay,
+      fallback
     } = this
 
     if( this.isShallow )  {
@@ -131,7 +132,8 @@ class Card extends Template {
         buttons,
         quickReplies
       },
-      delay
+      delay,
+      fallback
     }
   }
 }

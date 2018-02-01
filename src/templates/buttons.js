@@ -58,7 +58,8 @@ class Buttons extends Template {
       title,
       buttons,
       quickReplies,
-      delay
+      delay,
+      fallback
     } = this
 
     return {
@@ -68,7 +69,8 @@ class Buttons extends Template {
         buttons,
         quickReplies
       },
-      delay
+      delay,
+      fallback
     }
   }
 }

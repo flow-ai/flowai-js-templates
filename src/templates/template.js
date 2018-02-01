@@ -8,7 +8,6 @@ import QuickReply from '../components/quickReply'
  **/
 class Template {
 
-
   /**
    * Define a delay for the response in miliseconds
    * @param {Number} delay - Required
@@ -27,6 +26,21 @@ class Template {
 
   get delay() {
     return this._delay || 0
+  }
+
+  /**
+   * Optional fallback speech
+   * @param {String} fallback - Required
+   **/
+  set fallback(fallback) {
+    if(!(typeof fallback === 'string') && fallback !== undefined) {
+      throw new Error('Fallback must be a string or undefined')
+    }
+    this._fallback = fallback
+  }
+
+  get fallback() {
+    return this._fallback || undefined
   }
 
   /**

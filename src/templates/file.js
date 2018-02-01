@@ -59,7 +59,8 @@ class File extends Template {
       url,
       action,
       quickReplies,
-      delay
+      delay,
+      fallback
     } = this
 
     return {
@@ -70,7 +71,8 @@ class File extends Template {
         action,
         quickReplies
       },
-      delay
+      delay,
+      fallback
     }
   }
 }

@@ -82,6 +82,12 @@ describe("Template Card", () => {
     expect(card.action).to.equal(action)
   })
 
+  it("can set fallback", () => {
+    const card = new Card({ title: "Awesome title"})
+    card.fallback = "fallback test"
+    expect(card.fallback).to.equal("fallback test")
+  })
+
   it("cannot add invalid action", () => {
     expect(() => new Card({
       title: "Awesome title",

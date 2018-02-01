@@ -55,7 +55,8 @@ class Carousel extends Template {
     const {
       cards,
       quickReplies,
-      delay
+      delay,
+      fallback
     } = this
 
     return {
@@ -64,7 +65,8 @@ class Carousel extends Template {
         cards,
         quickReplies
       },
-      delay
+      delay,
+      fallback
     }
   }
 }

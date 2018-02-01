@@ -69,7 +69,8 @@ class Location extends Template {
       long,
       action,
       quickReplies,
-      delay
+      delay,
+      fallback
     } = this
 
     return {
@@ -81,7 +82,8 @@ class Location extends Template {
         action,
         quickReplies
       },
-      delay
+      delay,
+      fallback
     }
   }
 }

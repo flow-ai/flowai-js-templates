@@ -38,7 +38,8 @@ class Text extends Template {
     const {
       text,
       quickReplies,
-      delay
+      delay,
+      fallback
     } = this
 
     return {
@@ -47,7 +48,8 @@ class Text extends Template {
         text,
         quickReplies
       },
-      delay
+      delay,
+      fallback
     }
   }
 }

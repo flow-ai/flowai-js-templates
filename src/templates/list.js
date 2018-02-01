@@ -100,7 +100,8 @@ class List extends Template {
       items,
       buttons,
       quickReplies,
-      delay
+      delay,
+      fallback
     } = this
 
     return {
@@ -110,7 +111,8 @@ class List extends Template {
         buttons,
         quickReplies
       },
-      delay
+      delay,
+      fallback
     }
   }
 }
