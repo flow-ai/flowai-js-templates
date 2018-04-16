@@ -3,6 +3,13 @@
  * @property {string} label - Label that is shown as a quick reply
  * @property {string} value - Value that is being send as the quick reply, empty if type is location
  * @property {string} type - Type of quick reply, default is text
+ *
+ * @example
+ * const text = new Text('We have a 40" screen for sale')
+ * text.addQuickReply(new QuickReply({
+ *   label: 'Order now',
+ *   value: 'order 35633123322'
+ * }))
  **/
 class QuickReply {
   /**

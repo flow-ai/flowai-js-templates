@@ -169,16 +169,6 @@ Default action used in Card, List and Buttons templates
 | opts.type | <code>string</code> | Required |
 | opts.value | <code>string</code> | Required |
 
-**Example**  
-```js
-const image = new Image({
-  ...
-  action: new Action({
-    type: 'url',
-    value: 'https://...'
-  })
-})
-```
 <a name="Button"></a>
 
 ## Button
@@ -301,6 +291,14 @@ Component placed on any Template. Represents a shortcut for a user to reply with
 | opts.type | <code>string</code> | Optional type, default is text (or location) |
 | opts.value | <code>string</code> | Required, ignored if type is location |
 
+**Example**  
+```js
+const text = new Text('We have a 40" screen for sale')
+text.addQuickReply(new QuickReply({
+  label: 'Order now',
+  value: 'order 35633123322'
+}))
+```
 <a name="Audio"></a>
 
 ## Audio
@@ -468,6 +466,66 @@ Template that displays a set of cards
 | --- | --- | --- |
 | cards | [<code>Array.&lt;Card&gt;</code>](#Card) | Set of cards |
 
+
+* [Carousel](#Carousel)
+    * [new Carousel(cards)](#new_Carousel_new)
+    * [.addCard(card)](#Carousel+addCard) ⇒ [<code>Carousel</code>](#Carousel)
+
+<a name="new_Carousel_new"></a>
+
+### new Carousel(cards)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| cards | <code>Array</code> | Optional |
+
+**Example**  
+```js
+const card1 = new Card({
+  title: "Awesome title 1",
+  subtitle: "Some subtitle 1",
+  media: new Media({
+   url: "https://...",
+   type: "image"
+  })
+})
+
+const card2 = new Card({
+  title: "Awesome title 2",
+  subtitle: "Some subtitle 2",
+  media: new Media({
+   url: "https://...",
+   type: "image"
+  })
+})
+
+const carousel = new Carousel()
+carousel.addCard(card1)
+carousel.addCard(card2)
+```
+**Example**  
+```js
+// Short hand
+const card1 = new Card({
+  title: "Awesome title 1",
+  subtitle: "Some subtitle 1",
+  media: new Media({
+   url: "https://...",
+   type: "image"
+  })
+})
+
+const card2 = new Card({
+  title: "Awesome title 2",
+  subtitle: "Some subtitle 2",
+  media: new Media({
+   url: "https://...",
+   type: "image"
+  })
+})
+
+const carousel = new Carousel([card1, card2])
+```
 <a name="Carousel+addCard"></a>
 
 ### carousel.addCard(card) ⇒ [<code>Carousel</code>](#Carousel)

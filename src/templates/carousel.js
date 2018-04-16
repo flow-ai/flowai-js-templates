@@ -26,8 +26,43 @@ import Card from './card'
  * const carousel = new Carousel()
  * carousel.addCard(card1)
  * carousel.addCard(card2)
+ *
+ * @example
+ * // Short hand
+ * const card1 = new Card({
+ *   title: "Awesome title 1",
+ *   subtitle: "Some subtitle 1",
+ *   media: new Media({
+ *    url: "https://...",
+ *    type: "image"
+ *   })
+ * })
+ *
+ * const card2 = new Card({
+ *   title: "Awesome title 2",
+ *   subtitle: "Some subtitle 2",
+ *   media: new Media({
+ *    url: "https://...",
+ *    type: "image"
+ *   })
+ * })
+ *
+ * const carousel = new Carousel([card1, card2])
  **/
 class Carousel extends Template {
+
+  /**
+   * @param {Array} cards - Optional
+   **/
+  constructor(cards) {
+    super()
+
+    if(Array.isArray(cards)) {
+      for (let i = 0; i < cards.length; i++) {
+        this.addCard(cards[i])
+      }
+    }
+  }
 
   /**
    * Add a card to the cards
