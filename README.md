@@ -288,7 +288,7 @@ Component placed on any Template. Represents a shortcut for a user to reply with
 | Param | Type | Description |
 | --- | --- | --- |
 | opts.label | <code>string</code> | Required |
-| opts.type | <code>string</code> | Optional type, default is text (or location) |
+| opts.type | <code>string</code> | Optional type, default is text (supported are text, location, user_email, user_phone_number) |
 | opts.value | <code>string</code> | Required, ignored if type is location |
 
 **Example**  

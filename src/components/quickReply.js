@@ -14,12 +14,13 @@
 class QuickReply {
   /**
    * @param {string} opts.label - Required
-   * @param {string} opts.type - Optional type, default is text (or location)
+   * @param {string} opts.type - Optional type, default is text (supported are text, location, user_email, user_phone_number)
    * @param {string} opts.value - Required, ignored if type is location
    **/
   constructor({ label, type, value }) {
-    if(typeof label !== 'string' || label.length === 0) {
-      throw new Error('QuickReply label is mandatory')
+
+    if(type === 'text' && (typeof label !== 'string' || !label.length)) {
+      throw new Error('QuickReply label when it has the type text must be as string')
     }
 
     if(value && typeof value !== 'string') {
