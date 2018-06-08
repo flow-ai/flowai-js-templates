@@ -1,5 +1,5 @@
 import chai, { expect, assert } from 'chai'
-import { Message } from '../src'
+import { Message, QuickReply } from '../src'
 import Template from '../src/templates/template'
 
 describe("Message", () => {
@@ -98,5 +98,29 @@ describe("Message", () => {
     message.addResponse(response1)
 
     expect(() => message.responses[0].delay = -2000).to.throw(Error)
+  })
+
+  it("can add QuickReply to a Message", () => {
+    const message = new Message("Awesome")
+      .addQuickReply(new QuickReply({
+        label: 'test1'
+      }))
+      .addQuickReply(new QuickReply({
+        label: 'test2'
+      }))
+
+    expect(message.responses[0].quickReplies.length === 2)
+  })
+
+  it("can add QuickReply to a Message", () => {
+    const message = new Message(["Awesome", "Sure"])
+      .addQuickReply(new QuickReply({
+        label: 'test1'
+      }))
+      .addQuickReply(new QuickReply({
+        label: 'test2'
+      }))
+
+    expect(message.responses[1].quickReplies.length === 2)
   })
 })

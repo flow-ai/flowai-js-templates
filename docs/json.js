@@ -16,6 +16,7 @@ const fs = require('fs'),
         Action,
         Video,
         Buttons,
+        Param,
         QuickReply
       } = require('../lib')
 
@@ -61,7 +62,7 @@ doc.write('- `events` optional list with names of events to trigger')
 
 // - card
 doc.write('### Advanced reply')
-doc.write('The following example shows sending back an exmple weather report.')
+doc.write('The following example shows sending back an example weather report.')
 doc.write('Along with a rich card response we send a fallback text that is read on speech only devices')
 doc.write('This example does not only send back a message, but will also trigger a flow with an event called `TRIGGER_EVENT_NAME`')
 
@@ -87,6 +88,8 @@ const card = new Card({
 })
 .addButton(button1)
 .addButton(button2)
+
+card.delay = 1000
 
 const message1 = new Message("Today it's cloudy with a max temperature of 20 degrees celcius")
 message1.addResponse(card)
@@ -209,11 +212,12 @@ doc.write(file)
 
 doc.write('#### Image')
 const image = new Image({
-  title: "Awesome title",
+  title: "Pretty picture",
   url: "https://...",
   action: new Action({
-    type: 'url',
-    value: 'https://...'
+    type: 'event',
+    value: 'ORDER',
+    param: new Param('productId', '12e2-22342-aasd2')
   })
 })
 doc.write(image)
@@ -275,5 +279,41 @@ const video = new Video({
   })
 })
 doc.write(video)
+
+doc.write('### Params')
+doc.write('Buttons and QuickReplies can have various actions. They can open a URL, trigger a postback or event.')
+doc.write('When these are triggered with the type event or postback you can also send data to be used further on in your code.')
+
+const productParam = new Param('itemId', '332223323')
+const buttonsWithParams = new Buttons("Longboard Droprace ($150)")
+  .addButton(new Button({
+    label: 'Show details',
+    type: 'event',
+    value: 'PRODUCT_DETAILS',
+    param: productParam
+  }))
+  .addButton(new Button({
+    label: 'Find store',
+    type: 'event',
+    value: 'FIND_STORE_BY_PRODUCT',
+    param: productParam
+  }))
+
+doc.write(new Message("Longboard Droprace, $150, black").addResponse(buttonsWithParams))
+
+doc.write('Or with QuickReplies:')
+const shopId = new Param('shopId', '33211233')
+const productId = new Param('productId', '123443211')
+doc.write(new Message("Want a cold beverage?")
+ .addQuickReply(new QuickReply({
+   label: 'Yes',
+   type: 'event',
+   value: 'PRODUCT_ORDER',
+   param: [shopId, productId]
+ }))
+ .addQuickReply(new QuickReply({
+   label: 'No'
+ })))
+
 
 doc.output('JSON.md')

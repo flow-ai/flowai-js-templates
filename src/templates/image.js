@@ -71,7 +71,7 @@ class Image extends Template {
         action,
         quickReplies
       },
-      delay,
+      delay: delay || undefined,
       fallback
     }
   }

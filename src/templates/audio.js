@@ -71,7 +71,7 @@ class Audio extends Template {
         action,
         quickReplies
       },
-      delay,
+      delay: delay || undefined,
       fallback
     }
   }

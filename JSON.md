@@ -23,8 +23,7 @@ Webhooks can send messages to users by replying with structured JSON data.
      "type": "text",
      "payload": {
       "text": "Hi there"
-     },
-     "delay": 0
+     }
     }
    ]
   }
@@ -42,7 +41,7 @@ Webhooks can send messages to users by replying with structured JSON data.
 
 ### Advanced reply
 
-The following example shows sending back an exmple weather report.
+The following example shows sending back an example weather report.
 
 Along with a rich card response we send a fallback text that is read on speech only devices
 
@@ -77,7 +76,7 @@ This example does not only send back a message, but will also trigger a flow wit
        }
       ]
      },
-     "delay": 0
+     "delay": 1000
     }
    ]
   }
@@ -102,8 +101,7 @@ Response templates are part of a message. The following is an example of a simpl
    "type": "text",
    "payload": {
     "text": "Hi there"
-   },
-   "delay": 0
+   }
   }
  ]
 }
@@ -128,8 +126,7 @@ Response templates are part of a message. The following is an example of a simpl
     "type": "text"
    }
   ]
- },
- "delay": 0
+ }
 }
 ```
 
@@ -155,8 +152,7 @@ The following templates are supported
    "type": "url",
    "value": "https://example.com/awesomesong/info"
   }
- },
- "delay": 0
+ }
 }
 ```
 
@@ -179,8 +175,7 @@ The following templates are supported
     "value": "Show me special offers"
    }
   ]
- },
- "delay": 0
+ }
 }
 ```
 
@@ -209,7 +204,7 @@ The following templates are supported
    }
   ]
  },
- "delay": 0
+ "delay": 1000
 }
 ```
 
@@ -237,8 +232,7 @@ The following templates are supported
     }
    }
   ]
- },
- "delay": 0
+ }
 }
 ```
 
@@ -262,8 +256,7 @@ The following templates are supported
     "type": "text"
    }
   ]
- },
- "delay": 0
+ }
 }
 ```
 
@@ -279,8 +272,7 @@ The following templates are supported
    "type": "url",
    "value": "https://..."
   }
- },
- "delay": 0
+ }
 }
 ```
 
@@ -290,14 +282,19 @@ The following templates are supported
 {
  "type": "image",
  "payload": {
-  "title": "Awesome title",
+  "title": "Pretty picture",
   "url": "https://...",
   "action": {
-   "type": "url",
-   "value": "https://..."
+   "type": "event",
+   "value": "ORDER",
+   "params": [
+    {
+     "label": "productId",
+     "value": "12e2-22342-aasd2"
+    }
+   ]
   }
- },
- "delay": 0
+ }
 }
 ```
 
@@ -333,8 +330,7 @@ The following templates are supported
     }
    }
   ]
- },
- "delay": 0
+ }
 }
 ```
 
@@ -351,8 +347,7 @@ The following templates are supported
    "type": "url",
    "value": "https://..."
   }
- },
- "delay": 0
+ }
 }
 ```
 
@@ -368,7 +363,88 @@ The following templates are supported
    "type": "url",
    "value": "https://..."
   }
- },
- "delay": 0
+ }
+}
+```
+
+### Params
+
+Buttons and QuickReplies can have various actions. They can open a URL, trigger a postback or event.
+
+When these are triggered with the type event or postback you can also send data to be used further on in your code.
+
+```json
+{
+ "fallback": "Longboard Droprace, $150, black",
+ "responses": [
+  {
+   "type": "buttons",
+   "payload": {
+    "title": "Longboard Droprace ($150)",
+    "buttons": [
+     {
+      "type": "event",
+      "label": "Show details",
+      "value": "PRODUCT_DETAILS",
+      "params": [
+       {
+        "label": "itemId",
+        "value": "332223323"
+       }
+      ]
+     },
+     {
+      "type": "event",
+      "label": "Find store",
+      "value": "FIND_STORE_BY_PRODUCT",
+      "params": [
+       {
+        "label": "itemId",
+        "value": "332223323"
+       }
+      ]
+     }
+    ]
+   }
+  }
+ ]
+}
+```
+
+Or with QuickReplies:
+
+```json
+{
+ "fallback": "Want a cold beverage?",
+ "responses": [
+  {
+   "type": "text",
+   "payload": {
+    "text": "Want a cold beverage?",
+    "quickReplies": [
+     {
+      "label": "Yes",
+      "value": "PRODUCT_ORDER",
+      "type": "event",
+      "params": [
+       {
+        "label": "shopId",
+        "value": "33211233"
+       },
+       {
+        "label": "productId",
+        "value": "123443211"
+       }
+      ]
+     },
+     {
+      "label": "No",
+      "value": "No",
+      "type": "text"
+     }
+    ]
+   }
+  }
+ ]
 }
 ```

@@ -132,7 +132,7 @@ class Card extends Template {
         buttons,
         quickReplies
       },
-      delay,
+      delay: delay || undefined,
       fallback
     }
   }

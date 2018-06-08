@@ -100,7 +100,7 @@ class Carousel extends Template {
         cards,
         quickReplies
       },
-      delay,
+      delay: delay || undefined,
       fallback
     }
   }

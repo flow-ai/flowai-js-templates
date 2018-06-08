@@ -17,6 +17,7 @@ import Action from './components/action'
 import Button from './components/button'
 import Media from './components/media'
 import ListItem from './components/listItem'
+import { Param } from './components/param'
 import QuickReply from './components/quickReply'
 
 export {
@@ -38,5 +39,6 @@ export {
   Button,
   Media,
   ListItem,
+  Param,
   QuickReply
 }

@@ -1,12 +1,16 @@
+import { parseParam } from './param'
+
 /**
  * Default action used in Card, List and Buttons templates
- * @property {string} type - Type of action (url, postback etc)
+ * @property {string} type - Type of action (url, phone, postback, share, login, webview, event)
  * @property {string} value - Value of the action
+ * @property {Param[]} params - Optional parameters associated with the action
  **/
 class Action {
   /**
    * @param {string} opts.type - Required
    * @param {string} opts.value - Required
+   * @param {Param|Param[]} opts.param - Optional Param or array or Array of Params related to this action
    * @example
    * const image = new Image({
    *   ...
@@ -16,7 +20,7 @@ class Action {
    *   })
    * })
    **/
-  constructor({ type, value }) {
+  constructor({ type, value, param }) {
 
     if(typeof value !== 'string' || value.length === 0) {
       throw new Error('Action value is mandatory')
@@ -29,17 +33,21 @@ class Action {
     }
 
     this.type = type
+
+    this.params = parseParam(param)
   }
 
   toJSON() {
     const {
       type,
-      value
+      value,
+      params
     } = this
 
     return {
       type,
-      value
+      value,
+      params: params || undefined
     }
   }
 }

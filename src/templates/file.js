@@ -71,7 +71,7 @@ class File extends Template {
         action,
         quickReplies
       },
-      delay,
+      delay: delay || undefined,
       fallback
     }
   }

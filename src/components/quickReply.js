@@ -1,23 +1,31 @@
+import { parseParam } from './param'
+
 /**
  * Component placed on any Template. Represents a shortcut for a user to reply with. Ideal for yes / no type of questions.
  * @property {string} label - Label that is shown as a quick reply
  * @property {string} value - Value that is being send as the quick reply, empty if type is location
- * @property {string} type - Type of quick reply, default is text
+ * @property {string} type - Type of quick reply, default is text (text, location, user_email, user_phone_number, event)
+ * @property {Param[]} params - Optional parameters associated with the quick reply
  *
  * @example
- * const text = new Text('We have a 40" screen for sale')
+ * const text = new Text('We have a 40" screen for sale. Want to preorder it?')
  * text.addQuickReply(new QuickReply({
- *   label: 'Order now',
- *   value: 'order 35633123322'
+ *   label: '👍',
+ *   value: 'Yes'
+ * }))
+ * text.addQuickReply(new QuickReply({
+ *   label: '👎',
+ *   value: 'No'
  * }))
  **/
 class QuickReply {
   /**
    * @param {string} opts.label - Required
-   * @param {string} opts.type - Optional type, default is text (supported are text, location, user_email, user_phone_number)
+   * @param {string} opts.type - Optional type, default is text (text, location, user_email, user_phone_number, event)
    * @param {string} opts.value - Required, ignored if type is location
+   * @param {Param|Param[]} opts.param - Optional Param or array or Array of Params related to this QuickReply
    **/
-  constructor({ label, type, value }) {
+  constructor({ label, type, value, param }) {
 
     if(type === 'text' && (typeof label !== 'string' || !label.length)) {
       throw new Error('QuickReply label when it has the type text must be as string')
@@ -33,6 +41,7 @@ class QuickReply {
       this.type = type
     }
 
+    this.params = parseParam(param)
     this.value = value || label
     this.label = label
   }
@@ -41,13 +50,15 @@ class QuickReply {
     const {
       label,
       value,
-      type
+      type,
+      params
     } = this
 
     return {
       label,
       value,
-      type
+      type,
+      params: params || undefined
     }
   }
 }

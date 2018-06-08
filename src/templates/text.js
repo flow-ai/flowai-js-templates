@@ -48,7 +48,7 @@ class Text extends Template {
         text,
         quickReplies
       },
-      delay,
+      delay: delay || undefined,
       fallback
     }
   }

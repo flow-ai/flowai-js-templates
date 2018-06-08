@@ -1,8 +1,11 @@
+import { parseParam } from './param'
+
 /**
  * Component used in Card, Buttons templates
- * @property {string} type - Type of button (url, postback, webview)
+ * @property {string} type - Type of button (url, phone, postback, share, login, webview, event)
  * @property {string} label - Label of the button
  * @property {string} value - Value of the button
+ * @property {Param[]} params - Optional parameters associated with the button
  * @example
  * new Button({
  *  type: 'webview',
@@ -12,11 +15,12 @@
  **/
 class Button {
   /**
-   * @param {string} opts.type - Required
-   * @param {string} opts.label - Required
-   * @param {string} opts.value - Required
+   * @param {string} opts.type - Required, type of button (url, phone, postback, share, login, webview, event)
+   * @param {string} opts.label - Required, label of the button
+   * @param {string} opts.value - Required, value of the button (can be a URL or other string value)
+   * @param {Param|Param[]} opts.param - Optional Param or array or Array of Params related to this button
    **/
-  constructor({ type, label, value }) {
+  constructor({ type, label, value, param }) {
 
     if(typeof type !== 'string' || type.length === 0) {
       throw new Error('Button type is mandatory')
@@ -28,6 +32,7 @@ class Button {
       throw new Error('Button value is mandatory')
     }
 
+    this.params = parseParam(param)
     this.type = type
     this.label = label
     this.value = value
@@ -37,13 +42,15 @@ class Button {
     const {
       type,
       label,
-      value
+      value,
+      params
     } = this
 
     return {
       type,
       label,
-      value
+      value,
+      params: params || undefined
     }
   }
 }

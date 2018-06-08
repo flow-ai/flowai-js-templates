@@ -48,7 +48,7 @@ class Custom extends Template {
       payload: Object.assign(data, {
         quickReplies
       }),
-      delay,
+      delay: delay || undefined,
       fallback
     }
   }

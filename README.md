@@ -106,6 +106,9 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
 <dt><a href="#Media">Media</a></dt>
 <dd><p>Component that represents a URL to an image, video or audio file. Used on Templates like Card and Image.</p>
 </dd>
+<dt><a href="#Param">Param</a></dt>
+<dd><p>Data related to a Button or Quick Reply</p>
+</dd>
 <dt><a href="#QuickReply">QuickReply</a></dt>
 <dd><p>Component placed on any Template. Represents a shortcut for a user to reply with. Ideal for yes / no type of questions.</p>
 </dd>
@@ -157,8 +160,9 @@ Default action used in Card, List and Buttons templates
 
 | Name | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | Type of action (url, postback etc) |
+| type | <code>string</code> | Type of action (url, phone, postback, share, login, webview, event) |
 | value | <code>string</code> | Value of the action |
+| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the action |
 
 <a name="new_Action_new"></a>
 
@@ -168,6 +172,7 @@ Default action used in Card, List and Buttons templates
 | --- | --- | --- |
 | opts.type | <code>string</code> | Required |
 | opts.value | <code>string</code> | Required |
+| opts.param | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this action |
 
 <a name="Button"></a>
 
@@ -179,9 +184,10 @@ Component used in Card, Buttons templates
 
 | Name | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | Type of button (url, postback, webview) |
+| type | <code>string</code> | Type of button (url, phone, postback, share, login, webview, event) |
 | label | <code>string</code> | Label of the button |
 | value | <code>string</code> | Value of the button |
+| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the button |
 
 <a name="new_Button_new"></a>
 
@@ -189,9 +195,10 @@ Component used in Card, Buttons templates
 
 | Param | Type | Description |
 | --- | --- | --- |
-| opts.type | <code>string</code> | Required |
-| opts.label | <code>string</code> | Required |
-| opts.value | <code>string</code> | Required |
+| opts.type | <code>string</code> | Required, type of button (url, phone, postback, share, login, webview, event) |
+| opts.label | <code>string</code> | Required, label of the button |
+| opts.value | <code>string</code> | Required, value of the button (can be a URL or other string value) |
+| opts.param | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this button |
 
 **Example**  
 ```js
@@ -267,6 +274,64 @@ Component that represents a URL to an image, video or audio file. Used on Templa
 | opts.url | <code>string</code> | Required |
 | opts.type | <code>string</code> | Required |
 
+<a name="Param"></a>
+
+## Param
+Data related to a Button or Quick Reply
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| label | <code>string</code> | Name of the parameter |
+| value | <code>string</code> | Value of the parametet |
+
+<a name="new_Param_new"></a>
+
+### new Param()
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.type | <code>string</code> | Required |
+| opts.label | <code>string</code> | Required |
+| opts.value | <code>string</code> | Required |
+
+**Example**  
+```js
+// Render a Button that triggers an event with a Param
+const param = new Param('itemId', '332223323')
+const button = new Button({
+ label: 'More info',
+ type: 'event',
+ value: 'MORE_INFO',
+ param
+})
+```
+**Example**  
+```js
+// Render a QuickReply that triggers an event with Params
+const shopId = new Param('shopId', '33211233')
+const productId = new Param('productId', '123443211')
+const quickReply = new QuickReply({
+ label: 'Product details',
+ type: 'event',
+ value: 'PRODUCT_DETAILS',
+ param: [shopId, productId]
+})
+```
+**Example**  
+```js
+const image = new Image({
+  title: "Awesome title",
+  url: "https://...",
+  action: new Action({
+    type: 'event',
+    value: 'ORDER',
+    param: new Param('productId', '12e2-22342-aasd2')
+  })
+})
+```
 <a name="QuickReply"></a>
 
 ## QuickReply
@@ -279,7 +344,8 @@ Component placed on any Template. Represents a shortcut for a user to reply with
 | --- | --- | --- |
 | label | <code>string</code> | Label that is shown as a quick reply |
 | value | <code>string</code> | Value that is being send as the quick reply, empty if type is location |
-| type | <code>string</code> | Type of quick reply, default is text |
+| type | <code>string</code> | Type of quick reply, default is text (text, location, user_email, user_phone_number, event) |
+| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the quick reply |
 
 <a name="new_QuickReply_new"></a>
 
@@ -288,15 +354,20 @@ Component placed on any Template. Represents a shortcut for a user to reply with
 | Param | Type | Description |
 | --- | --- | --- |
 | opts.label | <code>string</code> | Required |
-| opts.type | <code>string</code> | Optional type, default is text (supported are text, location, user_email, user_phone_number) |
+| opts.type | <code>string</code> | Optional type, default is text (text, location, user_email, user_phone_number, event) |
 | opts.value | <code>string</code> | Required, ignored if type is location |
+| opts.param | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this QuickReply |
 
 **Example**  
 ```js
-const text = new Text('We have a 40" screen for sale')
+const text = new Text('We have a 40" screen for sale. Want to preorder it?')
 text.addQuickReply(new QuickReply({
-  label: 'Order now',
-  value: 'order 35633123322'
+  label: '👍',
+  value: 'Yes'
+}))
+text.addQuickReply(new QuickReply({
+  label: '👎',
+  value: 'No'
 }))
 ```
 <a name="Audio"></a>
