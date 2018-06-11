@@ -1,4 +1,4 @@
-import { parseParam } from './param'
+import { parseParam, flattenParams } from './param'
 
 /**
  * Component placed on any Template. Represents a shortcut for a user to reply with. Ideal for yes / no type of questions.
@@ -58,7 +58,7 @@ class QuickReply {
       label,
       value,
       type,
-      params: params || undefined
+      params: flattenParams(params)
     }
   }
 }

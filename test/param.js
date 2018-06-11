@@ -67,7 +67,7 @@ describe("Component param", () => {
   })
 
 
-  it("adding the same param in a list results in 1 param", () => {
+  it("adding the same param in a list results in 2 params", () => {
     const param = new Param('a', 'b')
     expect(param.label).to.equal("a")
     expect(param.value).to.equal("b")
@@ -79,10 +79,10 @@ describe("Component param", () => {
       param: [param, param]
     })
 
-    expect(button.params.length).to.equal(1)
+    expect(button.params.length).to.equal(2)
   })
 
-  it("adding the same param labels in a list results in 1 param", () => {
+  it("adding the same param labels in a list results in 2 params", () => {
     const param1 = new Param('a', 'b')
     const param2 = new Param('a', 'd')
 
@@ -93,8 +93,8 @@ describe("Component param", () => {
       param: [param1, param2]
     })
 
-    expect(button.params.length).to.equal(1)
-    expect(button.params[0].value).to.equal('d')
+    expect(button.params.length).to.equal(2)
+    expect(button.params[1].value).to.equal('d')
   })
 
   it("can add to reply", () => {
@@ -127,7 +127,7 @@ describe("Component param", () => {
   })
 
 
-  it("adding the same param in a list results in 1 param", () => {
+  it("adding the same param in a list results in 2 params", () => {
     const param = new Param('a', 'b')
     expect(param.label).to.equal("a")
     expect(param.value).to.equal("b")
@@ -139,10 +139,10 @@ describe("Component param", () => {
       param: [param, param]
     })
 
-    expect(reply.params.length).to.equal(1)
+    expect(reply.params.length).to.equal(2)
   })
 
-  it("adding the same param labels in a list results in 1 param", () => {
+  it("adding the same param labels in a list results in 2 params", () => {
     const param1 = new Param('a', 'b')
     const param2 = new Param('a', 'd')
 
@@ -153,8 +153,28 @@ describe("Component param", () => {
       param: [param1, param2]
     })
 
-    expect(reply.params.length).to.equal(1)
-    expect(reply.params[0].value).to.equal('d')
+    expect(reply.params.length).to.equal(2)
+    expect(reply.params[1].value).to.equal('d')
+  })
+
+  it("will convert to correct JSON", () => {
+    const param1 = new Param('a', 'b')
+    const param2 = new Param('a', 'd')
+    const param3 = new Param('b', 'c')
+    const reply = new QuickReply({
+      label: 'Buy',
+      type: 'postback',
+      value: 'do this',
+      param: [
+        param1,
+        param2,
+        param3
+      ]
+    })
+
+    const json = JSON.stringify(reply)
+
+    expect(json).to.equal('{"label":"Buy","value":"do this","type":"postback","params":{"a":[{"value":"b"},{"value":"d"}],"b":[{"value":"c"}]}}')
   })
 
 })

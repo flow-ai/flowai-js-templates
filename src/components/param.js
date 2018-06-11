@@ -70,6 +70,9 @@ class Param {
   }
 }
 
+/**
+ * Helper method to convert a list of params
+ **/
 const parseParam = param => {
 
   const params = []
@@ -83,13 +86,7 @@ const parseParam = param => {
       if(!(param[i] instanceof Param)) {
         throw new Error('any item inside a param array should be an instance of Param')
       }
-
-      const idx = params.findIndex(p => param[i].label === p.label)
-      if(idx === -1) {
-        params.push(param[i])
-      } else {
-        params[idx] = param[i]
-      }
+      params.push(param[i])
     }
   } else if(param) {
     params.push(param)
@@ -98,4 +95,30 @@ const parseParam = param => {
   return !!params.length ? params : undefined
 }
 
-export { Param, parseParam }
+/**
+ * Helper method to convert params into the expected format
+ **/
+const flattenParams = params => {
+  if(!Array.isArray(params)) {
+    return
+  }
+
+  const data = {}
+
+  for (let i = 0; i < params.length; i++) {
+    const {
+      label,
+      value
+    } = params[i]
+
+    if(!data[label]) {
+      data[label] = []
+    }
+
+    data[label].push({ value })
+  }
+
+  return data
+}
+
+export { Param, parseParam, flattenParams }

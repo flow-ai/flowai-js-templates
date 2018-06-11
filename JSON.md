@@ -386,23 +386,25 @@ When these are triggered with the type event or postback you can also send data 
       "type": "event",
       "label": "Show details",
       "value": "PRODUCT_DETAILS",
-      "params": [
-       {
-        "label": "itemId",
-        "value": "332223323"
-       }
-      ]
+      "params": {
+       "itemId": [
+        {
+         "value": "332223323"
+        }
+       ]
+      }
      },
      {
       "type": "event",
       "label": "Find store",
       "value": "FIND_STORE_BY_PRODUCT",
-      "params": [
-       {
-        "label": "itemId",
-        "value": "332223323"
-       }
-      ]
+      "params": {
+       "itemId": [
+        {
+         "value": "332223323"
+        }
+       ]
+      }
      }
     ]
    }
@@ -426,16 +428,18 @@ Or with QuickReplies:
       "label": "Yes",
       "value": "PRODUCT_ORDER",
       "type": "event",
-      "params": [
-       {
-        "label": "shopId",
-        "value": "33211233"
-       },
-       {
-        "label": "productId",
-        "value": "123443211"
-       }
-      ]
+      "params": {
+       "shopId": [
+        {
+         "value": "33211233"
+        }
+       ],
+       "productId": [
+        {
+         "value": "123443211"
+        }
+       ]
+      }
      },
      {
       "label": "No",

@@ -1,4 +1,4 @@
-import { parseParam } from './param'
+import { parseParam, flattenParams } from './param'
 
 /**
  * Component used in Card, Buttons templates
@@ -50,7 +50,7 @@ class Button {
       type,
       label,
       value,
-      params: params || undefined
+      params: flattenParams(params)
     }
   }
 }

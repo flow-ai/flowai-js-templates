@@ -150,6 +150,17 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
 </dd>
 </dl>
 
+## Functions
+
+<dl>
+<dt><a href="#parseParam">parseParam()</a></dt>
+<dd><p>Helper method to convert a list of params</p>
+</dd>
+<dt><a href="#flattenParams">flattenParams()</a></dt>
+<dd><p>Helper method to convert params into the expected format</p>
+</dd>
+</dl>
+
 <a name="Action"></a>
 
 ## Action
@@ -912,3 +923,15 @@ const video = new Video({
   })
 })
 ```
+<a name="parseParam"></a>
+
+## parseParam()
+Helper method to convert a list of params
+
+**Kind**: global function  
+<a name="flattenParams"></a>
+
+## flattenParams()
+Helper method to convert params into the expected format
+
+**Kind**: global function  
