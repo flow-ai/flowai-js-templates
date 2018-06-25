@@ -1,5 +1,5 @@
 import chai, { expect, assert } from 'chai'
-import { Param, Button, QuickReply } from '../src'
+import { Action, Param, Button, QuickReply } from '../src'
 
 describe("Component param", () => {
   it("throws error on empty", () => {
@@ -175,6 +175,24 @@ describe("Component param", () => {
     const json = JSON.stringify(reply)
 
     expect(json).to.equal('{"label":"Buy","value":"do this","type":"postback","params":{"a":[{"value":"b"},{"value":"d"}],"b":[{"value":"c"}]}}')
+  })
+
+  it("will convert to correct JSON with actions", () => {
+    const param1 = new Param('a', 'b')
+    const param2 = new Param('a', 'd')
+    const param3 = new Param('b', 'c')
+    const action = new Action({
+      type: 'postback',
+      value: 'do this',
+      param: [
+        param1,
+        param2,
+        param3
+      ]
+    })
+
+    const json = JSON.stringify(action)
+    expect(json).to.equal('{"type":"postback","value":"do this","params":{"a":[{"value":"b"},{"value":"d"}],"b":[{"value":"c"}]}}')
   })
 
 })

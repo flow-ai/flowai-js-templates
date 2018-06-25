@@ -7,7 +7,7 @@ const dist = {
   target: 'web',
   devtool: 'cheap-source-map',
   output: {
-    filename: 'flowai-js.min.js',
+    filename: 'flowai-js-templates.min.js',
     path: path.resolve(__dirname, 'dist'),
     library: "Flowai"
   },

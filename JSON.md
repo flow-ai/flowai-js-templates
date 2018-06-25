@@ -287,12 +287,13 @@ The following templates are supported
   "action": {
    "type": "event",
    "value": "ORDER",
-   "params": [
-    {
-     "label": "productId",
-     "value": "12e2-22342-aasd2"
-    }
-   ]
+   "params": {
+    "productId": [
+     {
+      "value": "12e2-22342-aasd2"
+     }
+    ]
+   }
   }
  }
 }

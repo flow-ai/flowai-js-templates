@@ -1,4 +1,4 @@
-import { parseParam } from './param'
+import { parseParam, flattenParams } from './param'
 
 /**
  * Default action used in Card, List and Buttons templates
@@ -47,7 +47,7 @@ class Action {
     return {
       type,
       value,
-      params: params || undefined
+      params: flattenParams(params)
     }
   }
 }
