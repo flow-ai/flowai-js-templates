@@ -34,7 +34,7 @@
     "debug": "^3.1.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
+    "@babel/cli": "^7.5.0",
     "babel-core": "^6.26.3",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
@@ -48,7 +48,7 @@
     "mocha": "^5.1.1",
     "sinon": "^4.5.0",
     "uglify-js": "^3.3.24",
-    "webpack": "^3.11.0",
+    "webpack": "^4.35.3",
     "webpack-node-externals": "^1.7.2"
   }
 }
