@@ -1,16 +1,16 @@
 {
   "name": "flowai-js-templates",
-  "version": "1.5.2",
+  "version": "1.6.0",
   "description": "Message response templates for flow.ai",
   "main": "./lib/index.js",
   "scripts": {
     "preexample": "npm run build",
     "example": "DEBUG=flowai:* node ./example/node/index.js",
     "postbuild": "npm run docs",
-    "build:dist": "NODE_ENV=production webpack --display-error-details --config ./webpack.config.js",
-    "build:lib": "NODE_ENV=production babel ./src --out-dir ./lib",
+    "build:dist": "BABEL_ENV=production NODE_ENV=production webpack-cli --display-error-details --config ./webpack.config.js",
+    "build:lib": "BABEL_ENV=production NODE_ENV=production babel ./src --out-dir ./lib",
     "build": "npm run build:dist && npm run build:lib",
-    "test": "npm run build:lib && mocha --recursive --reporter spec --compilers js:babel-core/register --require babel-polyfill --watch",
+    "test": "npm run build:lib && mocha --recursive --reporter spec --compilers js:@babel/register --require @babel/polyfill --watch",
     "eslint": "eslint ./src --fix",
     "prepublish": "npm run build",
     "docs": "jsdoc2md -c .jsdoc ./src/**/*.js --example-lang js --template ./docs/README.hbs > README.md && node ./docs/json.js"
@@ -30,16 +30,15 @@
     "url": "https://github.com/flow-ai/flowai-js-templates/issues"
   },
   "homepage": "https://github.com/flow-ai/flowai-js-templates#readme",
-  "dependencies": {
-    "debug": "^3.1.0"
-  },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
+    "@babel/core": "^7.6.4",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.3",
+    "@babel/register": "^7.6.2",
+    "babel-loader": "^8.0.6",
     "chai": "^4.1.2",
+    "debug": "^3.1.0",
     "eslint": "^4.19.1",
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.11.0",
@@ -47,8 +46,11 @@
     "jsdoc-to-markdown": "^4.0.1",
     "mocha": "^5.1.1",
     "sinon": "^4.5.0",
+    "terser-webpack-plugin": "^2.2.1",
     "uglify-js": "^3.3.24",
     "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.9",
     "webpack-node-externals": "^1.7.2"
-  }
+  },
+  "dependencies": {}
 }

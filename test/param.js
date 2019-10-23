@@ -195,4 +195,47 @@ describe("Component param", () => {
     expect(json).to.equal('{"type":"postback","value":"do this","params":{"a":[{"value":"b"},{"value":"d"}],"b":[{"value":"c"}]}}')
   })
 
+  it("will create a single params inside quick reply", () => {
+    const data = {
+      type: 'text',
+      label: 'Yes',
+      param: {
+        label: 'productId',
+        value: '1234'
+      }
+    }
+
+    const reply = new QuickReply(data)
+
+    expect(reply.params.length).to.equal(1)
+  })
+
+  it("will create lists of params inside quick reply", () => {
+    const data = {
+      type: 'text',
+      label: 'Yes',
+      param: [{
+        label: 'productId',
+        value: '1234'
+      }, {}]
+    }
+
+    const reply = new QuickReply(data)
+
+    expect(reply.params.length).to.equal(1)
+  })
+
+  it("will be forgiving with empty quick reply", () => {
+    const data = {
+      type: 'text',
+      label: 'Yes',
+      param: {
+        label: 'productId'
+      }
+    }
+
+    const reply = new QuickReply(data)
+
+    expect(reply.params).to.equal(undefined)
+  })
 })

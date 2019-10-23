@@ -304,7 +304,6 @@ Data related to a Button or Quick Reply
 
 | Param | Type | Description |
 | --- | --- | --- |
-| opts.type | <code>string</code> | Required |
 | opts.label | <code>string</code> | Required |
 | opts.value | <code>string</code> | Required |
 

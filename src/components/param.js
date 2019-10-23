@@ -34,7 +34,6 @@
  **/
 class Param {
   /**
-   * @param {string} opts.type - Required
    * @param {string} opts.label - Required
    * @param {string} opts.value - Required
    **/
@@ -77,19 +76,38 @@ const parseParam = param => {
 
   const params = []
 
-  if(param && !(param instanceof Param) && !Array.isArray(param)) {
+  const isArray = Array.isArray(param),
+        isParam = (param instanceof Param),
+        isObject = (typeof param === 'object')
+  
+  if(param && !isParam && !isObject && !isArray) {
     throw new Error('param should be an instance of Param or an array of Param instances')
   }
 
-  if(Array.isArray(param)) {
-    for (let i = 0; i < param.length; i++) {
-      if(!(param[i] instanceof Param)) {
-        throw new Error('any item inside a param array should be an instance of Param')
-      }
-      params.push(param[i])
-    }
-  } else if(param) {
+  if(isParam) {
     params.push(param)
+  } else if(isArray) {
+    for (let i = 0; i < param.length; i++) {
+      if(param[i] instanceof Param) {
+        params.push(param[i])
+      } else if(typeof param[i] === 'object') {
+        const {
+          label,
+          value
+        } = param[i] 
+
+        if(label && value) {
+          params.push(new Param({ 
+            label, 
+            value 
+          }))
+        }
+      } else {
+        throw new Error('any item inside a param array should be an instance of Param or an object')
+      }
+    }
+  } else if(isObject && param.label && param.value) {
+    params.push(new Param(param))
   }
 
   return !!params.length ? params : undefined
