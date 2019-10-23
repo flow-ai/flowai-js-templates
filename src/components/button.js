@@ -20,7 +20,7 @@ class Button {
    * @param {string} opts.value - Required, value of the button (can be a URL or other string value)
    * @param {Param|Param[]} opts.param - Optional Param or array or Array of Params related to this button
    **/
-  constructor({ type, label, value, param }) {
+  constructor({ type, label, value, param, params }) {
 
     if(typeof type !== 'string' || type.length === 0) {
       throw new Error('Button type is mandatory')
@@ -32,7 +32,7 @@ class Button {
       throw new Error('Button value is mandatory')
     }
 
-    this.params = parseParam(param)
+    this.params = parseParam(param || params)
     this.type = type
     this.label = label
     this.value = value

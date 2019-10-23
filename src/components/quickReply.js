@@ -25,7 +25,7 @@ class QuickReply {
    * @param {string} opts.value - Required, ignored if type is location
    * @param {Param|Param[]} opts.param - Optional Param or array or Array of Params related to this QuickReply
    **/
-  constructor({ label, type, value, param }) {
+  constructor({ label, type, value, param, params }) {
 
     if(type === 'text' && (typeof label !== 'string' || !label.length)) {
       throw new Error('QuickReply label when it has the type text must be as string')
@@ -41,7 +41,7 @@ class QuickReply {
       this.type = type
     }
 
-    this.params = parseParam(param)
+    this.params = parseParam(param || params)
     this.value = value || label
     this.label = label
   }

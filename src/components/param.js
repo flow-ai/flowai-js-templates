@@ -108,6 +108,17 @@ const parseParam = param => {
     }
   } else if(isObject && param.label && param.value) {
     params.push(new Param(param))
+  } else if(isObject) {
+    Object.keys(param).forEach(label => {
+      const values = param[label]
+      if(!Array.isArray(values)) {
+        return
+      }
+
+      values.forEach(value => {
+        params.push(new Param(label, value.value))
+      })
+    })
   }
 
   return !!params.length ? params : undefined

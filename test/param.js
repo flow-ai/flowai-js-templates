@@ -214,7 +214,7 @@ describe("Component param", () => {
     const data = {
       type: 'text',
       label: 'Yes',
-      param: [{
+      params: [{
         label: 'productId',
         value: '1234'
       }, {}]
@@ -237,5 +237,34 @@ describe("Component param", () => {
     const reply = new QuickReply(data)
 
     expect(reply.params).to.equal(undefined)
+  })
+
+  it("will work with quick reply params that are already parsed", () => {
+    const data = {
+      type: 'text',
+      label: 'Yes',
+      params : { 
+        label: [{ "value" : "red" }]
+      }
+    }
+
+    const reply = new QuickReply(data)
+
+    expect(reply.params.length).to.equal(1)
+  })
+
+  it("will work with button params that are already parsed", () => {
+    const data = {
+      type: 'text',
+      label: 'Yes',
+      value: 'Yes',
+      params : { 
+        label: [{ "value" : "red" }]
+      }
+    }
+
+    const button = new Button(data)
+
+    expect(button.params.length).to.equal(1)
   })
 })
