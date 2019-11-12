@@ -38,7 +38,7 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
 ##### Sending a single message with a single response
 
 ```js
-(function(payload,originator,done) {
+async payload=> {
 
   // Create a speech bubble
   const text = new Text("Hi there!")
@@ -48,12 +48,12 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
   message.addResponse(text)
 
   return message
-})
+}
 ```
 
 ##### Sending a single message with multiple responses
 ```js
-(function(payload,originator,done) {
+async payload=> {
 
   // Create a speech bubble
   const text = new Text("Hi there!")
@@ -67,12 +67,12 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
   return new Message("Hi, the address of the Cookie factory is Infinite lane 23")
           .addResponse(text)
           .addResponse(card)
-})
+}
 ```
 
 ##### Sending back multiple messages
 ```js
-(function(payload,originator,done) {
+async payload=> {
 
   // Create a speech bubble
   const text = new Text("Hi there!")
@@ -87,7 +87,7 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
     new Message("Hi, there").addResponse(text),
     new Message("the address of the Cookie factory is Infinite lane 23").addResponse(card)
   ]
-})
+}
 ```
 
 # Class Reference
