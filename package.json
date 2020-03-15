@@ -1,6 +1,6 @@
 {
   "name": "flowai-js-templates",
-  "version": "1.7.0-beta.0",
+  "version": "1.7.0-beta.1",
   "description": "Message response templates for Flow.ai",
   "main": "./lib/index.js",
   "scripts": {

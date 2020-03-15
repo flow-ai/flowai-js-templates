@@ -75,4 +75,64 @@ describe("Template Phone Ask", () => {
       voice: "man"
     }).toJSON()
   })
+
+  it("will accept valid finish on key values", () => {
+    const ask = new Phone.Ask({ 
+      speech: "Some question",
+      finishOnKey: '6'
+    })
+    expect(ask.finishOnKey).to.equal("6")
+  })
+
+  it("will not accept invalid finish on key values", () => {
+    expect(() => new Phone.Ask({ 
+      speech: "Some question",
+      finishOnKey: 'a'
+    })).to.throw(Error)
+  })
+
+  it("will accept valid number of digits", () => {
+    const ask = new Phone.Ask({ 
+      speech: "Some question",
+      numDigits: 2
+    })
+    expect(ask.numDigits).to.equal(2)
+  })
+
+  it("will not accept invalid numDigits values", () => {
+    expect(() => new Phone.Ask({ 
+      speech: "Some question",
+      numDigits: -2
+    })).to.throw(Error)
+  })
+
+  it("will accept valid speech timeout", () => {
+    const ask = new Phone.Ask({ 
+      speech: "Some question",
+      speechTimeout: 2
+    })
+    expect(ask.speechTimeout).to.equal(2)
+  })
+
+  it("will not accept invalid speech timeout values", () => {
+    expect(() => new Phone.Ask({ 
+      speech: "Some question",
+      speechTimeout: -2
+    })).to.throw(Error)
+  })
+
+  it("will accept valid speech model values", () => {
+    const ask = new Phone.Ask({ 
+      speech: "Some question",
+      speechModel: 'numbers_and_commands'
+    })
+    expect(ask.speechModel).to.equal("numbers_and_commands")
+  })
+
+  it("will not accept invalid speech model values", () => {
+    expect(() => new Phone.Ask({ 
+      speech: "Some question",
+      speechModel: 'a'
+    })).to.throw(Error)
+  })
 })
