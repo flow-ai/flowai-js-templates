@@ -50,6 +50,5 @@ describe("Template Custom", () => {
     }))
     expect(custom.quickReplies[0].value).to.equal("test 2")
     const output = JSON.stringify(custom)
-    // console.log(output)
   })
 })

@@ -95,11 +95,9 @@ async payload=> {
 
 <dl>
 <dt><a href="#Action">Action</a></dt>
-<dd><p>Default action used in Card, List and Buttons templates</p>
-</dd>
+<dd></dd>
 <dt><a href="#Button">Button</a></dt>
-<dd><p>Component used in Card, Buttons templates</p>
-</dd>
+<dd></dd>
 <dt><a href="#ListItem">ListItem</a></dt>
 <dd><p>Item within a List</p>
 </dd>
@@ -110,8 +108,7 @@ async payload=> {
 <dd><p>Data related to a Button or Quick Reply</p>
 </dd>
 <dt><a href="#QuickReply">QuickReply</a></dt>
-<dd><p>Component placed on any Template. Represents a shortcut for a user to reply with. Ideal for yes / no type of questions.</p>
-</dd>
+<dd></dd>
 <dt><a href="#Audio">Audio</a></dt>
 <dd><p>Template with audio</p>
 </dd>
@@ -164,17 +161,7 @@ async payload=> {
 <a name="Action"></a>
 
 ## Action
-Default action used in Card, List and Buttons templates
-
 **Kind**: global class  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | Type of action (url, phone, postback, share, login, webview, event) |
-| value | <code>string</code> | Value of the action |
-| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the action |
-
 <a name="new_Action_new"></a>
 
 ### new Action()
@@ -185,21 +172,20 @@ Default action used in Card, List and Buttons templates
 | opts.value | <code>string</code> | Required |
 | opts.param | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this action |
 
+**Example**  
+```js
+const image = new Image({
+  ...
+  action: new Action({
+    type: 'url',
+    value: 'https://...'
+  })
+})
+```
 <a name="Button"></a>
 
 ## Button
-Component used in Card, Buttons templates
-
 **Kind**: global class  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | Type of button (url, phone, postback, share, login, webview, event) |
-| label | <code>string</code> | Label of the button |
-| value | <code>string</code> | Value of the button |
-| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the button |
-
 <a name="new_Button_new"></a>
 
 ### new Button()
@@ -211,14 +197,6 @@ Component used in Card, Buttons templates
 | opts.value | <code>string</code> | Required, value of the button (can be a URL or other string value) |
 | opts.param | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this button |
 
-**Example**  
-```js
-new Button({
- type: 'webview',
- label: 'More info'
- value: 'https://...'
-})
-```
 <a name="ListItem"></a>
 
 ## ListItem
@@ -345,18 +323,7 @@ const image = new Image({
 <a name="QuickReply"></a>
 
 ## QuickReply
-Component placed on any Template. Represents a shortcut for a user to reply with. Ideal for yes / no type of questions.
-
 **Kind**: global class  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| label | <code>string</code> | Label that is shown as a quick reply |
-| value | <code>string</code> | Value that is being send as the quick reply, empty if type is location |
-| type | <code>string</code> | Type of quick reply, default is text (text, location, user_email, user_phone_number, event) |
-| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the quick reply |
-
 <a name="new_QuickReply_new"></a>
 
 ### new QuickReply()
@@ -368,18 +335,6 @@ Component placed on any Template. Represents a shortcut for a user to reply with
 | opts.value | <code>string</code> | Required, ignored if type is location |
 | opts.param | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this QuickReply |
 
-**Example**  
-```js
-const text = new Text('We have a 40" screen for sale. Want to preorder it?')
-text.addQuickReply(new QuickReply({
-  label: '👍',
-  value: 'Yes'
-}))
-text.addQuickReply(new QuickReply({
-  label: '👎',
-  value: 'No'
-}))
-```
 <a name="Audio"></a>
 
 ## Audio

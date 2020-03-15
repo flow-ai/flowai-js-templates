@@ -12,13 +12,27 @@ import Carousel from './templates/carousel'
 import List from './templates/list'
 import Location from './templates/location'
 import Custom from './templates/custom'
-
 import Action from './components/action'
 import Button from './components/button'
 import Media from './components/media'
 import ListItem from './components/listItem'
 import { Param } from './components/param'
 import QuickReply from './components/quickReply'
+
+// Phone templates
+import Say from './templates/phone/say'
+import Hangup from './templates/phone/hangup'
+import Pause from './templates/phone/pause'
+import Ask from './templates/phone/ask'
+import Dial from './templates/phone/dial'
+
+const Phone = {
+  Say,
+  Hangup,
+  Pause,
+  Ask,
+  Dial
+}
 
 export {
   Message,
@@ -40,5 +54,7 @@ export {
   Media,
   ListItem,
   Param,
-  QuickReply
+  QuickReply,
+
+  Phone
 }

@@ -6,9 +6,9 @@ It's not mandatory to use it and only available for Node.js and JavaScript at th
 
 This document provides examples of these JSON messages. It's use case is usually in combination with a Webhook integration.
 
-## Webhooks
+## Webhooks and code action
 
-Webhooks can send messages to users by replying with structured JSON data.
+Webhooks and code actions can send messages to users by replying with structured JSON data.
 
 ### Simple reply
 
@@ -451,5 +451,21 @@ Or with QuickReplies:
    }
   }
  ]
+}
+```
+
+## Phone
+
+Specific templates for phone responses.
+
+### Say
+
+```json
+{
+ "type": "phone_say",
+ "payload": {
+  "speech": "The time is ...",
+  "voice": "alice"
+ }
 }
 ```

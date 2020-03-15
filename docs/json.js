@@ -17,7 +17,8 @@ const fs = require('fs'),
         Video,
         Buttons,
         Param,
-        QuickReply
+        QuickReply,
+        Phone
       } = require('../lib')
 
 const doc = {
@@ -45,8 +46,8 @@ doc.write('It\'s not mandatory to use it and only available for Node.js and Java
 doc.write('This document provides examples of these JSON messages. It\'s use case is usually in combination with a Webhook integration.')
 
 // - Webhook
-doc.write('## Webhooks')
-doc.write('Webhooks can send messages to users by replying with structured JSON data.')
+doc.write('## Webhooks and code action')
+doc.write('Webhooks and code actions can send messages to users by replying with structured JSON data.')
 
 doc.write('### Simple reply')
 const message = new Message("Hi there")
@@ -315,5 +316,14 @@ doc.write(new Message("Want a cold beverage?")
    label: 'No'
  })))
 
+
+doc.write('## Phone')
+doc.write('Specific templates for phone responses.')
+
+doc.write('### Say')
+
+doc.write(new Phone.Say({
+  speech: "The time is ..."
+}))
 
 doc.output('JSON.md')
