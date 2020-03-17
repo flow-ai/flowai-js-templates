@@ -9,7 +9,7 @@ import Template from '../template'
 class Pause extends Template {
 
   /**
-   * @param {string} opts.seconds - Required
+   * @param {number} opts.seconds - Required
    **/
   constructor(opts) {
     super()
