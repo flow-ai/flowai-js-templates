@@ -1,4 +1,4 @@
-import Template from '../template'
+import Template from '../../generic/templates/template'
 
 /**
  * Dial a number and forward the call

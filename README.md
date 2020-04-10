@@ -109,6 +109,9 @@ async payload=> {
 </dd>
 <dt><a href="#QuickReply">QuickReply</a></dt>
 <dd></dd>
+<dt><a href="#Message">Message</a></dt>
+<dd><p>Representation of a message to a user. Contains a pronounceable fallback message and optional rich template responses.</p>
+</dd>
 <dt><a href="#Audio">Audio</a></dt>
 <dd><p>Template with audio</p>
 </dd>
@@ -144,6 +147,31 @@ async payload=> {
 </dd>
 <dt><a href="#Video">Video</a></dt>
 <dd><p>Template with a video</p>
+</dd>
+<dt><a href="#Ask">Ask</a></dt>
+<dd><p>Send a message to a user asking for input</p>
+</dd>
+<dt><a href="#Dial">Dial</a></dt>
+<dd><p>Dial a number and forward the call</p>
+</dd>
+<dt><a href="#Hangup">Hangup</a></dt>
+<dd></dd>
+<dt><a href="#Pause">Pause</a></dt>
+<dd><p>Pause a moment during the call</p>
+</dd>
+<dt><a href="#Say">Say</a></dt>
+<dd><p>Send a message to a user</p>
+</dd>
+</dl>
+
+## Constants
+
+<dl>
+<dt><a href="#support">support</a></dt>
+<dd><p>Basic support matrix</p>
+</dd>
+<dt><a href="#support">support</a></dt>
+<dd><p>Basic support matrix</p>
 </dd>
 </dl>
 
@@ -335,6 +363,76 @@ const image = new Image({
 | opts.value | <code>string</code> | Required, ignored if type is location |
 | opts.param | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this QuickReply |
 
+<a name="Message"></a>
+
+## Message
+Representation of a message to a user. Contains a pronounceable fallback message and optional rich template responses.
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| fallback | <code>string</code> | Pronounceable and represents the responses as a whole |
+| responses | [<code>Array.&lt;Template&gt;</code>](#Template) | List of rich template responses |
+
+
+* [Message](#Message)
+    * [new Message(fallback)](#new_Message_new)
+    * [.addResponse(response, delay)](#Message+addResponse) ⇒ [<code>Message</code>](#Message)
+    * [.addQuickReply(quickReply)](#Message+addQuickReply)
+
+<a name="new_Message_new"></a>
+
+### new Message(fallback)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| fallback | <code>string</code> | Required |
+
+**Example**  
+```js
+// Create a message without responses
+// this will create a response
+// when converted to JSON
+const message = new Message('Hi there')
+
+// This also works for multiple text responses by adding an array of strings
+const message = new Message(['Hi there', 'How can I help?'])
+```
+<a name="Message+addResponse"></a>
+
+### message.addResponse(response, delay) ⇒ [<code>Message</code>](#Message)
+Add a response
+
+**Kind**: instance method of [<code>Message</code>](#Message)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| response | [<code>Template</code>](#Template) | response |
+| delay | <code>Number</code> | Optional delay in miliseconds for sending the response |
+
+<a name="Message+addQuickReply"></a>
+
+### message.addQuickReply(quickReply)
+A convienamnce method to add a quick reply to the last response template of a Message
+
+**Kind**: instance method of [<code>Message</code>](#Message)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| quickReply | [<code>QuickReply</code>](#QuickReply) | Required |
+
+**Example**  
+```js
+const message = new Message("Want a cold beverage?")
+ .addQuickReply(new QuickReply({
+   label: 'Yes'
+ }))
+ .addQuickReply(new QuickReply({
+   label: 'No'
+ }))
+```
 <a name="Audio"></a>
 
 ## Audio
@@ -877,6 +975,147 @@ const video = new Video({
   })
 })
 ```
+<a name="Ask"></a>
+
+## Ask
+Send a message to a user asking for input
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| speech | <code>string</code> | Text to speech |
+| url | <code>string</code> | URL to an audio file |
+| expected | <code>string</code> | Optional, what kind of input to expect. Valid are speech, digits or any (default is any) |
+| hints | <code>string</code> | Optional, expected words or sentences, comma separated (max 500 words) |
+| language | <code>string</code> | Optional language for text to speech |
+| voice | <code>string</code> | Optional voice for text to speech |
+| timeout | <code>number</code> | Optional, number of seconds to wait for user input (default ) and send a repeat message |
+| repeat | <code>number</code> | Optional, number of times to ask again after user has not provided input (default 1, 0 is unlimited loop) |
+| profanityFilter | <code>boolean</code> | Optional, filter profanity from any received input |
+| finishOnKey | <code>string</code> | Optional, only when expecting digits, set a value that your caller can press to submit their digits. |
+| numDigits | <code>number</code> | Optional, only when expecting digits, set the number of digits you expect from your caller |
+| speechTimeout | <code>string</code> | Optional, only when expecting speech, sets the limit (in seconds) to wait before it stopping speech recognition |
+| speechModel | <code>string</code> | Optional, only when expecting speech, specify a specific speech model. Options: default, numbers_and_commands and phone_call. |
+
+<a name="new_Ask_new"></a>
+
+### new Ask()
+Ask a user for input
+
+**Example**  
+```js
+const ask = new Phone.Ask({
+  speech: 'Do you speak English?',
+  language: 'en-GB',
+  expected: 'speech',
+  hints: 'yes,yeah,yup,yes I do,no,no not really,nope'
+})
+```
+<a name="Dial"></a>
+
+## Dial
+Dial a number and forward the call
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| phoneNumber | <code>string</code> | The number of phoneNumber to delay |
+
+<a name="new_Dial_new"></a>
+
+### new Dial()
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.phoneNumber | <code>string</code> | Required |
+
+**Example**  
+```js
+const pause = new Dial(0.2)
+```
+<a name="Hangup"></a>
+
+## Hangup
+**Kind**: global class  
+<a name="new_Hangup_new"></a>
+
+### new Hangup()
+Disconnect a phone call
+
+<a name="Pause"></a>
+
+## Pause
+Pause a moment during the call
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| seconds | <code>float</code> | The number of seconds to delay |
+
+<a name="new_Pause_new"></a>
+
+### new Pause()
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.seconds | <code>number</code> | Required |
+
+**Example**  
+```js
+const pause = new Pause(0.2)
+```
+<a name="Say"></a>
+
+## Say
+Send a message to a user
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| speech | <code>string</code> | Text to speech |
+| url | <code>string</code> | URL to an audio file |
+| language | <code>string</code> | Optional language for text to speech |
+| voice | <code>string</code> | Optional voice for text to speech |
+
+<a name="new_Say_new"></a>
+
+### new Say(opts)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>Object</code> | Configuration |
+| opts.speech | <code>string</code> | Text to speech |
+| opts.url | <code>string</code> | URL to audio File |
+| opts.language | <code>string</code> | Optional language for text to speech |
+| opts.voice | <code>string</code> | Optional voice for text to speech |
+
+**Example**  
+```js
+const say = new Phone.Say({
+  speech: "The weather is nice today!",
+  language: "en-GB"
+})
+```
+<a name="support"></a>
+
+## support
+Basic support matrix
+
+**Kind**: global constant  
+<a name="support"></a>
+
+## support
+Basic support matrix
+
+**Kind**: global constant  
 <a name="parseParam"></a>
 
 ## parseParam()

@@ -13,7 +13,7 @@
     "test": "npm run build:lib && mocha --recursive --reporter spec --compilers js:@babel/register --require @babel/polyfill --watch",
     "eslint": "eslint ./src --fix",
     "prepublish": "npm run build",
-    "docs": "jsdoc2md -c .jsdoc ./src/**/*.js --example-lang js --template ./docs/README.hbs > README.md && node ./docs/json.js"
+    "docs": "jsdoc2md \"src/**/*.js\" -c .jsdoc --example-lang js --template ./docs/README.hbs > README.md && node ./docs/json.js"
   },
   "repository": {
     "type": "git",

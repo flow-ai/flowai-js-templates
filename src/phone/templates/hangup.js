@@ -1,4 +1,4 @@
-import Template from '../template'
+import Template from '../../generic/templates/template'
 
 class Hangup extends Template {
 
