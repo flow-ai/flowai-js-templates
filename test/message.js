@@ -1,6 +1,6 @@
 import chai, { expect, assert } from 'chai'
 import { Message, QuickReply } from '../src'
-import Template from '../src/templates/template'
+import Template from '../src/generic/templates/template'
 
 describe("Message", () => {
   it("Throws error without a fallback", () => {
@@ -11,6 +11,11 @@ describe("Message", () => {
     const message = new Message("Awesome")
     expect(message.fallback).to.equal("Awesome")
     expect(message.responses).to.equal(undefined)
+  })
+
+  it("can create with metasdata", () => {
+    const message = new Message("Awesome", { tag: "abc"})
+    expect(message.metadata.tag).to.equal("abc")
   })
 
   it("can create with responses", () => {
@@ -37,6 +42,13 @@ describe("Message", () => {
 
     const parsed = JSON.parse(JSON.stringify(message))
     expect(parsed.responses.length === 2)
+  })
+
+  it("can convert to JSON with metadata", () => {
+    const message = new Message("Awesome", { tag: "abc" })
+
+    const parsed = JSON.parse(JSON.stringify(message))
+    expect(message.metadata.tag === "abc")
   })
 
   it("to JSON without response will add one", () => {

@@ -25,7 +25,6 @@ import Hangup from './phone/templates/hangup'
 import Pause from './phone/templates/pause'
 import Ask from './phone/templates/ask'
 import Dial from './phone/templates/dial'
-
 const Phone = {
   Say,
   Hangup,
@@ -33,6 +32,7 @@ const Phone = {
   Ask,
   Dial
 }
+
 
 export {
   Message,
