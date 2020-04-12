@@ -15,7 +15,7 @@ describe("Message", () => {
 
   it("can create with metasdata", () => {
     const message = new Message("Awesome", { tag: "abc"})
-    expect(message.metadata.tag).to.equal("abc")
+    expect(message.meta.tag).to.equal("abc")
   })
 
   it("can create with responses", () => {
@@ -44,11 +44,11 @@ describe("Message", () => {
     expect(parsed.responses.length === 2)
   })
 
-  it("can convert to JSON with metadata", () => {
+  it("can convert to JSON with meta", () => {
     const message = new Message("Awesome", { tag: "abc" })
 
     const parsed = JSON.parse(JSON.stringify(message))
-    expect(message.metadata.tag === "abc")
+    expect(message.meta.tag === "abc")
   })
 
   it("to JSON without response will add one", () => {

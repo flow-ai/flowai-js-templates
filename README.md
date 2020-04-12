@@ -378,18 +378,18 @@ Representation of a message to a user. Contains a pronounceable fallback message
 
 
 * [Message](#Message)
-    * [new Message(fallback, metadata)](#new_Message_new)
+    * [new Message(fallback, meta)](#new_Message_new)
     * [.addResponse(response, delay)](#Message+addResponse) ⇒ [<code>Message</code>](#Message)
     * [.addQuickReply(quickReply)](#Message+addQuickReply)
 
 <a name="new_Message_new"></a>
 
-### new Message(fallback, metadata)
+### new Message(fallback, meta)
 
 | Param | Type | Description |
 | --- | --- | --- |
 | fallback | <code>string</code> | Required |
-| metadata | <code>Object</code> | Optional property list with data |
+| meta | <code>Object</code> | Optional property list with data |
 
 **Example**  
 ```js

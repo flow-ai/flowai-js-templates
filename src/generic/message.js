@@ -20,9 +20,9 @@ class Message {
 
   /**
    * @param {string} fallback - Required
-   * @param {Object} metadata - Optional property list with data
+   * @param {Object} meta - Optional property list with data
    **/
-  constructor(fallback, metadata){
+  constructor(fallback, meta){
     if((typeof fallback !== 'string' && !Array.isArray(fallback)) || fallback.length === 0) {
       throw new Error('fallback is mandatory and must be a string or string array')
     }
@@ -37,8 +37,8 @@ class Message {
 
     this.fallback = fallback
 
-    if(typeof metadata === 'object') {
-      this.metadata = metadata
+    if(typeof meta === 'object') {
+      this.meta = meta
     }
   }
 
@@ -104,7 +104,7 @@ class Message {
     const {
       fallback,
       responses,
-      metadata
+      meta
     } = this
 
     const isFallbackArray = Array.isArray(fallback)
@@ -131,7 +131,7 @@ class Message {
     return {
       fallback: parsedFallback,
       responses,
-      metadata
+      meta
     }
   }
 }
