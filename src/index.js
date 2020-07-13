@@ -12,6 +12,7 @@ import Carousel from './generic/templates/carousel'
 import List from './generic/templates/list'
 import Location from './generic/templates/location'
 import Custom from './generic/templates/custom'
+import Note from './generic/templates/note'
 import Action from './generic/components/action'
 import Button from './generic/components/button'
 import Media from './generic/components/media'
@@ -48,6 +49,7 @@ export {
   List,
   Location,
   Custom,
+  Note,
 
   Action,
   Button,

@@ -139,6 +139,9 @@ async payload=> {
 <dt><a href="#Location">Location</a></dt>
 <dd><p>Template with a location</p>
 </dd>
+<dt><a href="#Note">Note</a></dt>
+<dd><p>Template with a piece of note</p>
+</dd>
 <dt><a href="#Template">Template</a></dt>
 <dd><p>Base class of all response templates</p>
 </dd>
@@ -856,6 +859,30 @@ const location = new Location({
     value: 'https://...'
   })
 })
+```
+<a name="Note"></a>
+
+## Note
+Template with a piece of note
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| note | <code>string</code> | Note to show |
+
+<a name="new_Note_new"></a>
+
+### new Note()
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.note | <code>string</code> | Required |
+
+**Example**  
+```js
+const note = new Note('Red note')
 ```
 <a name="Template"></a>
 
