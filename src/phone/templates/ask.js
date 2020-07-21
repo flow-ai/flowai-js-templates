@@ -42,7 +42,9 @@ class Ask extends Say {
       finishOnKey,
       numDigits,
       speechTimeout,
-      speechModel
+      speechModel,
+      preTone,
+      postTone
     } = opts
 
     if(expected !== undefined && support.expected.indexOf(expected) === -1) {
@@ -90,6 +92,8 @@ class Ask extends Say {
     this.numDigits = numDigits || undefined
     this.speechTimeout = speechTimeout || undefined
     this.speechModel = speechModel || undefined
+    this.preTone = preTone
+    this.postTone = postTone
   }
 
   toJSON() {
@@ -102,7 +106,9 @@ class Ask extends Say {
       finishOnKey,
       numDigits,
       speechTimeout,
-      speechModel
+      speechModel,
+      preTone,
+      postTone
     } = this
 
     const _json = super.toJSON()
@@ -118,7 +124,9 @@ class Ask extends Say {
         finishOnKey,
         numDigits,
         speechTimeout,
-        speechModel
+        speechModel,
+        preTone,
+        postTone
       }
     }
   }
