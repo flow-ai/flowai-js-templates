@@ -129,7 +129,8 @@ class Ask extends Say {
         speechTimeout,
         speechModel,
         preTone,
-        postTone
+        postTone,
+        tone
       }
     }
   }
