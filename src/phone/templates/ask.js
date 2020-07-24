@@ -44,7 +44,8 @@ class Ask extends Say {
       speechTimeout,
       speechModel,
       preTone,
-      postTone
+      postTone,
+      tone
     } = opts
 
     if(expected !== undefined && support.expected.indexOf(expected) === -1) {
@@ -94,6 +95,7 @@ class Ask extends Say {
     this.speechModel = speechModel || undefined
     this.preTone = preTone
     this.postTone = postTone
+    this.tone = tone
   }
 
   toJSON() {
@@ -108,7 +110,8 @@ class Ask extends Say {
       speechTimeout,
       speechModel,
       preTone,
-      postTone
+      postTone,
+      tone
     } = this
 
     const _json = super.toJSON()
