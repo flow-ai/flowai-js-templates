@@ -66,7 +66,9 @@ class Say extends Template {
     if(language !== undefined) {
       if(this.voice === 'alice' && support.languages.alice.indexOf(language) === -1) {
         throw new Error(`Unsupported language provided. Alice supports one of: "${support.languages.alice.join(', ')}"`)
-      } else if(this.voice !== 'alice' && support.languages.other.indexOf(language) === -1) {
+      } else if (this.voice === 'polly' && support.languages.polly.indexOf(language) === -1) {
+        throw new Error(`Unsupported language provided. Polly supports one of: "${support.languages.polly.join(', ')}"`)
+      } else if(this.voice !== 'alice' && this.voice !== 'polly' && support.languages.other.indexOf(language) === -1) {
         throw new Error(`Unsupported language provided. You need to choose one of "${support.languages.other.join(', ')}"`)
       }
     }
@@ -101,7 +103,8 @@ const support = {
   voices: [
     'alice',
     'man',
-    'woman'
+    'woman',
+    'polly'
   ],
   languages: {
     alice: [
@@ -131,6 +134,71 @@ const support = {
       'zh-CN',
       'zh-HK',
       'zh-TW'
+    ],
+    polly: [
+      'Polly.Mads',
+      'Polly.Naja',
+      'Polly.Lotte',
+      'Polly.Ruben',
+      'Polly.Nicole',
+      'Polly.Russell',
+      'Polly.Amy',
+      'Polly.Brian',
+      'Polly.Emma',
+      'Polly.Amy-Neural',
+      'Polly.Emma-Neural',
+      'Polly.Brian-Neural',
+      'Polly.Raveena',
+      'Polly.Ivy',
+      'Polly.Joanna',
+      'Polly.Joey',
+      'Polly.Justin',
+      'Polly.Kendra',
+      'Polly.Kimberly',
+      'Polly.Matthew',
+      'Polly.Salli',
+      'Polly.Ivy-Neural',
+      'Polly.Joanna-Neural*',
+      'Polly.Kendra-Neural',
+      'Polly.Kimberly-Neural',
+      'Polly.Salli-Neural',
+      'Polly.Joey-Neural',
+      'Polly.Justin-Neural',
+      'Polly.Matthew-Neural*',
+      'Polly.Geraint',
+      'Polly.Celine',
+      'Polly.Mathieu',
+      'Polly.Chantal',
+      'Polly.Hans',
+      'Polly.Marlene',
+      'Polly.Vicki',
+      'Polly.Dora',
+      'Polly.Karl',
+      'Polly.Carla',
+      'Polly.Giorgio',
+      'Polly.Mizuki',
+      'Polly.Takumi',
+      'Polly.Liv',
+      'Polly.Jacek',
+      'Polly.Jan',
+      'Polly.Ewa',
+      'Polly.Maja',
+      'Polly.Ricardo',
+      'Polly.Vitoria',
+      'Polly.Camila-Neural',
+      'Polly.Cristiano',
+      'Polly.Ines',
+      'Polly.Carmen',
+      'Polly.Maxim',
+      'Polly.Tatyana',
+      'Polly.Conchita',
+      'Polly.Enrique',
+      'Polly.Miguel',
+      'Polly.Penelope',
+      'Polly.Lupe-Neural',
+      'Polly.Astrid',
+      'Polly.Filiz',
+      'Polly.Gwyneth'
     ],
     other: [
       'en', 
