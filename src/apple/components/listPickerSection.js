@@ -11,7 +11,7 @@ import ListPickerItem from "./listPickerItem"
  * @property {Number} order - An integer containing the ordinal position for the section
  * @property {string} title - Required title
  **/
-export default class ListPickerSection {
+class ListPickerSection {
 
  /**
   * @param {object} opts - Collection of options
@@ -95,3 +95,5 @@ export default class ListPickerSection {
     }
   }
 }
+
+export default ListPickerSection

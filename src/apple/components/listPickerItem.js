@@ -11,7 +11,7 @@
  * @property {string} title - Required title
  * @property {string} subtitle - Optional subtitle
  **/
-export default class ListPickerItem {
+class ListPickerItem {
   /**
    * @param {object} opts - Collection of options
    * @param {string} opts.identifier - Optional Unique identifier
@@ -79,3 +79,5 @@ export default class ListPickerItem {
     }
   }
 }
+
+export default ListPickerItem

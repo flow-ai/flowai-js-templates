@@ -8,7 +8,7 @@
  * @property {float} duration - An integer representing the duration of the time slot, in seconds
  * @property {string} startTime - A UTC date string, represented by a valid date in ISO-8601 format and specified as absolute GMT +0000 date; for example, 2017-05-26T08:27:55+00:00, 2017-05-26T08:27:55+0000, or 2017-05-26T08:27:55Z. The timezoneOffset, from the EventItem dictionary, determines whether the startTime is in a specific time zone or in the customer's current time zone
  **/
-export default class TimeItem {
+class TimeItem {
   /**
    * @param {object} opts - Collection of options
    * @param {float} opts.duration - Required duration of the time slot, in seconds
@@ -68,3 +68,5 @@ export default class TimeItem {
     }
   }
 }
+
+export default TimeItem

@@ -225,17 +225,6 @@ For a complete overview of all reply actions see the [Flow.ai documentation](htt
 </dd>
 </dl>
 
-## Functions
-
-<dl>
-<dt><a href="#addTimeslot">addTimeslot(item)</a> ⇒ <code>EventItem</code></dt>
-<dd><p>Add a TimeItem to the list of timeslots</p>
-</dd>
-<dt><a href="#addItem">addItem(item)</a> ⇒ <code>ListPickerSection</code></dt>
-<dd><p>Add a list item to the section</p>
-</dd>
-</dl>
-
 <a name="Phone"></a>
 
 ## Phone
@@ -408,184 +397,74 @@ Apple Business API specific reply actions
 
 * [Apple](#Apple)
 
-    * _static_
-        * _Components_
-            * [.exports](#Apple.module.exports)
+    * _Components_
+        * [~EventItem](#Apple.EventItem)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+            * [new EventItem(opts)](#new_Apple.EventItem_new)
 
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
+            * [.addTimeslot(item)](#Apple.EventItem+addTimeslot)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+        * [~ImageAsset](#Apple.ImageAsset)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+            * [new ImageAsset(url, mimeType)](#new_Apple.ImageAsset_new)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+        * [~InteractiveMessage](#Apple.InteractiveMessage)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+            * [new InteractiveMessage(opts)](#new_Apple.InteractiveMessage_new)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+        * [~ListPickerItem](#Apple.ListPickerItem)
 
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
+            * [new ListPickerItem(opts)](#new_Apple.ListPickerItem_new)
 
-            * [.exports](#Apple.module.exports)
+        * [~ListPickerSection](#Apple.ListPickerSection)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+            * [new ListPickerSection(opts)](#new_Apple.ListPickerSection_new)
 
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
+            * [.addItem(item)](#Apple.ListPickerSection+addItem)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+        * [~LocationItem](#Apple.LocationItem)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+            * [new LocationItem(opts)](#new_Apple.LocationItem_new)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+        * [~TimeItem](#Apple.TimeItem)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+            * [new TimeItem(opts)](#new_Apple.TimeItem_new)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+        * [~VideoAsset](#Apple.VideoAsset)
 
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
+            * [new VideoAsset(url, mimeType)](#new_Apple.VideoAsset_new)
 
-            * [.exports](#Apple.module.exports)
+    * _Templates_
+        * [~AuthRequest](#Apple.AuthRequest)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+            * [new AuthRequest(opts)](#new_Apple.AuthRequest_new)
 
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
+            * [.addScope(scope)](#Apple.AuthRequest+addScope)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+        * [~CustomInteractiveData](#Apple.CustomInteractiveData)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+            * [new CustomInteractiveData(opts)](#new_Apple.CustomInteractiveData_new)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+        * [~ListPicker](#Apple.ListPicker)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+            * [new ListPicker(opts)](#new_Apple.ListPicker_new)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+            * [.addSection(section)](#Apple.ListPicker+addSection)
 
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
+        * [~RichLink](#Apple.RichLink)
 
-            * [.exports](#Apple.module.exports)
+            * [new RichLink(opts)](#new_Apple.RichLink_new)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+            * [.addAsset(asset)](#Apple.RichLink+addAsset)
 
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
+        * [~TimePicker](#Apple.TimePicker)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+            * [new TimePicker(opts)](#new_Apple.TimePicker_new)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
+<a name="Apple.EventItem"></a>
 
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-            * [.exports](#Apple.module.exports)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-            * [.exports](#Apple.module.exports)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-            * [.exports](#Apple.module.exports)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-            * [.exports](#Apple.module.exports)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-                * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-    * _inner_
-        * _Templates_
-            * [~AuthRequest](#Apple.AuthRequest)
-
-                * [new AuthRequest(opts)](#new_Apple.AuthRequest_new)
-
-                * [.addScope(scope)](#Apple.AuthRequest+addScope)
-
-            * [~CustomInteractiveData](#Apple.CustomInteractiveData)
-
-                * [new CustomInteractiveData(opts)](#new_Apple.CustomInteractiveData_new)
-
-            * [~ListPicker](#Apple.ListPicker)
-
-                * [new ListPicker(opts)](#new_Apple.ListPicker_new)
-
-                * [.addSection(section)](#Apple.ListPicker+addSection)
-
-            * [~RichLink](#Apple.RichLink)
-
-                * [new RichLink(opts)](#new_Apple.RichLink_new)
-
-                * [.addAsset(asset)](#Apple.RichLink+addAsset)
-
-            * [~TimePicker](#Apple.TimePicker)
-
-                * [new TimePicker(opts)](#new_Apple.TimePicker_new)
-
-
-<a name="Apple.module.exports"></a>
-
-### *Apple*.exports
+### *Apple*~EventItem
 **Category**: Components  
 **Properties**
 
@@ -601,28 +480,16 @@ Apple Business API specific reply actions
 Component that represents an event inside a TimePicker
 
 
-* [.exports](#Apple.module.exports)
+* [~EventItem](#Apple.EventItem)
 
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
+    * [new EventItem(opts)](#new_Apple.EventItem_new)
 
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
+    * [.addTimeslot(item)](#Apple.EventItem+addTimeslot)
 
 
-<a name="new_Apple.module.exports_new"></a>
+<a name="new_Apple.EventItem_new"></a>
 
-#### new module.exports(opts)
+#### new EventItem(opts)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -633,92 +500,19 @@ Component that represents an event inside a TimePicker
 | opts.timezoneOffset | <code>integer</code> | Optional integer representing the number of minutes from GMT |
 | opts.title | <code>string</code> | Required title |
 
-<a name="new_Apple.module.exports_new"></a>
+<a name="Apple.EventItem+addTimeslot"></a>
 
-#### new module.exports(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the image |
-| mimeType | <code>string</code> | Required. The format/type of the image |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
+#### *eventItem*.addTimeslot(item)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-| opts.secondarySubtitle | <code>string</code> | A right-aligned title |
-| opts.tertiarySubtitle | <code>string</code> | A right-aligned subtitle |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.imageTitle | <code>string</code> | The image's title |
-| opts.imageSubtitle | <code>string</code> | The image's subtitle |
-| opts.style | <code>string</code> | A style that controls the size of the view |
+| item | <code>TimeItem</code> | item |
 
-<a name="new_Apple.module.exports_new"></a>
+Add a TimeItem to the list of timeslots
 
-#### new module.exports(opts)
+<a name="Apple.ImageAsset"></a>
 
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.order | <code>Number</code> | Optional integer representing the ordinal position for the item |
-| opts.style | <code>string</code> | Optional item style. Defaults to default |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.items | <code>array</code> | An array of ListPickerItem objects |
-| opts.multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections within the section. Defaults to false |
-| opts.order | <code>Number</code> | An integer containing the ordinal position for the section |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.latitude | <code>float</code> | Latitude of the location |
-| opts.longitude | <code>float</code> | Longitude of the location |
-| opts.radius | <code>float</code> | A double representing the location radius in meters |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.duration | <code>float</code> | Required duration of the time slot, in seconds |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.startTime | <code>string</code> | Required UTC date string |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the video |
-| mimeType | <code>string</code> | Required. The format/type of the video |
-
-<a name="Apple.module.exports"></a>
-
-### *Apple*.exports
+### *Apple*~ImageAsset
 **Category**: Components  
 **Properties**
 
@@ -729,125 +523,18 @@ Component that represents an event inside a TimePicker
 
 Component that represents a image asset
 
+<a name="new_Apple.ImageAsset_new"></a>
 
-* [.exports](#Apple.module.exports)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional identifier |
-| opts.image | <code>string</code> | Optional URL to an image. |
-| opts.timeslots | <code>Array.&lt;TimeItem&gt;</code> | Optional array of TimeItem objects |
-| opts.timezoneOffset | <code>integer</code> | Optional integer representing the number of minutes from GMT |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(url, mimeType)
+#### new ImageAsset(url, mimeType)
 
 | Param | Type | Description |
 | --- | --- | --- |
 | url | <code>string</code> | Required. URL to the image |
 | mimeType | <code>string</code> | Required. The format/type of the image |
 
-<a name="new_Apple.module.exports_new"></a>
+<a name="Apple.InteractiveMessage"></a>
 
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-| opts.secondarySubtitle | <code>string</code> | A right-aligned title |
-| opts.tertiarySubtitle | <code>string</code> | A right-aligned subtitle |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.imageTitle | <code>string</code> | The image's title |
-| opts.imageSubtitle | <code>string</code> | The image's subtitle |
-| opts.style | <code>string</code> | A style that controls the size of the view |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.order | <code>Number</code> | Optional integer representing the ordinal position for the item |
-| opts.style | <code>string</code> | Optional item style. Defaults to default |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.items | <code>array</code> | An array of ListPickerItem objects |
-| opts.multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections within the section. Defaults to false |
-| opts.order | <code>Number</code> | An integer containing the ordinal position for the section |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.latitude | <code>float</code> | Latitude of the location |
-| opts.longitude | <code>float</code> | Longitude of the location |
-| opts.radius | <code>float</code> | A double representing the location radius in meters |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.duration | <code>float</code> | Required duration of the time slot, in seconds |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.startTime | <code>string</code> | Required UTC date string |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the video |
-| mimeType | <code>string</code> | Required. The format/type of the video |
-
-<a name="Apple.module.exports"></a>
-
-### *Apple*.exports
+### *Apple*~InteractiveMessage
 **Category**: Components  
 **Properties**
 
@@ -864,51 +551,9 @@ Component that represents a image asset
 
 Message that renders in a bubble either shown as the received message that allows a customer to open a List or time picker. Or as a reply message that is shown after a customer makes a selection,
 
+<a name="new_Apple.InteractiveMessage_new"></a>
 
-* [.exports](#Apple.module.exports)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional identifier |
-| opts.image | <code>string</code> | Optional URL to an image. |
-| opts.timeslots | <code>Array.&lt;TimeItem&gt;</code> | Optional array of TimeItem objects |
-| opts.timezoneOffset | <code>integer</code> | Optional integer representing the number of minutes from GMT |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the image |
-| mimeType | <code>string</code> | Required. The format/type of the image |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
+#### new InteractiveMessage(opts)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -922,67 +567,9 @@ Message that renders in a bubble either shown as the received message that allow
 | opts.imageSubtitle | <code>string</code> | The image's subtitle |
 | opts.style | <code>string</code> | A style that controls the size of the view |
 
-<a name="new_Apple.module.exports_new"></a>
+<a name="Apple.ListPickerItem"></a>
 
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.order | <code>Number</code> | Optional integer representing the ordinal position for the item |
-| opts.style | <code>string</code> | Optional item style. Defaults to default |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.items | <code>array</code> | An array of ListPickerItem objects |
-| opts.multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections within the section. Defaults to false |
-| opts.order | <code>Number</code> | An integer containing the ordinal position for the section |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.latitude | <code>float</code> | Latitude of the location |
-| opts.longitude | <code>float</code> | Longitude of the location |
-| opts.radius | <code>float</code> | A double representing the location radius in meters |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.duration | <code>float</code> | Required duration of the time slot, in seconds |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.startTime | <code>string</code> | Required UTC date string |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the video |
-| mimeType | <code>string</code> | Required. The format/type of the video |
-
-<a name="Apple.module.exports"></a>
-
-### *Apple*.exports
+### *Apple*~ListPickerItem
 **Category**: Components  
 **Properties**
 
@@ -997,67 +584,9 @@ Message that renders in a bubble either shown as the received message that allow
 
 Component that represents an item inside a ListPickerSection
 
+<a name="new_Apple.ListPickerItem_new"></a>
 
-* [.exports](#Apple.module.exports)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional identifier |
-| opts.image | <code>string</code> | Optional URL to an image. |
-| opts.timeslots | <code>Array.&lt;TimeItem&gt;</code> | Optional array of TimeItem objects |
-| opts.timezoneOffset | <code>integer</code> | Optional integer representing the number of minutes from GMT |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the image |
-| mimeType | <code>string</code> | Required. The format/type of the image |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-| opts.secondarySubtitle | <code>string</code> | A right-aligned title |
-| opts.tertiarySubtitle | <code>string</code> | A right-aligned subtitle |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.imageTitle | <code>string</code> | The image's title |
-| opts.imageSubtitle | <code>string</code> | The image's subtitle |
-| opts.style | <code>string</code> | A style that controls the size of the view |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
+#### new ListPickerItem(opts)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1069,53 +598,9 @@ Component that represents an item inside a ListPickerSection
 | opts.title | <code>string</code> | Required title |
 | opts.subtitle | <code>string</code> | Optional subtitle |
 
-<a name="new_Apple.module.exports_new"></a>
+<a name="Apple.ListPickerSection"></a>
 
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.items | <code>array</code> | An array of ListPickerItem objects |
-| opts.multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections within the section. Defaults to false |
-| opts.order | <code>Number</code> | An integer containing the ordinal position for the section |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.latitude | <code>float</code> | Latitude of the location |
-| opts.longitude | <code>float</code> | Longitude of the location |
-| opts.radius | <code>float</code> | A double representing the location radius in meters |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.duration | <code>float</code> | Required duration of the time slot, in seconds |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.startTime | <code>string</code> | Required UTC date string |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the video |
-| mimeType | <code>string</code> | Required. The format/type of the video |
-
-<a name="Apple.module.exports"></a>
-
-### *Apple*.exports
+### *Apple*~ListPickerSection
 **Category**: Components  
 **Properties**
 
@@ -1129,80 +614,16 @@ Component that represents an item inside a ListPickerSection
 Component that represents a section inside a ListPicker
 
 
-* [.exports](#Apple.module.exports)
+* [~ListPickerSection](#Apple.ListPickerSection)
 
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
+    * [new ListPickerSection(opts)](#new_Apple.ListPickerSection_new)
 
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
+    * [.addItem(item)](#Apple.ListPickerSection+addItem)
 
 
-<a name="new_Apple.module.exports_new"></a>
+<a name="new_Apple.ListPickerSection_new"></a>
 
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional identifier |
-| opts.image | <code>string</code> | Optional URL to an image. |
-| opts.timeslots | <code>Array.&lt;TimeItem&gt;</code> | Optional array of TimeItem objects |
-| opts.timezoneOffset | <code>integer</code> | Optional integer representing the number of minutes from GMT |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the image |
-| mimeType | <code>string</code> | Required. The format/type of the image |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-| opts.secondarySubtitle | <code>string</code> | A right-aligned title |
-| opts.tertiarySubtitle | <code>string</code> | A right-aligned subtitle |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.imageTitle | <code>string</code> | The image's title |
-| opts.imageSubtitle | <code>string</code> | The image's subtitle |
-| opts.style | <code>string</code> | A style that controls the size of the view |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.order | <code>Number</code> | Optional integer representing the ordinal position for the item |
-| opts.style | <code>string</code> | Optional item style. Defaults to default |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
+#### new ListPickerSection(opts)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1212,41 +633,19 @@ Component that represents a section inside a ListPicker
 | opts.order | <code>Number</code> | An integer containing the ordinal position for the section |
 | opts.title | <code>string</code> | Required title |
 
-<a name="new_Apple.module.exports_new"></a>
+<a name="Apple.ListPickerSection+addItem"></a>
 
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.latitude | <code>float</code> | Latitude of the location |
-| opts.longitude | <code>float</code> | Longitude of the location |
-| opts.radius | <code>float</code> | A double representing the location radius in meters |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
+#### *listPickerSection*.addItem(item)
 
 | Param | Type | Description |
 | --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.duration | <code>float</code> | Required duration of the time slot, in seconds |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.startTime | <code>string</code> | Required UTC date string |
+| item | <code>ListPickerItem</code> | item |
 
-<a name="new_Apple.module.exports_new"></a>
+Add a list item to the section
 
-#### new module.exports(url, mimeType)
+<a name="Apple.LocationItem"></a>
 
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the video |
-| mimeType | <code>string</code> | Required. The format/type of the video |
-
-<a name="Apple.module.exports"></a>
-
-### *Apple*.exports
+### *Apple*~LocationItem
 **Category**: Components  
 **Properties**
 
@@ -1259,93 +658,9 @@ Component that represents a section inside a ListPicker
 
 Component that represents an item inside a LocationSection
 
+<a name="new_Apple.LocationItem_new"></a>
 
-* [.exports](#Apple.module.exports)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional identifier |
-| opts.image | <code>string</code> | Optional URL to an image. |
-| opts.timeslots | <code>Array.&lt;TimeItem&gt;</code> | Optional array of TimeItem objects |
-| opts.timezoneOffset | <code>integer</code> | Optional integer representing the number of minutes from GMT |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the image |
-| mimeType | <code>string</code> | Required. The format/type of the image |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-| opts.secondarySubtitle | <code>string</code> | A right-aligned title |
-| opts.tertiarySubtitle | <code>string</code> | A right-aligned subtitle |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.imageTitle | <code>string</code> | The image's title |
-| opts.imageSubtitle | <code>string</code> | The image's subtitle |
-| opts.style | <code>string</code> | A style that controls the size of the view |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.order | <code>Number</code> | Optional integer representing the ordinal position for the item |
-| opts.style | <code>string</code> | Optional item style. Defaults to default |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.items | <code>array</code> | An array of ListPickerItem objects |
-| opts.multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections within the section. Defaults to false |
-| opts.order | <code>Number</code> | An integer containing the ordinal position for the section |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
+#### new LocationItem(opts)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1355,29 +670,9 @@ Component that represents an item inside a LocationSection
 | opts.radius | <code>float</code> | A double representing the location radius in meters |
 | opts.title | <code>string</code> | Required title |
 
-<a name="new_Apple.module.exports_new"></a>
+<a name="Apple.TimeItem"></a>
 
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.duration | <code>float</code> | Required duration of the time slot, in seconds |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.startTime | <code>string</code> | Required UTC date string |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the video |
-| mimeType | <code>string</code> | Required. The format/type of the video |
-
-<a name="Apple.module.exports"></a>
-
-### *Apple*.exports
+### *Apple*~TimeItem
 **Category**: Components  
 **Properties**
 
@@ -1389,105 +684,9 @@ Component that represents an item inside a LocationSection
 
 Component that represents an item inside a TimeSection
 
+<a name="new_Apple.TimeItem_new"></a>
 
-* [.exports](#Apple.module.exports)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional identifier |
-| opts.image | <code>string</code> | Optional URL to an image. |
-| opts.timeslots | <code>Array.&lt;TimeItem&gt;</code> | Optional array of TimeItem objects |
-| opts.timezoneOffset | <code>integer</code> | Optional integer representing the number of minutes from GMT |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the image |
-| mimeType | <code>string</code> | Required. The format/type of the image |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-| opts.secondarySubtitle | <code>string</code> | A right-aligned title |
-| opts.tertiarySubtitle | <code>string</code> | A right-aligned subtitle |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.imageTitle | <code>string</code> | The image's title |
-| opts.imageSubtitle | <code>string</code> | The image's subtitle |
-| opts.style | <code>string</code> | A style that controls the size of the view |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.order | <code>Number</code> | Optional integer representing the ordinal position for the item |
-| opts.style | <code>string</code> | Optional item style. Defaults to default |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.items | <code>array</code> | An array of ListPickerItem objects |
-| opts.multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections within the section. Defaults to false |
-| opts.order | <code>Number</code> | An integer containing the ordinal position for the section |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.latitude | <code>float</code> | Latitude of the location |
-| opts.longitude | <code>float</code> | Longitude of the location |
-| opts.radius | <code>float</code> | A double representing the location radius in meters |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
+#### new TimeItem(opts)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1496,18 +695,9 @@ Component that represents an item inside a TimeSection
 | opts.identifier | <code>string</code> | Optional Unique identifier |
 | opts.startTime | <code>string</code> | Required UTC date string |
 
-<a name="new_Apple.module.exports_new"></a>
+<a name="Apple.VideoAsset"></a>
 
-#### new module.exports(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the video |
-| mimeType | <code>string</code> | Required. The format/type of the video |
-
-<a name="Apple.module.exports"></a>
-
-### *Apple*.exports
+### *Apple*~VideoAsset
 **Category**: Components  
 **Properties**
 
@@ -1518,116 +708,9 @@ Component that represents an item inside a TimeSection
 
 Component that represents a video asset
 
+<a name="new_Apple.VideoAsset_new"></a>
 
-* [.exports](#Apple.module.exports)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(opts)](#new_Apple.module.exports_new)
-
-    * [new module.exports(url, mimeType)](#new_Apple.module.exports_new)
-
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional identifier |
-| opts.image | <code>string</code> | Optional URL to an image. |
-| opts.timeslots | <code>Array.&lt;TimeItem&gt;</code> | Optional array of TimeItem objects |
-| opts.timezoneOffset | <code>integer</code> | Optional integer representing the number of minutes from GMT |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the image |
-| mimeType | <code>string</code> | Required. The format/type of the image |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-| opts.secondarySubtitle | <code>string</code> | A right-aligned title |
-| opts.tertiarySubtitle | <code>string</code> | A right-aligned subtitle |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.imageTitle | <code>string</code> | The image's title |
-| opts.imageSubtitle | <code>string</code> | The image's subtitle |
-| opts.style | <code>string</code> | A style that controls the size of the view |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.order | <code>Number</code> | Optional integer representing the ordinal position for the item |
-| opts.style | <code>string</code> | Optional item style. Defaults to default |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.items | <code>array</code> | An array of ListPickerItem objects |
-| opts.multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections within the section. Defaults to false |
-| opts.order | <code>Number</code> | An integer containing the ordinal position for the section |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.latitude | <code>float</code> | Latitude of the location |
-| opts.longitude | <code>float</code> | Longitude of the location |
-| opts.radius | <code>float</code> | A double representing the location radius in meters |
-| opts.title | <code>string</code> | Required title |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.duration | <code>float</code> | Required duration of the time slot, in seconds |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.startTime | <code>string</code> | Required UTC date string |
-
-<a name="new_Apple.module.exports_new"></a>
-
-#### new module.exports(url, mimeType)
+#### new VideoAsset(url, mimeType)
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1961,26 +1044,6 @@ const timePicker = new Apple.TimePicker({
   })
 })
 ```
-<a name="addTimeslot"></a>
-
-## addTimeslot(item)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>TimeItem</code> | item |
-
-Add a TimeItem to the list of timeslots
-
-<a name="addItem"></a>
-
-## addItem(item)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>ListPickerItem</code> | item |
-
-Add a list item to the section
-
 <a name="Action"></a>
 
 ## Action

@@ -15,7 +15,7 @@ import TimeItem from "./timeItem"
  * @property {integer} timezoneOffset - An integer representing the number of minutes from GMT, specifying the timezone of the event’s location. If not set, times are shown according to the customer’s current time zone. If set, the times are shown according to the event’s time zone, regardless of the customer’s location.
  * @property {string} title - Required title
  **/
-export default class EventItem {
+class EventItem {
   /**
    * @param {object} opts - Collection of options
    * @param {string} opts.identifier - Optional identifier
@@ -116,3 +116,5 @@ export default class EventItem {
     }
   }
 }
+
+export default EventItem

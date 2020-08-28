@@ -110,4 +110,4 @@ class TimePicker extends Template {
   }
 }
 
-export default  TimePicker
+export default TimePicker

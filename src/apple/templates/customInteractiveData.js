@@ -129,4 +129,4 @@ class CustomInteractiveData extends Template {
   }
 }
 
-export default  CustomInteractiveData
+export default CustomInteractiveData

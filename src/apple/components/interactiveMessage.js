@@ -13,7 +13,7 @@
  * @property {string} imageSubtitle - The attached image's subtitle. Limited to 512 characters. Only custom interactive messages support this.
  * @property {string} style - A style that controls the size of the view rendered by Live Layout can be icon, small, large. The default is icon. 
  **/
-export default class InteractiveMessage {
+class InteractiveMessage {
   /**
    * @param {object} opts - Collection of options
    * @param {string} opts.title - Required title
@@ -79,3 +79,5 @@ export default class InteractiveMessage {
     }
   }
 }
+
+export default InteractiveMessage

@@ -9,7 +9,7 @@
  * @property {float} radius - A double representing the location radius, in meters. Business Chat ignores this field when latitude and longitude are missing or empty.
  * @property {string} title - Required title
  **/
-export default class LocationItem {
+class LocationItem {
   /**
    * @param {object} opts - Collection of options
    * @param {float} opts.latitude - Latitude of the location
@@ -85,3 +85,5 @@ export default class LocationItem {
     }
   }
 }
+
+export default LocationItem

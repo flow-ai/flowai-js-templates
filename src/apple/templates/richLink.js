@@ -102,4 +102,4 @@ class RichLink extends Template {
   }
 }
 
-export default  RichLink
+export default RichLink

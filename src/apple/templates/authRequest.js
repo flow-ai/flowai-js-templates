@@ -148,4 +148,4 @@ class AuthRequest extends Template {
   }
 }
 
-export default  AuthRequest
+export default AuthRequest

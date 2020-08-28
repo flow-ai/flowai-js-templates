@@ -135,4 +135,4 @@ class ListPicker extends Template {
   }
 }
 
-export default  ListPicker
+export default ListPicker
