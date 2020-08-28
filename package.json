@@ -4,15 +4,15 @@
   "description": "Message response templates for Flow.ai",
   "main": "./lib/index.js",
   "scripts": {
-    "preexample": "npm run build",
+    "preexample": "yarn build",
     "example": "DEBUG=flowai:* node ./example/node/index.js",
-    "postbuild": "npm run docs",
+    "postbuild": "yarn docs",
     "build:dist": "BABEL_ENV=production NODE_ENV=production webpack-cli --display-error-details --config ./webpack.config.js",
     "build:lib": "BABEL_ENV=production NODE_ENV=production babel ./src --out-dir ./lib",
-    "build": "npm run build:dist && npm run build:lib",
-    "test": "npm run build:lib && mocha --recursive --reporter spec --require @babel/register --watch",
+    "build": "yarn build:dist && yarn build:lib",
+    "test": "yarn build:lib && mocha --recursive --reporter spec --require @babel/register --watch",
     "eslint": "eslint ./src --fix",
-    "prepublish": "npm run build",
+    "prepublish": "yarn build",
     "docs": "jsdoc2md \"src/**/*.js\" -c .jsdoc --plugin dmd-clear --example-lang js --template ./docs/README.hbs > README.md && node ./docs/json.js"
   },
   "repository": {
