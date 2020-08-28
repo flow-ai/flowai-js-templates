@@ -2,7 +2,7 @@
  * Component that represents an item inside a ListPickerSection
  * 
  * @memberof Apple
- * @category Components
+ * @category ListPicker
  * 
  * @property {string} identifier - Field identifying the item
  * @property {string} image - Optional URL to a 30x30 image

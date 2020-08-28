@@ -4,7 +4,7 @@ import ListPickerItem from "./listPickerItem"
  * Component that represents a section inside a ListPicker
  * 
  * @memberof Apple
- * @category Components
+ * @category ListPicker
  * 
  * @property {array} items - A list of ListPickerItem objects 
  * @property {boolean} multipleSelection - Indicates whether the customer can make multiple selections within the section. Defaults to false

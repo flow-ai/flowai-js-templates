@@ -2,7 +2,6 @@
  * Message that renders in a bubble either shown as the received message that allows a customer to open a List or time picker. Or as a reply message that is shown after a customer makes a selection,
  * 
  * @memberof Apple
- * @category Components
  * 
  * @property {string} title - The main title shown in the header of the message bubble
  * @property {string} subtitle - The subtitle that appears under the main title in the received message bubble

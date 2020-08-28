@@ -6,7 +6,7 @@ import EventItem from '../components/eventItem'
  * Allow the customer to schedule an appointment
  * 
  * @memberof Apple
- * @category Templates
+ * @category TimePicker
  * 
  * @property {EventItem} event - Required. Represents the event to pick a time for
  * @property {InteractiveMessage} receivedMessage - Required. Message bubble that is shown to the customer to open the TimePicker window

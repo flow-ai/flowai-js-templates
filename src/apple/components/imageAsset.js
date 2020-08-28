@@ -2,7 +2,7 @@
  * Component that represents a image asset
  * 
  * @memberof Apple
- * @category Components
+ * @category RichLink
  * 
  * @property {string} url - Required. URL to the image
  * @property {string} mimeType - Required. A string representing the format/type of the image; for example, image/jpeg, image/png

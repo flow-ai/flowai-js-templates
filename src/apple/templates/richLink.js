@@ -6,7 +6,7 @@ import VideoAsset from '../components/videoAsset'
  * Enhance the customer's experience by allowing them to preview inline content.
  * 
  * @memberof Apple
- * @category Templates
+ * @category RichLink
  * 
  * @property {string} title - Required title
  * @property {string} url - Required. URL to the linked web page

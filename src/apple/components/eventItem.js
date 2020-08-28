@@ -6,7 +6,7 @@ import TimeItem from "./timeItem"
  * Component that represents an event inside a TimePicker
  * 
  * @memberof Apple
- * @category Components
+ * @category TimePicker
  * 
  * @property {string} identifier - Field identifying the item
  * @property {string} image - Optional URL to an image. The image should be a @3x image sized at 375 x 208 points (that is, 1125 x 624 pixels).

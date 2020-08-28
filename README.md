@@ -397,21 +397,21 @@ Apple Business API specific reply actions
 
 * [Apple](#Apple)
 
-    * _Components_
-        * [~EventItem](#Apple.EventItem)
+    * [~InteractiveMessage](#Apple.InteractiveMessage)
 
-            * [new EventItem(opts)](#new_Apple.EventItem_new)
+        * [new InteractiveMessage(opts)](#new_Apple.InteractiveMessage_new)
 
-            * [.addTimeslot(item)](#Apple.EventItem+addTimeslot)
+    * [~AuthRequest](#Apple.AuthRequest)
 
-        * [~ImageAsset](#Apple.ImageAsset)
+        * [new AuthRequest(opts)](#new_Apple.AuthRequest_new)
 
-            * [new ImageAsset(url, mimeType)](#new_Apple.ImageAsset_new)
+        * [.addScope(scope)](#Apple.AuthRequest+addScope)
 
-        * [~InteractiveMessage](#Apple.InteractiveMessage)
+    * [~CustomInteractiveData](#Apple.CustomInteractiveData)
 
-            * [new InteractiveMessage(opts)](#new_Apple.InteractiveMessage_new)
+        * [new CustomInteractiveData(opts)](#new_Apple.CustomInteractiveData_new)
 
+    * _ListPicker_
         * [~ListPickerItem](#Apple.ListPickerItem)
 
             * [new ListPickerItem(opts)](#new_Apple.ListPickerItem_new)
@@ -422,6 +422,34 @@ Apple Business API specific reply actions
 
             * [.addItem(item)](#Apple.ListPickerSection+addItem)
 
+        * [~ListPicker](#Apple.ListPicker)
+
+            * [new ListPicker(opts)](#new_Apple.ListPicker_new)
+
+            * [.addSection(section)](#Apple.ListPicker+addSection)
+
+    * _RichLink_
+        * [~ImageAsset](#Apple.ImageAsset)
+
+            * [new ImageAsset(url, mimeType)](#new_Apple.ImageAsset_new)
+
+        * [~VideoAsset](#Apple.VideoAsset)
+
+            * [new VideoAsset(url, mimeType)](#new_Apple.VideoAsset_new)
+
+        * [~RichLink](#Apple.RichLink)
+
+            * [new RichLink(opts)](#new_Apple.RichLink_new)
+
+            * [.addAsset(asset)](#Apple.RichLink+addAsset)
+
+    * _TimePicker_
+        * [~EventItem](#Apple.EventItem)
+
+            * [new EventItem(opts)](#new_Apple.EventItem_new)
+
+            * [.addTimeslot(item)](#Apple.EventItem+addTimeslot)
+
         * [~LocationItem](#Apple.LocationItem)
 
             * [new LocationItem(opts)](#new_Apple.LocationItem_new)
@@ -430,112 +458,14 @@ Apple Business API specific reply actions
 
             * [new TimeItem(opts)](#new_Apple.TimeItem_new)
 
-        * [~VideoAsset](#Apple.VideoAsset)
-
-            * [new VideoAsset(url, mimeType)](#new_Apple.VideoAsset_new)
-
-    * _Templates_
-        * [~AuthRequest](#Apple.AuthRequest)
-
-            * [new AuthRequest(opts)](#new_Apple.AuthRequest_new)
-
-            * [.addScope(scope)](#Apple.AuthRequest+addScope)
-
-        * [~CustomInteractiveData](#Apple.CustomInteractiveData)
-
-            * [new CustomInteractiveData(opts)](#new_Apple.CustomInteractiveData_new)
-
-        * [~ListPicker](#Apple.ListPicker)
-
-            * [new ListPicker(opts)](#new_Apple.ListPicker_new)
-
-            * [.addSection(section)](#Apple.ListPicker+addSection)
-
-        * [~RichLink](#Apple.RichLink)
-
-            * [new RichLink(opts)](#new_Apple.RichLink_new)
-
-            * [.addAsset(asset)](#Apple.RichLink+addAsset)
-
         * [~TimePicker](#Apple.TimePicker)
 
             * [new TimePicker(opts)](#new_Apple.TimePicker_new)
 
 
-<a name="Apple.EventItem"></a>
-
-### *Apple*~EventItem
-**Category**: Components  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| identifier | <code>string</code> | Field identifying the item |
-| image | <code>string</code> | Optional URL to an image. The image should be a @3x image sized at 375 x 208 points (that is, 1125 x 624 pixels). |
-| location | <code>LocationItem</code> | Describes a location |
-| timeslots | <code>Array.&lt;TimeItem&gt;</code> | A list of TimeItem objects |
-| timezoneOffset | <code>integer</code> | An integer representing the number of minutes from GMT, specifying the timezone of the event’s location. If not set, times are shown according to the customer’s current time zone. If set, the times are shown according to the event’s time zone, regardless of the customer’s location. |
-| title | <code>string</code> | Required title |
-
-Component that represents an event inside a TimePicker
-
-
-* [~EventItem](#Apple.EventItem)
-
-    * [new EventItem(opts)](#new_Apple.EventItem_new)
-
-    * [.addTimeslot(item)](#Apple.EventItem+addTimeslot)
-
-
-<a name="new_Apple.EventItem_new"></a>
-
-#### new EventItem(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional identifier |
-| opts.image | <code>string</code> | Optional URL to an image. |
-| opts.timeslots | <code>Array.&lt;TimeItem&gt;</code> | Optional array of TimeItem objects |
-| opts.timezoneOffset | <code>integer</code> | Optional integer representing the number of minutes from GMT |
-| opts.title | <code>string</code> | Required title |
-
-<a name="Apple.EventItem+addTimeslot"></a>
-
-#### *eventItem*.addTimeslot(item)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>TimeItem</code> | item |
-
-Add a TimeItem to the list of timeslots
-
-<a name="Apple.ImageAsset"></a>
-
-### *Apple*~ImageAsset
-**Category**: Components  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the image |
-| mimeType | <code>string</code> | Required. A string representing the format/type of the image; for example, image/jpeg, image/png |
-
-Component that represents a image asset
-
-<a name="new_Apple.ImageAsset_new"></a>
-
-#### new ImageAsset(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the image |
-| mimeType | <code>string</code> | Required. The format/type of the image |
-
 <a name="Apple.InteractiveMessage"></a>
 
 ### *Apple*~InteractiveMessage
-**Category**: Components  
 **Properties**
 
 | Name | Type | Description |
@@ -567,160 +497,9 @@ Message that renders in a bubble either shown as the received message that allow
 | opts.imageSubtitle | <code>string</code> | The image's subtitle |
 | opts.style | <code>string</code> | A style that controls the size of the view |
 
-<a name="Apple.ListPickerItem"></a>
-
-### *Apple*~ListPickerItem
-**Category**: Components  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| identifier | <code>string</code> | Field identifying the item |
-| image | <code>string</code> | Optional URL to a 30x30 image |
-| order | <code>number</code> | Optional integer representing the ordinal position for the item |
-| style | <code>string</code> | Optional item style. Defaults to default |
-| title | <code>string</code> | Required title |
-| subtitle | <code>string</code> | Optional subtitle |
-
-Component that represents an item inside a ListPickerSection
-
-<a name="new_Apple.ListPickerItem_new"></a>
-
-#### new ListPickerItem(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.image | <code>string</code> | Optional URL to a 30x30 image |
-| opts.order | <code>Number</code> | Optional integer representing the ordinal position for the item |
-| opts.style | <code>string</code> | Optional item style. Defaults to default |
-| opts.title | <code>string</code> | Required title |
-| opts.subtitle | <code>string</code> | Optional subtitle |
-
-<a name="Apple.ListPickerSection"></a>
-
-### *Apple*~ListPickerSection
-**Category**: Components  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| items | <code>array</code> | A list of ListPickerItem objects |
-| multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections within the section. Defaults to false |
-| order | <code>Number</code> | An integer containing the ordinal position for the section |
-| title | <code>string</code> | Required title |
-
-Component that represents a section inside a ListPicker
-
-
-* [~ListPickerSection](#Apple.ListPickerSection)
-
-    * [new ListPickerSection(opts)](#new_Apple.ListPickerSection_new)
-
-    * [.addItem(item)](#Apple.ListPickerSection+addItem)
-
-
-<a name="new_Apple.ListPickerSection_new"></a>
-
-#### new ListPickerSection(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.items | <code>array</code> | An array of ListPickerItem objects |
-| opts.multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections within the section. Defaults to false |
-| opts.order | <code>Number</code> | An integer containing the ordinal position for the section |
-| opts.title | <code>string</code> | Required title |
-
-<a name="Apple.ListPickerSection+addItem"></a>
-
-#### *listPickerSection*.addItem(item)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| item | <code>ListPickerItem</code> | item |
-
-Add a list item to the section
-
-<a name="Apple.LocationItem"></a>
-
-### *Apple*~LocationItem
-**Category**: Components  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| latitude | <code>float</code> | A double representing the latitude of the location |
-| longitude | <code>float</code> | A double representing the longitude of the location |
-| radius | <code>float</code> | A double representing the location radius, in meters. Business Chat ignores this field when latitude and longitude are missing or empty. |
-| title | <code>string</code> | Required title |
-
-Component that represents an item inside a LocationSection
-
-<a name="new_Apple.LocationItem_new"></a>
-
-#### new LocationItem(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.latitude | <code>float</code> | Latitude of the location |
-| opts.longitude | <code>float</code> | Longitude of the location |
-| opts.radius | <code>float</code> | A double representing the location radius in meters |
-| opts.title | <code>string</code> | Required title |
-
-<a name="Apple.TimeItem"></a>
-
-### *Apple*~TimeItem
-**Category**: Components  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| identifier | <code>string</code> | Field identifying the item |
-| duration | <code>float</code> | An integer representing the duration of the time slot, in seconds |
-| startTime | <code>string</code> | A UTC date string, represented by a valid date in ISO-8601 format and specified as absolute GMT +0000 date; for example, 2017-05-26T08:27:55+00:00, 2017-05-26T08:27:55+0000, or 2017-05-26T08:27:55Z. The timezoneOffset, from the EventItem dictionary, determines whether the startTime is in a specific time zone or in the customer's current time zone |
-
-Component that represents an item inside a TimeSection
-
-<a name="new_Apple.TimeItem_new"></a>
-
-#### new TimeItem(opts)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts | <code>object</code> | Collection of options |
-| opts.duration | <code>float</code> | Required duration of the time slot, in seconds |
-| opts.identifier | <code>string</code> | Optional Unique identifier |
-| opts.startTime | <code>string</code> | Required UTC date string |
-
-<a name="Apple.VideoAsset"></a>
-
-### *Apple*~VideoAsset
-**Category**: Components  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the video |
-| mimeType | <code>string</code> | Required. A string representing the format/type of the video; for example, video/mp4, video/mpeg |
-
-Component that represents a video asset
-
-<a name="new_Apple.VideoAsset_new"></a>
-
-#### new VideoAsset(url, mimeType)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| url | <code>string</code> | Required. URL to the video |
-| mimeType | <code>string</code> | Required. The format/type of the video |
-
 <a name="Apple.AuthRequest"></a>
 
 ### *Apple*~AuthRequest
-**Category**: Templates  
 **Properties**
 
 | Name | Type | Description |
@@ -787,7 +566,6 @@ Add a scope to the list of scopes
 <a name="Apple.CustomInteractiveData"></a>
 
 ### *Apple*~CustomInteractiveData
-**Category**: Templates  
 **Properties**
 
 | Name | Type | Description |
@@ -836,10 +614,86 @@ const custom = new Apple.CustomInteractiveData({
   url: "?data=passed-to-app&data2=more-data-passed-to-app"
 })
 ```
+<a name="Apple.ListPickerItem"></a>
+
+### *Apple*~ListPickerItem
+**Category**: ListPicker  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| identifier | <code>string</code> | Field identifying the item |
+| image | <code>string</code> | Optional URL to a 30x30 image |
+| order | <code>number</code> | Optional integer representing the ordinal position for the item |
+| style | <code>string</code> | Optional item style. Defaults to default |
+| title | <code>string</code> | Required title |
+| subtitle | <code>string</code> | Optional subtitle |
+
+Component that represents an item inside a ListPickerSection
+
+<a name="new_Apple.ListPickerItem_new"></a>
+
+#### new ListPickerItem(opts)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Collection of options |
+| opts.identifier | <code>string</code> | Optional Unique identifier |
+| opts.image | <code>string</code> | Optional URL to a 30x30 image |
+| opts.order | <code>Number</code> | Optional integer representing the ordinal position for the item |
+| opts.style | <code>string</code> | Optional item style. Defaults to default |
+| opts.title | <code>string</code> | Required title |
+| opts.subtitle | <code>string</code> | Optional subtitle |
+
+<a name="Apple.ListPickerSection"></a>
+
+### *Apple*~ListPickerSection
+**Category**: ListPicker  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| items | <code>array</code> | A list of ListPickerItem objects |
+| multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections within the section. Defaults to false |
+| order | <code>Number</code> | An integer containing the ordinal position for the section |
+| title | <code>string</code> | Required title |
+
+Component that represents a section inside a ListPicker
+
+
+* [~ListPickerSection](#Apple.ListPickerSection)
+
+    * [new ListPickerSection(opts)](#new_Apple.ListPickerSection_new)
+
+    * [.addItem(item)](#Apple.ListPickerSection+addItem)
+
+
+<a name="new_Apple.ListPickerSection_new"></a>
+
+#### new ListPickerSection(opts)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Collection of options |
+| opts.items | <code>array</code> | An array of ListPickerItem objects |
+| opts.multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections within the section. Defaults to false |
+| opts.order | <code>Number</code> | An integer containing the ordinal position for the section |
+| opts.title | <code>string</code> | Required title |
+
+<a name="Apple.ListPickerSection+addItem"></a>
+
+#### *listPickerSection*.addItem(item)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>ListPickerItem</code> | item |
+
+Add a list item to the section
+
 <a name="Apple.ListPicker"></a>
 
 ### *Apple*~ListPicker
-**Category**: Templates  
+**Category**: ListPicker  
 **Properties**
 
 | Name | Type | Description |
@@ -921,10 +775,54 @@ const listPicker = new Apple.ListPicker({
 
 Add a section to the sections
 
+<a name="Apple.ImageAsset"></a>
+
+### *Apple*~ImageAsset
+**Category**: RichLink  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| url | <code>string</code> | Required. URL to the image |
+| mimeType | <code>string</code> | Required. A string representing the format/type of the image; for example, image/jpeg, image/png |
+
+Component that represents a image asset
+
+<a name="new_Apple.ImageAsset_new"></a>
+
+#### new ImageAsset(url, mimeType)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>string</code> | Required. URL to the image |
+| mimeType | <code>string</code> | Required. The format/type of the image |
+
+<a name="Apple.VideoAsset"></a>
+
+### *Apple*~VideoAsset
+**Category**: RichLink  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| url | <code>string</code> | Required. URL to the video |
+| mimeType | <code>string</code> | Required. A string representing the format/type of the video; for example, video/mp4, video/mpeg |
+
+Component that represents a video asset
+
+<a name="new_Apple.VideoAsset_new"></a>
+
+#### new VideoAsset(url, mimeType)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| url | <code>string</code> | Required. URL to the video |
+| mimeType | <code>string</code> | Required. The format/type of the video |
+
 <a name="Apple.RichLink"></a>
 
 ### *Apple*~RichLink
-**Category**: Templates  
+**Category**: RichLink  
 **Properties**
 
 | Name | Type | Description |
@@ -981,10 +879,110 @@ const richLink = new Apple.RichLink({
 
 Add an asset to the list of media assets
 
+<a name="Apple.EventItem"></a>
+
+### *Apple*~EventItem
+**Category**: TimePicker  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| identifier | <code>string</code> | Field identifying the item |
+| image | <code>string</code> | Optional URL to an image. The image should be a @3x image sized at 375 x 208 points (that is, 1125 x 624 pixels). |
+| location | <code>LocationItem</code> | Describes a location |
+| timeslots | <code>Array.&lt;TimeItem&gt;</code> | A list of TimeItem objects |
+| timezoneOffset | <code>integer</code> | An integer representing the number of minutes from GMT, specifying the timezone of the event’s location. If not set, times are shown according to the customer’s current time zone. If set, the times are shown according to the event’s time zone, regardless of the customer’s location. |
+| title | <code>string</code> | Required title |
+
+Component that represents an event inside a TimePicker
+
+
+* [~EventItem](#Apple.EventItem)
+
+    * [new EventItem(opts)](#new_Apple.EventItem_new)
+
+    * [.addTimeslot(item)](#Apple.EventItem+addTimeslot)
+
+
+<a name="new_Apple.EventItem_new"></a>
+
+#### new EventItem(opts)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Collection of options |
+| opts.identifier | <code>string</code> | Optional identifier |
+| opts.image | <code>string</code> | Optional URL to an image. |
+| opts.timeslots | <code>Array.&lt;TimeItem&gt;</code> | Optional array of TimeItem objects |
+| opts.timezoneOffset | <code>integer</code> | Optional integer representing the number of minutes from GMT |
+| opts.title | <code>string</code> | Required title |
+
+<a name="Apple.EventItem+addTimeslot"></a>
+
+#### *eventItem*.addTimeslot(item)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | <code>TimeItem</code> | item |
+
+Add a TimeItem to the list of timeslots
+
+<a name="Apple.LocationItem"></a>
+
+### *Apple*~LocationItem
+**Category**: TimePicker  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| latitude | <code>float</code> | A double representing the latitude of the location |
+| longitude | <code>float</code> | A double representing the longitude of the location |
+| radius | <code>float</code> | A double representing the location radius, in meters. Business Chat ignores this field when latitude and longitude are missing or empty. |
+| title | <code>string</code> | Required title |
+
+Component that represents an item inside a LocationSection
+
+<a name="new_Apple.LocationItem_new"></a>
+
+#### new LocationItem(opts)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Collection of options |
+| opts.latitude | <code>float</code> | Latitude of the location |
+| opts.longitude | <code>float</code> | Longitude of the location |
+| opts.radius | <code>float</code> | A double representing the location radius in meters |
+| opts.title | <code>string</code> | Required title |
+
+<a name="Apple.TimeItem"></a>
+
+### *Apple*~TimeItem
+**Category**: TimePicker  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| identifier | <code>string</code> | Field identifying the item |
+| duration | <code>float</code> | An integer representing the duration of the time slot, in seconds |
+| startTime | <code>string</code> | A UTC date string, represented by a valid date in ISO-8601 format and specified as absolute GMT +0000 date; for example, 2017-05-26T08:27:55+00:00, 2017-05-26T08:27:55+0000, or 2017-05-26T08:27:55Z. The timezoneOffset, from the EventItem dictionary, determines whether the startTime is in a specific time zone or in the customer's current time zone |
+
+Component that represents an item inside a TimeSection
+
+<a name="new_Apple.TimeItem_new"></a>
+
+#### new TimeItem(opts)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Collection of options |
+| opts.duration | <code>float</code> | Required duration of the time slot, in seconds |
+| opts.identifier | <code>string</code> | Optional Unique identifier |
+| opts.startTime | <code>string</code> | Required UTC date string |
+
 <a name="Apple.TimePicker"></a>
 
 ### *Apple*~TimePicker
-**Category**: Templates  
+**Category**: TimePicker  
 **Properties**
 
 | Name | Type | Description |

@@ -5,7 +5,6 @@ import InteractiveMessage from '../components/interactiveMessage'
  * Provide a unique user experience with custom interactive messages
  * 
  * @memberof Apple
- * @category Templates
  * 
  * @property {string} appIcon - Required. URL to an image representing the app icon of the iMessage extension
  * @property {string} appId - Required. The App Store identifier of the iMessage extension. 

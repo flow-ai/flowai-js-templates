@@ -2,7 +2,7 @@
  * Component that represents a video asset
  * 
  * @memberof Apple
- * @category Components
+ * @category RichLink
  * 
  * @property {string} url - Required. URL to the video
  * @property {string} mimeType - Required. A string representing the format/type of the video; for example, video/mp4, video/mpeg

@@ -6,7 +6,7 @@ import ListPickerSection from '../components/listPickerSection'
  * Allow the customer to choose from a list of items
  * 
  * @memberof Apple
- * @category Templates
+ * @category ListPicker
  * 
  * @property {array} sections - Required 1 or more ListPickerSection objects
  * @property {InteractiveMessage} receivedMessage - Required. Message bubble that is shown to the customer to open the ListPicker window

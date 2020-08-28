@@ -5,7 +5,6 @@ import InteractiveMessage from '../components/interactiveMessage'
  * Pass a customer's authentication data to a business by using the OAuth protocol
  * 
  * @memberof Apple
- * @category Templates
  * 
  * @property {string} clientSecret - Required. The secret provisioned by the authorization server
  * @property {string} responseEncryptionKey - Required. The Base64-encoded public key that encrypts the access token returned in the response

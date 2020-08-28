@@ -2,7 +2,7 @@
  * Component that represents an item inside a LocationSection
  * 
  * @memberof Apple
- * @category Components
+ * @category TimePicker
  * 
  * @property {float} latitude - A double representing the latitude of the location
  * @property {float} longitude - A double representing the longitude of the location

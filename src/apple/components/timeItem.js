@@ -2,7 +2,7 @@
  * Component that represents an item inside a TimeSection
  * 
  * @memberof Apple
- * @category Components
+ * @category TimePicker
  * 
  * @property {string} identifier - Field identifying the item
  * @property {float} duration - An integer representing the duration of the time slot, in seconds
