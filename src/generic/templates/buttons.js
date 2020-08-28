@@ -4,6 +4,9 @@ import Media from '../components/media'
 
 /**
  * Template with a short description and buttons to request input from the user.
+ * 
+ * @category Templates
+ * 
  * @property {string} title - Main title of the buttons
  * @property {Button[]} buttons - Optional set of buttons
  * @example

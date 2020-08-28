@@ -2,6 +2,9 @@ import Template from './template'
 
 /**
  * Template with a piece of note
+ * 
+ * @category Templates
+ * 
  * @property {string} note - Note to show
  * @example
  * const note = new Note('Red note')

@@ -2,6 +2,9 @@ import Template from './template'
 
 /**
  * Template with an One-Time Notification
+ * 
+ * @category Templates
+ * 
  * @property {string} title - title of the OTN
  * @property {string} tag - tag that will be assigned to actor when this OTN is called
  * @example

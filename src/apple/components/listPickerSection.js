@@ -1,16 +1,17 @@
-
-const ListPickerItem = require("./listPickerItem")
+import ListPickerItem from "./listPickerItem"
 
 /**
  * Component that represents a section inside a ListPicker
  * 
  * @memberof Apple
+ * @category Components
+ * 
  * @property {array} items - A list of ListPickerItem objects 
  * @property {boolean} multipleSelection - Indicates whether the customer can make multiple selections within the section. Defaults to false
  * @property {Number} order - An integer containing the ordinal position for the section
  * @property {string} title - Required title
  **/
-class ListPickerSection {
+export default class ListPickerSection {
 
  /**
   * @param {object} opts - Collection of options
@@ -94,5 +95,3 @@ class ListPickerSection {
     }
   }
 }
-
-export default  ListPickerSection

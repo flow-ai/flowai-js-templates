@@ -2,10 +2,12 @@
  * Component that represents a image asset
  * 
  * @memberof Apple
+ * @category Components
+ * 
  * @property {string} url - Required. URL to the image
  * @property {string} mimeType - Required. A string representing the format/type of the image; for example, image/jpeg, image/png
  **/
-class ImageAsset {
+export default class ImageAsset {
   /**
    * @param {string} url - Required. URL to the image
    * @param {string} mimeType - Required. The format/type of the image
@@ -46,5 +48,3 @@ class ImageAsset {
     }
   }
 }
-
-export default  ImageAsset

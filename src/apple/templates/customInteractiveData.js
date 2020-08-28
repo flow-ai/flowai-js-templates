@@ -1,11 +1,12 @@
 import Template from '../../generic/templates/template'
 import InteractiveMessage from '../components/interactiveMessage'
-import EventItem from '../components/eventItem'
 
 /**
  * Provide a unique user experience with custom interactive messages
  * 
  * @memberof Apple
+ * @category Templates
+ * 
  * @property {string} appIcon - Required. URL to an image representing the app icon of the iMessage extension
  * @property {string} appId - Required. The App Store identifier of the iMessage extension. 
  * @property {string} appName - Required. The name of the iMessage extension
@@ -112,7 +113,7 @@ class CustomInteractiveData extends Template {
     } = this
 
     return {
-      type: 'apple.customInteractiveData',
+      type: 'apple_custom_interactive_data',
       payload: {
         replyMessage,
         receivedMessage,

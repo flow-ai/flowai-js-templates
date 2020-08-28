@@ -2,6 +2,9 @@ import { parseParam, flattenParams } from './param'
 
 /**
  * Component used in Card, Buttons templates
+ * 
+ * @category Components
+ * 
  * @property {string} type - Type of button (url, phone, postback, share, login, webview, event)
  * @property {string} label - Label of the button
  * @property {string} value - Value of the button

@@ -2,6 +2,9 @@ import { parseParam, flattenParams } from './param'
 
 /**
  * Default action used in Card, List and Buttons templates
+ * 
+ * @category Components
+ * 
  * @property {string} type - Type of action (url, phone, postback, share, login, webview, event)
  * @property {string} value - Value of the action
  * @property {Param[]} params - Optional parameters associated with the action

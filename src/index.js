@@ -53,6 +53,7 @@ import RichLink from './apple/templates/richLink'
 import ListPicker from './apple/templates/listPicker'
 import TimePicker from './apple/templates/timePicker'
 import CustomInteractiveData from './apple/templates/customInteractiveData'
+import AuthRequest from './apple/templates/authRequest'
 
 /** 
  * @namespace 
@@ -71,7 +72,8 @@ const Apple = {
   LocationItem,
   EventItem,
   TimeItem,
-  CustomInteractiveData
+  CustomInteractiveData,
+  AuthRequest
 }
 
 export {

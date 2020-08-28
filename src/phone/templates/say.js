@@ -4,6 +4,7 @@ import Template from '../../generic/templates/template'
  * Send a message to a user
  * 
  * @memberof Phone
+ * @category Templates
  * 
  * @property {string} speech - Text to speech
  * @property {string} url - URL to an audio file

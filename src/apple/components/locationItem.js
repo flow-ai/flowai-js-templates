@@ -2,12 +2,14 @@
  * Component that represents an item inside a LocationSection
  * 
  * @memberof Apple
+ * @category Components
+ * 
  * @property {float} latitude - A double representing the latitude of the location
  * @property {float} longitude - A double representing the longitude of the location
  * @property {float} radius - A double representing the location radius, in meters. Business Chat ignores this field when latitude and longitude are missing or empty.
  * @property {string} title - Required title
  **/
-class LocationItem {
+export default class LocationItem {
   /**
    * @param {object} opts - Collection of options
    * @param {float} opts.latitude - Latitude of the location
@@ -83,5 +85,3 @@ class LocationItem {
     }
   }
 }
-
-export default  LocationItem

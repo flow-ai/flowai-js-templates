@@ -1,6 +1,8 @@
 /**
  * Data related to a Button or Quick Reply
  * 
+ * @category Components
+ * 
  * @property {string} label - Name of the parameter
  * @property {string} value - Value of the parametet
  * @example

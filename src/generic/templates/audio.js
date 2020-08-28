@@ -3,6 +3,9 @@ import Action from '../components/action'
 
 /**
  * Template with audio
+ * 
+ * @category Templates
+ * 
  * @property {string} title - Describes the audio
  * @property {string} url - URL to the audio file
  * @property {Action} action - Optional Action

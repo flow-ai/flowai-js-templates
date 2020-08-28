@@ -52,6 +52,7 @@ async payload=> {
 ```
 
 ##### Sending a single message with multiple responses
+
 ```js
 async payload=> {
 
@@ -71,6 +72,7 @@ async payload=> {
 ```
 
 ##### Sending back multiple messages
+
 ```js
 async payload=> {
 
@@ -89,6 +91,58 @@ async payload=> {
   ]
 }
 ```
+
+## Channel specific
+
+We support a number of generic components that render on most channels. For example a `Card` element works for both Facebook Messenger and the Flow.ai Web Widget. 
+
+However, there are specific components as well for channels like Apple Business Chat or an IVR Bot. 
+
+You can create and send these as well. The following example shows how to create and send a Time Picker for Apple Business chat.
+
+```js
+async payload=> {
+  const timePicker = new Apple.TimePicker({
+    receivedMessage: new Apple.InteractiveMessage({
+      title: "Schedule an Appointment",
+      subtitle: "We'll see you there!",
+      style: "icon"
+    }),
+    replyMessage: new Apple.InteractiveMessage({
+      title: "Your Appointment",
+      style: "icon"
+    }),
+    event: new Apple.EventItem({
+      title: "Some event",
+      location: new Apple.LocationItem({
+        latitude: 37.7725,
+        longitude: -122.4311,
+        radius: 100,
+        title: "Some venue"
+      }),
+      timeslots: [
+        new Apple.TimeItem({
+          duration: 60,
+          startTime: "2020-05-26T08:27:55+00:00"
+        }),
+        new Apple.TimeItem({
+          duration: 60,
+          startTime: "2020-05-26T09:27:55+00:00"
+        }),
+        new Apple.TimeItem({
+          duration: 60,
+          startTime: "2020-05-26T10:27:55+00:00"
+        })
+      ],
+      timezoneOffset: 2
+    })
+  })
+
+  return new Message('Time picker').addResponse(timePicker)
+}
+```
+
+For a complete overview of all reply actions see the [Flow.ai documentation](https://flow.ai/docs/integrations/overview) site.
 
 # Class Reference
 

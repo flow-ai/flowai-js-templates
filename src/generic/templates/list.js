@@ -4,6 +4,9 @@ import Button from '../components/button'
 
 /**
  * Template that displays a set of list items
+ * 
+ * @category Templates
+ * 
  * @property {ListItem[]} items - Set of list items
  * @example
  * const item1 = new ListItem({

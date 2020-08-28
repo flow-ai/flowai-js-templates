@@ -4,6 +4,7 @@ import Template from '../../generic/templates/template'
  * Pause a moment during the call
  * 
  * @memberof Phone
+ * @category Templates
  * 
  * @property {float} seconds - The number of seconds to delay
  * 

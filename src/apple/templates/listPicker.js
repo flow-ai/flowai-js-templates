@@ -6,6 +6,8 @@ import ListPickerSection from '../components/listPickerSection'
  * Allow the customer to choose from a list of items
  * 
  * @memberof Apple
+ * @category Templates
+ * 
  * @property {array} sections - Required 1 or more ListPickerSection objects
  * @property {InteractiveMessage} receivedMessage - Required. Message bubble that is shown to the customer to open the ListPicker window
  * @property {InteractiveMessage} replyMessage - Required. When the customer’s device receives a picker, the Messages app uses the replyMessage to set the style, content, and images for the reply message bubble that the Messages app displays after the customer makes their selection and returns a reply to the business.
@@ -121,7 +123,7 @@ class ListPicker extends Template {
     } = this
 
     return {
-      type: 'apple.listPicker',
+      type: 'apple_list_picker',
       payload: {
         replyMessage,
         receivedMessage,

@@ -3,6 +3,9 @@ import Action from '../components/action'
 
 /**
  * Template with a file
+ * 
+ * @category Templates
+ * 
  * @property {string} title - Describes the file
  * @property {string} url - URL to the file
  * @property {Action} action - Optional Action

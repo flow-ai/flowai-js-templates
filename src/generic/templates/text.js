@@ -2,6 +2,9 @@ import Template from './template'
 
 /**
  * Template with a piece of text
+ * 
+ * @category Templates
+ * 
  * @property {string} text - Text to show
  * @example
  * const text = new Text('Want a free soda?')

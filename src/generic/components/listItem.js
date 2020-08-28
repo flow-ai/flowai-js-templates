@@ -4,6 +4,9 @@ import Media from './media'
 
 /**
  * Item within a List
+ * 
+ * @category Components
+ * 
  * @property {string} title - Title of the list item
  * @property {string} subtitle - Optional subtitle
  * @property {Media} media - Optional Media

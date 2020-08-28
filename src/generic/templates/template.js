@@ -2,6 +2,9 @@ import QuickReply from '../components/quickReply'
 
 /**
  * Base class of all response templates
+ * 
+ * @category Templates
+ * 
  * @property {Number} delay - Optional delay in miliseconds for sending the response
  * @property {QuickReply[]} quickReplies - Optional list of QuickReplies
  * @abstract

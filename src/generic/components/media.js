@@ -1,6 +1,8 @@
 /**
  * Component that represents a URL to an image, video or audio file. Used on Templates like Card and Image.
- * @class
+ * 
+ * @category Components
+ * 
  * @property {string} url - URL to the media file
  **/
 class Media {

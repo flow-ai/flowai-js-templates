@@ -2,6 +2,8 @@
  * Message that renders in a bubble either shown as the received message that allows a customer to open a List or time picker. Or as a reply message that is shown after a customer makes a selection,
  * 
  * @memberof Apple
+ * @category Components
+ * 
  * @property {string} title - The main title shown in the header of the message bubble
  * @property {string} subtitle - The subtitle that appears under the main title in the received message bubble
  * @property {string} secondarySubtitle - A right-aligned title. Limited to 512 characters. Only custom interactive messages support this.
@@ -11,7 +13,7 @@
  * @property {string} imageSubtitle - The attached image's subtitle. Limited to 512 characters. Only custom interactive messages support this.
  * @property {string} style - A style that controls the size of the view rendered by Live Layout can be icon, small, large. The default is icon. 
  **/
-class InteractiveMessage {
+export default class InteractiveMessage {
   /**
    * @param {object} opts - Collection of options
    * @param {string} opts.title - Required title
@@ -77,5 +79,3 @@ class InteractiveMessage {
     }
   }
 }
-
-export default  InteractiveMessage

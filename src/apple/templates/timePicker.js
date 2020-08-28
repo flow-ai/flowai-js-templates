@@ -6,6 +6,8 @@ import EventItem from '../components/eventItem'
  * Allow the customer to schedule an appointment
  * 
  * @memberof Apple
+ * @category Templates
+ * 
  * @property {EventItem} event - Required. Represents the event to pick a time for
  * @property {InteractiveMessage} receivedMessage - Required. Message bubble that is shown to the customer to open the TimePicker window
  * @property {InteractiveMessage} replyMessage - Required. When the customer’s device receives a picker, the Messages app uses the replyMessage to set the style, content, and images for the reply message bubble that the Messages app displays after the customer makes their selection and returns a reply to the business.
@@ -96,7 +98,7 @@ class TimePicker extends Template {
     } = this
 
     return {
-      type: 'apple.timePicker',
+      type: 'apple_time_picker',
       payload: {
         replyMessage,
         receivedMessage,

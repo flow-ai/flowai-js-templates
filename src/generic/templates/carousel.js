@@ -3,6 +3,9 @@ import Card from './card'
 
 /**
  * Template that displays a set of cards
+ * 
+ * @category Templates
+ * 
  * @property {Card[]} cards - Set of cards
  * @example
  * const card1 = new Card({

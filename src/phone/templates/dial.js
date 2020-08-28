@@ -4,6 +4,7 @@ import Template from '../../generic/templates/template'
  * Dial a number and forward the call
  * 
  * @memberof Phone
+ * @category Templates
  * 
  * @property {string} phoneNumber - The number of phoneNumber to delay
  * @example

@@ -6,6 +6,8 @@ import VideoAsset from '../components/videoAsset'
  * Enhance the customer's experience by allowing them to preview inline content.
  * 
  * @memberof Apple
+ * @category Templates
+ * 
  * @property {string} title - Required title
  * @property {string} url - Required. URL to the linked web page
  * @property {array} assets - Required. List of media assets like images or videos
@@ -88,7 +90,7 @@ class RichLink extends Template {
     } = this
 
     return {
-      type: 'apple.richLink',
+      type: 'apple_rich_link',
       payload: {
         title,
         url,

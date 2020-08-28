@@ -3,6 +3,9 @@ import Action from '../components/action'
 
 /**
  * Template with a video
+ * 
+ * @category Templates
+ * 
  * @property {string} title - Describes the video
  * @property {string} url - URL to the video
  * @property {Action} action - Optional Action

@@ -2,6 +2,8 @@
  * Component that represents an item inside a ListPickerSection
  * 
  * @memberof Apple
+ * @category Components
+ * 
  * @property {string} identifier - Field identifying the item
  * @property {string} image - Optional URL to a 30x30 image
  * @property {number} order - Optional integer representing the ordinal position for the item
@@ -9,7 +11,7 @@
  * @property {string} title - Required title
  * @property {string} subtitle - Optional subtitle
  **/
-class ListPickerItem {
+export default class ListPickerItem {
   /**
    * @param {object} opts - Collection of options
    * @param {string} opts.identifier - Optional Unique identifier
@@ -77,5 +79,3 @@ class ListPickerItem {
     }
   }
 }
-
-export default  ListPickerItem

@@ -5,6 +5,9 @@ import Media from '../components/media'
 
 /**
  * Template composed of a media attachment, short description and buttons to request input from the user.
+ * 
+ * @category Templates
+ * 
  * @property {string} title - Main title of the card
  * @property {string} subtitle - Optional subtitle
  * @property {Media} media - Optional Media

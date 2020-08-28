@@ -5,6 +5,9 @@ import QuickReply from './components/quickReply'
 
 /**
  * Representation of a message to a user. Contains a pronounceable fallback message and optional rich template responses.
+ * 
+ * @category Message
+ * 
  * @property {string} fallback - Pronounceable and represents the responses as a whole
  * @property {Template[]} responses - List of rich template responses
  * @example

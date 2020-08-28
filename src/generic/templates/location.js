@@ -3,6 +3,9 @@ import Action from '../components/action'
 
 /**
  * Template with a location
+ * 
+ * @category Templates
+ * 
  * @property {string} title - Describes the image
  * @property {string} lat - Latitude
  * @property {string} long - Longitude

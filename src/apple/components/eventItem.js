@@ -1,24 +1,26 @@
 
-const LocationItem = require("./locationItem")
-const TimeItem = require("./timeItem")
+import LocationItem from "./locationItem"
+import TimeItem from "./timeItem"
 
 /**
  * Component that represents an event inside a TimePicker
  * 
  * @memberof Apple
+ * @category Components
+ * 
  * @property {string} identifier - Field identifying the item
  * @property {string} image - Optional URL to an image. The image should be a @3x image sized at 375 x 208 points (that is, 1125 x 624 pixels).
  * @property {LocationItem} location - Describes a location
- * @property {array} timeslots - A list of TimeItem objects 
+ * @property {TimeItem[]} timeslots - A list of TimeItem objects 
  * @property {integer} timezoneOffset - An integer representing the number of minutes from GMT, specifying the timezone of the event’s location. If not set, times are shown according to the customer’s current time zone. If set, the times are shown according to the event’s time zone, regardless of the customer’s location.
  * @property {string} title - Required title
  **/
-class EventItem {
+export default class EventItem {
   /**
    * @param {object} opts - Collection of options
    * @param {string} opts.identifier - Optional identifier
    * @param {string} opts.image - Optional URL to an image.
-   * @param {array} opts.timeslots - Optional array of TimeItem objects 
+   * @param {TimeItem[]} opts.timeslots - Optional array of TimeItem objects 
    * @param {integer} opts.timezoneOffset - Optional integer representing the number of minutes from GMT
    * @param {string} opts.title - Required title
    **/
@@ -42,7 +44,7 @@ class EventItem {
     }
 
     if(typeof location !== "undefined" && !(location instanceof LocationItem)) {
-      throw new Error('Provided location must be an instance of a Apple.LocationItem')
+      throw new Error('Provided location must be an instance of Apple.LocationItem')
     }
 
     if(Array.isArray(timeslots)) {
@@ -114,5 +116,3 @@ class EventItem {
     }
   }
 }
-
-export default  EventItem

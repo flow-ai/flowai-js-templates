@@ -4,6 +4,7 @@ import Template from '../../generic/templates/template'
  * Disconnect
  * 
  * @memberof Phone
+ * @category Templates
  * 
  * @example
  * const hangup = new Phone.Hangup()
