@@ -3,10 +3,13 @@ import Template from '../../generic/templates/template'
 /**
  * Send a message to a user
  * 
+ * @memberof Phone
+ * 
  * @property {string} speech - Text to speech
  * @property {string} url - URL to an audio file
  * @property {string} language - Optional language for text to speech
  * @property {string} voice -  Optional voice for text to speech
+ * 
  * @example
  * const say = new Phone.Say({
  *   speech: "The weather is nice today!",
@@ -98,6 +101,7 @@ class Say extends Template {
 
 /**
  * Basic support matrix
+ * @ignore
  */
 const support = {
   voices: [

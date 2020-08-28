@@ -2,6 +2,9 @@ import Template from '../../generic/templates/template'
 
 /**
  * Dial a number and forward the call
+ * 
+ * @memberof Phone
+ * 
  * @property {string} phoneNumber - The number of phoneNumber to delay
  * @example
  * const pause = new Dial(0.2)

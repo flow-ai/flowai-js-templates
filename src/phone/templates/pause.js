@@ -2,9 +2,13 @@ import Template from '../../generic/templates/template'
 
 /**
  * Pause a moment during the call
+ * 
+ * @memberof Phone
+ * 
  * @property {float} seconds - The number of seconds to delay
+ * 
  * @example
- * const pause = new Pause(0.2)
+ * const pause = new Phone.Pause(0.2)
  **/
 class Pause extends Template {
 

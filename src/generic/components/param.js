@@ -1,5 +1,6 @@
 /**
  * Data related to a Button or Quick Reply
+ * 
  * @property {string} label - Name of the parameter
  * @property {string} value - Value of the parametet
  * @example
@@ -71,6 +72,7 @@ class Param {
 
 /**
  * Helper method to convert a list of params
+ * @ignore
  **/
 const parseParam = param => {
 
@@ -126,6 +128,7 @@ const parseParam = param => {
 
 /**
  * Helper method to convert params into the expected format
+ * @ignore
  **/
 const flattenParams = params => {
   if(!Array.isArray(params)) {

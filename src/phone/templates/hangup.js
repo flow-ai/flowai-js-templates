@@ -1,5 +1,13 @@
 import Template from '../../generic/templates/template'
 
+/**
+ * Disconnect
+ * 
+ * @memberof Phone
+ * 
+ * @example
+ * const hangup = new Phone.Hangup()
+ */
 class Hangup extends Template {
 
   /**

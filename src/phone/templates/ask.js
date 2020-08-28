@@ -3,6 +3,7 @@ import Say from './say'
 /**
  * Send a message to a user asking for input
  * 
+ * @memberof Phone
  * @property {string} speech - Text to speech
  * @property {string} url - URL to an audio file
  * @property {string} expected - Optional, what kind of input to expect. Valid are speech, digits or any (default is any)
@@ -138,6 +139,7 @@ class Ask extends Say {
 
 /**
  * Basic support matrix
+ * @ignore
  */
 const support = {
   expected: [

@@ -20,13 +20,18 @@ import ListItem from './generic/components/listItem'
 import { Param } from './generic/components/param'
 import QuickReply from './generic/components/quickReply'
 
-// Phone templates
 import Say from './phone/templates/say'
 import Hangup from './phone/templates/hangup'
 import Pause from './phone/templates/pause'
 import Ask from './phone/templates/ask'
 import Dial from './phone/templates/dial'
 
+
+/** 
+ * @namespace 
+ * @description 
+ * IVR bot specific reply actions
+ **/
 const Phone = {
   Say,
   Hangup,
@@ -35,10 +40,42 @@ const Phone = {
   Dial
 }
 
+// Apple templates
+import ImageAsset from './apple/components/imageAsset'
+import VideoAsset from './apple/components/videoAsset'
+import InteractiveMessage from './apple/components/interactiveMessage'
+import LocationItem from './apple/components/locationItem'
+import EventItem from './apple/components/eventItem'
+import TimeItem from './apple/components/timeItem'
+import ListPickerSection from './apple/components/listPickerSection'
+import ListPickerItem from './apple/components/listPickerItem'
+import RichLink from './apple/templates/richLink'
+import ListPicker from './apple/templates/listPicker'
+import TimePicker from './apple/templates/timePicker'
+import CustomInteractiveData from './apple/templates/customInteractiveData'
+
+/** 
+ * @namespace 
+ * @description 
+ * Apple Business API specific reply actions
+ **/
+const Apple = {
+  ImageAsset,
+  VideoAsset,
+  RichLink,
+  ListPicker,
+  ListPickerSection,
+  ListPickerItem,
+  TimePicker,
+  InteractiveMessage,
+  LocationItem,
+  EventItem,
+  TimeItem,
+  CustomInteractiveData
+}
 
 export {
   Message,
-
   Text,
   Card,
   Image,
@@ -60,5 +97,6 @@ export {
   Param,
   QuickReply,
 
-  Phone
+  Phone,
+  Apple
 }
