@@ -1,5 +1,5 @@
 /**
- * Message that renders in a bubble either shown as the received message that allows a customer to open a List or time picker. Or as a reply message that is shown after a customer makes a selection,
+ * Message that renders in a bubble either shown as the received message that allows a customer to open for example a {@link ListPicker}, {@link TimePicker} or {@link PayRequest}. Or as a reply message that is shown after a customer makes a selection,
  * 
  * @memberof Apple
  * 

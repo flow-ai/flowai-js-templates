@@ -9,11 +9,13 @@ describe("Template Apple AuthRequest", () => {
 
   it("Can create auth request", () => {
     const authRequest = new Apple.AuthRequest({
-      responseType: "code",
-      scope: ["email", "profile"],
-      state: "security_token",
-      responseEncryptionKey: "BFz948MTG3OQ0Q69 <truncated>",
-      clientSecret: "client_secret",
+      oauth2: new Apple.Oauth2({
+        responseType: "code",
+        scope: ["email", "profile"],
+        state: "security_token",
+        responseEncryptionKey: "BFz948MTG3OQ0Q69 <truncated>",
+        clientSecret: "client_secret"
+      }),  
       receivedMessage: new Apple.InteractiveMessage({
         title: "Sign In to Business Chat Sandbox"
       }),
@@ -22,7 +24,7 @@ describe("Template Apple AuthRequest", () => {
       })
     })
 
-    expect(authRequest.scope.length).to.equal(2)
+    expect(authRequest.oauth2.scope.length).to.equal(2)
     // console.info(JSON.stringify(authRequest, null, 2))
   })
 })

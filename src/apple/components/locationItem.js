@@ -1,5 +1,5 @@
 /**
- * Component that represents an item inside a LocationSection
+ * Component that represents a location inside a {@link TimePicker}
  * 
  * @memberof Apple
  * @category TimePicker

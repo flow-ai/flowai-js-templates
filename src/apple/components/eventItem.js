@@ -3,7 +3,7 @@ import LocationItem from "./locationItem"
 import TimeItem from "./timeItem"
 
 /**
- * Component that represents an event inside a TimePicker
+ * Component that represents an event inside a {@link TimePicker}
  * 
  * @memberof Apple
  * @category TimePicker

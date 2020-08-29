@@ -1,7 +1,7 @@
 import { parseParam, flattenParams } from './param'
 
 /**
- * Component used in Card, Buttons templates
+ * Component used in {@link Card}, {@link Buttons} templates
  * 
  * @category Components
  * 

@@ -1,26 +1,26 @@
 import Template from '../../generic/templates/template'
 import InteractiveMessage from '../components/interactiveMessage'
+import Oauth2 from '../components/oauth2'
 
 /**
- * Pass a customer's authentication data to a business by using the OAuth protocol
+ * Authenticate a customer using the OAuth protocol
  * 
  * @memberof Apple
+ * @category Authentication
  * 
- * @property {string} clientSecret - Required. The secret provisioned by the authorization server
- * @property {string} responseEncryptionKey - Required. The Base64-encoded public key that encrypts the access token returned in the response
- * @property {string} responseType - Required. Indicates the type of authentication request
- * @property {string[]} scope - Required. Array of scopes that describe the granted access for read and write
- * @property {string} state - Required. Indicates the state of the authentication request
+ * @property {Oauth2} oauth2 - Required. Oauth2 collection of keys
  * @property {InteractiveMessage} receivedMessage - Required. Message bubble that is shown to the customer to start the authentication
  * @property {InteractiveMessage} replyMessage - Required. When the customer’s device receives a authentication request, the Messages app uses the replyMessage to set the style, content, and images for the reply message bubble that the Messages app displays after the customer authenticates and returns a reply to the business.
  * 
  * @example
  * const authRequest = new Apple.AuthRequest({
- *   responseType: "code",
- *   scope: ["email", "profile"],
- *   state: "security_token",
- *   responseEncryptionKey: "BFz948MTG3OQ0Q69 <truncated>",
- *   clientSecret: "client_secret",
+ *   oauth2: new Apple.Oauth2({
+ *     responseType: "code",
+ *     scope: ["email", "profile"],
+ *     state: "security_token",
+ *     responseEncryptionKey: "BFz948MTG3OQ0Q69 <truncated>",
+ *     clientSecret: "client_secret"
+ *   }),  
  *   receivedMessage: new Apple.InteractiveMessage({
  *     title: "Sign In to Business Chat Sandbox"
  *   }),
@@ -33,11 +33,7 @@ class AuthRequest extends Template {
 
   /**
   * @param {object} opts - Collection of options
-  * @param {string} opts.clientSecret - Required. The secret provisioned by the authorization server
-  * @param {string} opts.responseEncryptionKey - Required. The Base64-encoded public key that encrypts the access token returned in the response
-  * @param {string} opts.responseType - Required. Indicates the type of authentication request
-  * @param {string[]} opts.scope - Required. Array of scopes that describe the granted access for read and write
-  * @param {string} opts.state - Required. Indicates the state of the authentication request
+  * @param {Oauth2} opts.oauth2 - Required. Oauth2 collection of keys
   * @param {InteractiveMessage} opts.receivedMessage - Required. Message bubble that is shown to the customer to open the authentication request window
   * @param {InteractiveMessage} opts.replyMessage - Required. Message bubble that is shown when the customer authenticated
   **/ 
@@ -49,20 +45,10 @@ class AuthRequest extends Template {
     }
 
     const {
-      clientSecret,
-      responseEncryptionKey,
-      responseType,
-      scope,
-      state,
+      oauth2,
       receivedMessage,
       replyMessage
     } = opts
-
-    if(Array.isArray(scope)) {
-      for (let i = 0; i < scope.length; i++) {
-        this.addScope(scope[i])
-      }
-    }
 
     if(!(replyMessage instanceof InteractiveMessage)) {
       throw new Error("AuthRequest requires a replyMessage of the type InteractiveMessage")
@@ -72,74 +58,30 @@ class AuthRequest extends Template {
       throw new Error("AuthRequest requires a receivedMessage of the type InteractiveMessage")
     }
 
-    if(typeof clientSecret !== "string" || !clientSecret.length) {
-      throw new Error("AuthRequest requires a valid clientSecret")
+    if(!(oauth2 instanceof Oauth2)) {
+      throw new Error("AuthRequest requires a oauth2 property of the type Oauth2")
     }
-
-    if(typeof responseEncryptionKey !== "string" || !responseEncryptionKey.length) {
-      throw new Error("AuthRequest requires a valid responseEncryptionKey")
-    }
-
-    if(typeof responseType !== "string" || !responseType.length) {
-      throw new Error("AuthRequest requires a valid responseType")
-    }
-
-    if(typeof state !== "string" || !state.length) {
-      throw new Error("AuthRequest requires a valid state")
-    }
-
-    this.clientSecret = clientSecret
-    this.responseEncryptionKey = responseEncryptionKey
-    this.responseType = responseType
-    this.state = state
+    
+    this.oauth2 = oauth2
     this.receivedMessage = receivedMessage
     this.replyMessage = replyMessage
-  }
-
-    /**
-   * Add a scope to the list of scopes
-   * 
-   * @param {string} - scope
-   * 
-   * @return {AuthRequest}
-   **/
-  addScope(scope) {
-    if(typeof scope !== "string" || !scope.length) {
-      throw new Error('AuthRequest scope must be a valid string')
-    }
-
-    if(!this.scope) {
-      this.scope= []
-    }
-
-    this.scope.push(scope)
-
-    return this
   }
 
   toJSON() {
     const {
       replyMessage,
       receivedMessage,
-      clientSecret,
-      responseEncryptionKey,
-      responseType,
-      scope,
-      state,
+      oauth2,
       delay,
       fallback
     } = this
 
     return {
-      type: 'apple_authenticate',
+      type: 'apple_auth_request',
       payload: {
         replyMessage,
         receivedMessage,
-        clientSecret,
-        responseEncryptionKey,
-        responseType,
-        scope,
-        state
+        oauth2
       },
       delay: delay || undefined,
       fallback

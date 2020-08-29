@@ -1,5 +1,5 @@
 /**
- * Data related to a Button or Quick Reply
+ * Data related to a {@link Button} or {@link QuickReply}
  * 
  * @category Components
  * 

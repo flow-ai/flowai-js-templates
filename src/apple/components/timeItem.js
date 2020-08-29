@@ -1,5 +1,5 @@
 /**
- * Component that represents an item inside a TimeSection
+ * Component that represents an item inside a {@link TimePicker}
  * 
  * @memberof Apple
  * @category TimePicker

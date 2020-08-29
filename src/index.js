@@ -26,7 +26,6 @@ import Pause from './phone/templates/pause'
 import Ask from './phone/templates/ask'
 import Dial from './phone/templates/dial'
 
-
 /** 
  * @namespace 
  * @description 
@@ -53,7 +52,13 @@ import RichLink from './apple/templates/richLink'
 import ListPicker from './apple/templates/listPicker'
 import TimePicker from './apple/templates/timePicker'
 import CustomInteractiveData from './apple/templates/customInteractiveData'
+import Oauth2 from './apple/components/oauth2'
 import AuthRequest from './apple/templates/authRequest'
+import PayRequest from './apple/templates/payRequest'
+import PayEndpoints from './apple/components/payEndpoints'
+import PayMerchant from './apple/components/payMerchant'
+import PayLineItem from './apple/components/payLineItem'
+import PayShippingMethod from './apple/components/payShippingMethod'
 
 /** 
  * @namespace 
@@ -73,7 +78,13 @@ const Apple = {
   EventItem,
   TimeItem,
   CustomInteractiveData,
-  AuthRequest
+  AuthRequest,
+  Oauth2,
+  PayRequest,
+  PayEndpoints,
+  PayMerchant,
+  PayLineItem,
+  PayShippingMethod
 }
 
 export {

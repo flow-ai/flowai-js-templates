@@ -2,7 +2,7 @@ import Template from './template'
 import Action from '../components/action'
 
 /**
- * Template with a image
+ * Template to show an image
  * 
  * @category Templates
  * 
@@ -24,7 +24,7 @@ class Image extends Template {
   /**
    * @param {string} opts.title - Required
    * @param {string} opts.url - Required
-   * @param {string} opts.action - Optional
+   * @param {string} opts.action - Optional {@link Action}
    **/
   constructor( { title, url, action }) {
     super()

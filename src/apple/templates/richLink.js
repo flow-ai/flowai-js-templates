@@ -10,7 +10,7 @@ import VideoAsset from '../components/videoAsset'
  * 
  * @property {string} title - Required title
  * @property {string} url - Required. URL to the linked web page
- * @property {array} assets - Required. List of media assets like images or videos
+ * @property {array} assets - Required. List of assets like {@link ImageAsset} or {@link VideoAsset}
  * 
  * @example
  * const richLink = new Apple.RichLink({
@@ -34,7 +34,7 @@ class RichLink extends Template {
   * @param {object} opts - Collection of options
   * @param {string} opts.title - Required title
   * @param {string} opts.url - Required. URL to the linked web page
-  * @param {array} opts.assets - Required. List of media assets like images or videos
+  * @param {array} opts.assets - Required. List of assets like {@link ImageAsset} or {@link VideoAsset}
   **/ 
   constructor(opts) {
     super()

@@ -2,14 +2,14 @@ import Template from './template'
 import Action from '../components/action'
 
 /**
- * Template with a location
+ * Template to show a location
  * 
  * @category Templates
  * 
  * @property {string} title - Describes the image
  * @property {string} lat - Latitude
  * @property {string} long - Longitude
- * @property {Action} action - Optional Action
+ * @property {Action} action - Optional {@link Action}
  * @example
  * const location = new Location({
  *   title: "Infinite Loop 1",

@@ -1,18 +1,18 @@
 import QuickReply from '../components/quickReply'
 
 /**
- * Base class of all response templates
+ * Base class for all response templates
  * 
  * @category Templates
  * 
- * @property {Number} delay - Optional delay in miliseconds for sending the response
- * @property {QuickReply[]} quickReplies - Optional list of QuickReplies
+ * @property {Number} delay - Optional delay in milliseconds for sending the response
+ * @property {QuickReply[]} quickReplies - Optional list of {@link QuickReply} components
  * @abstract
  **/
 class Template {
 
   /**
-   * Define a delay for the response in miliseconds
+   * Define a delay for the response in milliseconds
    * @param {Number} delay - Required
    **/
   set delay(delay) {
@@ -33,7 +33,7 @@ class Template {
 
   /**
    * Optional fallback speech
-   * @param {String} fallback - Required
+   * @param {string} fallback - Required
    **/
   set fallback(fallback) {
     if(!(typeof fallback === 'string') && fallback !== undefined) {
@@ -47,7 +47,7 @@ class Template {
   }
 
   /**
-   * Add a quick reply to the template
+   * Add a {@link QuickReply} to the template
    * @param {QuickReply} quickReply - Required
    **/
   addQuickReply(quickReply) {

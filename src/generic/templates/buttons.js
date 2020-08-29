@@ -3,7 +3,7 @@ import Button from '../components/button'
 import Media from '../components/media'
 
 /**
- * Template with a short description and buttons to request input from the user.
+ * Template with a short description and {@link Button} components to request input from the user
  * 
  * @category Templates
  * 

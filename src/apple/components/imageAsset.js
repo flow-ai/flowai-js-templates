@@ -1,5 +1,5 @@
 /**
- * Component that represents a image asset
+ * Component that represents an image asset used with a {@link RichLink} template
  * 
  * @memberof Apple
  * @category RichLink
@@ -9,8 +9,9 @@
  **/
 class ImageAsset {
   /**
-   * @param {string} url - Required. URL to the image
-   * @param {string} mimeType - Required. The format/type of the image
+   * @param {object} opts - Collection of options
+   * @param {string} opts.url - Required. URL to the image
+   * @param {string} opts.mimeType - Required. The format/type of the image
    **/
   constructor(opts) {
     

@@ -1,5 +1,5 @@
 /**
- * Component that represents a URL to an image, video or audio file. Used on Templates like Card and Image.
+ * Component that represents a URL to an image, video or audio file. Used with templates like {@link Card} and {@link Image}.
  * 
  * @category Components
  * 

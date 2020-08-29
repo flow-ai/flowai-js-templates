@@ -1,5 +1,5 @@
 /**
- * Component that represents a video asset
+ * Component that represents a video asset used with a {@link RichLink} template
  * 
  * @memberof Apple
  * @category RichLink
@@ -9,9 +9,10 @@
  **/
 class VideoAsset {
   /**
-   * @param {string} url - Required. URL to the video
-   * @param {string} mimeType - Required. The format/type of the video
-    **/
+   * @param {object} opts - Collection of options
+   * @param {string} opts.url - Required. URL to the video
+   * @param {string} opts.mimeType - Required. The format/type of the video
+  **/
   constructor(opts) {
     
     if(typeof opts !== "object") {

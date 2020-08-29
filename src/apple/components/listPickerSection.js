@@ -1,12 +1,12 @@
 import ListPickerItem from "./listPickerItem"
 
 /**
- * Component that represents a section inside a ListPicker
+ * Component that groups a list of {@link ListPickerItem} objects and is part of a {@link ListPicker}
  * 
  * @memberof Apple
  * @category ListPicker
  * 
- * @property {array} items - A list of ListPickerItem objects 
+ * @property {ListPickerItem[]} items - A list of {@link ListPickerItem} objects 
  * @property {boolean} multipleSelection - Indicates whether the customer can make multiple selections within the section. Defaults to false
  * @property {Number} order - An integer containing the ordinal position for the section
  * @property {string} title - Required title
@@ -15,7 +15,7 @@ class ListPickerSection {
 
  /**
   * @param {object} opts - Collection of options
-  * @param {array} opts.items - An array of ListPickerItem objects 
+  * @param {ListPickerItem[]} opts.items - An array of {@link ListPickerItem} objects 
   * @param {boolean} opts.multipleSelection - Indicates whether the customer can make multiple selections within the section. Defaults to false
   * @param {Number} opts.order - An integer containing the ordinal position for the section
   * @param {string} opts.title - Required title
@@ -64,6 +64,17 @@ class ListPickerSection {
    * Add a list item to the section
    * 
    * @param {ListPickerItem} - item
+   * 
+   * @example
+   * const section = new Apple.ListPickerSection({
+   *   title: "Fruit"
+   * })
+   * section.addItem(new Apple.ListPickerItem({
+   *   title: "Apples"
+   * }))
+   * section.addItem(new Apple.ListPickerItem({
+   *   title: "Oranges"
+   * }))
    * 
    * @return {ListPickerSection}
    **/

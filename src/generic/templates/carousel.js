@@ -2,11 +2,11 @@ import Template from './template'
 import Card from './card'
 
 /**
- * Template that displays a set of cards
+ * Template that displays a set of {@link Card} templates
  * 
  * @category Templates
  * 
- * @property {Card[]} cards - Set of cards
+ * @property {Card[]} cards - Set of {@link Card} templates
  * @example
  * const card1 = new Card({
  *   title: "Awesome title 1",
@@ -55,7 +55,7 @@ import Card from './card'
 class Carousel extends Template {
 
   /**
-   * @param {Array} cards - Optional
+   * @param {Array} cards - Optional list of {@link Card} templates
    **/
   constructor(cards) {
     super()
@@ -68,7 +68,7 @@ class Carousel extends Template {
   }
 
   /**
-   * Add a card to the cards
+   * Add a {@link Card} to the list of cards
    * @param {Card} - card
    * @return {Carousel}
    **/

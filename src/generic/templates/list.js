@@ -3,7 +3,7 @@ import ListItem from '../components/listItem'
 import Button from '../components/button'
 
 /**
- * Template that displays a set of list items
+ * Template that displays a set of {@link ListItem} components 
  * 
  * @category Templates
  * 
@@ -42,8 +42,8 @@ import Button from '../components/button'
 class List extends Template {
 
   /**
-   * Add a item to the items
-   * @param {ListItem} - item
+   * Add a {@link ListItem} to the list of items
+   * @param {ListItem} - {@link ListItem}
    * @return {List}
    **/
   addItem(item) {
@@ -80,7 +80,7 @@ class List extends Template {
   }
 
   /**
-   * Add a button to the list item
+   * Add a {@link Button} to the list of buttons
    * @param {Button} - button
    * @return {ListItem}
    **/

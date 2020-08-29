@@ -4,15 +4,15 @@ import Button from '../components/button'
 import Media from '../components/media'
 
 /**
- * Template composed of a media attachment, short description and buttons to request input from the user.
+ * Template composed of a media attachment, short description and {@link Button} components to request input from the user.
  * 
  * @category Templates
  * 
  * @property {string} title - Main title of the card
  * @property {string} subtitle - Optional subtitle
- * @property {Media} media - Optional Media
- * @property {Action} action - Optional Action
- * @property {Button[]} buttons - Optional set of buttons
+ * @property {Media} media - Optional {@link Media}
+ * @property {Action} action - Optional {@link Action}
+ * @property {Button[]} buttons - Optional set of {@link Button} components
  * @property {Action} action - Optional Action that is triggered when a user interacts with the card
  * @example
  * const button1 = new Button({
@@ -43,8 +43,8 @@ class Card extends Template {
   /**
    * @param {string} opts.title - Required
    * @param {string} opts.subtitle - Optional
-   * @param {Media} opts.media - Optional
-   * @param {Action} opts.action - Optional
+   * @param {Media} opts.media - Optional {@link Media}
+   * @param {Action} opts.action - Optional {@link Action}
    **/
   constructor({ title, subtitle, media, action }) {
     super()

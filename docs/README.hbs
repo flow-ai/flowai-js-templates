@@ -144,6 +144,139 @@ async payload=> {
 
 For a complete overview of all reply actions see the [Flow.ai documentation](https://flow.ai/docs/integrations/overview) site.
 
-# Class Reference
+{{#*inline "classDoc" }}
+{{#class name=className}}
+<a name="{{{anchorName}}}"></a>
 
-{{>main}}
+{{>heading-indent}}{{id}}
+
+{{>description~}}
+{{>summary~}}
+{{>examples~}}
+{{>properties~}}
+{{#children inherited=undefined ~}}
+{{>heading-indent}}{{>sig-name}}
+
+{{>description~}}
+{{>summary~}}
+{{>examples~}}
+{{>params~}}
+{{>properties~}}
+{{/children~}}
+{{/class}}
+{{/inline}}
+
+---
+
+# Reply Templates Reference
+
+{{>classDoc className="Message"}}
+
+---
+
+# Generic Response Templates Reference
+
+There are a number of generic templates that are supported by multiple messaging channels
+
+{{>classDoc className="Text"}}
+
+{{>classDoc className="Image"}}
+
+{{>classDoc className="File"}}
+
+{{>classDoc className="Video"}}
+
+{{>classDoc className="Audio"}}
+
+{{>classDoc className="Location"}}
+
+{{>classDoc className="Buttons"}}
+
+{{>classDoc className="Card"}}
+
+{{>classDoc className="Carousel"}}
+
+{{>classDoc className="List"}}
+
+{{>classDoc className="ListItem"}}
+
+---
+
+{{>classDoc className="Action"}}
+
+{{>classDoc className="Button"}}
+
+{{>classDoc className="Media"}}
+
+{{>classDoc className="Param"}}
+
+{{>classDoc className="QuickReply"}}
+
+--- 
+
+# Phone Templates Reference
+
+{{>classDoc className="Ask"}}
+
+{{>classDoc className="Say"}}
+
+{{>classDoc className="Pause"}}
+
+{{>classDoc className="Dial"}}
+
+{{>classDoc className="Hangup"}}
+
+--- 
+
+# Apple Business Chat Templates Reference (Preview)
+
+
+{{>classDoc className="RichLink"}}
+
+{{>classDoc className="ImageAsset"}}
+
+{{>classDoc className="VideoAsset"}}
+
+---
+
+{{>classDoc className="ListPicker"}}
+
+{{>classDoc className="ListPickerSection"}}
+
+{{>classDoc className="ListPickerItem"}}
+
+---
+
+{{>classDoc className="TimePicker"}}
+
+{{>classDoc className="EventItem"}}
+
+{{>classDoc className="TimeItem"}}
+
+{{>classDoc className="LocationItem"}}
+
+---
+
+{{>classDoc className="AuthRequest"}}
+
+{{>classDoc className="Oauth2"}}
+
+---
+
+{{>classDoc className="PayRequest"}}
+
+{{>classDoc className="PayMerchant"}}
+
+{{>classDoc className="PayShippingMethod"}}
+
+{{>classDoc className="PayLineItem"}}
+
+{{>classDoc className="PayEndpoints"}}
+
+---
+
+{{>classDoc className="CustomInteractiveData"}}
+
+---
+
+{{>classDoc className="InteractiveMessage"}}

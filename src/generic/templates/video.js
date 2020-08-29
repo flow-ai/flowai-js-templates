@@ -8,7 +8,7 @@ import Action from '../components/action'
  * 
  * @property {string} title - Describes the video
  * @property {string} url - URL to the video
- * @property {Action} action - Optional Action
+ * @property {Action} action - Optional {@link Action}
  * @example
  * const video = new Video({
  *   title: "Awesome title",

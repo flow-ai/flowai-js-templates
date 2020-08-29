@@ -3,7 +3,7 @@ import Button from './button'
 import Media from './media'
 
 /**
- * Item within a List
+ * Item within a {@link List} template
  * 
  * @category Components
  * 

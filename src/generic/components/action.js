@@ -1,7 +1,7 @@
 import { parseParam, flattenParams } from './param'
 
 /**
- * Default action used in Card, List and Buttons templates
+ * Default action used in {@link Card}, {@link List} and {@link Buttons} templates
  * 
  * @category Components
  * 

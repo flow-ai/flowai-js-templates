@@ -2,13 +2,13 @@ import Template from './template'
 import Action from '../components/action'
 
 /**
- * Template with audio
+ * Template that sends an audio file or shows an audio player
  * 
  * @category Templates
  * 
  * @property {string} title - Describes the audio
  * @property {string} url - URL to the audio file
- * @property {Action} action - Optional Action
+ * @property {Action} action - Optional {@link Action}
  * @example
  * const audio = new Audio({
  *   title: "Awesome title",

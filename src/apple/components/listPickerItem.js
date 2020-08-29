@@ -1,5 +1,5 @@
 /**
- * Component that represents an item inside a ListPickerSection
+ * Component that represents a selectable item inside a {@link ListPickerSection}
  * 
  * @memberof Apple
  * @category ListPicker

@@ -13,7 +13,8 @@
     "test": "yarn build:lib && mocha --recursive --reporter spec --require @babel/register --watch",
     "eslint": "eslint ./src --fix",
     "prepublish": "yarn build",
-    "docs": "jsdoc2md \"src/**/*.js\" -c .jsdoc --plugin dmd-clear --example-lang js --template ./docs/README.hbs > README.md && node ./docs/json.js"
+    "docs": "jsdoc2md \"src/**/*.js\" -c .jsdoc --plugin dmd-clear --example-lang js --template ./docs/README.hbs > README.md && node ./docs/json.js",
+    "docs:debug": "jsdoc2md \"src/**/*.js\" -c .jsdoc --plugin dmd-clear --example-lang js --json > README.json"
   },
   "repository": {
     "type": "git",
