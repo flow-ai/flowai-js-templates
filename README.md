@@ -142,9 +142,6 @@ async payload=> {
 <dt><a href="#Note">Note</a></dt>
 <dd><p>Template with a piece of note</p>
 </dd>
-<dt><a href="#OTN">OTN</a></dt>
-<dd><p>Template with an One-Time Notification</p>
-</dd>
 <dt><a href="#Template">Template</a></dt>
 <dd><p>Base class of all response templates</p>
 </dd>
@@ -153,6 +150,9 @@ async payload=> {
 </dd>
 <dt><a href="#Video">Video</a></dt>
 <dd><p>Template with a video</p>
+</dd>
+<dt><a href="#OTN">OTN</a></dt>
+<dd><p>Template with an One-Time Notification</p>
 </dd>
 <dt><a href="#Ask">Ask</a></dt>
 <dd><p>Send a message to a user asking for input</p>
@@ -887,32 +887,6 @@ Template with a piece of note
 ```js
 const note = new Note('Red note')
 ```
-<a name="OTN"></a>
-
-## OTN
-Template with an One-Time Notification
-
-**Kind**: global class  
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| title | <code>string</code> | title of the OTN |
-| tag | <code>string</code> | tag that will be assigned to actor when this OTN is called |
-
-<a name="new_OTN_new"></a>
-
-### new OTN(title, tag)
-
-| Param | Type | Description |
-| --- | --- | --- |
-| title | <code>string</code> | Required |
-| tag | <code>string</code> | Optional |
-
-**Example**  
-```js
-const otn = new OTN('When keyboards are available', 'keyboard')
-```
 <a name="Template"></a>
 
 ## *Template*
@@ -1031,6 +1005,32 @@ const video = new Video({
     value: 'https://...'
   })
 })
+```
+<a name="OTN"></a>
+
+## OTN
+Template with an One-Time Notification
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | title of the OTN |
+| tag | <code>string</code> | tag that will be assigned to actor when this OTN is called |
+
+<a name="new_OTN_new"></a>
+
+### new OTN(title, tag)
+
+| Param | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Required |
+| tag | <code>string</code> | Optional |
+
+**Example**  
+```js
+const otn = new OTN('When keyboards are available', 'keyboard')
 ```
 <a name="Ask"></a>
 

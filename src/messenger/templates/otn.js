@@ -1,4 +1,4 @@
-import Template from './template'
+import Template from '../../generic/templates/template'
 
 /**
  * Template with an One-Time Notification
