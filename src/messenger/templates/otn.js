@@ -39,7 +39,7 @@ class OTN extends Template {
     } = this
 
     return {
-      type: 'otn',
+      type: 'messenger_otn',
       payload: {
         title,
         tag
