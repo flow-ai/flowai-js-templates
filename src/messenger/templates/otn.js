@@ -1,4 +1,4 @@
-import Template from './template'
+import Template from '../../generic/templates/template'
 
 /**
  * Template with an One-Time Notification
@@ -42,7 +42,7 @@ class OTN extends Template {
     } = this
 
     return {
-      type: 'otn',
+      type: 'messenger_otn',
       payload: {
         title,
         tag

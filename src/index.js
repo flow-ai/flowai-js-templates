@@ -12,7 +12,6 @@ import List from './generic/templates/list'
 import Location from './generic/templates/location'
 import Custom from './generic/templates/custom'
 import Note from './generic/templates/note'
-import OTN from './generic/templates/otn'
 import Action from './generic/components/action'
 import Button from './generic/components/button'
 import Media from './generic/components/media'
@@ -29,8 +28,9 @@ import Dial from './phone/templates/dial'
 /** 
  * @namespace 
  * @description 
- * IVR bot specific reply actions
+ * IVR bot specific reply templates
  **/
+
 const Phone = {
   Say,
   Hangup,
@@ -63,7 +63,7 @@ import PayShippingMethod from './apple/components/payShippingMethod'
 /** 
  * @namespace 
  * @description 
- * Apple Business API specific reply actions
+ * Apple Business API specific reply templates
  **/
 const Apple = {
   ImageAsset,
@@ -87,6 +87,19 @@ const Apple = {
   PayShippingMethod
 }
 
+// Messenger templates
+import OTN from './messenger/templates/otn'
+
+/** 
+ * @namespace 
+ * @description 
+ * Facebook Messenger specific reply templates
+ **/
+const Messenger = {
+  OTN
+}
+
+
 export {
   Message,
   Text,
@@ -101,7 +114,6 @@ export {
   Location,
   Custom,
   Note,
-  OTN,
 
   Action,
   Button,
@@ -111,5 +123,7 @@ export {
   QuickReply,
 
   Phone,
-  Apple
+  Apple,
+
+  Messenger
 }
