@@ -683,16 +683,6 @@ Add a button to the list item
 
 ## Action
 
-Default action used in [Card](#Card), [List](#List) and [Buttons](#Buttons) templates
-
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | Type of action (url, phone, postback, share, login, webview, event) |
-| value | <code>string</code> | Value of the action |
-| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the action |
-
 ### new Action()
 
 **Example**  
@@ -717,27 +707,8 @@ const image = new Image({
 
 ## Button
 
-Component used in [Card](#Card), [Buttons](#Buttons) templates
-
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| type | <code>string</code> | Type of button (url, phone, postback, share, login, webview, event) |
-| label | <code>string</code> | Label of the button |
-| value | <code>string</code> | Value of the button |
-| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the button |
-
 ### new Button()
 
-**Example**  
-```js
-new Button({
- type: 'webview',
- label: 'More info'
- value: 'https://...'
-})
-```
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -829,31 +800,8 @@ const image = new Image({
 
 ## QuickReply
 
-Component placed on any Template. Represents a shortcut for a user to reply with. Ideal for yes / no type of questions.
-
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| label | <code>string</code> | Label that is shown as a quick reply |
-| value | <code>string</code> | Value that is being send as the quick reply, empty if type is location |
-| type | <code>string</code> | Type of quick reply, default is text (text, location, user_email, user_phone_number, event) |
-| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the quick reply |
-
 ### new QuickReply()
 
-**Example**  
-```js
-const text = new Text('We have a 40" screen for sale. Want to preorder it?')
-text.addQuickReply(new QuickReply({
-  label: '👍',
-  value: 'Yes'
-}))
-text.addQuickReply(new QuickReply({
-  label: '👎',
-  value: 'No'
-}))
-```
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1265,7 +1213,7 @@ Component that represents a selectable item inside a [ListPickerSection](ListPic
 
 ---
 
-<a name="Apple.TimePicker"></a>
+<!--<a name="Apple.TimePicker"></a>
 
 ## Apple.TimePicker
 
@@ -1327,8 +1275,9 @@ const timePicker = new Apple.TimePicker({
 | opts.receivedMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown to the customer to open the TimePicker window |
 | opts.replyMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown when the customer made a choice |
 
+-->
 
-<a name="Apple.EventItem"></a>
+<!--<a name="Apple.EventItem"></a>
 
 ## Apple.EventItem
 
@@ -1366,8 +1315,9 @@ Add a TimeItem to the list of timeslots
 | --- | --- | --- |
 | item | <code>TimeItem</code> | item |
 
+-->
 
-<a name="Apple.TimeItem"></a>
+<!--<a name="Apple.TimeItem"></a>
 
 ## Apple.TimeItem
 
@@ -1391,8 +1341,9 @@ Component that represents an item inside a [TimePicker](TimePicker)
 | opts.identifier | <code>string</code> | Optional Unique identifier |
 | opts.startTime | <code>string</code> | Required UTC date string |
 
+-->
 
-<a name="Apple.LocationItem"></a>
+<!--<a name="Apple.LocationItem"></a>
 
 ## Apple.LocationItem
 
@@ -1418,10 +1369,11 @@ Component that represents a location inside a [TimePicker](TimePicker)
 | opts.radius | <code>float</code> | A double representing the location radius in meters |
 | opts.title | <code>string</code> | Required title |
 
+-->
 
 ---
 
-<a name="Apple.AuthRequest"></a>
+<!--<a name="Apple.AuthRequest"></a>
 
 ## Apple.AuthRequest
 
@@ -1463,8 +1415,9 @@ const authRequest = new Apple.AuthRequest({
 | opts.receivedMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown to the customer to open the authentication request window |
 | opts.replyMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown when the customer authenticated |
 
+-->
 
-<a name="Apple.Oauth2"></a>
+<!--<a name="Apple.Oauth2"></a>
 
 ## Apple.Oauth2
 
@@ -1519,10 +1472,11 @@ Add a scope to the list of scopes
 | --- | --- | --- |
 | scope | <code>string</code> | scope |
 
+-->
 
 ---
 
-<a name="Apple.PayRequest"></a>
+<!--<a name="Apple.PayRequest"></a>
 
 ## Apple.PayRequest
 
@@ -1638,8 +1592,9 @@ Add a [PayShippingMethod](PayShippingMethod) to the list of shippingMethods
 | --- | --- | --- |
 | method | <code>PayShippingMethod</code> | item |
 
+-->
 
-<a name="Apple.PayMerchant"></a>
+<!--<a name="Apple.PayMerchant"></a>
 
 ## Apple.PayMerchant
 
@@ -1689,8 +1644,9 @@ new Apple.PayMerchant({
 | opts.capabilities | <code>Array.&lt;string&gt;</code> | Optional. An array of payment capabilities supported by the merchant. The array must include supports3DS, and may optionally include supportsCredit, supportsDebit, and supportsEMV |
 | opts.supportedNetworks | <code>Array.&lt;string&gt;</code> | Optional. An array of payment networks supported by the merchant. The array must include one or more of the following values: amex, discover, jcb, masterCard, privateLabel, or visa. |
 
+-->
 
-<a name="Apple.PayShippingMethod"></a>
+<!--<a name="Apple.PayShippingMethod"></a>
 
 ## Apple.PayShippingMethod
 
@@ -1725,8 +1681,9 @@ new Apple.PayShippingMethod({
 | opts.label | <code>string</code> | Required. A short description of the shipping method |
 | opts.detail | <code>string</code> | Additional description of the shipping method |
 
+-->
 
-<a name="Apple.PayLineItem"></a>
+<!--<a name="Apple.PayLineItem"></a>
 
 ## Apple.PayLineItem
 
@@ -1758,8 +1715,9 @@ new Apple.PayLineItem({
 | opts.label | <code>string</code> | Required. A short, localized description of the line item |
 | opts.type | <code>string</code> | Required A value that indicates whether the line item is "final" or "pending" |
 
+-->
 
-<a name="Apple.PayEndpoints"></a>
+<!--<a name="Apple.PayEndpoints"></a>
 
 ## Apple.PayEndpoints
 
@@ -1800,6 +1758,7 @@ new Apple.PayEndpoints({
 | opts.shippingContactUpdateUrl | <code>string</code> | Optional. Called by Apple Pay when the customer changes their shipping address information. |
 | opts.shippingMethodUpdateUrl | <code>string</code> | Optional. Called by Apple Pay when the customer changes the shipping method. |
 
+-->
 
 ---
 
