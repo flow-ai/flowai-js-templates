@@ -18,6 +18,7 @@ describe("Template Apple List picker", () => {
         title: "Selected products",
         style: "small"
       }),
+      multipleSelection: true,
       sections: [
         new Apple.ListPickerSection({
           title: "Fruit",
@@ -47,8 +48,9 @@ describe("Template Apple List picker", () => {
         })
       ]
     })
-
+    
     expect(listPicker.sections.length).to.equal(2)
+    expect(listPicker.multipleSelection).to.equal(true)
     //console.info(JSON.stringify(listPicker, null, 2))
   })
 })

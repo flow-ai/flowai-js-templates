@@ -1117,6 +1117,7 @@ Allow the customer to choose from a list of items
 | Name | Type | Description |
 | --- | --- | --- |
 | sections | <code>array</code> | Required 1 or more ListPickerSection objects |
+| multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections across sections. Defaults to false |
 | receivedMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown to the customer to open the ListPicker window |
 | replyMessage | <code>InteractiveMessage</code> | Required. When the customer’s device receives a picker, the Messages app uses the replyMessage to set the style, content, and images for the reply message bubble that the Messages app displays after the customer makes their selection and returns a reply to the business. |
 
@@ -1169,6 +1170,7 @@ const listPicker = new Apple.ListPicker({
 | --- | --- | --- |
 | opts | <code>object</code> | Collection of options |
 | opts.sections | <code>array</code> | An array of ListPickerSection objects |
+| opts.multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections across sections. Defaults to false |
 | opts.receivedMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown to the customer to open the ListPicker window |
 | opts.replyMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown when the customer made a choice |
 

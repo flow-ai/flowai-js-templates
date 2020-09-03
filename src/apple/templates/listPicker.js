@@ -9,6 +9,7 @@ import ListPickerSection from '../components/listPickerSection'
  * @category ListPicker
  * 
  * @property {array} sections - Required 1 or more ListPickerSection objects
+ * @property {boolean} multipleSelection - Indicates whether the customer can make multiple selections across sections. Defaults to false
  * @property {InteractiveMessage} receivedMessage - Required. Message bubble that is shown to the customer to open the ListPicker window
  * @property {InteractiveMessage} replyMessage - Required. When the customer’s device receives a picker, the Messages app uses the replyMessage to set the style, content, and images for the reply message bubble that the Messages app displays after the customer makes their selection and returns a reply to the business.
  * 
@@ -58,6 +59,7 @@ class ListPicker extends Template {
   /**
   * @param {object} opts - Collection of options
   * @param {array} opts.sections - An array of ListPickerSection objects 
+  * @param {boolean} opts.multipleSelection - Indicates whether the customer can make multiple selections across sections. Defaults to false
   * @param {InteractiveMessage} opts.receivedMessage - Required. Message bubble that is shown to the customer to open the ListPicker window
   * @param {InteractiveMessage} opts.replyMessage - Required. Message bubble that is shown when the customer made a choice
   **/ 
@@ -71,7 +73,8 @@ class ListPicker extends Template {
     const {
       replyMessage,
       receivedMessage,
-      sections
+      sections,
+      multipleSelection
     } = opts
 
     if(!(replyMessage instanceof InteractiveMessage)) {
@@ -88,6 +91,11 @@ class ListPicker extends Template {
       }
     }
 
+    if(typeof multipleSelection !== "boolean" && typeof multipleSelection !== "undefined") {
+      throw new Error("ListPicker multipleSelection must be boolean value")
+    }
+
+    this.multipleSelection = multipleSelection
     this.replyMessage = replyMessage
     this.receivedMessage = receivedMessage
   }
@@ -117,6 +125,7 @@ class ListPicker extends Template {
     const {
       replyMessage,
       receivedMessage,
+      multipleSelection,
       sections,
       delay,
       fallback
@@ -127,6 +136,7 @@ class ListPicker extends Template {
       payload: {
         replyMessage,
         receivedMessage,
+        multipleSelection,
         sections
       },
       delay: delay || undefined,
