@@ -683,6 +683,16 @@ Add a button to the list item
 
 ## Action
 
+Default action used in [Card](#Card), [List](#List) and [Buttons](#Buttons) templates
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Type of action (url, phone, postback, share, login, webview, event) |
+| value | <code>string</code> | Value of the action |
+| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the action |
+
 ### new Action()
 
 **Example**  
@@ -707,8 +717,27 @@ const image = new Image({
 
 ## Button
 
+Component used in [Card](#Card), [Buttons](#Buttons) templates
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Type of button (url, phone, postback, share, login, webview, event) |
+| label | <code>string</code> | Label of the button |
+| value | <code>string</code> | Value of the button |
+| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the button |
+
 ### new Button()
 
+**Example**  
+```js
+new Button({
+ type: 'webview',
+ label: 'More info'
+ value: 'https://...'
+})
+```
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -800,8 +829,31 @@ const image = new Image({
 
 ## QuickReply
 
+Component placed on any Template. Represents a shortcut for a user to reply with. Ideal for yes / no type of questions.
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| label | <code>string</code> | Label that is shown as a quick reply |
+| value | <code>string</code> | Value that is being send as the quick reply, empty if type is location |
+| type | <code>string</code> | Type of quick reply, default is text (text, location, user_email, user_phone_number, event) |
+| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the quick reply |
+
 ### new QuickReply()
 
+**Example**  
+```js
+const text = new Text('We have a 40" screen for sale. Want to preorder it?')
+text.addQuickReply(new QuickReply({
+  label: '👍',
+  value: 'Yes'
+}))
+text.addQuickReply(new QuickReply({
+  label: '👎',
+  value: 'No'
+}))
+```
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -1371,9 +1423,9 @@ Component that represents a location inside a [TimePicker](TimePicker)
 
 -->
 
----
+<!------->
 
-<!--<a name="Apple.AuthRequest"></a>
+<a name="Apple.AuthRequest"></a>
 
 ## Apple.AuthRequest
 
@@ -1415,9 +1467,8 @@ const authRequest = new Apple.AuthRequest({
 | opts.receivedMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown to the customer to open the authentication request window |
 | opts.replyMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown when the customer authenticated |
 
--->
 
-<!--<a name="Apple.Oauth2"></a>
+<a name="Apple.Oauth2"></a>
 
 ## Apple.Oauth2
 
@@ -1472,9 +1523,8 @@ Add a scope to the list of scopes
 | --- | --- | --- |
 | scope | <code>string</code> | scope |
 
--->
 
----
+<!------->
 
 <!--<a name="Apple.PayRequest"></a>
 
@@ -1760,7 +1810,7 @@ new Apple.PayEndpoints({
 
 -->
 
----
+<!------->
 
 <a name="Apple.CustomInteractiveData"></a>
 
