@@ -863,6 +863,68 @@ text.addQuickReply(new QuickReply({
 | opts.param | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this QuickReply |
 
 
+---
+
+# Messenger Templates Reference
+
+<a name="Products"></a>
+
+## Products
+
+Products Template
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| productIds | <code>Array.&lt;string&gt;</code> | list of product IDs |
+
+### new Products(productIds)
+
+The product template can be used to render products that have been uploaded to Facebook catalog. Product details (image, title, price) will automatically be pulled from the product catalog.
+
+**Example**  
+```js
+// Single product card
+const product = new Messenger.Products('11232112332')
+
+// Carousel of products
+const product = new Messenger.Products(['11232112332', '23422224343])
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| productIds | <code>Array.&lt;string&gt;</code> | Required |
+
+
+<a name="OTN"></a>
+
+## OTN
+
+One-Time Notification Request Template
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | title of the OTN |
+| tag | <code>string</code> | tag that will be assigned to actor when this OTN is called |
+
+### new OTN(title, tag)
+
+The One-Time Notification request template template will be rendered and once the user clicks the Notify Me button, a special ONTR trigger is called. The specific user can now be reached for a follow up message after the 24hr period.
+
+**Example**  
+```js
+const otn = new OTN('When keyboards are available', 'keyboard')
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Required title for the request |
+| tag | <code>string</code> | Optional tag name to apply when a user accepts the OTNR |
+
+
 --- 
 
 # Phone Templates Reference
@@ -1265,7 +1327,7 @@ Component that represents a selectable item inside a [ListPickerSection](ListPic
 
 ---
 
-<a name="Apple.TimePicker"></a>
+<!--<a name="Apple.TimePicker"></a>
 
 ## Apple.TimePicker
 
@@ -1327,8 +1389,9 @@ const timePicker = new Apple.TimePicker({
 | opts.receivedMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown to the customer to open the TimePicker window |
 | opts.replyMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown when the customer made a choice |
 
+-->
 
-<a name="Apple.EventItem"></a>
+<!--<a name="Apple.EventItem"></a>
 
 ## Apple.EventItem
 
@@ -1366,8 +1429,9 @@ Add a TimeItem to the list of timeslots
 | --- | --- | --- |
 | item | <code>TimeItem</code> | item |
 
+-->
 
-<a name="Apple.TimeItem"></a>
+<!--<a name="Apple.TimeItem"></a>
 
 ## Apple.TimeItem
 
@@ -1391,8 +1455,9 @@ Component that represents an item inside a [TimePicker](TimePicker)
 | opts.identifier | <code>string</code> | Optional Unique identifier |
 | opts.startTime | <code>string</code> | Required UTC date string |
 
+-->
 
-<a name="Apple.LocationItem"></a>
+<!--<a name="Apple.LocationItem"></a>
 
 ## Apple.LocationItem
 
@@ -1418,8 +1483,9 @@ Component that represents a location inside a [TimePicker](TimePicker)
 | opts.radius | <code>float</code> | A double representing the location radius in meters |
 | opts.title | <code>string</code> | Required title |
 
+-->
 
----
+<!------->
 
 <a name="Apple.AuthRequest"></a>
 
@@ -1520,9 +1586,9 @@ Add a scope to the list of scopes
 | scope | <code>string</code> | scope |
 
 
----
+<!------->
 
-<a name="Apple.PayRequest"></a>
+<!--<a name="Apple.PayRequest"></a>
 
 ## Apple.PayRequest
 
@@ -1638,8 +1704,9 @@ Add a [PayShippingMethod](PayShippingMethod) to the list of shippingMethods
 | --- | --- | --- |
 | method | <code>PayShippingMethod</code> | item |
 
+-->
 
-<a name="Apple.PayMerchant"></a>
+<!--<a name="Apple.PayMerchant"></a>
 
 ## Apple.PayMerchant
 
@@ -1689,8 +1756,9 @@ new Apple.PayMerchant({
 | opts.capabilities | <code>Array.&lt;string&gt;</code> | Optional. An array of payment capabilities supported by the merchant. The array must include supports3DS, and may optionally include supportsCredit, supportsDebit, and supportsEMV |
 | opts.supportedNetworks | <code>Array.&lt;string&gt;</code> | Optional. An array of payment networks supported by the merchant. The array must include one or more of the following values: amex, discover, jcb, masterCard, privateLabel, or visa. |
 
+-->
 
-<a name="Apple.PayShippingMethod"></a>
+<!--<a name="Apple.PayShippingMethod"></a>
 
 ## Apple.PayShippingMethod
 
@@ -1725,8 +1793,9 @@ new Apple.PayShippingMethod({
 | opts.label | <code>string</code> | Required. A short description of the shipping method |
 | opts.detail | <code>string</code> | Additional description of the shipping method |
 
+-->
 
-<a name="Apple.PayLineItem"></a>
+<!--<a name="Apple.PayLineItem"></a>
 
 ## Apple.PayLineItem
 
@@ -1758,8 +1827,9 @@ new Apple.PayLineItem({
 | opts.label | <code>string</code> | Required. A short, localized description of the line item |
 | opts.type | <code>string</code> | Required A value that indicates whether the line item is "final" or "pending" |
 
+-->
 
-<a name="Apple.PayEndpoints"></a>
+<!--<a name="Apple.PayEndpoints"></a>
 
 ## Apple.PayEndpoints
 
@@ -1800,8 +1870,9 @@ new Apple.PayEndpoints({
 | opts.shippingContactUpdateUrl | <code>string</code> | Optional. Called by Apple Pay when the customer changes their shipping address information. |
 | opts.shippingMethodUpdateUrl | <code>string</code> | Optional. Called by Apple Pay when the customer changes the shipping method. |
 
+-->
 
----
+<!------->
 
 <a name="Apple.CustomInteractiveData"></a>
 

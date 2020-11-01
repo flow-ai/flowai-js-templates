@@ -89,6 +89,7 @@ const Apple = {
 
 // Messenger templates
 import OTN from './messenger/templates/otn'
+import Products from './messenger/templates/products'
 
 /** 
  * @namespace 
@@ -96,7 +97,8 @@ import OTN from './messenger/templates/otn'
  * Facebook Messenger specific reply templates
  **/
 const Messenger = {
-  OTN
+  OTN,
+  Products
 }
 
 
