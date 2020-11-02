@@ -18,6 +18,7 @@ import { parseParam, flattenParams } from './param'
  **/
 class Button {
   /**
+   * @param {object} opts - Required properties
    * @param {string} opts.type - Required, type of button (url, phone, postback, share, login, webview, event)
    * @param {string} opts.label - Required, label of the button
    * @param {string} opts.value - Required, value of the button (can be a URL or other string value)

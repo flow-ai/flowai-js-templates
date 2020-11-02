@@ -728,7 +728,7 @@ Component used in [Card](#Card), [Buttons](#Buttons) templates
 | value | <code>string</code> | Value of the button |
 | params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the button |
 
-### new Button()
+### new Button(opts)
 
 **Example**  
 ```js
@@ -741,6 +741,7 @@ new Button({
 
 | Param | Type | Description |
 | --- | --- | --- |
+| opts | <code>object</code> | Required properties |
 | opts.type | <code>string</code> | Required, type of button (url, phone, postback, share, login, webview, event) |
 | opts.label | <code>string</code> | Required, label of the button |
 | opts.value | <code>string</code> | Required, value of the button (can be a URL or other string value) |
@@ -861,6 +862,254 @@ text.addQuickReply(new QuickReply({
 | opts.type | <code>string</code> | Optional type, default is text (text, location, user_email, user_phone_number, event) |
 | opts.value | <code>string</code> | Required, ignored if type is location |
 | opts.param | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this QuickReply |
+
+
+---
+
+# Messenger Templates Reference
+
+<a name="Products"></a>
+
+## Products
+
+Products Template
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| productIds | <code>Array.&lt;string&gt;</code> | list of product IDs |
+
+### new Products(productIds)
+
+The product template can be used to render products that have been uploaded to Facebook catalog. Product details (image, title, price) will automatically be pulled from the product catalog.
+
+**Example**  
+```js
+// Single product card
+const product = new Messenger.Products('11232112332')
+
+// Carousel of products
+const product = new Messenger.Products(['11232112332', '23422224343])
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| productIds | <code>Array.&lt;string&gt;</code> | Required |
+
+
+<a name="OTN"></a>
+
+## OTN
+
+One-Time Notification Request Template
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | title of the OTN |
+| tag | <code>string</code> | tag that will be assigned to actor when this OTN is called |
+
+### new OTN(title, tag)
+
+The One-Time Notification request template template will be rendered and once the user clicks the Notify Me button, a special ONTR trigger is called. The specific user can now be reached for a follow up message after the 24hr period.
+
+**Example**  
+```js
+const otn = new OTN('When keyboards are available', 'keyboard')
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Required title for the request |
+| tag | <code>string</code> | Optional tag name to apply when a user accepts the OTNR |
+
+
+<a name="Receipt"></a>
+
+## Receipt
+
+Receipt Template
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| sharable | <code>boolean</code> | Optional, set to true to enable the native share button in Messenger for the template message. Defaults to false. |
+| recipientName | <code>string</code> | Required, the recipient's name. |
+| merchantName | <code>string</code> | Optional, the merchant's name. If present this is shown as logo text. |
+| orderNumber | <code>string</code> | Required, the order number. Must be unique. |
+| currency | <code>string</code> | Required,  currency of the payment. |
+| paymentMethod | <code>string</code> | Required, the payment method used. Providing enough information for the customer to decipher which payment method and account they used is recommended. This can be a custom string, such as, "Visa 1234". |
+| timestamp | <code>string</code> | Optional, timestamp of the order in seconds. |
+| elements | [<code>Array.&lt;ReceiptElement&gt;</code>](#ReceiptElement) | Optional, array of a maximum of 100 element objects that describe items in the order. Sort order of the elements is not guaranteed. |
+| address | [<code>ReceiptAddress</code>](#ReceiptAddress) | Optional, the shipping address of the order. |
+| summary | [<code>ReceiptSummary</code>](#ReceiptSummary) | Optional, the payment summary. See summary. |
+| adjustments | [<code>Array.&lt;ReceiptAdjustment&gt;</code>](#ReceiptAdjustment) | Optional, an array of payment objects that describe payment adjustments, such as discounts. |
+
+### new Receipt()
+
+Create a Receipt template
+
+**Example**  
+```js
+// Single receipt card
+const receipt = new Messenger.Receipt({
+
+})
+```
+
+<a name="ReceiptElement"></a>
+
+## ReceiptElement
+
+Component used in [Receipt](#Receipt) templates
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Required, the name to display for the item. |
+| subtitle | <code>string</code> | Optional, a brief item description |
+| quantity | <code>number</code> | Optional, the quantity of the item purchased. |
+| price | <code>number</code> | Required, the price of the item. For free items, '0' is allowed. |
+| currency | <code>string</code> | Optional, the currency of the item price. |
+| imageUrl | <code>string</code> | Optional, the URL of an image to be displayed with the item. |
+
+### new ReceiptElement(opts)
+
+The shipping element of an order
+
+**Example**  
+```js
+const element = new Messenger.ReceiptElement({
+})
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Required properties |
+| opts.title | <code>string</code> | Required, the name to display for the item. |
+| opts.subtitle | <code>string</code> | Optional, a brief item description |
+| opts.quantity | <code>number</code> | Optional, the quantity of the item purchased. |
+| opts.price | <code>number</code> | Required, the price of the item. For free items, '0' is allowed. |
+| opts.currency | <code>string</code> | Optional, the currency of the item price. |
+| opts.imageUrl | <code>string</code> | Optional, the URL of an image to be displayed with the item. |
+
+
+<a name="ReceiptAddress"></a>
+
+## ReceiptAddress
+
+Component used in [Receipt](#Receipt) templates
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| street1 | <code>string</code> | Required, the street address, line 1. |
+| street2 | <code>string</code> | Optional, the street address, line 2. |
+| city | <code>string</code> | Required, the city name of the address. |
+| postalCode | <code>string</code> | Required, the postal code of the address. |
+| state | <code>string</code> | Required, the state abbreviation for U.S. addresses, or the region/province for non-U.S. addresses. |
+| country | <code>string</code> | Required, the two-letter country abbreviation of the address. |
+
+### new ReceiptAddress(opts)
+
+The shipping address of an order
+
+**Example**  
+```js
+const address = new Messenger.ReceiptAddress({
+  street1: "1 Hacker Way",
+  street2: "2nd floor",
+  city: "Menlo Park",
+  postalCode: "94025",
+  state: "CA",
+  country: "US"
+})
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Required properties |
+| opts.street1 | <code>string</code> | Required, the street address, line 1. |
+| opts.street2 | <code>string</code> | Optional, the street address, line 2. |
+| opts.city | <code>string</code> | Required, the city name of the address. |
+| opts.postalCode | <code>string</code> | Required, the postal code of the address. |
+| opts.state | <code>string</code> | Required, the state abbreviation for U.S. addresses, or the region/province for non-U.S. addresses. |
+| opts.country | <code>string</code> | Required, the two-letter country abbreviation of the address. |
+
+
+<a name="ReceiptSummary"></a>
+
+## ReceiptSummary
+
+Component used in [Receipt](#Receipt) templates
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| subtotal | <code>number</code> | Optional, the sub-total of the order. |
+| shippingCost | <code>number</code> | Optional, the shipping cost of the order. |
+| totalTax | <code>number</code> | Optional, the tax of the order. |
+| totalCost | <code>number</code> | Required, the total cost of the order, including sub-total, shipping, and tax. |
+
+### new ReceiptSummary(opts)
+
+The shipping summary of an order
+
+**Example**  
+```js
+const summary = new Messenger.ReceiptSummary({
+  subtotal: 75.00,
+  shippingCost: 4.95,
+  totalTax: 6.19,
+  totalCost: 56.14
+})
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Required properties |
+| opts.subtotal | <code>number</code> | Optional, the sub-total of the order. |
+| opts.shippingCost | <code>number</code> | Optional, the shipping cost of the order. |
+| opts.totalTax | <code>number</code> | Optional, the tax of the order. |
+| opts.totalCost | <code>number</code> | Required, the total cost of the order, including sub-total, shipping, and tax. |
+
+
+<a name="ReceiptAdjustment"></a>
+
+## ReceiptAdjustment
+
+Component used in [Receipt](#Receipt) templates
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | <code>string</code> | Required, name of the adjustment. |
+| amount | <code>number</code> | Required, the amount of the adjustment. |
+
+### new ReceiptAdjustment(opts)
+
+Describes a payment adjustments, such as discounts
+
+**Example**  
+```js
+const adjustment = new Messenger.ReceiptAdjustment({
+  name: "10% discount",
+  amount: 4.95
+})
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Required properties |
+| opts.name | <code>string</code> | Required, name of the adjustment. |
+| opts.amount | <code>number</code> | Required, the amount of the adjustment. |
 
 
 --- 

@@ -89,6 +89,12 @@ const Apple = {
 
 // Messenger templates
 import OTN from './messenger/templates/otn'
+import Products from './messenger/templates/products'
+import Receipt from './messenger/templates/receipt'
+import ReceiptAddress from './messenger/components/receipt/address'
+import ReceiptAdjustment from './messenger/components/receipt/adjustment'
+import ReceiptElement from './messenger/components/receipt/element'
+import ReceiptSummary from './messenger/components/receipt/summary'
 
 /** 
  * @namespace 
@@ -96,7 +102,13 @@ import OTN from './messenger/templates/otn'
  * Facebook Messenger specific reply templates
  **/
 const Messenger = {
-  OTN
+  OTN,
+  Products,
+  Receipt,
+  ReceiptAddress,
+  ReceiptAdjustment,
+  ReceiptElement,
+  ReceiptSummary
 }
 
 

@@ -1,8 +1,12 @@
 import Template from '../../generic/templates/template'
 
 /**
- * Template with an One-Time Notification
+ * One-Time Notification Request Template
  * 
+ * @description
+ * 
+ * The One-Time Notification request template template will be rendered and once the user clicks the Notify Me button, a special ONTR trigger is called. The specific user can now be reached for a follow up message after the 24hr period.
+ *   
  * @category Templates
  * 
  * @property {string} title - title of the OTN
@@ -13,8 +17,8 @@ import Template from '../../generic/templates/template'
 class OTN extends Template {
 
   /**
-   * @param {string} title - Required
-   * @param {string} tag - Optional
+   * @param {string} title - Required title for the request
+   * @param {string} tag - Optional tag name to apply when a user accepts the OTNR
    **/
   constructor({ title, tag }) {
     super()
@@ -26,7 +30,7 @@ class OTN extends Template {
     }
 
     if (otnTitle.length > 65) {
-      throw new Error('Title length should be less or equal 65 symbols')
+      throw new Error('Title length should be less or equal to 65 symbols')
     }
 
     this.title = otnTitle
