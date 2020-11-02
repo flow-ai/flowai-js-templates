@@ -40,7 +40,7 @@ class Products extends Template {
     } = this
 
     return {
-      type: 'products',
+      type: 'messenger_products',
       payload: {
         productIds
       },

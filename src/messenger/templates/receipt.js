@@ -186,7 +186,7 @@ class Receipt extends Template {
     } = this
 
     return {
-      type: 'receipt',
+      type: 'messenger_receipt',
       payload: {
         sharable,
         recipientName,
