@@ -25,9 +25,56 @@ import ReceiptSummary from '../components/receipt/summary'
  * @property {ReceiptAdjustment[]} adjustments - Optional, an array of payment objects that describe payment adjustments, such as discounts.
  * 
  * @example
- * // Single receipt card
+ * // Create a receipt
  * const receipt = new Messenger.Receipt({
- * 
+ *   recipientName: "Stephane Crozatier",
+ *   orderNumber: "12345678902",
+ *   currency: "USD",
+ *   paymentMethod: "Visa 2345",
+ *   orderUrl: "http://petersapparel.parseapp.com/order?order_id=123456",
+ *   timestamp: "1428444852",
+ *   address: new Messenger.ReceiptAddress({
+ *     street1: "1 Hacker Way",
+ *     street2: "2nd floor",
+ *     city: "Menlo Park",
+ *     postalCode: "94025",
+ *     state: "CA",
+ *     country: "US"
+ *   }),
+ *   summary: new Messenger.ReceiptSummary({
+ *     subtotal: 75.00,
+ *     shippingCost: 4.95,
+ *     totalTax: 6.19,
+ *     totalCost: 56.14
+ *   }),
+ *   adjustments: [
+ *     new Messenger.ReceiptAdjustment({
+ *       name: "New Customer Discount",
+ *       amount: 20
+ *     }),
+ *     new Messenger.ReceiptAdjustment({
+ *       name: "$10 Off Coupon",
+ *       amount: 10
+ *     })
+ *   ],
+ *   elements: [
+ *     new Messenger.ReceiptElement({
+ *       title: "Classic White T-Shirt",
+ *       subtitle: "100% Soft and Luxurious Cotton",
+ *       quantity: 2,
+ *       price: 29.95,
+ *       currency: "USD",
+ *       imageUrl: "http://petersapparel.parseapp.com/img/whiteshirt.png"
+ *     }),
+ *     new Messenger.ReceiptElement({
+ *       title: "Classic Gray T-Shirt",
+ *       subtitle: "100% Soft and Luxurious Cotton",
+ *       quantity: 2,
+ *       price: 49.95,
+ *       currency: "USD",
+ *       imageUrl: "http://petersapparel.parseapp.com/img/grayshirt.png"
+ *     })
+ *   ]
  * })
  **/
 class Receipt extends Template {
@@ -123,7 +170,7 @@ class Receipt extends Template {
     const {
       delay,
       fallback,
-      
+
       sharable,
       recipientName,
       merchantName,
