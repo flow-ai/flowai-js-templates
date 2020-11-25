@@ -11,8 +11,8 @@ import Media from '../components/media'
  * 
  * @property {string} title - Main title of the card
  * @property {string} description - Optional description
- * @property {Media} media - Optional {@link GBM.Media}
- * @property {Suggestion[]} suggestions - Optional set of {@link GBM.Suggestion} components
+ * @property {GBM.Media} media - Optional {@link GBM.Media}
+ * @property {GBM.Suggestion[]} suggestions - Optional set of {@link GBM.Suggestion} components
  * @example
  * const suggestion1 = new Suggestion({
  *   label: "Label",

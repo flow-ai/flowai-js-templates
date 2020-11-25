@@ -2229,8 +2229,8 @@ Send a related information, [Media](#GBM.Media) or [Suggestion](#GBM.Suggestion)
 | --- | --- | --- |
 | title | <code>string</code> | Main title of the card |
 | description | <code>string</code> | Optional description |
-| media | [<code>Media</code>](#Media) | Optional [Media](#GBM.Media) |
-| suggestions | <code>Array.&lt;Suggestion&gt;</code> | Optional set of [Suggestion](#GBM.Suggestion) components |
+| media | [<code>Media</code>](#GBM.Media) | Optional [Media](#GBM.Media) |
+| suggestions | [<code>Array.&lt;Suggestion&gt;</code>](#GBM.Suggestion) | Optional set of [Suggestion](#GBM.Suggestion) components |
 
 ### new Card(opts)
 
@@ -2427,4 +2427,32 @@ Add a scopes to the list of scopes
 | Param | Type | Description |
 | --- | --- | --- |
 | scopes | <code>string</code> | scopes |
+
+
+<a name="GBM.Media"></a>
+
+## GBM.Media
+
+A media file within a rich  [Card](#GBM.Card)
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| height | <code>string</code> | Optional. The height of the media within a rich card. SHORT = 112 DP. MEDIUM = 168 DP. TALL = 264 DP. Not available for rich card carousels when the card width is set to SMALL. |
+| fileUrl | <code>string</code> | Required. Publicly reachable URL of the file. The platform determines the MIME type of the file from the content-type field in the HTTP headers when the platform fetches the file. The content-type field must be present and accurate in the HTTP response from the URL. Maximum 5 MB. Supported content types: image/jpeg, image/jpg, image/png |
+| thumbnailUrl | <code>string</code> | Optional. Publicly reachable URL of the thumbnail. If you don't provide a thumbnail URL, the platform displays a blank placeholder thumbnail until the user's device downloads the file. Maximum 25 KB. Supported content types: image/jpeg, image/jpg, image/png |
+| forceRefresh | <code>string</code> | Optional. If set, the platform fetches the file and thumbnail from the specified URLs, even if the platform has cached copies of the file (and/or of the thumbnail). |
+| altText | <code>string</code> | Optional. Text describing the details about the media for accessibility purposes. |
+
+### new Media()
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.height | <code>string</code> | Optional |
+| opts.fileUrl | <code>string</code> | Required |
+| opts.thumbnailUrl | <code>string</code> | Optional |
+| opts.forceRefresh | <code>bool</code> | Optional |
+| opts.forceRefresh | <code>bool</code> | Optional |
 
