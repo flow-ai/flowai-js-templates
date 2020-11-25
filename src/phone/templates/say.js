@@ -1,4 +1,4 @@
-import Template from '../../generic/templates/template'
+import Template from '../../base/templates/template'
 
 /**
  * Send a message to a user

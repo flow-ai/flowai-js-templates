@@ -1,4 +1,4 @@
-import Template from '../../generic/templates/template'
+import Template from '../../base/templates/template'
 
 /**
  * Products Template
@@ -6,6 +6,7 @@ import Template from '../../generic/templates/template'
  * @description
  * The product template can be used to render products that have been uploaded to Facebook catalog. Product details (image, title, price) will automatically be pulled from the product catalog.
  * 
+ * @memberof Messenger
  * @category Templates
  * 
  * @property {string[]} productIds - list of product IDs

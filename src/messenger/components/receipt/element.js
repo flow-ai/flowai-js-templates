@@ -1,6 +1,7 @@
 /**
  * Component used in {@link Receipt} templates
  * 
+ * @memberof Messenger 
  * @category Components
  * 
  * @property {string} title - Required, the name to display for the item.

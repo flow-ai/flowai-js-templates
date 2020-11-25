@@ -1,4 +1,4 @@
-import { parseParam, flattenParams } from './param'
+import { parseParam, flattenParams } from '../../base/components/param'
 
 /**
  * Component used in {@link Card}, {@link Buttons} templates

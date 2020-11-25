@@ -1,4 +1,4 @@
-import { parseParam, flattenParams } from './param'
+import { parseParam, flattenParams } from '../../base/components/param'
 
 /**
  * Component placed on any Template. Represents a shortcut for a user to reply with. Ideal for yes / no type of questions.

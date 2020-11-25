@@ -1,4 +1,4 @@
-import Template from '../../generic/templates/template'
+import Template from '../../base/templates/template'
 
 /**
  * Pause a moment during the call

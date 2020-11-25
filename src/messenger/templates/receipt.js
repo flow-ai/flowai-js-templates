@@ -1,4 +1,4 @@
-import Template from '../../generic/templates/template'
+import Template from '../../base/templates/template'
 import ReceiptElement from '../components/receipt/element'
 import ReceiptAddress from '../components/receipt/address'
 import ReceiptAdjustment from '../components/receipt/adjustment'
@@ -10,6 +10,7 @@ import ReceiptSummary from '../components/receipt/summary'
  * @description
  * The receipt template allows you to send an order confirmation. The template may include an order summary, payment details, and shipping information.
  * 
+ * @memberof Messenger
  * @category Templates
  * 
  * @property {boolean} sharable - Optional, set to true to enable the native share button in Messenger for the template message. Defaults to false.

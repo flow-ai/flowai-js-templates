@@ -1,4 +1,4 @@
-import { parseParam, flattenParams } from './param'
+import { parseParam, flattenParams } from '../../base/components/param'
 
 /**
  * Default action used in {@link Card}, {@link List} and {@link Buttons} templates

@@ -1,6 +1,7 @@
 /**
  * Component used in {@link Receipt} templates
  * 
+ * @memberof Messenger
  * @category Components
  * 
  * @property {string} street1 - Required, the street address, line 1.

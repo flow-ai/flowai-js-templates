@@ -1,4 +1,4 @@
-import Template from '../../generic/templates/template'
+import Template from '../../base/templates/template'
 import ImageAsset from '../components/imageAsset'
 import VideoAsset from '../components/videoAsset'
 

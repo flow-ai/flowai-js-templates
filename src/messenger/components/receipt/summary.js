@@ -1,6 +1,7 @@
 /**
  * Component used in {@link Receipt} templates
  * 
+ * @memberof Messenger 
  * @category Components
  * 
  * @property {number} subtotal - Optional, the sub-total of the order.

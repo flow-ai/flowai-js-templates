@@ -1,6 +1,7 @@
 /**
  * Component used in {@link Receipt} templates
  * 
+ * @memberof Messenger
  * @category Components
  * 
  * @property {string} name - Required, name of the adjustment.

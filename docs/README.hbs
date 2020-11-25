@@ -1,4 +1,5 @@
 # The Flow.ai JavaScript Response Templates
+
 Easy helper classes to create rich [flow.ai](https://flow.ai) response templates like cards, buttons and locations.
 
 Reponse templates allow developers to render widgets at channels that support this like Facebook Messenger or the flow.ai Web client.
@@ -9,6 +10,7 @@ Reponse templates allow developers to render widgets at channels that support th
 * Full support for all template types
 
 ## Getting started
+
 All classes are available for usage with Flow.ai Cloud functions. When you want to send rich responses using a webhook, install the library with NPM.
 
 ### Install
@@ -18,6 +20,7 @@ npm install --save flowai-js-templates
 ```
 
 ### Usage
+
 When using Flow.ai [cloud code](https://docs.flow.ai/features/cloud-functions.html) there is no need to require or import anything.
 
 ```js
@@ -30,9 +33,11 @@ const card = new Card({
 ```
 
 ### Sending back rich messages
+
 You can send back rich messages in 3 different ways
 
 #### Cloud code
+
 Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) function you can directly send back messages by returning them from your function.
 
 ##### Sending a single message with a single response
@@ -145,7 +150,7 @@ async payload=> {
 For a complete overview of all reply actions see the [Flow.ai documentation](https://flow.ai/docs/integrations/overview) site.
 
 {{#*inline "classDoc" }}
-{{#class name=className}}
+{{#class longname=className}}
 <a name="{{{anchorName}}}"></a>
 
 {{>heading-indent}}{{id}}
@@ -216,85 +221,97 @@ There are a number of generic templates that are supported by multiple messaging
 
 # Messenger Templates Reference
 
-{{>classDoc className="Products"}}
+{{>classDoc className="Messenger.Products"}}
 
-{{>classDoc className="OTN"}}
+{{>classDoc className="Messenger.OTN"}}
 
-{{>classDoc className="Receipt"}}
+{{>classDoc className="Messenger.Receipt"}}
 
-{{>classDoc className="ReceiptElement"}}
+{{>classDoc className="Messenger.ReceiptElement"}}
 
-{{>classDoc className="ReceiptAddress"}}
+{{>classDoc className="Messenger.ReceiptAddress"}}
 
-{{>classDoc className="ReceiptSummary"}}
+{{>classDoc className="Messenger.ReceiptSummary"}}
 
-{{>classDoc className="ReceiptAdjustment"}}
+{{>classDoc className="Messenger.ReceiptAdjustment"}}
 
 --- 
 
 # Phone Templates Reference
 
-{{>classDoc className="Ask"}}
+{{>classDoc className="Phone.Ask"}}
 
-{{>classDoc className="Say"}}
+{{>classDoc className="Phone.Say"}}
 
-{{>classDoc className="Pause"}}
+{{>classDoc className="Phone.Pause"}}
 
-{{>classDoc className="Dial"}}
+{{>classDoc className="Phone.Dial"}}
 
-{{>classDoc className="Hangup"}}
+{{>classDoc className="Phone.Hangup"}}
 
 --- 
 
 # Apple Business Chat Templates Reference (Preview)
 
 
-{{>classDoc className="RichLink"}}
+{{>classDoc className="Apple.RichLink"}}
 
-{{>classDoc className="ImageAsset"}}
+{{>classDoc className="Apple.ImageAsset"}}
 
-{{>classDoc className="VideoAsset"}}
-
----
-
-{{>classDoc className="ListPicker"}}
-
-{{>classDoc className="ListPickerSection"}}
-
-{{>classDoc className="ListPickerItem"}}
+{{>classDoc className="Apple.VideoAsset"}}
 
 ---
 
-<!--{{>classDoc className="TimePicker"}}-->
+{{>classDoc className="Apple.ListPicker"}}
 
-<!--{{>classDoc className="EventItem"}}-->
+{{>classDoc className="Apple.ListPickerSection"}}
 
-<!--{{>classDoc className="TimeItem"}}-->
-
-<!--{{>classDoc className="LocationItem"}}-->
-
-<!------->
-
-{{>classDoc className="AuthRequest"}}
-
-{{>classDoc className="Oauth2"}}
-
-<!------->
-
-<!--{{>classDoc className="PayRequest"}}-->
-
-<!--{{>classDoc className="PayMerchant"}}-->
-
-<!--{{>classDoc className="PayShippingMethod"}}-->
-
-<!--{{>classDoc className="PayLineItem"}}-->
-
-<!--{{>classDoc className="PayEndpoints"}}-->
-
-<!------->
-
-{{>classDoc className="CustomInteractiveData"}}
+{{>classDoc className="Apple.ListPickerItem"}}
 
 ---
 
-{{>classDoc className="InteractiveMessage"}}
+<!--{{>classDoc className="Apple.TimePicker"}}-->
+
+<!--{{>classDoc className="Apple.EventItem"}}-->
+
+<!--{{>classDoc className="Apple.TimeItem"}}-->
+
+<!--{{>classDoc className="Apple.LocationItem"}}-->
+
+<!------->
+
+{{>classDoc className="Apple.AuthRequest"}}
+
+{{>classDoc className="Apple.Oauth2"}}
+
+<!------->
+
+<!--{{>classDoc className="Apple.PayRequest"}}-->
+
+<!--{{>classDoc className="Apple.PayMerchant"}}-->
+
+<!--{{>classDoc className="Apple.PayShippingMethod"}}-->
+
+<!--{{>classDoc className="Apple.PayLineItem"}}-->
+
+<!--{{>classDoc className="Apple.PayEndpoints"}}-->
+
+<!------->
+
+{{>classDoc className="Apple.CustomInteractiveData"}}
+
+---
+
+{{>classDoc className="Apple.InteractiveMessage"}}
+
+--- 
+
+# Google Business Messages Templates Reference (Preview)
+
+{{>classDoc className="GBM.Card"}}
+
+{{>classDoc className="GBM.Carousel"}}
+
+{{>classDoc className="GBM.Suggestion"}}
+
+{{>classDoc className="GBM.Auth"}}

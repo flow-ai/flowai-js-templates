@@ -1,4 +1,4 @@
-import Template from '../../generic/templates/template'
+import Template from '../../base/templates/template'
 import InteractiveMessage from '../components/interactiveMessage'
 import ListPickerSection from '../components/listPickerSection'
 
@@ -56,7 +56,7 @@ import ListPickerSection from '../components/listPickerSection'
  **/
 class ListPicker extends Template {
 
-  /**
+ /**
   * @param {object} opts - Collection of options
   * @param {array} opts.sections - An array of ListPickerSection objects 
   * @param {boolean} opts.multipleSelection - Indicates whether the customer can make multiple selections across sections. Defaults to false

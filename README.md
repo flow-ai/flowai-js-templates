@@ -1,4 +1,5 @@
 # The Flow.ai JavaScript Response Templates
+
 Easy helper classes to create rich [flow.ai](https://flow.ai) response templates like cards, buttons and locations.
 
 Reponse templates allow developers to render widgets at channels that support this like Facebook Messenger or the flow.ai Web client.
@@ -9,6 +10,7 @@ Reponse templates allow developers to render widgets at channels that support th
 * Full support for all template types
 
 ## Getting started
+
 All classes are available for usage with Flow.ai Cloud functions. When you want to send rich responses using a webhook, install the library with NPM.
 
 ### Install
@@ -18,6 +20,7 @@ npm install --save flowai-js-templates
 ```
 
 ### Usage
+
 When using Flow.ai [cloud code](https://docs.flow.ai/features/cloud-functions.html) there is no need to require or import anything.
 
 ```js
@@ -30,9 +33,11 @@ const card = new Card({
 ```
 
 ### Sending back rich messages
+
 You can send back rich messages in 3 different ways
 
 #### Cloud code
+
 Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) function you can directly send back messages by returning them from your function.
 
 ##### Sending a single message with a single response
@@ -192,7 +197,7 @@ Add a response
 
 ### *message*.addQuickReply(quickReply)
 
-A convienamnce method to add a quick reply to the last response template of a Message
+A convenience method to add a quick reply to the last response template of a Message
 
 **Example**  
 ```js
@@ -227,6 +232,17 @@ Template with a piece of text
 | Name | Type | Description |
 | --- | --- | --- |
 | text | <code>string</code> | Text to show |
+
+### new Text()
+
+**Example**  
+```js
+const text = new Text('Want a free soda?')
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.text | <code>string</code> | Required |
 
 ### new Text()
 
@@ -868,9 +884,9 @@ text.addQuickReply(new QuickReply({
 
 # Messenger Templates Reference
 
-<a name="Products"></a>
+<a name="Messenger.Products"></a>
 
-## Products
+## Messenger.Products
 
 Products Template
 
@@ -898,9 +914,9 @@ const product = new Messenger.Products(['11232112332', '23422224343])
 | productIds | <code>Array.&lt;string&gt;</code> | Required |
 
 
-<a name="OTN"></a>
+<a name="Messenger.OTN"></a>
 
-## OTN
+## Messenger.OTN
 
 One-Time Notification Request Template
 
@@ -913,11 +929,11 @@ One-Time Notification Request Template
 
 ### new OTN(title, tag)
 
-The One-Time Notification request template template will be rendered and once the user clicks the Notify Me button, a special ONTR trigger is called. The specific user can now be reached for a follow up message after the 24hr period.
+The One-Time Notification request template template will be rendered and once the user clicks the Notify Me button, a special OTNR trigger is called. The specific user can now be reached for a follow up message after the 24hr period.
 
 **Example**  
 ```js
-const otn = new OTN('When keyboards are available', 'keyboard')
+const otn = new Messenger.OTN('When keyboards are available', 'keyboard')
 ```
 
 | Param | Type | Description |
@@ -926,9 +942,9 @@ const otn = new OTN('When keyboards are available', 'keyboard')
 | tag | <code>string</code> | Optional tag name to apply when a user accepts the OTNR |
 
 
-<a name="Receipt"></a>
+<a name="Messenger.Receipt"></a>
 
-## Receipt
+## Messenger.Receipt
 
 Receipt Template
 
@@ -943,14 +959,14 @@ Receipt Template
 | currency | <code>string</code> | Required,  currency of the payment. |
 | paymentMethod | <code>string</code> | Required, the payment method used. Providing enough information for the customer to decipher which payment method and account they used is recommended. This can be a custom string, such as, "Visa 1234". |
 | timestamp | <code>string</code> | Optional, timestamp of the order in seconds. |
-| elements | [<code>Array.&lt;ReceiptElement&gt;</code>](#ReceiptElement) | Optional, array of a maximum of 100 element objects that describe items in the order. Sort order of the elements is not guaranteed. |
-| address | [<code>ReceiptAddress</code>](#ReceiptAddress) | Optional, the shipping address of the order. |
-| summary | [<code>ReceiptSummary</code>](#ReceiptSummary) | Optional, the payment summary. See summary. |
-| adjustments | [<code>Array.&lt;ReceiptAdjustment&gt;</code>](#ReceiptAdjustment) | Optional, an array of payment objects that describe payment adjustments, such as discounts. |
+| elements | <code>Array.&lt;ReceiptElement&gt;</code> | Optional, array of a maximum of 100 element objects that describe items in the order. Sort order of the elements is not guaranteed. |
+| address | <code>ReceiptAddress</code> | Optional, the shipping address of the order. |
+| summary | <code>ReceiptSummary</code> | Optional, the payment summary. See summary. |
+| adjustments | <code>Array.&lt;ReceiptAdjustment&gt;</code> | Optional, an array of payment objects that describe payment adjustments, such as discounts. |
 
 ### new Receipt()
 
-The receipt template allows you to send an order confirmation. The template may include an order summary, payment details, and shipping information.
+Create a Receipt template
 
 **Example**  
 ```js
@@ -1007,11 +1023,11 @@ const receipt = new Messenger.Receipt({
 })
 ```
 
-<a name="ReceiptElement"></a>
+<a name="Messenger.ReceiptElement"></a>
 
-## ReceiptElement
+## Messenger.ReceiptElement
 
-Component used in [Receipt](#Receipt) templates
+Component used in [Receipt](Receipt) templates
 
 **Properties**
 
@@ -1045,11 +1061,11 @@ const element = new Messenger.ReceiptElement({
 | opts.imageUrl | <code>string</code> | Optional, the URL of an image to be displayed with the item. |
 
 
-<a name="ReceiptAddress"></a>
+<a name="Messenger.ReceiptAddress"></a>
 
-## ReceiptAddress
+## Messenger.ReceiptAddress
 
-Component used in [Receipt](#Receipt) templates
+Component used in [Receipt](Receipt) templates
 
 **Properties**
 
@@ -1089,11 +1105,11 @@ const address = new Messenger.ReceiptAddress({
 | opts.country | <code>string</code> | Required, the two-letter country abbreviation of the address. |
 
 
-<a name="ReceiptSummary"></a>
+<a name="Messenger.ReceiptSummary"></a>
 
-## ReceiptSummary
+## Messenger.ReceiptSummary
 
-Component used in [Receipt](#Receipt) templates
+Component used in [Receipt](Receipt) templates
 
 **Properties**
 
@@ -1127,11 +1143,11 @@ const summary = new Messenger.ReceiptSummary({
 | opts.totalCost | <code>number</code> | Required, the total cost of the order, including sub-total, shipping, and tax. |
 
 
-<a name="ReceiptAdjustment"></a>
+<a name="Messenger.ReceiptAdjustment"></a>
 
-## ReceiptAdjustment
+## Messenger.ReceiptAdjustment
 
-Component used in [Receipt](#Receipt) templates
+Component used in [Receipt](Receipt) templates
 
 **Properties**
 
@@ -2195,4 +2211,219 @@ Message that renders in a bubble either shown as the received message that allow
 | opts.imageTitle | <code>string</code> | The image's title |
 | opts.imageSubtitle | <code>string</code> | The image's subtitle |
 | opts.style | <code>string</code> | A style that controls the size of the view |
+
+
+--- 
+
+# Google Business Messages Templates Reference (Preview)
+
+<a name="GBM.Card"></a>
+
+## GBM.Card
+
+Send a related information, [Media](#GBM.Media) or [Suggestion](#GBM.Suggestion) components
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Main title of the card |
+| description | <code>string</code> | Optional description |
+| media | [<code>Media</code>](#Media) | Optional [Media](#GBM.Media) |
+| suggestions | <code>Array.&lt;Suggestion&gt;</code> | Optional set of [Suggestion](#GBM.Suggestion) components |
+
+### new Card()
+
+**Example**  
+```js
+const suggestion1 = new Suggestion({
+  label: "Label",
+  type: "url",
+  url: "https://..."
+})
+
+const suggestion2 = new Suggestion({
+  label: "Label",
+  type: "url",
+  url: "https://..."
+ })
+
+const card = new Card({
+  title: "Awesome title",
+  description: "Some description",
+  media: new Media({
+   url: "https://...",
+   type: "image"
+  })
+})
+card.addSuggestion(suggestion1)
+card.addSuggestion(suggestion2)
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.title | <code>string</code> | Optional |
+| opts.description | <code>string</code> | Optional |
+| opts.media | [<code>Media</code>](#Media) | Optional [Media](#Media) |
+
+### *card*.addSuggestion(suggestion)
+
+Add a suggestion to the card
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| suggestion | [<code>Suggestion</code>](#GBM.Suggestion) | suggestion |
+
+
+<a name="GBM.Carousel"></a>
+
+## GBM.Carousel
+
+Template that displays a set of [Card](#GBM.Card) templates
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| cardWidth | <code>string</code> | The width of the cards in the carousel, SMALL, MEDIUM or CARD_WIDTH_UNSPECIFIED |
+| cards | [<code>Array.&lt;Card&gt;</code>](#GBM.Card) | Set of [Card](#GBM.Card) templates |
+
+### new Carousel(opts)
+
+**Example**  
+```js
+const card1 = new GBM.Card({
+  title: "Awesome title 1",
+  description: "Some description 1",
+  media: new GBM.Media({
+   fileUrl: "https://..."
+  })
+})
+
+const card2 = new GBM.Card({
+  title: "Awesome title 2",
+  description: "Some description 2",
+  media: new GBM.Media({
+   fileUrl: "https://...",
+  })
+})
+
+const carousel = new GBM.Carousel()
+carousel.addCard(card1)
+carousel.addCard(card2)
+```
+**Example**  
+```js
+// Short hand
+
+const carousel = new GBM.Carousel([
+  new GBM.Card({
+    title: "Awesome title 1",
+    description: "Some description 1",
+    media: new GBM.Media({
+     fileUrl: "https://..."
+    })
+  }),
+  new GBM.Card({
+    title: "Awesome title 2",
+    description: "Some description 2",
+    media: new GBM.Media({
+     fileUrl: "https://..."
+    })
+  })
+])
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> \| [<code>Array.&lt;Card&gt;</code>](#GBM.Card) | Options or shorthand for collection of [Card](#GBM.Card) templates |
+| opts.cardWidth | <code>string</code> | Optional. Width of the cards in the carousel |
+| opts.cards | <code>Array</code> | Optional list of [Card](#GBM.Card) templates |
+
+### *carousel*.addCard(card)
+
+Add a [Card](#Card) to the list of cards
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| card | [<code>Card</code>](#GBM.Card) | card |
+
+
+<a name="GBM.Suggestion"></a>
+
+## GBM.Suggestion
+
+A suggestion for the user to reply with specified text or initiates a native action on the device.
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Type of suggestion, default is text (text, url, phone, live_agent, auth) |
+| text | <code>string</code> | Text that is shown in the suggested action. Maximum 25 characters. |
+| data | <code>string</code> | Value that is being send as the suggestion, empty if type is location |
+| url | <code>string</code> | URL to open in case it's a url type |
+| phoneNumber | <code>string</code> | phone number to dial in case of a phone type |
+| auth | <code>Auth</code> | phone number to dial in case of a phone type |
+| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the suggestion |
+
+### new Suggestion()
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.type | <code>string</code> | Required type, default is text (text, url, phone, live_agent, auth) |
+| opts.text | <code>string</code> | Required unless of type auth or live_agent |
+| opts.data | <code>string</code> | Optional data, required if type is text |
+| opts.url | <code>string</code> | Required if type is url |
+| opts.phoneNumber | <code>string</code> | Required if type is phone |
+| opts.auth | <code>Auth</code> | Required if type is auth |
+| opts.params | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this Suggestion |
+
+
+<a name="GBM.Auth"></a>
+
+## GBM.Auth
+
+The Authentication request suggestion prompts users to sign in to an OAuth 2.0-compliant application, passing authentication codes to confirm account data and enabling customized user experiences and detailed conversation flows.
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| clientId | <code>string</code> | Required. The ID of the application that asks for authorization. |
+| codeChallenge | <code>string</code> | Required. Required. The code challenge used to exchange access tokens. |
+| scopes | <code>Array.&lt;string&gt;</code> | Required. An array that specifies the scopes of the request. |
+
+### new Auth(opts)
+
+**Example**  
+```js
+const suggestion = new GBM.Suggestion({
+  type: 'auth',
+  value: new GBM.Auth({
+    clientId: 'CLIENT_ID',
+    codeChallenge: 'CODE_CHALLENGE',
+    scopes: ['SCOPE']
+  })
+})
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Collection of options |
+| opts.clientId | <code>string</code> | Required. The ID of the application that asks for authorization. |
+| opts.codeChallenge | <code>string</code> | Required. Required. The code challenge used to exchange access tokens. |
+| opts.scopes | <code>Array.&lt;string&gt;</code> | Required. An array that specifies the scopes of the request. |
+
+### *auth*.addScope(scopes)
+
+Add a scopes to the list of scopes
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| scopes | <code>string</code> | scopes |
 

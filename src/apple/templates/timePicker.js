@@ -1,4 +1,4 @@
-import Template from '../../generic/templates/template'
+import Template from '../../base/templates/template'
 import InteractiveMessage from '../components/interactiveMessage'
 import EventItem from '../components/eventItem'
 
