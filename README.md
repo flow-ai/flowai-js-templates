@@ -2232,7 +2232,7 @@ Send a related information, [Media](#GBM.Media) or [Suggestion](#GBM.Suggestion)
 | media | [<code>Media</code>](#Media) | Optional [Media](#GBM.Media) |
 | suggestions | <code>Array.&lt;Suggestion&gt;</code> | Optional set of [Suggestion](#GBM.Suggestion) components |
 
-### new Card()
+### new Card(opts)
 
 **Example**  
 ```js
@@ -2262,9 +2262,10 @@ card.addSuggestion(suggestion2)
 
 | Param | Type | Description |
 | --- | --- | --- |
+| opts | <code>object</code> | Collection of options |
 | opts.title | <code>string</code> | Optional |
 | opts.description | <code>string</code> | Optional |
-| opts.media | [<code>Media</code>](#Media) | Optional [Media](#Media) |
+| opts.media | [<code>Media</code>](#GBM.Media) | Optional [Media](#GBM.Media) |
 
 ### *card*.addSuggestion(suggestion)
 
@@ -2337,18 +2338,18 @@ const carousel = new GBM.Carousel([
 
 | Param | Type | Description |
 | --- | --- | --- |
-| opts | <code>object</code> \| [<code>Array.&lt;Card&gt;</code>](#GBM.Card) | Options or shorthand for collection of [Card](#GBM.Card) templates |
+| opts | <code>object</code> \| [<code>Array.&lt;Card&gt;</code>](#GBM.Card) | Collection of options or shorthand for a collection of [Card](#GBM.Card) templates |
 | opts.cardWidth | <code>string</code> | Optional. Width of the cards in the carousel |
-| opts.cards | <code>Array</code> | Optional list of [Card](#GBM.Card) templates |
+| opts.cards | [<code>Array.&lt;Card&gt;</code>](#GBM.Card) | Optional list of [Card](#GBM.Card) templates |
 
 ### *carousel*.addCard(card)
 
-Add a [Card](#Card) to the list of cards
+Add a [Card](#GBM.Card) to the list of cards
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| card | [<code>Card</code>](#GBM.Card) | card |
+| card | [<code>Card</code>](#GBM.Card) | Card to add to the carousel |
 
 
 <a name="GBM.Suggestion"></a>
@@ -2403,7 +2404,7 @@ The Authentication request suggestion prompts users to sign in to an OAuth 2.0-c
 ```js
 const suggestion = new GBM.Suggestion({
   type: 'auth',
-  value: new GBM.Auth({
+  auth: new GBM.Auth({
     clientId: 'CLIENT_ID',
     codeChallenge: 'CODE_CHALLENGE',
     scopes: ['SCOPE']
