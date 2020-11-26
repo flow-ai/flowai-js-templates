@@ -1,7 +1,9 @@
 import Template from './template'
 
 /**
- * Template with a piece of text
+ * Base template for text
+ * 
+ * @alias Base.Text
  * 
  * @category Templates
  * 

@@ -8,7 +8,7 @@ import { parseParam, flattenParams } from '../../base/components/param'
  * @property {string} type - Type of button (url, phone, postback, share, login, webview, event)
  * @property {string} label - Label of the button
  * @property {string} value - Value of the button
- * @property {Param[]} params - Optional parameters associated with the button
+ * @property {Base.Param[]} params - Optional parameters associated with the button
  * @example
  * new Button({
  *  type: 'webview',
@@ -22,7 +22,7 @@ class Button {
    * @param {string} opts.type - Required, type of button (url, phone, postback, share, login, webview, event)
    * @param {string} opts.label - Required, label of the button
    * @param {string} opts.value - Required, value of the button (can be a URL or other string value)
-   * @param {Param|Param[]} opts.param - Optional Param or array or Array of Params related to this button
+   * @param {Base.Param|Base.Param[]} opts.param - Optional Param or array or Array of Params related to this button
    **/
   constructor({ type, label, value, param, params }) {
 

@@ -1,6 +1,5 @@
 import Template from './template'
 import Button from '../components/button'
-import Media from '../components/media'
 
 /**
  * Template with a short description and {@link Button} components to request input from the user

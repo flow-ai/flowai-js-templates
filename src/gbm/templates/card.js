@@ -14,22 +14,22 @@ import Media from '../components/media'
  * @property {GBM.Media} media - Optional {@link GBM.Media}
  * @property {GBM.Suggestion[]} suggestions - Optional set of {@link GBM.Suggestion} components
  * @example
- * const suggestion1 = new Suggestion({
+ * const suggestion1 = new GBM.Suggestion({
  *   label: "Label",
  *   type: "url",
  *   url: "https://..."
  * })
  *
- * const suggestion2 = new Suggestion({
+ * const suggestion2 = new GBM.Suggestion({
  *   label: "Label",
  *   type: "url",
  *   url: "https://..."
  *  })
  *
- * const card = new Card({
+ * const card = new GBM.Card({
  *   title: "Awesome title",
  *   description: "Some description",
- *   media: new Media({
+ *   media: new GBM.Media({
  *    url: "https://...",
  *    type: "image"
  *   })

@@ -7,13 +7,13 @@ import { parseParam, flattenParams } from '../../base/components/param'
  * 
  * @property {string} type - Type of action (url, phone, postback, share, login, webview, event)
  * @property {string} value - Value of the action
- * @property {Param[]} params - Optional parameters associated with the action
+ * @property {Base.Param[]} params - Optional parameters associated with the action
  **/
 class Action {
   /**
    * @param {string} opts.type - Required
    * @param {string} opts.value - Required
-   * @param {Param|Param[]} opts.param - Optional Param or array or Array of Params related to this action
+   * @param {Base.Param|Base.Param[]} opts.param - Optional Param or array or Array of Params related to this action
    * @example
    * const image = new Image({
    *   ...

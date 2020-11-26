@@ -1,3 +1,4 @@
+import { Param } from '../base/components/param'
 import Message from './message'
 import Text from './templates/text'
 import Card from './templates/card'
@@ -15,7 +16,6 @@ import Action from './components/action'
 import Button from './components/button'
 import Media from './components/media'
 import ListItem from './components/listItem'
-import { Param } from '../base/components/param'
 import QuickReply from './components/quickReply'
 
 export default {

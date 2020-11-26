@@ -3,20 +3,19 @@ import Text from './templates/text'
 import QuickReply from './components/quickReply'
 
 /**
- * Representation of a message to a user. Contains a pronounceable fallback message and optional rich {@link Template} responses.
+ * Inherits from {@link Base.Message}.
  * 
  * @category Message
  * 
- * @property {string} fallback - Pronounceable and represents the responses as a whole
- * @property {Template[]} responses - List of rich {@link Template} responses
  * @example
- * // Create a message without responses
- * // this will create a response
- * // when converted to JSON
- * const message = new Message('Hi there')
- *
- * // This also works for multiple text responses by adding an array of strings
- * const message = new Message(['Hi there', 'How can I help?'])
+ * // Create a message with quick replies
+ * const message = new Message("Want a cold beverage?")
+ *  .addQuickReply(new QuickReply({
+ *    label: 'Yes'
+ *  }))
+ *  .addQuickReply(new QuickReply({
+ *    label: 'No'
+ *  }))
  **/
 class Message extends BaseMessage {
 

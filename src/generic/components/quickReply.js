@@ -8,7 +8,7 @@ import { parseParam, flattenParams } from '../../base/components/param'
  * @property {string} label - Label that is shown as a quick reply
  * @property {string} value - Value that is being send as the quick reply, empty if type is location
  * @property {string} type - Type of quick reply, default is text (text, location, user_email, user_phone_number, event)
- * @property {Param[]} params - Optional parameters associated with the quick reply
+ * @property {Base.Param[]} params - Optional parameters associated with the quick reply
  *
  * @example
  * const text = new Text('We have a 40" screen for sale. Want to preorder it?')
@@ -26,7 +26,7 @@ class QuickReply {
    * @param {string} opts.label - Required
    * @param {string} opts.type - Optional type, default is text (text, location, user_email, user_phone_number, event)
    * @param {string} opts.value - Required, ignored if type is location
-   * @param {Param|Param[]} opts.param - Optional Param or array or Array of Params related to this QuickReply
+   * @param {Base.Param|Base.Param[]} opts.param - Optional Param or array or Array of Params related to this QuickReply
    **/
   constructor({ label, type, value, param, params }) {
 

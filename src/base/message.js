@@ -2,12 +2,14 @@ import Template from '../base/templates/template'
 import Text from './templates/text'
 
 /**
- * Representation of a message to a user. Contains a pronounceable fallback message and optional rich {@link Template} responses.
+ * The base representation of a message to a user. Contains a pronounceable fallback message and optional rich {@link Template} responses.
+ * 
+ * @alias Base.Message
  * 
  * @category Message
  * 
  * @property {string} fallback - Pronounceable and represents the responses as a whole
- * @property {Template[]} responses - List of rich {@link Template} responses
+ * @property {Base.Template[]} responses - List of rich {@link Base.Template} responses
  * 
  * @example
  * // Create a message without responses
@@ -46,16 +48,17 @@ class Message {
 
   /**
    * Add a response
-   * @param {Template} - response
-   * @param {Number} delay - Optional delay in miliseconds for sending the response
-   * @return {Message}
+   * 
+   * @param {Base.Template} - response
+   * @return {Base.Message}
    **/
   addResponse(response, delay) {
     if(!(response instanceof Template)) {
       throw new Error('addResponse argument must be an instance of a Template')
     }
 
-    if(typeof d === 'number') {
+    if(typeof delay === 'number') {
+      // For backwards compatibility
       response.delay = delay
     }
 

@@ -5,7 +5,7 @@ import Suggestion from './components/suggestion'
 import Auth from './components/auth'
 import Media from './components/media'
 import Message from '../base/message'
-import Text from '../base/templates/text'
+import Text from './templates/text'
 
 export default {
   Card,

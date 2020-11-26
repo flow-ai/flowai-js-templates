@@ -45,10 +45,10 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
 ```js
 async payload=> {
 
-  // Create a speech bubble
+  // Create a generic speech bubble
   const text = new Text("Hi there!")
 
-  // Create a message with fallback text
+  // Create a generic message with fallback text
   const message = new Message("Hi, there")
   message.addResponse(text)
 
@@ -61,13 +61,13 @@ async payload=> {
 ```js
 async payload=> {
 
-  // Create a speech bubble
+  // Create a generic speech bubble
   const text = new Text("Hi there!")
 
-  // Create a card
-  const card = new Card({
+  // Create a Google Business Messages specific card
+  const card = new GBM.Card({
     title: "Cookie factory",
-    subtitle: "Infinite lane 23"
+    description: "Infinite lane 23"
   })
 
   return new Message("Hi, the address of the Cookie factory is Infinite lane 23")
@@ -81,10 +81,10 @@ async payload=> {
 ```js
 async payload=> {
 
-  // Create a speech bubble
+  // Create a generic speech bubble
   const text = new Text("Hi there!")
 
-  // Create a card
+  // Create a generic card
   const card = new Card({
     title: "Cookie factory",
     subtitle: "Infinite lane 23"
@@ -154,18 +154,20 @@ For a complete overview of all reply actions see the [Flow.ai documentation](htt
 
 # Reply Templates Reference
 
-<a name="Message"></a>
+Each reply being sent is part of a message.
 
-## Message
+<a name="Base.Message"></a>
 
-Representation of a message to a user. Contains a pronounceable fallback message and optional rich [Template](#Template) responses.
+## Base.Message
+
+The base representation of a message to a user. Contains a pronounceable fallback message and optional rich [Template](#Template) responses.
 
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
 | fallback | <code>string</code> | Pronounceable and represents the responses as a whole |
-| responses | [<code>Array.&lt;Template&gt;</code>](#Template) | List of rich [Template](#Template) responses |
+| responses | [<code>Array.&lt;Template&gt;</code>](#Base.Template) | List of rich [Template](#Base.Template) responses |
 
 ### new Message(fallback, meta)
 
@@ -185,15 +187,27 @@ const message = new Message(['Hi there', 'How can I help?'])
 | fallback | <code>string</code> | Required |
 | meta | <code>Object</code> | Optional property list with data |
 
-### *message*.addResponse(response, delay)
+### *message*.addResponse(response)
 
 Add a response
 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| response | [<code>Template</code>](#Template) | response |
-| delay | <code>Number</code> | Optional delay in miliseconds for sending the response |
+| response | [<code>Template</code>](#Base.Template) | response |
+
+
+---
+
+# Generic Response Templates Reference
+
+We provide a collection of generic message templates that can be sent to any messaging channel. These generic templates are transformed into specific channel counter parts. They provide a convenient way to reply with a single message to multiple channels.
+
+<a name="Message"></a>
+
+## Message
+
+Inherits from [Message](#Base.Message).
 
 ### *message*.addQuickReply(quickReply)
 
@@ -215,12 +229,6 @@ const message = new Message("Want a cold beverage?")
 | quickReply | [<code>QuickReply</code>](#QuickReply) | Required |
 
 
----
-
-# Generic Response Templates Reference
-
-There are a number of generic templates that are supported by multiple messaging channels
-
 <a name="Text"></a>
 
 ## Text
@@ -232,17 +240,6 @@ Template with a piece of text
 | Name | Type | Description |
 | --- | --- | --- |
 | text | <code>string</code> | Text to show |
-
-### new Text()
-
-**Example**  
-```js
-const text = new Text('Want a free soda?')
-```
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts.text | <code>string</code> | Required |
 
 ### new Text()
 
@@ -693,8 +690,6 @@ Add a button to the list item
 | button | [<code>Button</code>](#Button) | button |
 
 
----
-
 <a name="Action"></a>
 
 ## Action
@@ -707,7 +702,7 @@ Default action used in [Card](#Card), [List](#List) and [Buttons](#Buttons) temp
 | --- | --- | --- |
 | type | <code>string</code> | Type of action (url, phone, postback, share, login, webview, event) |
 | value | <code>string</code> | Value of the action |
-| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the action |
+| params | [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional parameters associated with the action |
 
 ### new Action()
 
@@ -726,7 +721,7 @@ const image = new Image({
 | --- | --- | --- |
 | opts.type | <code>string</code> | Required |
 | opts.value | <code>string</code> | Required |
-| opts.param | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this action |
+| opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this action |
 
 
 <a name="Button"></a>
@@ -742,7 +737,7 @@ Component used in [Card](#Card), [Buttons](#Buttons) templates
 | type | <code>string</code> | Type of button (url, phone, postback, share, login, webview, event) |
 | label | <code>string</code> | Label of the button |
 | value | <code>string</code> | Value of the button |
-| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the button |
+| params | [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional parameters associated with the button |
 
 ### new Button(opts)
 
@@ -761,7 +756,7 @@ new Button({
 | opts.type | <code>string</code> | Required, type of button (url, phone, postback, share, login, webview, event) |
 | opts.label | <code>string</code> | Required, label of the button |
 | opts.value | <code>string</code> | Required, value of the button (can be a URL or other string value) |
-| opts.param | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this button |
+| opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this button |
 
 
 <a name="Media"></a>
@@ -785,63 +780,6 @@ Component that represents a URL to an image, video or audio file. Used with temp
 | opts.type | <code>string</code> | Required |
 
 
-<a name="Param"></a>
-
-## Param
-
-Data related to a [Button](#Button) or [QuickReply](#QuickReply)
-
-**Properties**
-
-| Name | Type | Description |
-| --- | --- | --- |
-| label | <code>string</code> | Name of the parameter |
-| value | <code>string</code> | Value of the parametet |
-
-### new Param()
-
-**Example**  
-```js
-// Render a Button that triggers an event with a Param
-const param = new Param('itemId', '332223323')
-const button = new Button({
- label: 'More info',
- type: 'event',
- value: 'MORE_INFO',
- param
-})
-```
-**Example**  
-```js
-// Render a QuickReply that triggers an event with Params
-const shopId = new Param('shopId', '33211233')
-const productId = new Param('productId', '123443211')
-const quickReply = new QuickReply({
- label: 'Product details',
- type: 'event',
- value: 'PRODUCT_DETAILS',
- param: [shopId, productId]
-})
-```
-**Example**  
-```js
-const image = new Image({
-  title: "Awesome title",
-  url: "https://...",
-  action: new Action({
-    type: 'event',
-    value: 'ORDER',
-    param: new Param('productId', '12e2-22342-aasd2')
-  })
-})
-```
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts.label | <code>string</code> | Required |
-| opts.value | <code>string</code> | Required |
-
-
 <a name="QuickReply"></a>
 
 ## QuickReply
@@ -855,7 +793,7 @@ Component placed on any Template. Represents a shortcut for a user to reply with
 | label | <code>string</code> | Label that is shown as a quick reply |
 | value | <code>string</code> | Value that is being send as the quick reply, empty if type is location |
 | type | <code>string</code> | Type of quick reply, default is text (text, location, user_email, user_phone_number, event) |
-| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the quick reply |
+| params | [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional parameters associated with the quick reply |
 
 ### new QuickReply()
 
@@ -877,7 +815,7 @@ text.addQuickReply(new QuickReply({
 | opts.label | <code>string</code> | Required |
 | opts.type | <code>string</code> | Optional type, default is text (text, location, user_email, user_phone_number, event) |
 | opts.value | <code>string</code> | Required, ignored if type is location |
-| opts.param | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this QuickReply |
+| opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this QuickReply |
 
 
 ---
@@ -1317,7 +1255,6 @@ const hangup = new Phone.Hangup()
 --- 
 
 # Apple Business Chat Templates Reference (Preview)
-
 
 <a name="Apple.RichLink"></a>
 
@@ -2217,6 +2154,45 @@ Message that renders in a bubble either shown as the received message that allow
 
 # Google Business Messages Templates Reference (Preview)
 
+<a name="GBM.Text"></a>
+
+## GBM.Text
+
+Template with a piece of text
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| text | <code>string</code> | Text to show |
+| containsRichText | <code>boolean</code> | True by default, indicates that the message contains rich text. If the message contains invalid formatting, returns an error. |
+
+### new Text(opts)
+
+**Example**  
+```js
+const text = new GBM.Text('Want a free soda?')
+text.addSuggestion(new GBM.Suggestion({
+  label: 'Yes',
+  data: 'yes'
+}))
+text.addSuggestion(new Suggestion({
+  label: 'No',
+  data: 'no'
+}))
+```
+**Example**  
+```js
+const text = new GBM.Text('Hello, here is some **bold text**, *italicized text*, and a [link](https://www.google.com).')
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> \| <code>string</code> | Collection of options or the text |
+| opts.text | <code>string</code> | Required |
+| opts.containsRichText | <code>boolean</code> | Optional |
+
+
 <a name="GBM.Card"></a>
 
 ## GBM.Card
@@ -2236,22 +2212,22 @@ Send a related information, [Media](#GBM.Media) or [Suggestion](#GBM.Suggestion)
 
 **Example**  
 ```js
-const suggestion1 = new Suggestion({
+const suggestion1 = new GBM.Suggestion({
   label: "Label",
   type: "url",
   url: "https://..."
 })
 
-const suggestion2 = new Suggestion({
+const suggestion2 = new GBM.Suggestion({
   label: "Label",
   type: "url",
   url: "https://..."
  })
 
-const card = new Card({
+const card = new GBM.Card({
   title: "Awesome title",
   description: "Some description",
-  media: new Media({
+  media: new GBM.Media({
    url: "https://...",
    type: "image"
   })
@@ -2368,10 +2344,81 @@ A suggestion for the user to reply with specified text or initiates a native act
 | url | <code>string</code> | URL to open in case it's a url type |
 | phoneNumber | <code>string</code> | phone number to dial in case of a phone type |
 | auth | <code>Auth</code> | phone number to dial in case of a phone type |
-| params | [<code>Array.&lt;Param&gt;</code>](#Param) | Optional parameters associated with the suggestion |
+| params | [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional parameters associated with the suggestion |
 
 ### new Suggestion()
 
+**Example**  
+```js
+// Text suggestion
+const textSuggestion = new GBM.Suggestion({ 
+  type: "text",
+  text: "Say hi",
+  data: "Hello"
+})
+
+// With param
+const textSuggestion = new GBM.Suggestion({ 
+  type: "text",
+  text: "Buy product",
+  params: new Param('itemId', '332223323')
+})
+
+// With params
+const textSuggestion = new GBM.Suggestion({ 
+  type: "text",
+  text: "Buy products",
+  params: [
+    new Param('itemId', '332223323'),
+    new Param('itemId', '113432143')
+  ]
+})
+
+// Short hand syntax
+const textSuggestion = new GBM.Suggestion("yes")
+
+// Event suggestion
+const textSuggestion = new GBM.Suggestion({ 
+  type: "event",
+  text: "Main menu",
+  data: "MAIN_MENU"
+})
+
+// Open URL suggestion
+const urlSuggestion = new GBM.Suggestion({ 
+  type: "url",
+  text: "Open link",
+  url: "https://foo.bar"
+})
+
+// Dial action
+const dialSuggestion = new GBM.Suggestion({ 
+  type: "phone",
+  text: "Dial",
+  phoneNumber: "+1234567890"
+})
+
+// Auth suggestion
+const authSuggestion = new GBM.Suggestion({ 
+  type: "auth",
+  auth: new GBM.Auth({
+    clientId: 'CLIENT_ID',
+    codeChallenge: 'CODE_CHALLENGE',
+    scopes: ['SCOPE']
+  })
+})
+
+// Live agent suggestion
+const liveAgentSuggestion = new GBM.Suggestion({ 
+  type: "live_agent"
+})
+
+const text new GBM.Text("Make a suggestion")
+text.addSuggestion(textSuggestion)
+text.addSuggestion(urlSuggestion)
+text.addSuggestion(authSuggestion)
+text.addSuggestion(liveAgentSuggestion)
+```
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -2381,7 +2428,7 @@ A suggestion for the user to reply with specified text or initiates a native act
 | opts.url | <code>string</code> | Required if type is url |
 | opts.phoneNumber | <code>string</code> | Required if type is phone |
 | opts.auth | <code>Auth</code> | Required if type is auth |
-| opts.params | [<code>Param</code>](#Param) \| [<code>Array.&lt;Param&gt;</code>](#Param) | Optional Param or array or Array of Params related to this Suggestion |
+| opts.params | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this Suggestion |
 
 
 <a name="GBM.Auth"></a>
@@ -2455,4 +2502,115 @@ A media file within a rich  [Card](#GBM.Card)
 | opts.thumbnailUrl | <code>string</code> | Optional |
 | opts.forceRefresh | <code>bool</code> | Optional |
 | opts.forceRefresh | <code>bool</code> | Optional |
+
+
+---
+
+# Base classes
+
+<a name="Base.Param"></a>
+
+## Base.Param
+
+Data related to a generic [Button](#Button), [QuickReply](#QuickReply) or specific components like [Suggestion](#GBM.Suggestion)
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| label | <code>string</code> | Name of the parameter |
+| value | <code>string</code> | Value of the parameter |
+
+### new Param()
+
+**Example**  
+```js
+// Render a generic Button that triggers an event with a Param
+const param = new Param('itemId', '332223323')
+const button = new Button({
+ label: 'More info',
+ type: 'event',
+ value: 'MORE_INFO',
+ param
+})
+```
+**Example**  
+```js
+// Render a generic QuickReply that triggers an event with Params
+const shopId = new Param('shopId', '33211233')
+const productId = new Param('productId', '123443211')
+const quickReply = new QuickReply({
+ label: 'Product details',
+ type: 'event',
+ value: 'PRODUCT_DETAILS',
+ param: [shopId, productId]
+})
+```
+**Example**  
+```js
+// Render a generic Image that has an action that sets params 
+const image = new Image({
+  title: "Awesome title",
+  url: "https://...",
+  action: new Action({
+    type: 'event',
+    value: 'ORDER',
+    param: new Param('productId', '12e2-22342-aasd2')
+  })
+})
+```
+**Example**  
+```js
+// Generate an RBM suggestion that includes a param
+const textSuggestion = new GBM.Suggestion({ 
+  type: "text",
+  text: "Buy product",
+  params: new Param('itemId', '332223323')
+})
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.label | <code>string</code> | Required |
+| opts.value | <code>string</code> | Required |
+
+
+<a name="Base.Template"></a>
+
+## Base.Template
+
+Base class for all response templates
+
+### **template*.fallback*
+
+Optional fallback speech
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| fallback | <code>string</code> | Required |
+
+
+<a name="Base.Text"></a>
+
+## Base.Text
+
+Base template for text
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| text | <code>string</code> | Text to show |
+
+### new Text()
+
+**Example**  
+```js
+const text = new Text('Want a free soda?')
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.text | <code>string</code> | Required |
 

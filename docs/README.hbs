@@ -45,10 +45,10 @@ Within a [cloud code](https://docs.flow.ai/features/cloud-functions.html) functi
 ```js
 async payload=> {
 
-  // Create a speech bubble
+  // Create a generic speech bubble
   const text = new Text("Hi there!")
 
-  // Create a message with fallback text
+  // Create a generic message with fallback text
   const message = new Message("Hi, there")
   message.addResponse(text)
 
@@ -61,13 +61,13 @@ async payload=> {
 ```js
 async payload=> {
 
-  // Create a speech bubble
+  // Create a generic speech bubble
   const text = new Text("Hi there!")
 
-  // Create a card
-  const card = new Card({
+  // Create a Google Business Messages specific card
+  const card = new GBM.Card({
     title: "Cookie factory",
-    subtitle: "Infinite lane 23"
+    description: "Infinite lane 23"
   })
 
   return new Message("Hi, the address of the Cookie factory is Infinite lane 23")
@@ -81,10 +81,10 @@ async payload=> {
 ```js
 async payload=> {
 
-  // Create a speech bubble
+  // Create a generic speech bubble
   const text = new Text("Hi there!")
 
-  // Create a card
+  // Create a generic card
   const card = new Card({
     title: "Cookie factory",
     subtitle: "Infinite lane 23"
@@ -175,13 +175,17 @@ For a complete overview of all reply actions see the [Flow.ai documentation](htt
 
 # Reply Templates Reference
 
-{{>classDoc className="Message"}}
+Each reply being sent is part of a message.
+
+{{>classDoc className="Base.Message"}}
 
 ---
 
 # Generic Response Templates Reference
 
-There are a number of generic templates that are supported by multiple messaging channels
+We provide a collection of generic message templates that can be sent to any messaging channel. These generic templates are transformed into specific channel counter parts. They provide a convenient way to reply with a single message to multiple channels.
+
+{{>classDoc className="Message"}}
 
 {{>classDoc className="Text"}}
 
@@ -205,15 +209,11 @@ There are a number of generic templates that are supported by multiple messaging
 
 {{>classDoc className="ListItem"}}
 
----
-
 {{>classDoc className="Action"}}
 
 {{>classDoc className="Button"}}
 
 {{>classDoc className="Media"}}
-
-{{>classDoc className="Param"}}
 
 {{>classDoc className="QuickReply"}}
 
@@ -252,7 +252,6 @@ There are a number of generic templates that are supported by multiple messaging
 --- 
 
 # Apple Business Chat Templates Reference (Preview)
-
 
 {{>classDoc className="Apple.RichLink"}}
 
@@ -308,6 +307,8 @@ There are a number of generic templates that are supported by multiple messaging
 
 # Google Business Messages Templates Reference (Preview)
 
+{{>classDoc className="GBM.Text"}}
+
 {{>classDoc className="GBM.Card"}}
 
 {{>classDoc className="GBM.Carousel"}}
@@ -317,3 +318,13 @@ There are a number of generic templates that are supported by multiple messaging
 {{>classDoc className="GBM.Auth"}}
 
 {{>classDoc className="GBM.Media"}}
+
+---
+
+# Base classes
+
+{{>classDoc className="Base.Param"}}
+
+{{>classDoc className="Base.Template"}}
+
+{{>classDoc className="Base.Text"}}

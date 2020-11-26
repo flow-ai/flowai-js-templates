@@ -1,6 +1,5 @@
 import chai, { expect, assert } from 'chai'
-import GBM from '../../src/gbm'
-import Auth from '../../src/gbm/components/auth'
+import { GBM, Param } from '../../src'
 
 describe("GBM", () => {
   describe("Template Suggestion", () => {
@@ -9,8 +8,49 @@ describe("GBM", () => {
       expect(() => new GBM.Suggestion()).to.throw(Error)
     })
 
-    it("Throws on unknown type", () => {
-      expect(() => new GBM.Suggestion({ type: 'unknown_type' })).to.throw(Error)
+    it("By default created a Text suggestion", () => {
+      const suggestion = new GBM.Suggestion("Yes")
+      expect(suggestion.type).to.equal("text")
+      expect(suggestion.text).to.equal("Yes")
+      expect(suggestion.data).to.equal("Yes")
+    })
+
+    it("By default created a Text suggestion with only text", () => {
+      const suggestion = new GBM.Suggestion({ text: "Yes" })
+      expect(suggestion.type).to.equal("text")
+      expect(suggestion.text).to.equal("Yes")
+      expect(suggestion.data).to.equal("Yes")
+    })
+
+    it("By default created a Text suggestion if data is different", () => {
+      const suggestion = new GBM.Suggestion({ 
+        text: "Yes",
+        data: "Yes I want a coke"
+      })
+      expect(suggestion.type).to.equal("text")
+      expect(suggestion.text).to.equal("Yes")
+      expect(suggestion.data).to.equal("Yes I want a coke")
+    })
+
+    it("can create valid text suggestion with a param", () => {
+      const suggestion = new GBM.Suggestion({ 
+        type: "text",
+        text: "Buy product",
+        params: new Param('itemId', '332223323')
+      })
+      expect(suggestion.params.length).to.equal(1)
+    })
+
+    it("can create valid text suggestion with params", () => {
+      const suggestion = new GBM.Suggestion({ 
+        type: "text",
+        text: "Buy products",
+        params: [
+          new Param('itemId', '332223323'),
+          new Param('itemId', '113432143')
+        ]
+      })
+      expect(suggestion.params.length).to.equal(2)
     })
 
     describe("Text suggestion", () => {
@@ -18,8 +58,15 @@ describe("GBM", () => {
         expect(() => new GBM.Suggestion({ type: 'text' })).to.throw(Error)
       })
 
-      it("Throws error when text has no data", () => {
-        expect(() => new GBM.Suggestion({ type: 'text', text: 'something' })).to.throw(Error)
+      it("can create valid text suggestion without data", () => {
+        expect(() => new GBM.Suggestion()).to.throw(Error)
+        const suggestion = new GBM.Suggestion({ 
+          type: 'text', 
+          text: 'something' 
+        })
+        expect(suggestion.type).to.equal("text")
+        expect(suggestion.text).to.equal("something")
+        expect(suggestion.data).to.equal("something")
       })
 
       it("can create valid text suggestion", () => {
@@ -34,6 +81,27 @@ describe("GBM", () => {
       })
     })
 
+    describe("Event suggestion", () => {
+      it("Throws error when event type has no text", () => {
+        expect(() => new GBM.Suggestion({ type: 'event' })).to.throw(Error)
+      })
+
+      it("Throws error when event has no data", () => {
+        expect(() => new GBM.Suggestion({ type: 'event', text: 'something' })).to.throw(Error)
+      })
+
+      it("can create valid event suggestion", () => {
+        const suggestion = new GBM.Suggestion({ 
+          type: "event",
+          text: "Main menu",
+          data: "MAIN_MENU"
+        })
+        expect(suggestion.type).to.equal("event")
+        expect(suggestion.text).to.equal("Main menu")
+        expect(suggestion.data).to.equal("MAIN_MENU")
+      })
+    })
+
     describe("URL suggestion", () => {
       it("Throws error when url type has no text", () => {
         expect(() => new GBM.Suggestion({ type: 'url' })).to.throw(Error)
@@ -43,7 +111,7 @@ describe("GBM", () => {
         expect(() => new GBM.Suggestion({ type: 'url', text: 'something' })).to.throw(Error)
       })
 
-      it("can create valid text suggestion", () => {
+      it("can create valid url suggestion", () => {
         const suggestion = new GBM.Suggestion({ 
           type: "url",
           text: "Open link",
@@ -64,7 +132,7 @@ describe("GBM", () => {
         expect(() => new GBM.Suggestion({ type: 'phone', text: 'something' })).to.throw(Error)
       })
 
-      it("can create valid text suggestion", () => {
+      it("can create valid phone suggestion", () => {
         const suggestion = new GBM.Suggestion({ 
           type: "phone",
           text: "Dial",

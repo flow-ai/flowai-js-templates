@@ -1,12 +1,15 @@
 /**
- * Data related to a {@link Button} or {@link QuickReply}
+ * Data related to a generic {@link Button}, {@link QuickReply} or specific components like {@link GBM.Suggestion}
+ * 
+ * @alias Base.Param
  * 
  * @category Components
  * 
  * @property {string} label - Name of the parameter
- * @property {string} value - Value of the parametet
+ * @property {string} value - Value of the parameter
+ * 
  * @example
- * // Render a Button that triggers an event with a Param
+ * // Render a generic Button that triggers an event with a Param
  * const param = new Param('itemId', '332223323')
  * const button = new Button({
  *  label: 'More info',
@@ -14,8 +17,9 @@
  *  value: 'MORE_INFO',
  *  param
  * })
+ * 
  * @example
- * // Render a QuickReply that triggers an event with Params
+ * // Render a generic QuickReply that triggers an event with Params
  * const shopId = new Param('shopId', '33211233')
  * const productId = new Param('productId', '123443211')
  * const quickReply = new QuickReply({
@@ -24,7 +28,9 @@
  *  value: 'PRODUCT_DETAILS',
  *  param: [shopId, productId]
  * })
+ * 
  * @example
+ * // Render a generic Image that has an action that sets params 
  * const image = new Image({
  *   title: "Awesome title",
  *   url: "https://...",
@@ -33,6 +39,14 @@
  *     value: 'ORDER',
  *     param: new Param('productId', '12e2-22342-aasd2')
  *   })
+ * })
+ * 
+ * @example
+ * // Generate an RBM suggestion that includes a param
+ * const textSuggestion = new GBM.Suggestion({ 
+ *   type: "text",
+ *   text: "Buy product",
+ *   params: new Param('itemId', '332223323')
  * })
  **/
 class Param {
