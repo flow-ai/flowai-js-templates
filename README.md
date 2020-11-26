@@ -819,6 +819,8 @@ text.addQuickReply(new QuickReply({
 
 # Messenger Templates Reference
 
+These reply templates are specific to the Messenger integration. They are not supported by other channels.
+
 <a name="Messenger.Products"></a>
 
 ## Messenger.Products
@@ -1112,7 +1114,9 @@ const adjustment = new Messenger.ReceiptAdjustment({
 
 --- 
 
-# Phone Templates Reference
+# Phone Templates
+
+These reply templates are specific to the Twilio voice integration. They are not supported by other channels.
 
 <a name="Phone.Ask"></a>
 
@@ -1251,7 +1255,9 @@ const hangup = new Phone.Hangup()
 
 --- 
 
-# Apple Business Chat Templates Reference (Preview)
+# Apple Business Chat Templates (Preview)
+
+These reply templates are specific to the Apple Business Chat integration. They are not supported by other channels.
 
 <a name="Apple.RichLink"></a>
 
@@ -2149,7 +2155,9 @@ Message that renders in a bubble either shown as the received message that allow
 
 --- 
 
-# Google Business Messages Templates Reference (Preview)
+# Google Business Messages Templates (Preview)
+
+These reply templates are specific to the Google Business Messages integration. They are not supported by other channels.
 
 <a name="GBM.Text"></a>
 
@@ -2173,7 +2181,7 @@ text.addSuggestion(new GBM.Suggestion({
   label: 'Yes',
   data: 'yes'
 }))
-text.addSuggestion(new Suggestion({
+text.addSuggestion(new GBM.Suggestion({
   label: 'No',
   data: 'no'
 }))
@@ -2504,6 +2512,8 @@ A media file within a rich  [Card](#GBM.Card)
 ---
 
 # Base classes
+
+For reference, these are some core classes the generic and specific templates inherit from.
 
 <a name="Base.Param"></a>
 

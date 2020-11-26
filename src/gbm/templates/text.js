@@ -16,7 +16,7 @@ import Template from './template'
  *   label: 'Yes',
  *   data: 'yes'
  * }))
- * text.addSuggestion(new Suggestion({
+ * text.addSuggestion(new GBM.Suggestion({
  *   label: 'No',
  *   data: 'no'
  * }))
