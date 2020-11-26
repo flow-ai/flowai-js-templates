@@ -35,14 +35,21 @@ class Text extends Template {
     super()
 
     let text = opts
-    if(typeof text === 'object') {
+    let containsRichText = true
+  
+    if(typeof opts === 'object') {
       text = opts.text
+
+      if(typeof opts.containsRichText === 'boolean') {
+        containsRichText = opts.containsRichText
+      }
     }
 
     if(typeof text !== 'string' || !text.length) {
       throw new Error('Text is mandatory')
     }
-    this.containsRichText = containsRichText || true
+    
+    this.containsRichText = containsRichText
     this.text = text
   }
 

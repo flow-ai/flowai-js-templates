@@ -10,11 +10,13 @@ describe("GBM", () => {
     it("can create with text", () => {
       const text = new GBM.Text({ text: "Awesome text"})
       expect(text.text).to.equal("Awesome text")
+      expect(text.containsRichText).to.equal(true)
     })
 
     it("can create with string as text", () => {
       const text = new GBM.Text("Awesome text")
       expect(text.text).to.equal("Awesome text")
+      expect(text.containsRichText).to.equal(true)
     })
 
     it("can add suggestions", () => {
@@ -28,6 +30,12 @@ describe("GBM", () => {
       const text = new GBM.Text("Awesome text")
         .addSuggestion(new GBM.Suggestion("Yes"))
       expect(text.suggestions.length).to.equal(1)
+    })
+
+    it("can create with containsRichText", () => {
+      const text = new GBM.Text({ text: "Awesome text", containsRichText: false })
+      expect(text.text).to.equal("Awesome text")
+      expect(text.containsRichText).to.equal(false)
     })
   })
 })
