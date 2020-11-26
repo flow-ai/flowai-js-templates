@@ -2,9 +2,9 @@ import Template from './template'
 import Card from './card'
 
 /**
- * Template that displays a set of {@link Card} templates
+ * Template that renders a set of generic {@link Card} templates
  * 
- * @category Templates
+ * @category Generic
  * 
  * @property {Card[]} cards - Set of {@link Card} templates
  * @example

@@ -5,7 +5,7 @@ import Media from './media'
 /**
  * Item within a {@link List} template
  * 
- * @category Components
+ * @category Generic
  * 
  * @property {string} title - Title of the list item
  * @property {string} subtitle - Optional subtitle

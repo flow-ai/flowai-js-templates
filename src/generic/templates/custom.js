@@ -1,9 +1,9 @@
 import Template from './template'
 
 /**
- * Template composed with your own data. Use this to create specific UI widgets or components to your app or web ui. Do remember we cannot convert these type of templates to channels like Messenger.
+ * Template composed with your own data. Use this to create specific UI widgets or components inside your app or web ui. Note: we cannot convert these type of templates to other channels.
  * 
- * @category Templates
+ * @category Generic
  * 
  * @property {object} data - Data tailored to your use case
  * @example

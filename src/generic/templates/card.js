@@ -4,9 +4,9 @@ import Button from '../components/button'
 import Media from '../components/media'
 
 /**
- * Template composed of a media attachment, short description and {@link Button} components to request input from the user.
+ * A generic template that can be a combination of a {@link Media} attachment, short description or {@link Button} components to request input from a user.
  * 
- * @category Templates
+ * @category Generic
  * 
  * @property {string} title - Main title of the card
  * @property {string} subtitle - Optional subtitle

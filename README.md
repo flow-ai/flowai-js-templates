@@ -233,7 +233,7 @@ const message = new Message("Want a cold beverage?")
 
 ## Text
 
-Template with a piece of text
+The simplest messages are made of text. Text messages are best suited to communicate information without the need for visuals, complex interaction, or response.
 
 **Properties**
 
@@ -265,7 +265,7 @@ text.addQuickReply(new QuickReply({
 
 ## Image
 
-Template to show an image
+Deliver an image to a user. Optionally you can specify an [Action](#Action) to perform when a user interacts with the image. Note: This is not supported on all channels.
 
 **Properties**
 
@@ -300,7 +300,7 @@ const image = new Image({
 
 ## File
 
-Template that delivers a file to view or download
+Deliver a file to a user. Optionally you can specify an [Action](#Action) to perform when a user interacts with the file. Note: This is not supported on all channels.
 
 **Properties**
 
@@ -335,7 +335,7 @@ const file = new File({
 
 ## Video
 
-Template with a video
+Deliver a video to a user or show a video player. Optionally you can specify an [Action](#Action) to perform when a user interacts with the video. Note: This is not supported on all channels.
 
 **Properties**
 
@@ -370,7 +370,7 @@ const video = new Video({
 
 ## Audio
 
-Template that sends an audio file or shows an audio player
+Send an audio file or show an audio player to a user. Optionally you can specify an [Action](#Action) to perform when a user interacts with the audio. Note: This is not supported on all channels.
 
 **Properties**
 
@@ -384,13 +384,10 @@ Template that sends an audio file or shows an audio player
 
 **Example**  
 ```js
+// Generic audio
 const audio = new Audio({
-  title: "Awesome title",
-  url: "https://...",
-  action: new Action({
-    type: 'url',
-    value: 'https://...'
-  })
+  title: "Name of the song",
+  url: "https://..."
 })
 ```
 
@@ -405,7 +402,7 @@ const audio = new Audio({
 
 ## Location
 
-Template to show a location
+Send or display a location on a map to a user. Optionally add an [Action](#Action) to perform when the user interacts with the location. Note: only supported on some channels.
 
 **Properties**
 
@@ -443,7 +440,7 @@ const location = new Location({
 
 ## Buttons
 
-Template with a short description and [Button](#Button) components to request input from the user
+Generic template with an optional short description and list of [Button](#Button) components to request input from a user
 
 **Properties**
 
@@ -487,7 +484,7 @@ Add a button to the buttons
 
 ## Card
 
-Template composed of a media attachment, short description and [Button](#Button) components to request input from the user.
+A generic template that can be a combination of a [Media](#Media) attachment, short description or [Button](#Button) components to request input from a user.
 
 **Properties**
 
@@ -549,7 +546,7 @@ Add a button to the card
 
 ## Carousel
 
-Template that displays a set of [Card](#Card) templates
+Template that renders a set of generic [Card](#Card) templates
 
 **Properties**
 
@@ -694,7 +691,7 @@ Add a button to the list item
 
 ## Action
 
-Default action used in [Card](#Card), [List](#List) and [Buttons](#Buttons) templates
+Attach an action that is performed when a user interacts with a generic [Card](#Card), [List](#List) or [Buttons](#Buttons) templates
 
 **Properties**
 
@@ -728,7 +725,7 @@ const image = new Image({
 
 ## Button
 
-Component used in [Card](#Card), [Buttons](#Buttons) templates
+Render a button inside [Card](#Card) or [Buttons](#Buttons) templates. Unlike [QuickReply](#QuickReply) templates, by default a button will remain on the screen even after a user presses them.
 
 **Properties**
 
@@ -763,7 +760,7 @@ new Button({
 
 ## Media
 
-Component that represents a URL to an image, video or audio file. Used with templates like [Card](#Card) and [Image](#Image).
+Component that represents a URL to an image, video or audio file. Used within generic templates like [Card](#Card) and [Image](#Image).
 
 **Properties**
 
@@ -1121,7 +1118,7 @@ const adjustment = new Messenger.ReceiptAdjustment({
 
 ## Phone.Ask
 
-Send a message to a user asking for input
+Ask a user for input by playing an audio file or send the question as a text message that gets converted into speech
 
 **Properties**
 
@@ -1159,13 +1156,13 @@ const ask = new Phone.Ask({
 
 ## Phone.Say
 
-Send a message to a user
+Play an audio file or send a text message to a user that is transformed to speech
 
 **Properties**
 
 | Name | Type | Description |
 | --- | --- | --- |
-| speech | <code>string</code> | Text to speech |
+| speech | <code>string</code> | The text transformed to speech |
 | url | <code>string</code> | URL to an audio file |
 | language | <code>string</code> | Optional language for text to speech |
 | voice | <code>string</code> | Optional voice for text to speech |
@@ -2158,7 +2155,7 @@ Message that renders in a bubble either shown as the received message that allow
 
 ## GBM.Text
 
-Template with a piece of text
+The simplest messages are made of text. Text messages are best suited to communicate information without the need for visuals, complex interaction, or response.
 
 **Properties**
 
@@ -2332,7 +2329,7 @@ Add a [Card](#GBM.Card) to the list of cards
 
 ## GBM.Suggestion
 
-A suggestion for the user to reply with specified text or initiates a native action on the device.
+A suggestion for the user to reply with a predefined text, trigger an event or initiate a native action like dialing a phone number
 
 **Properties**
 

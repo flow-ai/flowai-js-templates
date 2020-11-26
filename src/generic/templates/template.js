@@ -4,7 +4,7 @@ import QuickReply from '../components/quickReply'
 /**
  * Base class for all generic response templates
  * 
- * @category Templates
+ * @category Generic
  * 
  * @property {QuickReply[]} quickReplies - Optional list of {@link QuickReply} components
  * @abstract

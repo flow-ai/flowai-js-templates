@@ -1,7 +1,7 @@
 /**
- * Component that represents a URL to an image, video or audio file. Used with templates like {@link Card} and {@link Image}.
+ * Component that represents a URL to an image, video or audio file. Used within generic templates like {@link Card} and {@link Image}.
  * 
- * @category Components
+ * @category Generic
  * 
  * @property {string} url - URL to the media file
  **/

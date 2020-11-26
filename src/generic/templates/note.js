@@ -1,17 +1,19 @@
 import Template from './template'
 
 /**
- * Template with a piece of note
+ * Send an internal note to a customer service agent that is not shown to a user. This can only be used in combination with a reply {@link Message}
  * 
- * @category Templates
+ * @category Generic
  * 
- * @property {string} note - Note to show
+ * @property {string} note - The text content of the note
+ * 
  * @example
  * const note = new Note('Red note')
  **/
 class Note extends Template {
 
   /**
+   * @param {string|object} opts - Required. The note or a collection of options
    * @param {string} opts.note - Required
    **/
   constructor(opts) {

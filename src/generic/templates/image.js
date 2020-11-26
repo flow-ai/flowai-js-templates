@@ -2,9 +2,9 @@ import Template from './template'
 import Action from '../components/action'
 
 /**
- * Template to show an image
+ * Deliver an image to a user. Optionally you can specify an {@link Action} to perform when a user interacts with the image. Note: This is not supported on all channels.
  * 
- * @category Templates
+ * @category Generic
  * 
  * @property {string} title - Describes the image
  * @property {string} url - URL to the image

@@ -5,7 +5,7 @@ import Button from '../components/button'
 /**
  * Template that displays a set of {@link ListItem} components 
  * 
- * @category Templates
+ * @category Generic
  * 
  * @property {ListItem[]} items - Set of list items
  * @example

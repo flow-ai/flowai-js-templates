@@ -2,21 +2,18 @@ import Template from './template'
 import Action from '../components/action'
 
 /**
- * Template that sends an audio file or shows an audio player
+ * Send an audio file or show an audio player to a user. Optionally you can specify an {@link Action} to perform when a user interacts with the audio. Note: This is not supported on all channels.
  * 
- * @category Templates
+ * @category Generic
  * 
  * @property {string} title - Describes the audio
  * @property {string} url - URL to the audio file
  * @property {Action} action - Optional {@link Action}
  * @example
+ * // Generic audio
  * const audio = new Audio({
- *   title: "Awesome title",
- *   url: "https://...",
- *   action: new Action({
- *     type: 'url',
- *     value: 'https://...'
- *   })
+ *   title: "Name of the song",
+ *   url: "https://..."
  * })
  **/
 class Audio extends Template {

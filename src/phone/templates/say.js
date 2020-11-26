@@ -1,12 +1,12 @@
 import Template from '../../base/templates/template'
 
 /**
- * Send a message to a user
+ * Play an audio file or send a text message to a user that is transformed to speech
  * 
  * @memberof Phone
  * @category Templates
  * 
- * @property {string} speech - Text to speech
+ * @property {string} speech - The text transformed to speech
  * @property {string} url - URL to an audio file
  * @property {string} language - Optional language for text to speech
  * @property {string} voice -  Optional voice for text to speech

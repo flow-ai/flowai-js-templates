@@ -2,7 +2,7 @@ import { parseParam, flattenParams } from '../../base/components/param'
 import Auth from '../components/auth'
 
 /**
- * A suggestion for the user to reply with specified text or initiates a native action on the device.
+ * A suggestion for the user to reply with a predefined text, trigger an event or initiate a native action like dialing a phone number
  * 
  * @memberof GBM
  * 

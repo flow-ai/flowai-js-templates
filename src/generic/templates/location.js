@@ -2,9 +2,9 @@ import Template from './template'
 import Action from '../components/action'
 
 /**
- * Template to show a location
+ * Send or display a location on a map to a user. Optionally add an {@link Action} to perform when the user interacts with the location. Note: only supported on some channels.
  * 
- * @category Templates
+ * @category Generic
  * 
  * @property {string} title - Describes the image
  * @property {string} lat - Latitude

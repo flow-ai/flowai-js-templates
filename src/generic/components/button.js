@@ -1,9 +1,9 @@
 import { parseParam, flattenParams } from '../../base/components/param'
 
 /**
- * Component used in {@link Card}, {@link Buttons} templates
+ * Render a button inside {@link Card} or {@link Buttons} templates. Unlike {@link QuickReply} templates, by default a button will remain on the screen even after a user presses them.
  * 
- * @category Components
+ * @category Generic
  * 
  * @property {string} type - Type of button (url, phone, postback, share, login, webview, event)
  * @property {string} label - Label of the button

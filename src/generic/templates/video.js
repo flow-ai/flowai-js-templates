@@ -2,9 +2,9 @@ import Template from './template'
 import Action from '../components/action'
 
 /**
- * Template with a video
+ * Deliver a video to a user or show a video player. Optionally you can specify an {@link Action} to perform when a user interacts with the video. Note: This is not supported on all channels.
  * 
- * @category Templates
+ * @category Generic
  * 
  * @property {string} title - Describes the video
  * @property {string} url - URL to the video

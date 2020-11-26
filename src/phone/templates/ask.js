@@ -1,7 +1,7 @@
 import Say from './say'
 
 /**
- * Send a message to a user asking for input
+ * Ask a user for input by playing an audio file or send the question as a text message that gets converted into speech
  * 
  * @memberof Phone
  * @category Templates

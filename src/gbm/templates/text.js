@@ -1,7 +1,7 @@
 import Template from './template'
 
 /**
- * Template with a piece of text
+ * The simplest messages are made of text. Text messages are best suited to communicate information without the need for visuals, complex interaction, or response.
  * 
  * @alias GBM.Text
  * 

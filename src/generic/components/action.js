@@ -1,9 +1,9 @@
 import { parseParam, flattenParams } from '../../base/components/param'
 
 /**
- * Default action used in {@link Card}, {@link List} and {@link Buttons} templates
+ * Attach an action that is performed when a user interacts with a generic {@link Card}, {@link List} or {@link Buttons} templates
  * 
- * @category Components
+ * @category Generic
  * 
  * @property {string} type - Type of action (url, phone, postback, share, login, webview, event)
  * @property {string} value - Value of the action

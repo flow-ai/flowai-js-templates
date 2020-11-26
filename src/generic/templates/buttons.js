@@ -2,9 +2,9 @@ import Template from './template'
 import Button from '../components/button'
 
 /**
- * Template with a short description and {@link Button} components to request input from the user
+ * Generic template with an optional short description and list of {@link Button} components to request input from a user
  * 
- * @category Templates
+ * @category Generic
  * 
  * @property {string} title - Main title of the buttons
  * @property {Button[]} buttons - Optional set of buttons

@@ -2,9 +2,9 @@ import Template from './template'
 import Action from '../components/action'
 
 /**
- * Template that delivers a file to view or download
+ * Deliver a file to a user. Optionally you can specify an {@link Action} to perform when a user interacts with the file. Note: This is not supported on all channels.
  * 
- * @category Templates
+ * @category Generic
  * 
  * @property {string} title - Describes the file
  * @property {string} url - URL to the file
