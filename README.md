@@ -199,7 +199,7 @@ Add a response
 
 ---
 
-# Generic Response Templates Reference
+# Generic
 
 We provide a collection of generic message templates that can be sent to any messaging channel. These generic templates are transformed into specific channel counter parts. They provide a convenient way to reply with a single message to multiple channels.
 
@@ -408,7 +408,7 @@ Send or display a location on a map to a user. Optionally add an [Action](#Actio
 
 | Name | Type | Description |
 | --- | --- | --- |
-| title | <code>string</code> | Describes the image |
+| title | <code>string</code> | Describes the location |
 | lat | <code>string</code> | Latitude |
 | long | <code>string</code> | Longitude |
 | action | [<code>Action</code>](#Action) | Optional [Action](#Action) |
@@ -817,7 +817,7 @@ text.addQuickReply(new QuickReply({
 
 ---
 
-# Messenger Templates Reference
+# Messenger
 
 These reply templates are specific to the Messenger integration. They are not supported by other channels.
 
@@ -1114,7 +1114,7 @@ const adjustment = new Messenger.ReceiptAdjustment({
 
 --- 
 
-# Phone Templates
+# Phone
 
 These reply templates are specific to the Twilio voice integration. They are not supported by other channels.
 
@@ -1255,7 +1255,7 @@ const hangup = new Phone.Hangup()
 
 --- 
 
-# Apple Business Chat Templates (Preview)
+# Apple Business Chat (Preview)
 
 These reply templates are specific to the Apple Business Chat integration. They are not supported by other channels.
 
@@ -2155,7 +2155,7 @@ Message that renders in a bubble either shown as the received message that allow
 
 --- 
 
-# Google Business Messages Templates (Preview)
+# Google Business Messages (Preview)
 
 These reply templates are specific to the Google Business Messages integration. They are not supported by other channels.
 
@@ -2507,6 +2507,626 @@ A media file within a rich  [Card](#GBM.Card)
 | opts.thumbnailUrl | <code>string</code> | Optional |
 | opts.forceRefresh | <code>bool</code> | Optional |
 | opts.forceRefresh | <code>bool</code> | Optional |
+
+
+--- 
+
+# WhatsApp (Preview)
+
+These reply templates are specific to the WhatsApp integration. They are not supported by other channels.
+
+<a name="WhatsApp.Text"></a>
+
+## WhatsApp.Text
+
+The simplest messages are made of text. Text messages are best suited to communicate information without the need for visuals, complex inter or response.
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| text | <code>string</code> | Text to show |
+| previewUrl | <code>boolean</code> | True by default, will render a preview if a URL is inside the text message |
+
+### new Text(opts)
+
+**Example**  
+```js
+const text = new WhatsApp.Text('Want a free soda?')
+```
+**Example**  
+```js
+const text = new WhatsApp.Text('Hello, here is some **bold text**, *italicized text*, and a https://www.google.com')
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> \| <code>string</code> | Collection of options or the text |
+| opts.text | <code>string</code> | Required |
+| opts.previewUrl | <code>boolean</code> | Optional |
+
+
+<a name="WhatsApp.Audio"></a>
+
+## WhatsApp.Audio
+
+Deliver an audio to a user.
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Describes the audio |
+| url | <code>string</code> | URL to the audio |
+
+### new Audio(opts)
+
+**Example**  
+```js
+const audio = new WhatsApp.Audio("https://...")
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> \| <code>string</code> | Options or shorthand a URL |
+| opts.url | <code>string</code> | Required |
+
+
+<a name="WhatsApp.Document"></a>
+
+## WhatsApp.Document
+
+Deliver a document to a user.
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Describes the document |
+| filename | <code>string</code> | Filename of the document |
+| url | <code>string</code> | URL to the document |
+
+### new Document(opts)
+
+**Example**  
+```js
+const document = new WhatsApp.Document({
+  title: "Awesome title",
+  url: "https://..."
+})
+```
+**Example**  
+```js
+const document = new WhatsApp.Document("https://...")
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> \| <code>string</code> | Options or shorthand a URL |
+| opts.title | <code>string</code> | Optional |
+| opts.filename | <code>string</code> | Optional |
+| opts.url | <code>string</code> | Required |
+
+
+<a name="WhatsApp.Image"></a>
+
+## WhatsApp.Image
+
+Deliver an image to a user.
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Describes the image |
+| url | <code>string</code> | URL to the image |
+
+### new Image(opts)
+
+**Example**  
+```js
+const image = new WhatsApp.Image({
+  title: "Awesome title",
+  url: "https://..."
+})
+```
+**Example**  
+```js
+const image = new WhatsApp.Image("https://...")
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> \| <code>string</code> | Options or shorthand a URL |
+| opts.title | <code>string</code> | Required |
+| opts.url | <code>string</code> | Required |
+
+
+<a name="WhatsApp.Video"></a>
+
+## WhatsApp.Video
+
+Deliver a video to a user.
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Describes the video |
+| url | <code>string</code> | URL to the video |
+
+### new Video(opts)
+
+**Example**  
+```js
+const video = new WhatsApp.Video({
+  title: "Awesome title",
+  url: "https://..."
+})
+```
+**Example**  
+```js
+const image = new WhatsApp.Video("https://...")
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> \| <code>string</code> | Options or shorthand a URL |
+| opts.title | <code>string</code> | Optional |
+| opts.url | <code>string</code> | Required |
+
+
+<a name="WhatsApp.Sticker"></a>
+
+## WhatsApp.Sticker
+
+Deliver a sticker to a user
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| title | <code>string</code> | Describes the sticker |
+| stickerId | <code>string</code> | ID to the sticker |
+
+### new Sticker(opts)
+
+**Example**  
+```js
+const sticker = new WhatsApp.Sticker("121233212321")
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> \| <code>string</code> | Options or shorthand a ID |
+| opts.stickerId | <code>string</code> | Required |
+
+
+<a name="WhatsApp.Location"></a>
+
+## WhatsApp.Location
+
+Send or display a location on a map to a user
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| lat | <code>string</code> | Latitude |
+| long | <code>string</code> | Longitude |
+| name | <code>string</code> | Name of the location |
+| address | <code>string</code> | Address of the location. Only displayed if name is present. |
+
+### new Location()
+
+**Example**  
+```js
+const location = new WhatsApp.Location({
+  lat: "37.331860",
+  long: "-122.030248",
+  name: "HQ",
+  address: "Infinite Loop 1"
+})
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.lat | <code>string</code> | Required |
+| opts.long | <code>string</code> | Required |
+| opts.name | <code>string</code> | Optional |
+| opts.address | <code>string</code> | Optional |
+
+
+<a name="WhatsApp.Contacts"></a>
+
+## WhatsApp.Contacts
+
+Send one ore more [Contact](#WhatsApp.Contact) to a user.
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| contacts | [<code>Array.&lt;Contact&gt;</code>](#WhatsApp.Contact) | One ore more contacts |
+
+### new Contacts(contacts)
+
+**Example**  
+```js
+const contacts = new WhatsApp.Contacts([
+  new WhatsApp.Contact({
+    name: new WhatsApp.Name({
+      formattedName: "Jane Doo",
+      firstName: "Jane",
+      lastName: "Doo",
+      middleName: "Van"
+    }),
+    birthday: "2000-08-18",
+    organization: new WhatsApp.Organization({
+      company: "WhatsApp",
+      department: "Design",
+      title: "Manager"
+    }),
+    addresses: [
+      new WhatsApp.Address({
+        type: 'HOME',
+        street: "1 Hacker Way",
+        city: "Menlo Park",
+        zip: "94025",
+        state: "CA",
+        country: "United States",
+        countryCode: "US"
+      })
+    ],
+    emails: [
+      new WhatsApp.EmailAddress({
+        type: 'WORK',
+        email: "email@some.fake.org"
+      })
+    ],
+    phones: [
+      new WhatsApp.PhoneNumber({
+        type: 'WORK',
+        phone: "+1 (940) 555-1234"
+      })
+    ],
+    urls: [
+      new WhatsApp.WebsiteAddress({
+        type: 'WORK',
+        url: "https://www.some.fake.org"
+      })
+    ]
+  })
+])
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| contacts | [<code>Array.&lt;Contact&gt;</code>](#WhatsApp.Contact) | Required |
+
+
+## components
+
+<a name="WhatsApp.Contact"></a>
+
+## WhatsApp.Contact
+
+Component used in a [Contacts](#WhatsApp.Contacts) template
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| name | [<code>Name</code>](#WhatsApp.Name) | Optional, full contact name |
+| organization | [<code>Organization</code>](#WhatsApp.Organization) | Optional, contact organization information |
+| addresses | [<code>Array.&lt;Address&gt;</code>](#WhatsApp.Address) | Optional, or more contact addresses |
+| birthday | <code>string</code> | Optional, contact date or birth in ISO format |
+| emails | [<code>Array.&lt;EmailAddress&gt;</code>](#WhatsApp.EmailAddress) | Optional, or more contact email addresses |
+| phones | [<code>Array.&lt;PhoneNumber&gt;</code>](#WhatsApp.PhoneNumber) | Optional, or more contact phone numbers |
+| urls | [<code>Array.&lt;WebsiteAddress&gt;</code>](#WhatsApp.WebsiteAddress) | Optional, or more URLs |
+
+### new Contact(opts)
+
+A WhatsApp contact to share
+
+**Example**  
+```js
+const contact = new WhatsApp.Contact({
+  name: new WhatsApp.Name({
+    formattedName: "Jane Doo",
+    firstName: "Jane",
+    lastName: "Doo",
+    middleName: "Van"
+  }),
+  birthday: "2000-08-18",
+  organization: new WhatsApp.Organization({
+    company: "WhatsApp",
+    department: "Design",
+    title: "Manager"
+  }),
+  addresses: [
+    new WhatsApp.Address({
+      type: 'HOME',
+      street: "1 Hacker Way",
+      city: "Menlo Park",
+      zip: "94025",
+      state: "CA",
+      country: "United States",
+      countryCode: "US"
+    })
+  ],
+  emails: [
+    new WhatsApp.EmailAddress({
+      type: 'WORK',
+      email: "email@some.fake.org"
+    })
+  ],
+  phones: [
+    new WhatsApp.PhoneNumber({
+      type: 'WORK',
+      phone: "+1 (940) 555-1234"
+    })
+  ],
+  urls: [
+    new WhatsApp.WebsiteAddress({
+      type: 'WORK',
+      url: "https://www.some.fake.org"
+    })
+  ]
+})
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Optional properties |
+| opts.name | [<code>Name</code>](#WhatsApp.Name) | Optional, full contact name |
+| opts.organization | [<code>Organization</code>](#WhatsApp.Organization) | Optional, contact organization information |
+| opts.addresses | [<code>Array.&lt;Address&gt;</code>](#WhatsApp.Address) | Optional, or more contact addresses |
+| opts.birthday | <code>string</code> | Optional, contact date or birth in ISO format |
+| opts.emails | [<code>Array.&lt;EmailAddress&gt;</code>](#WhatsApp.EmailAddress) | Optional, or more contact email addresses |
+| opts.phones | [<code>Array.&lt;PhoneNumber&gt;</code>](#WhatsApp.PhoneNumber) | Optional, or more contact phone numbers |
+| opts.urls | [<code>Array.&lt;WebsiteAddress&gt;</code>](#WhatsApp.WebsiteAddress) | Optional, or more URLs |
+
+
+<a name="WhatsApp.Address"></a>
+
+## WhatsApp.Address
+
+Component used in a [Contact](#WhatsApp.Contact) component
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Optional, type of address, must be HOME or WORK |
+| street | <code>string</code> | Optional, the street address |
+| city | <code>string</code> | Optional, the city name of the address. |
+| zip | <code>string</code> | Optional, the ZIP code of the address. |
+| state | <code>string</code> | Optional, the state abbreviation for U.S. addresses, or the region/province for non-U.S. addresses. |
+| country | <code>string</code> | Optional, full country name |
+| countryCode | <code>string</code> | Optional, the two-letter country abbreviation of the address. |
+
+### new Address(opts)
+
+The address of a contact
+
+**Example**  
+```js
+const address = new WhatsApp.Address({
+  street: "1 Hacker Way",
+  city: "Menlo Park",
+  zip: "94025",
+  state: "CA",
+  country: "United States",
+  countryCode: "US"
+})
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Optional properties |
+| opts.type | <code>string</code> | Optional, type of address, must be HOME or WORK |
+| opts.street | <code>string</code> | Optional, the street address |
+| opts.city | <code>string</code> | Optional, the city name of the address |
+| opts.zip | <code>string</code> | Optional, the ZIP code of the address |
+| opts.state | <code>string</code> | Optional, the state abbreviation for U.S. addresses, or the region/province for non-U.S. addresses |
+| opts.country | <code>string</code> | Optional, full name of the country |
+| opts.countryCode | <code>string</code> | Optional, the two-letter country abbreviation of the address |
+
+
+<a name="WhatsApp.EmailAddress"></a>
+
+## WhatsApp.EmailAddress
+
+Component used in a [Contact](#WhatsApp.Contact) component
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Optional, type of email address, must be HOME or WORK |
+| email | <code>string</code> | Required, valid email address |
+
+### new EmailAddress(opts)
+
+The email address of as contact
+
+**Example**  
+```js
+const email = new WhatsApp.EmailAddress({
+  email: "email@some.fake.org"
+})
+```
+**Example**  
+```js
+// Shorthand
+const email = new WhatsApp.EmailAddress("email@some.fake.org")
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Optional properties |
+| opts.type | <code>string</code> | Optional, type of email address, must be HOME or WORK |
+| opts.email | <code>string</code> | Required, valid email address |
+
+
+<a name="WhatsApp.Name"></a>
+
+## WhatsApp.Name
+
+Component used in a [Contact](#WhatsApp.Contact) component
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| formattedName | <code>string</code> | Required, valid full name of a contact |
+| firstName | <code>string</code> | Optional, first name of a contact |
+| lastName | <code>string</code> | Optional, last name of a contact |
+| middleName | <code>string</code> | Optional, middle name of a contact |
+| suffix | <code>string</code> | Optional, name suffix of a contact |
+| prefix | <code>string</code> | Optional, name prefix of a contact |
+
+### new Name(opts)
+
+The full name of a contact
+
+**Example**  
+```js
+const name = new WhatsApp.Name({
+  formattedName: "Jane Doo",
+  firstName: "Jane",
+  lastName: "Doo",
+  middleName: "Van"
+})
+```
+**Example**  
+```js
+// Shorthand
+const name = new WhatsApp.Name("Jane Doo")
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> \| <code>string</code> | Optional properties, or name for shorthand |
+| opts.formattedName | <code>string</code> | Required, valid name contact |
+| opts.firstName | <code>string</code> | Optional, first name of a contact |
+| opts.lastName | <code>string</code> | Optional, last name of a contact |
+| opts.middleName | <code>string</code> | Optional, middle name of a contact |
+| opts.suffix | <code>string</code> | Optional, name suffix of a contact |
+| opts.prefix | <code>string</code> | Optional, name prefix of a contact |
+
+
+<a name="WhatsApp.Organization"></a>
+
+## WhatsApp.Organization
+
+Component used in a [Contact](#WhatsApp.Contact) component
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| company | <code>string</code> | Optional, name of the contact's company |
+| department | <code>string</code> | Optional, department name of a contact |
+| title | <code>string</code> | Optional, contact's business title |
+
+### new Organization(opts)
+
+Contact organization information
+
+**Example**  
+```js
+const organization = new WhatsApp.Organization({
+  company: "WhatsApp",
+  department: "Design",
+  title: "Manager"
+})
+```
+**Example**  
+```js
+// Shorthand
+const organization = new WhatsApp.Organization("WhatsApp")
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> \| <code>string</code> | Optional properties, or company name for shorthand |
+| opts.company | <code>string</code> | Optional, name of the contact's company |
+| opts.department | <code>string</code> | Optional, department name of a contact |
+| opts.title | <code>string</code> | Optional, contact's business title |
+
+
+<a name="WhatsApp.PhoneNumber"></a>
+
+## WhatsApp.PhoneNumber
+
+Component used in a [Contact](#WhatsApp.Contact) component
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Optional, type of phone number, must be HOME or WORK |
+| phone | <code>string</code> | Required, valid phone number |
+
+### new PhoneNumber(opts)
+
+The phone number of a contact
+
+**Example**  
+```js
+const phone = new WhatsApp.PhoneNumber({
+  phone: "+1 (940) 555-1234"
+})
+```
+**Example**  
+```js
+// Shorthand
+const phone = new WhatsApp.PhoneNumber("+1 (940) 555-1234")
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Optional properties |
+| opts.type | <code>string</code> | Optional, type of phone number, must be HOME or WORK |
+| opts.phone | <code>string</code> | Required, valid phone number |
+
+
+<a name="WhatsApp.WebsiteAddress"></a>
+
+## WhatsApp.WebsiteAddress
+
+Component used in a [Contact](#WhatsApp.Contact) component
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Optional, type of website, must be HOME or WORK |
+| url | <code>string</code> | Required, valid URL |
+
+### new WebsiteAddress(opts)
+
+The website URL of a contact
+
+**Example**  
+```js
+const url = new WhatsApp.WebsiteAddress({
+  url: "https://www.fake.org"
+})
+```
+**Example**  
+```js
+// Shorthand
+const url = new WhatsApp.WebsiteAddress("https://www.fake.org")
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Optional properties |
+| opts.type | <code>string</code> | Optional, type of website, must be HOME or WORK |
+| opts.url | <code>string</code> | Required, valid URL |
 
 
 ---

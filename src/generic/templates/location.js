@@ -6,7 +6,7 @@ import Action from '../components/action'
  * 
  * @category Generic
  * 
- * @property {string} title - Describes the image
+ * @property {string} title - Describes the location
  * @property {string} lat - Latitude
  * @property {string} long - Longitude
  * @property {Action} action - Optional {@link Action}

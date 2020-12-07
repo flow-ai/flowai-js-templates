@@ -33,6 +33,13 @@ import Apple from './apple'
  **/
 import GBM from './gbm'
 
+/** 
+ * @namespace WhatsApp
+ * @description 
+ * Google Business Messages specific reply templates
+ **/
+import WhatsApp from './whatsapp'
+
 const {
   Message,
   Text,
@@ -80,5 +87,6 @@ export {
   Phone,
   Apple,
   Messenger,
-  GBM
+  GBM,
+  WhatsApp
 }
