@@ -96,6 +96,9 @@ import ReceiptAdjustment from './messenger/components/receipt/adjustment'
 import ReceiptElement from './messenger/components/receipt/element'
 import ReceiptSummary from './messenger/components/receipt/summary'
 
+// Twitter templates
+import PublicReply from './twitter/templates/publicReply'
+
 /** 
  * @namespace 
  * @description 
@@ -109,6 +112,15 @@ const Messenger = {
   ReceiptAdjustment,
   ReceiptElement,
   ReceiptSummary
+}
+
+/**
+ * @namespace
+ * @description
+ * Twitter specific reply templates
+ */
+const Twitter = {
+  PublicReply
 }
 
 
@@ -137,5 +149,7 @@ export {
   Phone,
   Apple,
 
-  Messenger
+  Messenger,
+
+  Twitter
 }
