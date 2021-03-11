@@ -5,7 +5,7 @@ import Template from '../../generic/templates/template'
  * 
  * @category Templates
  * 
- * @property {string} reply - Text to reply to mention
+ * @property {string} text - Text to reply to mention
  * @example
  * const publicReply = new PublicReply('Could you DM us your order number please?')
  **/
@@ -17,21 +17,21 @@ class PublicReply extends Template {
   constructor(opts) {
     super()
 
-    let reply = opts
-    if(typeof reply === 'object') {
-      reply = opts.reply
+    let text = opts
+    if(typeof text === 'object') {
+      text = opts.text
     }
 
-    if(typeof reply !== 'string' || !reply.length) {
-      throw new Error('Reply is mandatory')
+    if(typeof text !== 'string' || !text.length) {
+      throw new Error('Text of reply is mandatory')
     }
 
-    this.reply = reply
+    this.text = text
   }
 
   toJSON() {
     const {
-      reply,
+      text,
       delay,
       fallback
     } = this
@@ -39,7 +39,7 @@ class PublicReply extends Template {
     return {
       type: 'twitter_public_reply',
       payload: {
-        reply
+        text
       },
       delay: delay || undefined,
       fallback
