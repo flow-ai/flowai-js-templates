@@ -25,18 +25,18 @@ import Pause from './phone/templates/pause'
 import Ask from './phone/templates/ask'
 import Dial from './phone/templates/dial'
 
-/** 
- * @namespace 
- * @description 
+/**
+ * @namespace
+ * @description
  * IVR bot specific reply templates
  **/
 
 const Phone = {
-  Say,
-  Hangup,
-  Pause,
-  Ask,
-  Dial
+   Say,
+   Hangup,
+   Pause,
+   Ask,
+   Dial
 }
 
 // Apple templates
@@ -60,31 +60,31 @@ import PayMerchant from './apple/components/payMerchant'
 import PayLineItem from './apple/components/payLineItem'
 import PayShippingMethod from './apple/components/payShippingMethod'
 
-/** 
- * @namespace 
- * @description 
+/**
+ * @namespace
+ * @description
  * Apple Business API specific reply templates
  **/
 const Apple = {
-  ImageAsset,
-  VideoAsset,
-  RichLink,
-  ListPicker,
-  ListPickerSection,
-  ListPickerItem,
-  TimePicker,
-  InteractiveMessage,
-  LocationItem,
-  EventItem,
-  TimeItem,
-  CustomInteractiveData,
-  AuthRequest,
-  Oauth2,
-  PayRequest,
-  PayEndpoints,
-  PayMerchant,
-  PayLineItem,
-  PayShippingMethod
+   ImageAsset,
+   VideoAsset,
+   RichLink,
+   ListPicker,
+   ListPickerSection,
+   ListPickerItem,
+   TimePicker,
+   InteractiveMessage,
+   LocationItem,
+   EventItem,
+   TimeItem,
+   CustomInteractiveData,
+   AuthRequest,
+   Oauth2,
+   PayRequest,
+   PayEndpoints,
+   PayMerchant,
+   PayLineItem,
+   PayShippingMethod
 }
 
 // Messenger templates
@@ -96,23 +96,24 @@ import ReceiptAdjustment from './messenger/components/receipt/adjustment'
 import ReceiptElement from './messenger/components/receipt/element'
 import ReceiptSummary from './messenger/components/receipt/summary'
 
-// Twitter templates
-import PublicReply from './twitter/templates/publicReply'
-
-/** 
- * @namespace 
- * @description 
+/**
+ * @namespace
+ * @description
  * Facebook Messenger specific reply templates
  **/
 const Messenger = {
-  OTN,
-  Products,
-  Receipt,
-  ReceiptAddress,
-  ReceiptAdjustment,
-  ReceiptElement,
-  ReceiptSummary
+   OTN,
+   Products,
+   Receipt,
+   ReceiptAddress,
+   ReceiptAdjustment,
+   ReceiptElement,
+   ReceiptSummary
 }
+
+
+// Twitter templates
+import PublicReply from './twitter/templates/publicReply'
 
 /**
  * @namespace
@@ -120,36 +121,45 @@ const Messenger = {
  * Twitter specific reply templates
  */
 const Twitter = {
-  PublicReply
+   PublicReply
+}
+
+// Khoros templates
+import Priority from './khoros/templates/priority'
+
+const Khoros = {
+   Priority
 }
 
 
 export {
-  Message,
-  Text,
-  Card,
-  Image,
-  Video,
-  Audio,
-  File,
-  Buttons,
-  Carousel,
-  List,
-  Location,
-  Custom,
-  Note,
+   Message,
+   Text,
+   Card,
+   Image,
+   Video,
+   Audio,
+   File,
+   Buttons,
+   Carousel,
+   List,
+   Location,
+   Custom,
+   Note,
 
-  Action,
-  Button,
-  Media,
-  ListItem,
-  Param,
-  QuickReply,
+   Action,
+   Button,
+   Media,
+   ListItem,
+   Param,
+   QuickReply,
 
-  Phone,
-  Apple,
+   Phone,
+   Apple,
 
-  Messenger,
+   Messenger,
 
-  Twitter
+   Twitter,
+
+   Khoros
 }
