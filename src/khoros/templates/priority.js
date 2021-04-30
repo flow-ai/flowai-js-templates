@@ -23,7 +23,7 @@ class Priority extends Template {
          priority = opts.priority
       }
 
-      if (typeof priority !== 'number' || !Number.isNaN(priority)) {
+      if (typeof priority !== 'number' || Number.isNaN(priority)) {
          throw new Error('Priority value is mandatory')
       }
 
