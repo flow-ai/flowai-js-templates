@@ -24,6 +24,7 @@ import Hangup from './phone/templates/hangup'
 import Pause from './phone/templates/pause'
 import Ask from './phone/templates/ask'
 import Dial from './phone/templates/dial'
+import Handover from './phone/templates/handover'
 
 /**
  * @namespace
@@ -36,7 +37,8 @@ const Phone = {
    Hangup,
    Pause,
    Ask,
-   Dial
+   Dial,
+   Handover
 }
 
 // Apple templates

@@ -3,11 +3,13 @@ import Hangup from './templates/hangup'
 import Pause from './templates/pause'
 import Ask from './templates/ask'
 import Dial from './templates/dial'
+import Handover from './templates/handover'
 
 export {
-  Say,
-  Hangup,
-  Pause,
-  Ask,
-  Dial
+   Say,
+   Hangup,
+   Pause,
+   Ask,
+   Dial,
+   Handover
 }
