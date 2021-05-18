@@ -18,27 +18,41 @@ class Handover extends Template {
    constructor(opts) {
       super()
 
-      let url = opts
-      if (typeof url === 'object') {
-         url = opts.url
+      if (typeof opts !== 'object') {
+         throw new Error('Options should be an object')
       }
+
+      const url = opts.url
 
       if (url && typeof url !== 'string') {
          throw new Error('Url should be string')
       }
 
+      let repeat = opts.repeat
+
+      if (repeat < 1) {
+         throw new Error('Repeat can\'t be less than 1')
+      }
+
+      if (!repeat || isNaN(repeat)) {
+         repeat = 10
+      }
+
       this.url = url
+      this.repeat = repeat
    }
 
    toJSON() {
       const {
-         url
+         url,
+         repeat
       } = this
 
       return {
          type: 'phone_handover',
          payload: {
-            url
+            url,
+            repeat
          }
       }
    }
