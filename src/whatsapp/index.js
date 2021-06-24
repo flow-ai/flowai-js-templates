@@ -7,6 +7,9 @@ import Location from './templates/location'
 import Document from './templates/document'
 import Sticker from './templates/sticker'
 import Contacts from './templates/contacts'
+import List from './templates/list'
+import ListItem from './components/listItem'
+import ListItemSection from './components/listItemSection'
 import Contact from './components/contact'
 import Address from './components/address'
 import EmailAddress from './components/emailAddress'
@@ -30,5 +33,8 @@ export default {
   WebsiteAddress,
   PhoneNumber,
   Name,
-  Organization
+  Organization,
+  List,
+  ListItem,
+  ListItemSection
 }

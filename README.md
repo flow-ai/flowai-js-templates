@@ -648,6 +648,15 @@ Add a [Button](#Button) to the list of buttons
 | --- | --- | --- |
 | button | [<code>Button</code>](#Button) | button |
 
+### *list*.addItem(item)
+
+Add a [ListItemSection](#ListItemSection) to the list of items
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| item | [<code>ListItemSection</code>](#ListItemSection) | [ListItemSection](#ListItemSection) |
+
 
 <a name="ListItem"></a>
 
@@ -676,6 +685,14 @@ Item within a [List](#List) template
 | opts.media | [<code>Media</code>](#Media) | Optional |
 | opts.action | [<code>Action</code>](#Action) | Optional |
 | opts.featured | <code>bool</code> | Optional |
+
+### new ListItem()
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.title | <code>string</code> | Required |
+| opts.description | <code>string</code> | Required |
 
 ### *listItem*.addButton(button)
 
@@ -754,6 +771,19 @@ new Button({
 | opts.label | <code>string</code> | Required, label of the button |
 | opts.value | <code>string</code> | Required, value of the button (can be a URL or other string value) |
 | opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this button |
+
+### new Button()
+
+**Example**  
+```js
+new Button({
+ label: 'Select'
+})
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.label | <code>string</code> | Required, label of the button |
 
 
 <a name="Media"></a>
