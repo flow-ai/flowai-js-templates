@@ -6,7 +6,11 @@ import Template from '../../base/templates/template'
  * 
  * @category Generic
  * 
- * @property {ListItemSection[]} items - Set of list items
+ * @property {ListItemSection[]} footer - Set of list items
+ * @property {string} body  - Required
+ * @property {string} header  - Optional
+ * @property {string} buttonText  - Required
+ * @property {string} footer  - Optional
  * @example
  * const listItemWA1 = new Templates.WhatsApp.ListItem({
  *             title: "Example title",
