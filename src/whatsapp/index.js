@@ -17,6 +17,9 @@ import WebsiteAddress from './components/websiteAddress'
 import PhoneNumber from './components/phoneNumber'
 import Name from './components/name'
 import Organization from './components/organization'
+import Button from './components/button'
+import Buttons from './templates/buttons'
+import Header from './components/header'
 
 export default {
   Text,
@@ -36,5 +39,8 @@ export default {
   Organization,
   List,
   ListItem,
-  ListItemSection
+  ListItemSection,
+  Button,
+  Buttons,
+  Header
 }

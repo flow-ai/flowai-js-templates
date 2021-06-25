@@ -1,36 +1,40 @@
 
-
+import uuid from 'uuid/v4'
 /**
  * 
  * @category Whatsapp
  *
- * @property {string} label - Label of the button
+ * @property {string} title - title of the button
  * @example
  * new Button({
- *  label: 'Select'
+ *  title: 'Select'
  * })
  **/
 class Button {
   /**
-   * @param {string} opts.label - Required, label of the button
+   * @param {string} opts.title - Required, title of the button
    **/
-  constructor({ label }) {
+  constructor({ title }) {
 
 
-    if(typeof label !== 'string' || label.length === 0) {
-      throw new Error('Button label is mandatory')
+    if(typeof title !== 'string' || title.length === 0) {
+      throw new Error('Button title is mandatory')
     }
 
-    this.label = label
+    this.title = title
   }
 
   toJSON() {
     const {
-      label
+      title
     } = this
 
     return {
-      label
+      type: 'reply',
+      reply:{
+        title,
+        id: uuid()
+      }
     }
   }
 }

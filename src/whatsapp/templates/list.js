@@ -76,7 +76,8 @@ class List extends Template {
       action: {
         button,
         sections
-      }
+      },
+      type: 'list'
     }
 
     if(header){
