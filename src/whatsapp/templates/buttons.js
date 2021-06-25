@@ -83,9 +83,7 @@ class Buttons extends Template {
     }
 
     if(header){
-      payload.header = {
-        header
-      }
+      payload.header = header
     }
     if(footer){
       payload.footer = {

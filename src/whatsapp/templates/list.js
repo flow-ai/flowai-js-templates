@@ -55,12 +55,12 @@ class List extends Template {
     if(!(item instanceof ListItemSection)) {
       throw new Error('List addItem argument must be an instance of a ListItem')
     }
-    this.items.push(item)
+    this.sections.push(item)
     return this
   }
 
   get items() {
-    return this._items
+    return this.sections
   }
 
 
