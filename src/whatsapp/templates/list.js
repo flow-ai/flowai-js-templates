@@ -1,5 +1,4 @@
 import ListItemSection from '../components/listItemSection'
-import Button from '../components/button'
 import Template from '../../base/templates/template'
 
 /**
@@ -9,27 +8,19 @@ import Template from '../../base/templates/template'
  * 
  * @property {ListItemSection[]} items - Set of list items
  * @example
- * const item1 = new ListItem({
- *   title: "40\" LED TV",
- *   subtitle: "Crystal clear screen",
- * })
- *
- * const item2 = new ListItem({
- *   title: "50\" LED TV",
- *   subtitle: "Big, bad and bold",
- *   media: new Media({
- *    url: "https://...",
- *    type: "image"
- *   }),
- *   action: new Action({
- *     type: 'webview',
- *     value: 'https://..'
- *   })
- * })
- *
- * const list = new List()
- * list.addItem(item1)
- * list.addItem(item2)
+ * const listItemWA1 = new Templates.WhatsApp.ListItem({
+ *             title: "Example title",
+ *             description: 'Example subtitle'
+ *          })
+ * const listItemWA2 = new Templates.WhatsApp.ListItem({
+ *             title: "Example title",
+ *             description: 'Example subtitle'
+ *           })
+ * const listItemSection = new Templates.WhatsApp.ListItemSection({
+ *             title: "Example section",
+ *             rows: [listItemWA1, listItemWA2]
+ *           })
+ * const listWA = new Templates.WhatsApp.List({body: 'Example body', buttonText: 'Example confirm', sections: [listItemSection]})
  **/
 class List extends Template {
 
@@ -50,6 +41,7 @@ class List extends Template {
       }
     }
     this.header = header || undefined
+    this.button = buttonText
     this.body = body
     this.footer = footer
     this.sections = sections
@@ -74,14 +66,17 @@ class List extends Template {
 
   toJSON() {
     const {
-      header, body, footer, sections
+      header, body, footer, sections, button
     } = this
 
     const payload = {
       body: {
         text: body
       },
-      sections
+      action: {
+        button,
+        sections
+      }
     }
 
     if(header){

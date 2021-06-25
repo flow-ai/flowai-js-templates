@@ -7,12 +7,12 @@ import ListItem from "./listItem";
  * @category Generic
  * 
  * @property {string} title - Title of the list item
- * @property {string} rows - rows of list items
+ * @property {array} rows - rows of list items
  **/
 class ListItemSection {
   /**
    * @param {string} opts.title - Required
-   * @param {string} opts.rows - Required
+   * @param {array} opts.rows - Required
    **/
   constructor({ title, rows }) {
     if(typeof title !== 'string' || title.length === 0) {
