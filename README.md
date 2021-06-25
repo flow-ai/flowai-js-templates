@@ -470,6 +470,40 @@ buttons.addButton(new Button({
 | --- | --- | --- |
 | opts.title | <code>string</code> | Required |
 
+### new Buttons(body, footer, header, buttons)
+
+**Example**  
+```js
+const ButtonWA = new Templates.WhatsApp.Button({
+             title: "Example title",
+           })
+const HeaderWA = new Templates.WhatsApp.Header({
+             type: 'text',
+             value: 'Example value'
+           })
+
+const buttonsWA = new Templates.WhatsApp.List({body: 'Example body',
+            header: HeaderWA,
+            buttons: [ButtonWA]
+          })
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| body | <code>string</code> | Required |
+| footer | <code>string</code> | Optional |
+| header | [<code>Header</code>](#Header) | Optional [Header](#Header) |
+| buttons | <code>Array</code> | Required |
+
+### *buttons*.addButton(button)
+
+Add a button to the buttons
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| button | [<code>Button</code>](#Button) | button |
+
 ### *buttons*.addButton(button)
 
 Add a button to the buttons
@@ -777,13 +811,13 @@ new Button({
 **Example**  
 ```js
 new Button({
- label: 'Select'
+ title: 'Select'
 })
 ```
 
 | Param | Type | Description |
 | --- | --- | --- |
-| opts.label | <code>string</code> | Required, label of the button |
+| opts.title | <code>string</code> | Required, title of the button |
 
 
 <a name="Media"></a>
@@ -797,6 +831,14 @@ Component that represents a URL to an image, video or audio file. Used within ge
 | Name | Type | Description |
 | --- | --- | --- |
 | url | <code>string</code> | URL to the media file |
+
+### new Media()
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.url | <code>string</code> | Required |
+| opts.type | <code>string</code> | Required |
 
 ### new Media()
 
@@ -933,7 +975,7 @@ Receipt Template
 
 ### new Receipt()
 
-Create a Receipt template
+The receipt template allows you to send an order confirmation. The template may include an order summary, payment details, and shipping information.
 
 **Example**  
 ```js
