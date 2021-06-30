@@ -37,10 +37,10 @@ class Say extends Template {
 
       const {
          speech,
-         url,
-         language,
-         voice
+         url
       } = opts
+
+      let { language, voice } = opts
 
       // Either speech or URL needs to be provided
       if (speech === undefined && url === undefined) {
@@ -57,6 +57,10 @@ class Say extends Template {
          throw new Error('Invalid or empty url provided')
       }
 
+      if (voice !== undefined && support.depricatedVoices.indexOf(voice) !== -1) {
+         voice = undefined
+      }
+
       // Verify provided voice
       if (voice !== undefined && support.voices.indexOf(voice) === -1) {
          throw new Error(`Unsupported voice specified. You need to choose one of: '${support.voices.join(', ')}'`)
@@ -68,7 +72,9 @@ class Say extends Template {
 
       // Verify provided language
       if (language !== undefined) {
-         if (this.voice === 'google' && support.languages.google.indexOf(language) === -1) {
+         if (support.deprecatedLanguages.indexOf(language) !== 1) {
+            language = undefined
+         } else if (this.voice === 'google' && support.languages.google.indexOf(language) === -1) {
             throw new Error(`Unsupported language provided. Google supports one of: '${support.languages.google.join(', ')}'`)
          }
       }
@@ -103,6 +109,108 @@ class Say extends Template {
 const support = {
    voices: [
       'google'
+   ],
+   depricatedVoices: [
+      'alice',
+      'man',
+      'woman',
+      'polly'
+   ],
+   deprecatedLanguages: [
+      'da-DK',
+      'de-DE',
+      'en-AU',
+      'en-CA',
+      'en-GB',
+      'en-IN',
+      'en-US',
+      'ca-ES',
+      'es-ES',
+      'es-MX',
+      'fi-FI',
+      'fr-CA',
+      'fr-FR',
+      'it-IT',
+      'ja-JP',
+      'ko-KR',
+      'nb-NO',
+      'nl-NL',
+      'pl-PL',
+      'pt-BR',
+      'pt-PT',
+      'ru-RU',
+      'sv-SE',
+      'zh-CN',
+      'zh-HK',
+      'zh-TW',
+      'Polly.Mads',
+      'Polly.Naja',
+      'Polly.Lotte',
+      'Polly.Ruben',
+      'Polly.Nicole',
+      'Polly.Russell',
+      'Polly.Amy',
+      'Polly.Brian',
+      'Polly.Emma',
+      'Polly.Amy-Neural',
+      'Polly.Emma-Neural',
+      'Polly.Brian-Neural',
+      'Polly.Raveena',
+      'Polly.Ivy',
+      'Polly.Joanna',
+      'Polly.Joey',
+      'Polly.Justin',
+      'Polly.Kendra',
+      'Polly.Kimberly',
+      'Polly.Matthew',
+      'Polly.Salli',
+      'Polly.Ivy-Neural',
+      'Polly.Joanna-Neural*',
+      'Polly.Kendra-Neural',
+      'Polly.Kimberly-Neural',
+      'Polly.Salli-Neural',
+      'Polly.Joey-Neural',
+      'Polly.Justin-Neural',
+      'Polly.Matthew-Neural*',
+      'Polly.Geraint',
+      'Polly.Celine',
+      'Polly.Mathieu',
+      'Polly.Chantal',
+      'Polly.Hans',
+      'Polly.Marlene',
+      'Polly.Vicki',
+      'Polly.Dora',
+      'Polly.Karl',
+      'Polly.Carla',
+      'Polly.Giorgio',
+      'Polly.Mizuki',
+      'Polly.Takumi',
+      'Polly.Liv',
+      'Polly.Jacek',
+      'Polly.Jan',
+      'Polly.Ewa',
+      'Polly.Maja',
+      'Polly.Ricardo',
+      'Polly.Vitoria',
+      'Polly.Camila-Neural',
+      'Polly.Cristiano',
+      'Polly.Ines',
+      'Polly.Carmen',
+      'Polly.Maxim',
+      'Polly.Tatyana',
+      'Polly.Conchita',
+      'Polly.Enrique',
+      'Polly.Miguel',
+      'Polly.Penelope',
+      'Polly.Lupe-Neural',
+      'Polly.Astrid',
+      'Polly.Filiz',
+      'Polly.Gwyneth',
+      'en',
+      'en-gb',
+      'es',
+      'fr',
+      'de'
    ],
    languages: {
       google: [
