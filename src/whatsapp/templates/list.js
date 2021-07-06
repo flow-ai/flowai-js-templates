@@ -36,7 +36,7 @@ class List extends Template {
     if(typeof buttonText !== 'string' || buttonText.length === 0) {
       throw new Error('List buttonText is mandatory')
     }
-    if(!sections || !sections.length) {
+    if(!sections) {
       throw new Error('List sections argument must be an array of List items')
     }
     for(let i = 0; i < sections.length; i++){

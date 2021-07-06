@@ -18,7 +18,7 @@ class ListItemSection {
     if(typeof title !== 'string' || title.length === 0) {
       throw new Error('ListItemSection title is mandatory')
     }
-    if(!rows || !rows.length) {
+    if(!rows) {
       throw new Error('ListItemSection rows argument must be an array of List items')
     }
     for(let i = 0; i < rows.length; i++){
