@@ -975,7 +975,7 @@ Receipt Template
 
 ### new Receipt()
 
-Create a Receipt template
+The receipt template allows you to send an order confirmation. The template may include an order summary, payment details, and shipping information.
 
 **Example**  
 ```js
