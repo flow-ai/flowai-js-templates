@@ -16,7 +16,7 @@ import Action from './generic/components/action'
 import Button from './generic/components/button'
 import Media from './generic/components/media'
 import ListItem from './generic/components/listItem'
-import { Param } from './generic/components/param'
+import { Param } from './base/components/param'
 import QuickReply from './generic/components/quickReply'
 
 import Say from './phone/templates/say'
@@ -34,12 +34,42 @@ import Handover from './phone/templates/handover'
  **/
 import Generic from './generic'
 
+// Apple templates
+import ImageAsset from './apple/components/imageAsset'
+import VideoAsset from './apple/components/videoAsset'
+import InteractiveMessage from './apple/components/interactiveMessage'
+import LocationItem from './apple/components/locationItem'
+import EventItem from './apple/components/eventItem'
+import TimeItem from './apple/components/timeItem'
+import ListPickerSection from './apple/components/listPickerSection'
+import ListPickerItem from './apple/components/listPickerItem'
+import RichLink from './apple/templates/richLink'
+import ListPicker from './apple/templates/listPicker'
+import TimePicker from './apple/templates/timePicker'
+import CustomInteractiveData from './apple/templates/customInteractiveData'
+import Oauth2 from './apple/components/oauth2'
+import AuthRequest from './apple/templates/authRequest'
+import PayRequest from './apple/templates/payRequest'
+import PayEndpoints from './apple/components/payEndpoints'
+import PayMerchant from './apple/components/payMerchant'
+import PayLineItem from './apple/components/payLineItem'
+import PayShippingMethod from './apple/components/payShippingMethod'
+
+
+// Messenger templates
+import OTN from './messenger/templates/otn'
+import Products from './messenger/templates/products'
+import Receipt from './messenger/templates/receipt'
+import ReceiptAddress from './messenger/components/receipt/address'
+import ReceiptAdjustment from './messenger/components/receipt/adjustment'
+import ReceiptElement from './messenger/components/receipt/element'
+import ReceiptSummary from './messenger/components/receipt/summary'
+
 /** 
  * @namespace Phone
  * @description 
  * IVR bot specific reply templates
  **/
-import Phone from './phone'
 const Phone = {
    Say,
    Hangup,
@@ -48,14 +78,6 @@ const Phone = {
    Dial,
    Handover
 }
-
-/** 
- * @namespace Messenger
- * @description 
- * Facebook Messenger specific reply templates
- **/
-import Messenger from './messenger'
-
 
 /**
  * @namespace
@@ -134,28 +156,6 @@ const Khoros = {
    Priority
 }
 
-
-const {
-  Message,
-  Text,
-  Card,
-  Image,
-  Video,
-  Audio,
-  File,
-  Buttons,
-  Carousel,
-  List,
-  Location,
-  Custom,
-  Note,
-  Action,
-  Button,
-  Media,
-  ListItem,
-  Param,
-  QuickReply
-} = Generic
 
 export {
   Message,
