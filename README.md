@@ -1,6 +1,5 @@
-# The Flow.ai JavaScript Response Templates
-
-Easy helper classes to create rich [flow.ai](https://flow.ai) response templates like cards, buttons and locations.
+# The Khoros Flow.ai JavaScript Response Templates
+Easy helper classes to create rich [khoros flow.ai](https://flow.ai) response templates like cards, buttons and locations.
 
 Reponse templates allow developers to render widgets at channels that support this like Facebook Messenger or the flow.ai Web client.
 
@@ -20,8 +19,12 @@ npm install --save flowai-js-templates
 ```
 
 ### Usage
+<<<<<<< HEAD
 
 When using Flow.ai [cloud code](https://docs.flow.ai/features/cloud-functions.html) there is no need to require or import anything.
+=======
+When using Khoros Flow.ai [cloud code](https://docs.flow.ai/features/cloud-functions.html) there is no need to require or import anything.
+>>>>>>> master
 
 ```js
 const { Card } = require('flowai-js-templates')
