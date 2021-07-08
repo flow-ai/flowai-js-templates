@@ -1,5 +1,6 @@
 import Template from '../../base/templates/template'
 import Button from '../components/button'
+import Header from '../components/header'
 
 /**
  * A Whatsapp template that represents an array of {@link Buttonn}
@@ -40,6 +41,9 @@ class Buttons extends Template {
     }
     if(!buttons || !buttons.length) {
       throw new Error('Buttons are mandatory')
+    }
+    if(header && !(header instanceof Header)) {
+      throw new Error('Buttons header must be Header object')
     }
 
     this.body = body

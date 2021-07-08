@@ -4,12 +4,14 @@ import Pause from './templates/pause'
 import Ask from './templates/ask'
 import Dial from './templates/dial'
 import Message from '../base/message'
+import Handover from './templates/handover'
 
-export default {
-  Say,
-  Hangup,
-  Pause,
-  Ask,
-  Dial,
-  Message
+export {
+   Say,
+   Hangup,
+   Pause,
+   Ask,
+   Dial,
+   Handover,
+   Message
 }
