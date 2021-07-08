@@ -465,7 +465,7 @@ Specific templates for phone responses.
  "type": "phone_say",
  "payload": {
   "speech": "The time is ...",
-  "voice": "alice"
+  "voice": "google"
  }
 }
 ```

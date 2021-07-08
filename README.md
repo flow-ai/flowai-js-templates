@@ -1,5 +1,6 @@
-# The Khoros Flow.ai JavaScript Response Templates
-Easy helper classes to create rich [khoros flow.ai](https://flow.ai) response templates like cards, buttons and locations.
+# The Flow.ai JavaScript Response Templates
+
+Easy helper classes to create rich [flow.ai](https://flow.ai) response templates like cards, buttons and locations.
 
 Reponse templates allow developers to render widgets at channels that support this like Facebook Messenger or the flow.ai Web client.
 
@@ -19,12 +20,8 @@ npm install --save flowai-js-templates
 ```
 
 ### Usage
-<<<<<<< HEAD
 
 When using Flow.ai [cloud code](https://docs.flow.ai/features/cloud-functions.html) there is no need to require or import anything.
-=======
-When using Khoros Flow.ai [cloud code](https://docs.flow.ai/features/cloud-functions.html) there is no need to require or import anything.
->>>>>>> master
 
 ```js
 const { Card } = require('flowai-js-templates')
@@ -1197,7 +1194,7 @@ These reply templates are specific to the Twilio voice integration. They are not
 
 ## Phone.Ask
 
-Ask a user for input by playing an audio file or send the question as a text message that gets converted into speech
+Send a message to a user asking for input
 
 **Properties**
 
@@ -1205,17 +1202,15 @@ Ask a user for input by playing an audio file or send the question as a text mes
 | --- | --- | --- |
 | speech | <code>string</code> | Text to speech |
 | url | <code>string</code> | URL to an audio file |
-| expected | <code>string</code> | Optional, what kind of input to expect. Valid are speech, digits or any (default is any) |
+| expected | <code>string</code> | Optional, what kind of input to expect. Valid are speech or digits (default is speech) |
 | hints | <code>string</code> | Optional, expected words or sentences, comma separated (max 500 words) |
 | language | <code>string</code> | Optional language for text to speech |
 | voice | <code>string</code> | Optional voice for text to speech |
 | timeout | <code>number</code> | Optional, number of seconds to wait for user input (default ) and send a repeat message |
 | repeat | <code>number</code> | Optional, number of times to ask again after user has not provided input (default 1, 0 is unlimited loop) |
-| profanityFilter | <code>boolean</code> | Optional, filter profanity from any received input |
 | finishOnKey | <code>string</code> | Optional, only when expecting digits, set a value that your caller can press to submit their digits. |
 | numDigits | <code>number</code> | Optional, only when expecting digits, set the number of digits you expect from your caller |
 | speechTimeout | <code>string</code> | Optional, only when expecting speech, sets the limit (in seconds) to wait before it stopping speech recognition |
-| speechModel | <code>string</code> | Optional, only when expecting speech, specify a specific speech model. Options: default, numbers_and_commands and phone_call. |
 
 ### new Ask()
 
@@ -1241,7 +1236,8 @@ Play an audio file or send a text message to a user that is transformed to speec
 
 | Name | Type | Description |
 | --- | --- | --- |
-| speech | <code>string</code> | The text transformed to speech |
+| speech | <code>string</code> | The text transformed to speech Send a message to a user |
+| speech | <code>string</code> | Text to speech |
 | url | <code>string</code> | URL to an audio file |
 | language | <code>string</code> | Optional language for text to speech |
 | voice | <code>string</code> | Optional voice for text to speech |
@@ -1251,8 +1247,8 @@ Play an audio file or send a text message to a user that is transformed to speec
 **Example**  
 ```js
 const say = new Phone.Say({
-  speech: "The weather is nice today!",
-  language: "en-GB"
+  speech: 'The weather is nice today!',
+  language: 'en-GB'
 })
 ```
 
