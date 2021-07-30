@@ -98,7 +98,7 @@ class List extends Template {
 
 
     return {
-      type: 'listWA',
+      type: 'whatsapp_list',
       payload
     }
   }

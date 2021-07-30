@@ -94,7 +94,7 @@ class Buttons extends Template {
     }
 
     return {
-      type: 'buttonsWA',
+      type: 'whatsapp_buttons',
       payload
     }
   }
