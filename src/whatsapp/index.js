@@ -8,6 +8,7 @@ import Document from './templates/document'
 import Sticker from './templates/sticker'
 import Contacts from './templates/contacts'
 import List from './templates/list'
+import Template from './templates/template'
 import ListItem from './components/listItem'
 import ListItemSection from './components/listItemSection'
 import Contact from './components/contact'
@@ -20,6 +21,12 @@ import Organization from './components/organization'
 import Button from './components/button'
 import Buttons from './templates/buttons'
 import Header from './components/header'
+import ButtonTemplate from './components/buttonTemplate'
+import Components from './components/component'
+import Currency from './components/currency'
+import DateTime from './components/dateTime'
+import Language from './components/language'
+import Parameter from './components/parameter'
 
 export default {
   Text,
@@ -42,5 +49,12 @@ export default {
   ListItemSection,
   Button,
   Buttons,
-  Header
+  Header,
+  Template,
+  ButtonTemplate,
+   Components ,
+   Currency ,
+   DateTime ,
+   Language,
+  Parameter,
 }
