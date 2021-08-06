@@ -18,10 +18,10 @@ class Currency {
     if(typeof fallback_value !== 'string' || fallback_value.length === 0){
       throw new Error('Fallback is mandatory')
     }
-    if(typeof code !== 'string' || code.length === 0){
+    if(typeof code !== 'string'){
       throw new Error('Code is mandatory')
     }
-    if(typeof amount_1000 !== 'string' || amount_1000.length === 0){
+    if(typeof amount_1000 !== 'number'){
       throw new Error('Amount is mandatory')
     }
 

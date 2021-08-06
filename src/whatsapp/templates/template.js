@@ -11,35 +11,35 @@ import Language from "../components/language";
  * @property {Language} language - Required {@link Language}
  * @property {Array} components - Optional
  * @example
- * const language = new Templates.WhatsApp.Language({
- *              policy: "deterministic",
- *              code: "en",
- *            })
- *  const currency = new Templates.WhatsApp.Currency({
- *               fallback_value: "$100.99",
- *               code: "USD",
- *               amount_1000: 100990
- *            })
- * const component = new Templates.WhatsApp.Component({
- *              type: 'body',
- *              parameters: [currency]
- *            })
- *  const buttonTemplate = new Templates.WhatsApp.Button({
- *                sub_type: 'url',
- *                index: 0,
- *                type: 'text',
- *                text: 'http://example.com'
- *            })
- *  const button = new Templates.WhatsApp.Component({
- *              type: 'button',
- *              button: buttonTemplate
- *            })
- *
- * const buttonsWA = new Templates.WhatsApp.Template({
- *       namespace: "your-namespace",
- *       name: "your-template-name",
- *       language: language,
- *       "components": [ button, component ])
+     const language = new WhatsApp.Language({
+                 policy: "deterministic",
+                   code: "en",
+                 })
+     const currency = new WhatsApp.Currency({
+                    fallback_value: "$100.99",
+                    code: "USD",
+                    amount_1000: 100990
+                 })
+     const component = new WhatsApp.Components({
+                   type: 'body',
+                   parameters: [currency]
+                 })
+     const buttonTemplate = new WhatsApp.ButtonTemplate({
+                     sub_type: 'url',
+                     index: 0,
+                     type: 'text',
+                    text: 'http://example.com'
+                 })
+     const button = new WhatsApp.Components({
+                   type: 'button',
+                   button: buttonTemplate
+                 })
+
+     const template = new WhatsApp.Template({
+            namespace: "your-namespace",
+            name: "your-template-name",
+            language: language,
+            components: [ button, component ]})``
  **/
 class TemplateWA extends Template {
 
