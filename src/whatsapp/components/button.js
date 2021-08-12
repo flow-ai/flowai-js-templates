@@ -1,5 +1,6 @@
 
 import uuid from 'uuid/v4'
+import { parseParam } from '../../base/components/param'
 /**
  * 
  * @category Whatsapp
@@ -29,6 +30,9 @@ class Button {
     }
     if(typeof type !== 'string' || type.length === 0) {
       throw new Error('Button type is mandatory')
+    }
+    if (type && (type !== 'text' && type !== 'event')) {
+      throw new Error('Type should be text or event')
     }
     if(typeof value !== 'string' || value.length === 0) {
       throw new Error('Button value is mandatory')

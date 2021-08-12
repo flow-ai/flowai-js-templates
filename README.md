@@ -982,7 +982,7 @@ Receipt Template
 
 ### new Receipt()
 
-The receipt template allows you to send an order confirmation. The template may include an order summary, payment details, and shipping information.
+Create a Receipt template
 
 **Example**  
 ```js
