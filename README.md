@@ -806,18 +806,25 @@ new Button({
 | opts.value | <code>string</code> | Required, value of the button (can be a URL or other string value) |
 | opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this button |
 
-### new Button()
+### new Button(opts)
 
 **Example**  
 ```js
 new Button({
- title: 'Select'
+ title: 'Select',
+ type: 'event',
+ value: 'NICE_EVENT'
 })
 ```
 
 | Param | Type | Description |
 | --- | --- | --- |
+| opts | <code>object</code> |  |
 | opts.title | <code>string</code> | Required, title of the button |
+| opts.type | <code>string</code> | Required, type of the button (text or event) |
+| opts.value | <code>string</code> | Required, value of payload to be sent back to the server when customer clicks the buttons |
+| opts.param | <code>Param</code> | Optional, parameter to pass to the button |
+|  | <code>Array.&lt;Param&gt;</code> | Optional, parameters to pass to the button |
 
 
 <a name="Media"></a>
