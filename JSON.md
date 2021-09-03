@@ -67,12 +67,14 @@ This example does not only send back a message, but will also trigger a flow wit
        {
         "type": "url",
         "label": "Forecast for today",
-        "value": "https://weatherforcastexample.com"
+        "value": "https://weatherforcastexample.com",
+        "newTab": false
        },
        {
         "type": "url",
         "label": "Weather this week",
-        "value": "https://weatherforcastexample.com/week"
+        "value": "https://weatherforcastexample.com/week",
+        "newTab": false
        }
       ]
      },
@@ -167,12 +169,14 @@ The following templates are supported
    {
     "type": "url",
     "label": "View website",
-    "value": "http://example.com"
+    "value": "http://example.com",
+    "newTab": false
    },
    {
     "type": "postback",
     "label": "Special offers",
-    "value": "Show me special offers"
+    "value": "Show me special offers",
+    "newTab": false
    }
   ]
  }
@@ -195,12 +199,14 @@ The following templates are supported
    {
     "type": "url",
     "label": "Forecast for today",
-    "value": "https://weatherforcastexample.com"
+    "value": "https://weatherforcastexample.com",
+    "newTab": false
    },
    {
     "type": "url",
     "label": "Weather this week",
-    "value": "https://weatherforcastexample.com/week"
+    "value": "https://weatherforcastexample.com/week",
+    "newTab": false
    }
   ]
  },
@@ -387,6 +393,7 @@ When these are triggered with the type event or postback you can also send data 
       "type": "event",
       "label": "Show details",
       "value": "PRODUCT_DETAILS",
+      "newTab": false,
       "params": {
        "itemId": [
         {
@@ -399,6 +406,7 @@ When these are triggered with the type event or postback you can also send data 
       "type": "event",
       "label": "Find store",
       "value": "FIND_STORE_BY_PRODUCT",
+      "newTab": false,
       "params": {
        "itemId": [
         {

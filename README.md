@@ -824,7 +824,7 @@ new Button({
 | opts.type | <code>string</code> | Required, type of the button (text or event) |
 | opts.value | <code>string</code> | Required, value of payload to be sent back to the server when customer clicks the buttons |
 | opts.param | <code>Param</code> | Optional, parameter to pass to the button |
-|  | <code>Array.&lt;Param&gt;</code> | Optional, parameters to pass to the button |
+| opts.params | <code>Array.&lt;Param&gt;</code> | Optional, parameters to pass to the button |
 
 
 <a name="Media"></a>
@@ -982,7 +982,7 @@ Receipt Template
 
 ### new Receipt()
 
-Create a Receipt template
+The receipt template allows you to send an order confirmation. The template may include an order summary, payment details, and shipping information.
 
 **Example**  
 ```js
