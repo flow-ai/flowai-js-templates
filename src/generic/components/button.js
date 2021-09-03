@@ -24,7 +24,7 @@ class Button {
    * @param {string} opts.value - Required, value of the button (can be a URL or other string value)
    * @param {Base.Param|Base.Param[]} opts.param - Optional Param or array or Array of Params related to this button
    **/
-  constructor({ type, label, value, param, params }) {
+  constructor({ type, label, value, param, newTab, params }) {
 
     if(typeof type !== 'string' || type.length === 0) {
       throw new Error('Button type is mandatory')
@@ -40,6 +40,7 @@ class Button {
     this.type = type
     this.label = label
     this.value = value
+    this.newTab = Boolean(newTab)
   }
 
   toJSON() {
@@ -47,6 +48,7 @@ class Button {
       type,
       label,
       value,
+      newTab,
       params
     } = this
 
@@ -54,6 +56,7 @@ class Button {
       type,
       label,
       value,
+      newTab,
       params: flattenParams(params)
     }
   }
