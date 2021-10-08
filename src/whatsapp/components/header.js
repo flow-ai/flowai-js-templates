@@ -22,11 +22,11 @@ class Header {
     if(typeof type !== 'string' || type.length === 0){
       throw new Error('Header type is mandatory')
     }
-    if(typeof value !== 'string' || value.length === 0){
-      throw new Error('Header type is mandatory')
-    }
     if(type !== 'image' && type !== 'document' && type !== 'text' && type !== 'video'){
       throw new Error('Header type is must be text, video, image or document')
+    }
+    if(typeof value !== 'string' || value.length === 0){
+      throw new Error('Header value is mandatory')
     }
 
     this.type = type
