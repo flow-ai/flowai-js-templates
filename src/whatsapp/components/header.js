@@ -41,11 +41,13 @@ class Header {
 
     if(type === 'text'){
       return {
+        type,
         text: value
       }
     }
 
     return {
+      type,
       [type]: {link: value}
     }
   }

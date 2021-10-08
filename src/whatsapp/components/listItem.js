@@ -1,3 +1,4 @@
+import { parseParam } from '../../base/components/param'
 
 /**
  * Item within a {@link ListItemSection} template
@@ -12,7 +13,7 @@ class ListItem {
    * @param {string} opts.title - Required
    * @param {string} opts.description - Required
    **/
-  constructor({ title, description }) {
+  constructor({ title, description, postbackType, postbackValue, params, param }) {
     if(typeof title !== 'string' || title.length === 0) {
       throw new Error('ListItem title is mandatory')
     }
@@ -22,17 +23,26 @@ class ListItem {
 
     this.title = title
     this.description = description
+    this.postbackType = postbackType
+    this.postbackValue = postbackValue
+    this.params = parseParam(param || params)
   }
 
   toJSON() {
     const {
       title,
-      description
+      description,
+      postbackType,
+      postbackValue,
+      params
     } = this
 
     return {
       title,
-      description
+      description,
+      postbackType,
+      postbackValue,
+      params
     }
   }
 }

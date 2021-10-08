@@ -90,17 +90,13 @@ class List extends Template {
     }
 
     if(header){
-      payload.header = {
-        type: 'text',
-        text: header
-      }
+      payload.header = header
     }
     if(footer){
       payload.footer = {
         text: footer
       }
     }
-
 
     return {
       type: 'whatsapp_list',
