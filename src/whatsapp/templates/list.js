@@ -1,5 +1,6 @@
 import ListItemSection from '../components/listItemSection'
 import Template from '../../base/templates/template'
+import Header from '../components/header'
 
 /**
  * Template that displays a set of {@link ListItemSection} components
