@@ -1,6 +1,6 @@
 {
   "name": "flowai-js-templates",
-  "version": "1.8.8",
+  "version": "1.8.9",
   "description": "Message response templates for Flow.ai",
   "main": "./lib/index.js",
   "scripts": {
@@ -52,8 +52,7 @@
     "uglify-js": "^3.10.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
-    "webpack-node-externals": "^2.5.2",
-    "uuid": "^3.2.1"
+    "webpack-node-externals": "^2.5.2"
   },
   "dependencies": {}
 }

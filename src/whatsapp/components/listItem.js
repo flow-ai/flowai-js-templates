@@ -1,6 +1,4 @@
 
-import uuid from 'uuid/v4'
-
 /**
  * Item within a {@link ListItemSection} template
  * 
@@ -24,20 +22,17 @@ class ListItem {
 
     this.title = title
     this.description = description
-    this.id = uuid()
   }
 
   toJSON() {
     const {
       title,
-      description,
-      id
+      description
     } = this
 
     return {
       title,
-      description,
-      id
+      description
     }
   }
 }
