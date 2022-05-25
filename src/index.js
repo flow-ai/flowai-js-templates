@@ -12,7 +12,6 @@ import List from './generic/templates/list'
 import Location from './generic/templates/location'
 import Custom from './generic/templates/custom'
 import Note from './generic/templates/note'
-import Sticker from './generic/templates/sticker'
 import Action from './generic/components/action'
 import Button from './generic/components/button'
 import Media from './generic/components/media'
@@ -65,6 +64,9 @@ import ReceiptAddress from './messenger/components/receipt/address'
 import ReceiptAdjustment from './messenger/components/receipt/adjustment'
 import ReceiptElement from './messenger/components/receipt/element'
 import ReceiptSummary from './messenger/components/receipt/summary'
+
+//Line templates
+import Sticker from './line/templates/sticker'
 
 /** 
  * @namespace Phone
@@ -157,6 +159,9 @@ const Khoros = {
    Priority
 }
 
+const Line = {
+   Sticker
+}
 
 export {
   Message,
@@ -172,7 +177,6 @@ export {
   Location,
   Custom,
   Note,
-  Sticker,
   Action,
   Button,
   Media,
@@ -186,5 +190,6 @@ export {
   GBM,
   WhatsApp,
   Twitter,
-  Khoros
+  Khoros,
+  Line
 }

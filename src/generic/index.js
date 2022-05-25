@@ -12,7 +12,6 @@ import List from './templates/list'
 import Location from './templates/location'
 import Custom from './templates/custom'
 import Note from './templates/note'
-import Sticker from './templates/sticker'
 import Action from './components/action'
 import Button from './components/button'
 import Media from './components/media'
@@ -32,7 +31,6 @@ export default {
   List,
   Location,
   Custom,
-  Sticker,
   Note,
   Action,
   Button,
