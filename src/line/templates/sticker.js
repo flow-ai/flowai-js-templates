@@ -1,4 +1,4 @@
-import Template from './template'
+import Template from '../../base/templates/template'
 
 /**
  * Template with a sticker
