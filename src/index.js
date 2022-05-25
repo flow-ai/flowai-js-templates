@@ -12,6 +12,7 @@ import List from './generic/templates/list'
 import Location from './generic/templates/location'
 import Custom from './generic/templates/custom'
 import Note from './generic/templates/note'
+import Sticker from './generic/templates/sticker'
 import Action from './generic/components/action'
 import Button from './generic/components/button'
 import Media from './generic/components/media'
@@ -171,6 +172,7 @@ export {
   Location,
   Custom,
   Note,
+  Sticker,
   Action,
   Button,
   Media,
