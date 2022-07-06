@@ -22,16 +22,28 @@ import Action from '../components/action'
 class Video extends Template {
 
   /**
+   * @param {object} opts
    * @param {string} opts.title - Required
    * @param {string} opts.url - Required
    * @param {string} opts.action - Optional
+   * @param {string} opts.thumbnailUrl - Optional
    **/
-  constructor( { title, url, action }) {
+  constructor( { title, url, action, thumbnailUrl }) {
     super()
 
     if(typeof title !== 'string' || !title.length) {
       throw new Error('Video title is mandatory')
     }
+
+    if (thumbnailUrl && typeof thumbnailUrl !== 'string') {
+      throw new Error('Thumbnail should be of type string')
+    }
+
+    if (thumbnailUrl && thumbnailUrl.length && !/^https?:\/\//.test(thumbnailUrl)) {
+      throw new Error('Thumbnail should be valid url')
+    }
+
+    this.thumbnailUrl = thumbnailUrl
 
     this.title = title
 
@@ -63,7 +75,8 @@ class Video extends Template {
       action,
       quickReplies,
       delay,
-      fallback
+      fallback,
+      thumbnailUrl
     } = this
 
     return {
@@ -72,7 +85,8 @@ class Video extends Template {
         title,
         url,
         action,
-        quickReplies
+        quickReplies,
+        thumbnailUrl
       },
       delay: delay || undefined,
       fallback
