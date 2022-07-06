@@ -345,7 +345,7 @@ Deliver a video to a user or show a video player. Optionally you can specify an 
 | url | <code>string</code> | URL to the video |
 | action | [<code>Action</code>](#Action) | Optional [Action](#Action) |
 
-### new Video()
+### new Video(opts)
 
 **Example**  
 ```js
@@ -361,9 +361,11 @@ const video = new Video({
 
 | Param | Type | Description |
 | --- | --- | --- |
+| opts | <code>object</code> |  |
 | opts.title | <code>string</code> | Required |
 | opts.url | <code>string</code> | Required |
 | opts.action | <code>string</code> | Optional |
+| opts.thumbnailUrl | <code>string</code> | Optional |
 
 
 <a name="Audio"></a>
