@@ -20,7 +20,8 @@ class Media {
 
     const {
       url,
-      type
+      type,
+      thumbnailUrl
     } = opts
 
     if(typeof url !== 'string' || url.length === 0) {
@@ -31,6 +32,16 @@ class Media {
       throw new Error(`type is mandatory for a Media component`)
     }
 
+    if (type === 'video' && thumbnailUrl && typeof thumbnailUrl !== 'string') {
+      throw new Error('Thumbnail should be of type string')
+    }
+
+    if(type === 'video' && thumbnailUrl && thumbnailUrl.length && !/^https?:\/\//.test(thumbnailUrl)) {
+      throw new Error('Thumbnail should be valid url')
+    }
+
+    this.thumbnailUrl = thumbnailUrl
+
     this.url = url
     this.type = type
   }
@@ -38,12 +49,14 @@ class Media {
   toJSON() {
     const {
       url,
-      type
+      type,
+      thumbnailUrl
     } = this
 
     return {
       url,
-      type
+      type,
+      thumbnailUrl
     }
   }
 }
