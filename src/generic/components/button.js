@@ -52,6 +52,10 @@ class Button {
     this.newTab = Boolean(newTab)
   }
 
+  static generateId() {
+    return `b${nanoid(8)}`
+  }
+
   toJSON() {
     const {
       type,
