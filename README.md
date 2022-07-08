@@ -806,6 +806,7 @@ new Button({
 | opts.type | <code>string</code> | Required, type of button (url, phone, postback, share, login, webview, event) |
 | opts.label | <code>string</code> | Required, label of the button |
 | opts.value | <code>string</code> | Required, value of the button (can be a URL or other string value) |
+| opts.id | <code>string</code> | Optional, id of the button. If not passed will be automatically generated |
 | opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this button |
 
 ### new Button(opts)

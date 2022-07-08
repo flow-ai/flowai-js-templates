@@ -68,13 +68,15 @@ This example does not only send back a message, but will also trigger a flow wit
         "type": "url",
         "label": "Forecast for today",
         "value": "https://weatherforcastexample.com",
-        "newTab": false
+        "newTab": false,
+        "id": "bNSoEerdM"
        },
        {
         "type": "url",
         "label": "Weather this week",
         "value": "https://weatherforcastexample.com/week",
-        "newTab": false
+        "newTab": false,
+        "id": "bzee-62A3"
        }
       ]
      },
@@ -170,13 +172,15 @@ The following templates are supported
     "type": "url",
     "label": "View website",
     "value": "http://example.com",
-    "newTab": false
+    "newTab": false,
+    "id": "bybXdKOR1"
    },
    {
     "type": "postback",
     "label": "Special offers",
     "value": "Show me special offers",
-    "newTab": false
+    "newTab": false,
+    "id": "bW0smc4zW"
    }
   ]
  }
@@ -200,13 +204,15 @@ The following templates are supported
     "type": "url",
     "label": "Forecast for today",
     "value": "https://weatherforcastexample.com",
-    "newTab": false
+    "newTab": false,
+    "id": "bNSoEerdM"
    },
    {
     "type": "url",
     "label": "Weather this week",
     "value": "https://weatherforcastexample.com/week",
-    "newTab": false
+    "newTab": false,
+    "id": "bzee-62A3"
    }
   ]
  },
@@ -400,7 +406,8 @@ When these are triggered with the type event or postback you can also send data 
          "value": "332223323"
         }
        ]
-      }
+      },
+      "id": "bpJsqWWSV"
      },
      {
       "type": "event",
@@ -413,7 +420,8 @@ When these are triggered with the type event or postback you can also send data 
          "value": "332223323"
         }
        ]
-      }
+      },
+      "id": "bCyhPkwOj"
      }
     ]
    }

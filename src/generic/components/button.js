@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid'
+
 import { parseParam, flattenParams } from '../../base/components/param'
 
 /**
@@ -22,9 +24,10 @@ class Button {
    * @param {string} opts.type - Required, type of button (url, phone, postback, share, login, webview, event)
    * @param {string} opts.label - Required, label of the button
    * @param {string} opts.value - Required, value of the button (can be a URL or other string value)
+   * @param {string} opts.id - Optional, id of the button. If not passed will be automatically generated
    * @param {Base.Param|Base.Param[]} opts.param - Optional Param or array or Array of Params related to this button
    **/
-  constructor({ type, label, value, param, newTab, params }) {
+  constructor({ type, label, value, param, newTab, params, id }) {
 
     if(typeof type !== 'string' || type.length === 0) {
       throw new Error('Button type is mandatory')
@@ -34,6 +37,12 @@ class Button {
     }
     if(typeof value !== 'string' || value.length === 0) {
       throw new Error('Button value is mandatory')
+    }
+
+    this.id = id
+
+    if (!this.id) {
+      this.id = `b${nanoid(8)}`
     }
 
     this.params = parseParam(param || params)
@@ -49,7 +58,8 @@ class Button {
       label,
       value,
       newTab,
-      params
+      params,
+      id
     } = this
 
     return {
@@ -57,7 +67,8 @@ class Button {
       label,
       value,
       newTab,
-      params: flattenParams(params)
+      params: flattenParams(params),
+      id
     }
   }
 }
