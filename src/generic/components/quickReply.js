@@ -26,9 +26,11 @@ class QuickReply {
    * @param {string} opts.label - Required
    * @param {string} opts.type - Optional type, default is text (text, location, user_email, user_phone_number, event)
    * @param {string} opts.value - Required, ignored if type is location
+   * @param {boolean} opts.auto - Optional, flag for auto reply
+   * @param {string} opts.stepId - Optional, step link for auto reply
    * @param {Base.Param|Base.Param[]} opts.param - Optional Param or array or Array of Params related to this QuickReply
    **/
-  constructor({ label, type, value, param, params }) {
+  constructor({ label, type, value, param, params, auto, stepId }) {
 
     if(type === 'text' && (typeof label !== 'string' || !label.length)) {
       throw new Error('QuickReply label when it has the type text must be as string')
@@ -44,6 +46,11 @@ class QuickReply {
       this.type = type
     }
 
+    if (auto && stepId) {
+      this.auto = auto
+      this.stepId = stepId
+    }
+
     this.params = parseParam(param || params)
     this.value = value || label
     this.label = label
@@ -54,6 +61,8 @@ class QuickReply {
       label,
       value,
       type,
+      auto,
+      stepId,
       params
     } = this
 
@@ -61,7 +70,8 @@ class QuickReply {
       label,
       value,
       type,
-      params: flattenParams(params)
+      params: flattenParams(params),
+      ...(auto && stepId ? { auto, stepId } : {})
     }
   }
 }

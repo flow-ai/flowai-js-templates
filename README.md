@@ -894,6 +894,8 @@ text.addQuickReply(new QuickReply({
 | opts.label | <code>string</code> | Required |
 | opts.type | <code>string</code> | Optional type, default is text (text, location, user_email, user_phone_number, event) |
 | opts.value | <code>string</code> | Required, ignored if type is location |
+| opts.auto | <code>boolean</code> | Optional, flag for auto reply |
+| opts.stepId | <code>string</code> | Optional, step link for auto reply |
 | opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this QuickReply |
 
 
