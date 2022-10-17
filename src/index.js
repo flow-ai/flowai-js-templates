@@ -29,7 +29,6 @@ import Handover from './phone/templates/handover'
 /**
  * @namespace
  * @description
->>>>>>> master
  * IVR bot specific reply templates
  **/
 import Generic from './generic'
@@ -67,6 +66,9 @@ import ReceiptSummary from './messenger/components/receipt/summary'
 
 //Line templates
 import Sticker from './line/templates/sticker'
+
+// Workflows templates
+import AgentText from './workflows/templates/agentText'
 
 /** 
  * @namespace Phone
@@ -163,6 +165,14 @@ const Line = {
    Sticker
 }
 
+/**
+ * @namespace Workflows
+ * @description Workflows specific reply templates
+ **/
+const Workflows = {
+   AgentText
+}
+
 export {
   Message,
   Text,
@@ -191,5 +201,6 @@ export {
   WhatsApp,
   Twitter,
   Khoros,
-  Line
+  Line,
+  Workflows
 }
