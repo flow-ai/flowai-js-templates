@@ -784,7 +784,7 @@ Render a button inside [Card](#Card) or [Buttons](#Buttons) templates. Unlike [Q
 
 | Name | Type | Description |
 | --- | --- | --- |
-| type | <code>string</code> | Type of button (url, phone, postback, share, login, webview, event) |
+| type | <code>string</code> | Type of button (url, phone, postback, share, login, webview, event, flow, step) |
 | label | <code>string</code> | Label of the button |
 | value | <code>string</code> | Value of the button |
 | params | [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional parameters associated with the button |
@@ -803,7 +803,7 @@ new Button({
 | Param | Type | Description |
 | --- | --- | --- |
 | opts | <code>object</code> | Required properties |
-| opts.type | <code>string</code> | Required, type of button (url, phone, postback, share, login, webview, event) |
+| opts.type | <code>string</code> | Required, type of button (url, phone, postback, share, login, webview, event, flow, step) |
 | opts.label | <code>string</code> | Required, label of the button |
 | opts.value | <code>string</code> | Required, value of the button (can be a URL or other string value) |
 | opts.id | <code>string</code> | Optional, id of the button. If not passed will be automatically generated |
@@ -871,7 +871,7 @@ Component placed on any Template. Represents a shortcut for a user to reply with
 | --- | --- | --- |
 | label | <code>string</code> | Label that is shown as a quick reply |
 | value | <code>string</code> | Value that is being send as the quick reply, empty if type is location |
-| type | <code>string</code> | Type of quick reply, default is text (text, location, user_email, user_phone_number, event) |
+| type | <code>string</code> | Type of quick reply, default is text (text, location, user_email, user_phone_number, event, flow, step) |
 | params | [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional parameters associated with the quick reply |
 
 ### new QuickReply()
@@ -892,7 +892,7 @@ text.addQuickReply(new QuickReply({
 | Param | Type | Description |
 | --- | --- | --- |
 | opts.label | <code>string</code> | Required |
-| opts.type | <code>string</code> | Optional type, default is text (text, location, user_email, user_phone_number, event) |
+| opts.type | <code>string</code> | Optional type, default is text (text, location, user_email, user_phone_number, event, flow, step) |
 | opts.value | <code>string</code> | Required, ignored if type is location |
 | opts.auto | <code>boolean</code> | Optional, flag for auto reply |
 | opts.stepId | <code>string</code> | Optional, step link for auto reply |

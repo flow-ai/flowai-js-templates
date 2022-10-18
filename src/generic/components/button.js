@@ -7,7 +7,7 @@ import { parseParam, flattenParams } from '../../base/components/param'
  * 
  * @category Generic
  * 
- * @property {string} type - Type of button (url, phone, postback, share, login, webview, event)
+ * @property {string} type - Type of button (url, phone, postback, share, login, webview, event, flow, step)
  * @property {string} label - Label of the button
  * @property {string} value - Value of the button
  * @property {Base.Param[]} params - Optional parameters associated with the button
@@ -21,7 +21,7 @@ import { parseParam, flattenParams } from '../../base/components/param'
 class Button {
   /**
    * @param {object} opts - Required properties
-   * @param {string} opts.type - Required, type of button (url, phone, postback, share, login, webview, event)
+   * @param {string} opts.type - Required, type of button (url, phone, postback, share, login, webview, event, flow, step)
    * @param {string} opts.label - Required, label of the button
    * @param {string} opts.value - Required, value of the button (can be a URL or other string value)
    * @param {string} opts.id - Optional, id of the button. If not passed will be automatically generated

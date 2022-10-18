@@ -7,7 +7,7 @@ import { parseParam, flattenParams } from '../../base/components/param'
  * 
  * @property {string} label - Label that is shown as a quick reply
  * @property {string} value - Value that is being send as the quick reply, empty if type is location
- * @property {string} type - Type of quick reply, default is text (text, location, user_email, user_phone_number, event)
+ * @property {string} type - Type of quick reply, default is text (text, location, user_email, user_phone_number, event, flow, step)
  * @property {Base.Param[]} params - Optional parameters associated with the quick reply
  *
  * @example
@@ -24,7 +24,7 @@ import { parseParam, flattenParams } from '../../base/components/param'
 class QuickReply {
   /**
    * @param {string} opts.label - Required
-   * @param {string} opts.type - Optional type, default is text (text, location, user_email, user_phone_number, event)
+   * @param {string} opts.type - Optional type, default is text (text, location, user_email, user_phone_number, event, flow, step)
    * @param {string} opts.value - Required, ignored if type is location
    * @param {boolean} opts.auto - Optional, flag for auto reply
    * @param {string} opts.stepId - Optional, step link for auto reply
