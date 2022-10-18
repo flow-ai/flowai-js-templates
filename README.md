@@ -824,7 +824,7 @@ new Button({
 | --- | --- | --- |
 | opts | <code>object</code> |  |
 | opts.title | <code>string</code> | Required, title of the button |
-| opts.type | <code>string</code> | Required, type of the button (text or event) |
+| opts.type | <code>string</code> | Required, type of the button (text, event, flow or step) |
 | opts.value | <code>string</code> | Required, value of payload to be sent back to the server when customer clicks the buttons |
 | opts.param | <code>Param</code> | Optional, parameter to pass to the button |
 | opts.params | <code>Array.&lt;Param&gt;</code> | Optional, parameters to pass to the button |
