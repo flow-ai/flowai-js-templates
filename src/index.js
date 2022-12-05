@@ -18,13 +18,14 @@ import Media from './generic/components/media'
 import ListItem from './generic/components/listItem'
 import { Param } from './base/components/param'
 import QuickReply from './generic/components/quickReply'
+import Handover from './generic/templates/handover'
 
 import Say from './phone/templates/say'
 import Hangup from './phone/templates/hangup'
 import Pause from './phone/templates/pause'
 import Ask from './phone/templates/ask'
 import Dial from './phone/templates/dial'
-import Handover from './phone/templates/handover'
+import PhoneHandover from './phone/templates/handover'
 
 /**
  * @namespace
@@ -81,7 +82,7 @@ const Phone = {
    Pause,
    Ask,
    Dial,
-   Handover
+   Handover: PhoneHandover
 }
 
 /**
@@ -187,6 +188,7 @@ export {
   Location,
   Custom,
   Note,
+  Handover,
   Action,
   Button,
   Media,

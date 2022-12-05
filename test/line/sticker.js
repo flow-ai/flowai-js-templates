@@ -1,5 +1,5 @@
 import chai, { expect, assert } from 'chai'
-import { Line } from '../src'
+import { Line } from '../../src'
 
 describe("Template Sticker", () => {
   it("throws error without mandatory fields", () => {
