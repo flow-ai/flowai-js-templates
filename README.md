@@ -568,6 +568,52 @@ card.addButton(button2)
 | opts.media | [<code>Media</code>](#Media) | Optional [Media](#Media) |
 | opts.action | [<code>Action</code>](#Action) | Optional [Action](#Action) |
 
+### new Card()
+
+**Example**  
+```js
+const button1 = new Button({
+  label: "Label",
+  type: "url",
+  value: "https://..."
+})
+
+const button2 = new Button({
+  label: "Label",
+  type: "url",
+  value: "https://..."
+ })
+
+const card = new Card({
+  title: "Awesome title",
+  subtitle: "Some subtitle",
+  media: new Media({
+   url: "https://...",
+   type: "image"
+  })
+})
+card.addButton(button1)
+card.addButton(button2)
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.title | <code>string</code> | Required |
+| opts.subtitle | <code>string</code> | Optional |
+| opts.media | [<code>Media</code>](#Media) | Optional [Media](#Media) |
+| opts.cardOrientation | <code>string</code> | Required |
+| opts.thumbnailImageAlignment | <code>string</code> | Required for horizontal orientation |
+| opts.action | [<code>Action</code>](#Action) | Optional [Action](#Action) |
+
+### *card*.addButton(button)
+
+Add a button to the card
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| button | [<code>Button</code>](#Button) | button |
+
 ### *card*.addButton(button)
 
 Add a button to the card
@@ -841,6 +887,14 @@ Component that represents a URL to an image, video or audio file. Used within ge
 | Name | Type | Description |
 | --- | --- | --- |
 | url | <code>string</code> | URL to the media file |
+
+### new Media()
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.url | <code>string</code> | Required |
+| opts.type | <code>string</code> | Required |
 
 ### new Media()
 

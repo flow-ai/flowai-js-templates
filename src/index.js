@@ -119,6 +119,13 @@ const Apple = {
  **/
 import GBM from './gbm'
 
+/** 
+ * @namespace RBM
+ * @description 
+ * Google Business Messages specific reply templates
+ **/
+import RBM from './rbm'
+
 
 /** 
  * @namespace WhatsApp
@@ -200,6 +207,7 @@ export {
   Apple,
   Messenger,
   GBM,
+  RBM,
   WhatsApp,
   Twitter,
   Khoros,
