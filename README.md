@@ -1526,6 +1526,7 @@ Allow the customer to choose from a list of items
 | multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections across sections. Defaults to false |
 | receivedMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown to the customer to open the ListPicker window |
 | replyMessage | <code>InteractiveMessage</code> | Required. When the customer’s device receives a picker, the Messages app uses the replyMessage to set the style, content, and images for the reply message bubble that the Messages app displays after the customer makes their selection and returns a reply to the business. |
+| opts.triggerAction | <code>object</code> | Required. Trigger Action when items are selected from the list |
 
 ### new ListPicker(opts)
 
@@ -1579,6 +1580,7 @@ const listPicker = new Apple.ListPicker({
 | opts.multipleSelection | <code>boolean</code> | Indicates whether the customer can make multiple selections across sections. Defaults to false |
 | opts.receivedMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown to the customer to open the ListPicker window |
 | opts.replyMessage | <code>InteractiveMessage</code> | Required. Message bubble that is shown when the customer made a choice |
+| opts.triggerAction | <code>object</code> | Required. Trigger Action when items are selected from the list |
 
 ### *listPicker*.addSection(section)
 
@@ -1653,7 +1655,8 @@ Component that represents a selectable item inside a [ListPickerSection](ListPic
 | order | <code>number</code> | Optional integer representing the ordinal position for the item |
 | style | <code>string</code> | Optional item style. Defaults to default |
 | title | <code>string</code> | Required title |
-| subtitle | <code>string</code> | Optional subtitle |
+| subtitle | <code>string</code> | Optional subtitle, |
+| params | <code>string</code> | Optional params, |
 
 ### new ListPickerItem(opts)
 
@@ -1667,6 +1670,7 @@ Component that represents a selectable item inside a [ListPickerSection](ListPic
 | opts.style | <code>string</code> | Optional item style. Defaults to default |
 | opts.title | <code>string</code> | Required title |
 | opts.subtitle | <code>string</code> | Optional subtitle |
+| opts.params | <code>string</code> | Optional subtitle |
 
 
 ---
