@@ -9,8 +9,10 @@
  * @property {number} order - Optional integer representing the ordinal position for the item
  * @property {string} style - Optional item style. Defaults to default
  * @property {string} title - Required title
- * @property {string} subtitle - Optional subtitle
+ * @property {string} subtitle - Optional subtitle,
+ * @property {string} params - Optional params,
  **/
+
 class ListPickerItem {
   /**
    * @param {object} opts - Collection of options
@@ -20,64 +22,69 @@ class ListPickerItem {
    * @param {string} opts.style - Optional item style. Defaults to default
    * @param {string} opts.title - Required title
    * @param {string} opts.subtitle - Optional subtitle
+   * @param {string} opts.params - Optional subtitle
    **/
+
   constructor(opts) {
+
     if(typeof opts !== "object") {
       throw new Error("To create a ListPickerItem you at least need a title")
     }
 
-    const {
-      identifier,
-      image,
-      order,
-      style,
-      title,
-      subtitle
+    const { 
+      identifier, 
+      image, 
+      order, 
+      style, 
+      title, 
+      subtitle, 
+      params 
     } = opts
 
-    if(typeof identifier !== "undefined" && typeof identifier !== "string") {
-      throw new Error("Provided ListPickerItem identifier must be unique string")
+    if (typeof identifier !== "undefined" && typeof identifier !== "string") {
+      throw new Error("Provided ListPickerItem identifier must be unique string");
     }
 
-    if(order !== undefined && typeof order !== "number") {
-      throw new Error("Provided ListPickerItem order must be number")
+    if (order !== undefined && typeof order !== "number") {
+      throw new Error("Provided ListPickerItem order must be number");
     }
 
-    if(typeof title !== "string") {
-      throw new Error("ListPickerItem title is required")
+    if (typeof title !== "string") {
+      throw new Error("ListPickerItem title is required");
     }
 
-    if(!title.length) {
-      throw new Error("Provided ListPickerItem title is empty")
+    if (!title.length) {
+      throw new Error("Provided ListPickerItem title is empty");
     }
 
-    this.identifier = identifier || Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
-    this.image = image || undefined
-    this.order = order || undefined
-    this.style = style || undefined
-    this.title = title || undefined
-    this.subtitle = subtitle || undefined
+    this.identifier = identifier || Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+    this.image = image || undefined;
+    this.order = order || undefined;
+    this.style = style || undefined;
+    this.title = title || undefined;
+    this.subtitle = subtitle || undefined;
+    this.params = params || []
   }
 
   toJSON() {
-    const {
-      identifier,
-      image,
-      order,
-      style,
-      title,
-      subtitle
-    } = this
-
-    return {
-      identifier,
-      image,
-      order,
-      style,
-      title,
-      subtitle
-    }
+    const identifier = this.identifier,
+          image = this.image,
+          order = this.order,
+          style = this.style,
+          title = this.title,
+          subtitle = this.subtitle,
+          params = this.params;
+      return {
+        identifier,
+        image,
+        order,
+        style,
+        title,
+        subtitle,
+        params
+      }
   }
-}
+
+} 
 
 export default ListPickerItem

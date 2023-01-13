@@ -1,3 +1,4 @@
+
 import Template from '../../base/templates/template'
 import InteractiveMessage from '../components/interactiveMessage'
 import ListPickerSection from '../components/listPickerSection'
@@ -12,6 +13,7 @@ import ListPickerSection from '../components/listPickerSection'
  * @property {boolean} multipleSelection - Indicates whether the customer can make multiple selections across sections. Defaults to false
  * @property {InteractiveMessage} receivedMessage - Required. Message bubble that is shown to the customer to open the ListPicker window
  * @property {InteractiveMessage} replyMessage - Required. When the customer’s device receives a picker, the Messages app uses the replyMessage to set the style, content, and images for the reply message bubble that the Messages app displays after the customer makes their selection and returns a reply to the business.
+ * @property {object} opts.triggerAction - Required. Trigger Action when items are selected from the list
  * 
  * @example
  * const listPicker = new Apple.ListPicker({
@@ -62,6 +64,7 @@ class ListPicker extends Template {
   * @param {boolean} opts.multipleSelection - Indicates whether the customer can make multiple selections across sections. Defaults to false
   * @param {InteractiveMessage} opts.receivedMessage - Required. Message bubble that is shown to the customer to open the ListPicker window
   * @param {InteractiveMessage} opts.replyMessage - Required. Message bubble that is shown when the customer made a choice
+  * @param {object} opts.triggerAction - Required. Trigger Action when items are selected from the list
   **/ 
   constructor(opts) {
     super()
@@ -74,7 +77,8 @@ class ListPicker extends Template {
       replyMessage,
       receivedMessage,
       sections,
-      multipleSelection
+      multipleSelection,
+      triggerAction
     } = opts
 
     if(!(replyMessage instanceof InteractiveMessage)) {
@@ -98,6 +102,7 @@ class ListPicker extends Template {
     this.multipleSelection = multipleSelection
     this.replyMessage = replyMessage
     this.receivedMessage = receivedMessage
+    this.triggerAction = triggerAction
   }
 
   /**
@@ -127,6 +132,7 @@ class ListPicker extends Template {
       receivedMessage,
       multipleSelection,
       sections,
+      triggerAction,
       delay,
       fallback
     } = this
@@ -137,7 +143,8 @@ class ListPicker extends Template {
         replyMessage,
         receivedMessage,
         multipleSelection,
-        sections
+        sections,
+        triggerAction
       },
       delay: delay || undefined,
       fallback
