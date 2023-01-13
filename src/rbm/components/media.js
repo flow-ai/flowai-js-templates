@@ -9,6 +9,7 @@ class Media {
   /**
    * @param {string} opts.url - Required
    * @param {string} opts.type - Required
+   * @param {string} opts.height - Required
    **/
   constructor(opts) {
     if(!opts) {
@@ -36,11 +37,11 @@ class Media {
       throw new Error(`height is mandatory for a Media component`)
     }
     if (type === 'video' && thumbnailUrl && typeof thumbnailUrl !== 'string') {
-      throw new Error('Thumbnail should be of type string')
+      throw new Error('thumbnail should be of type string for a video')
     }
 
     if(type === 'video' && thumbnailUrl && thumbnailUrl.length && !/^https?:\/\//.test(thumbnailUrl)) {
-      throw new Error('Thumbnail should be valid url')
+      throw new Error('video thumbnail should be valid url')
     }
 
     this.thumbnailUrl = thumbnailUrl

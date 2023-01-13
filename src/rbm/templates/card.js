@@ -29,12 +29,28 @@ import Media from '../components/media'
  *   value: "https://..."
  *  })
  *
- * const card = new Card({
+ * const rbm_card_vr = new Card({
  *   title: "Awesome title",
  *   subtitle: "Some subtitle",
+ *   cardOrientation: "VERTICAL" 
  *   media: new Media({
  *    url: "https://...",
- *    type: "image"
+ *    type: "image",
+ *    height: "TALL"
+ *   })
+ * })
+ * card.addButton(button1)
+ * card.addButton(button2)
+ * 
+ * const rbm_card_hr = new Card({
+ *   title: "Awesome title",
+ *   subtitle: "Some subtitle",
+ *   cardOrientation: "HORIZONTAL",
+ *   thumbnailImageAlignment: "LEFT", 
+ *   media: new Media({
+ *    url: "https://...",
+ *    type: "image",
+ *    height: "TALL"
  *   })
  * })
  * card.addButton(button1)
