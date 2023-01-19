@@ -41,9 +41,7 @@ class Carousel extends Template {
    **/
   constructor(cardWidth,cards) {
     super()
-    // if(typeof cardWidth !== 'string' || !cardWidth.length) {
-    //   throw new Error('Card width is mandatory')
-    // }
+    
     if(Array.isArray(cards)) {
       for (let i = 0; i < cards.length; i++) {
         this.addCard(cards[i])
