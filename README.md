@@ -706,6 +706,50 @@ const carousel = new Carousel([card1, card2])
 | --- | --- | --- |
 | cards | <code>Array</code> | Optional list of [Card](#Card) templates |
 
+### new Carousel(cardWidth, cards)
+
+**Example**  
+```js
+const card1 = new Card({
+  title: "Awesome title 1",
+  subtitle: "Some subtitle 1",
+  cardOrientation: 'VERTICAL'
+  media: new Media({
+   url: "https://...",
+   type: "image"
+  })
+})
+
+const card2 = new Card({
+  title: "Awesome title 2",
+  subtitle: "Some subtitle 2",
+  cardOrientation: 'VERTICAL'
+  media: new Media({
+   url: "https://...",
+   type: "image"
+  })
+})
+
+const carousel = new Carousel()
+carousel.addCard(card1)
+carousel.addCard(card2)
+carousel.cardWidth = 'MEDIUM'
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| cardWidth | <code>string</code> | required |
+| cards | <code>Array</code> | Optional list of [Card](#Card) templates |
+
+### *carousel*.addCard(card)
+
+Add a [Card](#Card) to the list of cards
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| card | [<code>Card</code>](#Card) | card |
+
 ### *carousel*.addCard(card)
 
 Add a [Card](#Card) to the list of cards
@@ -919,7 +963,7 @@ Component that represents a URL to an image, video or audio file. Used within ge
 | --- | --- | --- |
 | opts.url | <code>string</code> | Required |
 | opts.type | <code>string</code> | Required |
-| opts.height | <code>string</code> | Required |
+| opts.height | <code>string</code> | Required for Vertical layout |
 
 ### new Media()
 

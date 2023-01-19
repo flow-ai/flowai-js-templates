@@ -70,14 +70,6 @@ describe("RBM", () => {
             expect(card.media).to.equal(media)
         })
 
-        it("height is mandatory for a Media component", () => {
-            expect (()=> new RBM.Media({
-            type: 'image',
-            url: 'htpp://fakeurl',
-            })).to.throw(Error) 
-            
-        })
-
         it("can add button", () => {
             const card = new RBM.Card({ title: "Awesome title",
             cardOrientation: "VERTICAL"})

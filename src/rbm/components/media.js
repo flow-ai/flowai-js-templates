@@ -9,7 +9,7 @@ class Media {
   /**
    * @param {string} opts.url - Required
    * @param {string} opts.type - Required
-   * @param {string} opts.height - Required
+   * @param {string} opts.height - Required for Vertical layout
    **/
   constructor(opts) {
     if(!opts) {
@@ -33,9 +33,7 @@ class Media {
     if(typeof type !== 'string' || type.length === 0) {
       throw new Error(`type is mandatory for a Media component`)
     }
-    if(typeof height !== 'string' || height.length === 0) {
-      throw new Error(`height is mandatory for a Media component`)
-    }
+    
     if (type === 'video' && thumbnailUrl && typeof thumbnailUrl !== 'string') {
       throw new Error('thumbnail should be of type string for a video')
     }
@@ -49,7 +47,7 @@ class Media {
     this.url = url
     this.type = type
 
-    this.height = height
+    this.height = height || undefined
   }
 
   toJSON() {
