@@ -64,6 +64,7 @@ import ReceiptAddress from './messenger/components/receipt/address'
 import ReceiptAdjustment from './messenger/components/receipt/adjustment'
 import ReceiptElement from './messenger/components/receipt/element'
 import ReceiptSummary from './messenger/components/receipt/summary'
+import PublicFbReply from './messenger/templates/publicReply'
 
 //Line templates
 import Sticker from './line/templates/sticker'
@@ -139,16 +140,17 @@ import WhatsApp from './whatsapp'
  * @description
  * Facebook Messenger specific reply templates
  **/
+
 const Messenger = {
    OTN,
    Products,
    Receipt,
+   PublicFbReply,
    ReceiptAddress,
    ReceiptAdjustment,
    ReceiptElement,
    ReceiptSummary
 }
-
 
 // Twitter templates
 import PublicReply from './twitter/templates/publicReply'
