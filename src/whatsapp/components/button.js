@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid'
+
 import { parseParam } from '../../base/components/param'
 
 /**
@@ -18,10 +20,11 @@ class Button {
     * @param {string} opts.title - Required, title of the button
     * @param {string} opts.type - Required, type of the button (text, event, flow or step)
     * @param {string} opts.value - Required, value of payload to be sent back to the server when customer clicks the buttons
+    * @param {string} opts.id - Optional, id of the button. If not passed will be automatically generated
     * @param {Param} opts.param - Optional, parameter to pass to the button
     * @param {Array<Param>} opts.params - Optional, parameters to pass to the button
     **/
-   constructor({ title, type, value, param, params }) {
+   constructor({ title, type, value, param, params, id }) {
 
 
       if (typeof title !== 'string' || title.length === 0) {
@@ -37,18 +40,29 @@ class Button {
          throw new Error('Button value is mandatory')
       }
 
+      this.id = id
+
+      if (!this.id) {
+         this.id = `b${nanoid(8)}`
+      }
+
       this.title = title
       this.params = parseParam(param || params)
       this.type = type
       this.value = value
    }
 
+   static generateId() {
+      return `b${nanoid(8)}`
+    }
+
    toJSON() {
       const {
          title,
          type,
          value,
-         params
+         params,
+         id
       } = this
 
       return {
@@ -57,7 +71,8 @@ class Button {
             title,
             type,
             value,
-            params
+            params,
+            id
          }
       }
    }

@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid'
+
 import { parseParam } from '../../base/components/param'
 
 /**
@@ -12,13 +14,20 @@ class ListItem {
   /**
    * @param {string} opts.title - Required
    * @param {string} opts.description - Required
+   * @param {string} opts.id - Optional, id of the button. If not passed will be automatically generated
    **/
-  constructor({ title, description, postbackType, postbackValue, params, param }) {
-    if(typeof title !== 'string' || title.length === 0) {
+  constructor({ title, description, postbackType, postbackValue, params, param, id }) {
+    if (typeof title !== 'string' || title.length === 0) {
       throw new Error('ListItem title is mandatory')
     }
-    if(typeof description !== 'string' || description.length === 0) {
+    if (typeof description !== 'string' || description.length === 0) {
       throw new Error('ListItem description is mandatory')
+    }
+
+    this.id = id
+
+    if (!this.id) {
+      this.id = `b${nanoid(8)}`
     }
 
     this.title = title
@@ -34,7 +43,8 @@ class ListItem {
       description,
       postbackType,
       postbackValue,
-      params
+      params,
+      id
     } = this
 
     return {
@@ -42,7 +52,8 @@ class ListItem {
       description,
       postbackType,
       postbackValue,
-      params
+      params,
+      id
     }
   }
 }
