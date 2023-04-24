@@ -1,6 +1,7 @@
 import Template from '../../generic/templates/template'
 import Action from '../../generic/components/action'
 import Button from '../../generic/components/button'
+import RBMButton from '../components/button'
 import Media from '../components/media'
 
 /**
@@ -131,6 +132,25 @@ class Card extends Template {
 
     return this
   }
+
+    /**
+   * Add a RBM type button to the card
+   * @param {RBMButton} - button
+   * @return {Card}
+   **/
+    addRBMButton(button) {
+      if(!(button instanceof RBMButton)) {
+        throw new Error('Card addRBMButton argument must be an instance of a RBM Button')
+      }
+  
+      if(!this.buttons) {
+        this.buttons = []
+      }
+  
+      this.buttons.push(button)
+  
+      return this
+    }
 
   toJSON() {
     const {

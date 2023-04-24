@@ -1,5 +1,6 @@
 import BaseTemplate from '../../base/templates/template'
 import QuickReply from '../components/quickReply'
+import RBMQuickReply from '../../rbm/components/quickReply'
 
 /**
  * Base class for all generic response templates
@@ -38,6 +39,23 @@ class Template extends BaseTemplate {
   addQuickReply(quickReply) {
     if(!(quickReply instanceof QuickReply)) {
       throw new Error('addQuickReply argument must be an instance of a QuickReply')
+    }
+
+    if(!this.quickReplies) {
+      this.quickReplies = []
+    }
+    this.quickReplies.push(quickReply)
+
+    return this
+  }
+
+  /**
+   * Add a {@link RBMQuickReply} to the template
+   * @param {RBMQuickReply} quickReply - Required
+   **/
+  addRBMQuickReply(quickReply) {
+    if(!(quickReply instanceof RBMQuickReply)) {
+      throw new Error('addRBMQuickReply argument must be an instance of a QuickReply')
     }
 
     if(!this.quickReplies) {
