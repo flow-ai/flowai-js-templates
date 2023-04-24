@@ -55,7 +55,7 @@ class Template extends BaseTemplate {
    **/
   addRBMQuickReply(quickReply) {
     if(!(quickReply instanceof RBMQuickReply)) {
-      throw new Error('addRBMQuickReply argument must be an instance of a QuickReply')
+      throw new Error('addRBMQuickReply argument must be an instance of a RBMQuickReply')
     }
 
     if(!this.quickReplies) {
