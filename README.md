@@ -639,6 +639,15 @@ Add a button to the card
 | --- | --- | --- |
 | button | [<code>Button</code>](#Button) | button |
 
+### *card*.addRBMButton(button)
+
+Add a RBM type button to the card
+
+
+| Param | Type | Description |
+| --- | --- | --- |
+| button | <code>RBMButton</code> | button |
+
 
 <a name="Carousel"></a>
 
@@ -921,6 +930,31 @@ new Button({
 **Example**  
 ```js
 new Button({
+ type: 'webview',
+ label: 'More info'
+ value: 'https://...'
+})
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Required properties |
+| opts.type | <code>string</code> | Required, type of button (url, phone, postback, share, login, webview, event, flow, step) |
+| opts.value | <code>string</code> | Required, value of the button (can be a URL or other string value) (not for calendar action) |
+| opts.label | <code>string</code> | Required, label of the button |
+| opts.id | <code>string</code> | Optional, id of the button. If not passed will be automatically generated |
+| opts.title | <code>string</code> | Required |
+| opts.description | <code>string</code> | Optional |
+| opts.startTime | <code>string</code> | Required |
+| opts.endTime | <code>string</code> | Required |
+| opts.timezone | <code>string</code> | Required |
+| opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this button |
+
+### new Button(opts)
+
+**Example**  
+```js
+new Button({
  title: 'Select',
  type: 'event',
  value: 'NICE_EVENT'
@@ -1013,6 +1047,35 @@ text.addQuickReply(new QuickReply({
 | opts.value | <code>string</code> | Required, ignored if type is location |
 | opts.auto | <code>boolean</code> | Optional, flag for auto reply |
 | opts.stepId | <code>string</code> | Optional, step link for auto reply |
+| opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this QuickReply |
+
+### new QuickReply()
+
+**Example**  
+```js
+const text = new Text('We have a 40" screen for sale. Want to preorder it?')
+text.addQuickReply(new QuickReply({
+  label: '👍',
+  value: 'Yes'
+}))
+text.addQuickReply(new QuickReply({
+  label: '👎',
+  value: 'No'
+}))
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.label | <code>string</code> | Required |
+| opts.type | <code>string</code> | Optional type, default is text (text, location, user_email, user_phone_number, event, flow, step) |
+| opts.value | <code>string</code> | Required, ignored if type is location or calendar action (not for calendar action) |
+| opts.auto | <code>boolean</code> | Optional, flag for auto reply |
+| opts.stepId | <code>string</code> | Optional, step link for auto reply |
+| opts.title | <code>string</code> | Required |
+| opts.description | <code>string</code> | Optional |
+| opts.startTime | <code>string</code> | Required |
+| opts.endTime | <code>string</code> | Required |
+| opts.timezone | <code>string</code> | Required |
 | opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this QuickReply |
 
 
