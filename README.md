@@ -228,6 +228,28 @@ const message = new Message("Want a cold beverage?")
 | --- | --- | --- |
 | quickReply | [<code>QuickReply</code>](#QuickReply) | Required |
 
+### *message*.addRBMQuickReply(quickReply)
+
+A convenience method to add a RBM quick reply to the last response template of a Message
+
+**Example**  
+```js
+const message = new Message("Put on some music please!")
+ .addRBMQuickReply(new RBMQuickReply({
+   "label": "test with code action",
+   "type": "calendar_action",
+   "title": "Party at Imran's",
+   "description": "party tonight",
+   "startTime": "2023-04-27T23:30",
+   "endTime": "2023-04-28T04:30",
+   "timezone": "(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi"
+ }))
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| quickReply | <code>RBMQuickReply</code> | Required |
+
 
 <a name="Text"></a>
 
