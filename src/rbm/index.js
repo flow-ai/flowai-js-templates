@@ -1,13 +1,13 @@
 import Media from "./components/media";
 import Card from "./templates/card";
 import Carousel from "./templates/carousel";
-import QuickReply from "./components/quickReply";
 import Button from "./components/button";
+import SuggestedAction from "./components/suggestedAction";
 
 export default {
     Media,
     Card,
     Carousel,
-    QuickReply,
-    Button
+    Button,
+    SuggestedAction
 }

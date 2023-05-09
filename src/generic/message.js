@@ -1,7 +1,7 @@
 import BaseMessage from '../base/message'
 import Text from './templates/text'
 import QuickReply from './components/quickReply'
-import RBMQuickReply from '../rbm/components/quickReply'
+import SuggestedAction from '../rbm/components/suggestedAction'
 
 /**
  * Inherits from {@link Base.Message}.
@@ -56,13 +56,13 @@ class Message extends BaseMessage {
   }
 
   /**
-   * A convenience method to add a RBM quick reply to the last response template of a Message
+   * A convenience method to add a Suggested Action to the last response template of a Message
    * 
-   * @param {RBMQuickReply} quickReply - Required
+   * @param {SuggestedAction} suggestedAction - Required
    * 
    * @example
    * const message = new Message("Put on some music please!")
-   *  .addRBMQuickReply(new RBMQuickReply({
+   *  .addSuggestedAction(new SuggestedAction({
    *    "label": "test with code action",
    *    "type": "calendar_action",
    *    "title": "Party at Imran's",
@@ -73,9 +73,9 @@ class Message extends BaseMessage {
    *  }))
    *
    **/
-  addRBMQuickReply(quickReply) {
-    if(!(quickReply instanceof RBMQuickReply)) {
-      throw new Error('addRBMQuickReply argument must be an instance of a RBMQuickReply')
+  addSuggestedAction(suggestedAction) {
+    if(!(suggestedAction instanceof SuggestedAction)) {
+      throw new Error('addSuggestedAction argument must be an instance of Suggested Action')
     }
 
     const {
@@ -89,7 +89,7 @@ class Message extends BaseMessage {
       this.responses = (isFallbackArray) ? fallback.map(text => new Text(text)) : [new Text(fallback)]
     }
 
-    this.responses[this.responses.length - 1].addRBMQuickReply(quickReply)
+    this.responses[this.responses.length - 1].addSuggestedAction(suggestedAction)
 
     return this
   }
