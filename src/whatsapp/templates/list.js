@@ -29,31 +29,34 @@ import Header from '../components/header'
  **/
 class List extends Template {
 
-  constructor( {header, buttonText, body, footer, sections} ) {
+  constructor({ header, buttonText, body, footer, sections }) {
     super()
-    if(typeof body !== 'string' || body.length === 0) {
+    if (typeof body !== 'string' || body.length === 0) {
       throw new Error('List body is mandatory')
     }
-    if(typeof buttonText !== 'string' || buttonText.length === 0) {
+    if (typeof buttonText !== 'string' || buttonText.length === 0) {
       throw new Error('List buttonText is mandatory')
     }
-    if(!sections) {
+    if (!sections) {
       throw new Error('List sections argument must be an array of List items')
     }
-    if(header && !(header instanceof Header)) {
+    if (header && !(header instanceof Header)) {
       throw new Error('List header must be Header object')
     }
-    
-    for(let i = 0; i < sections.length; i++){
-      if(!(sections[i] instanceof ListItemSection)) {
-        throw new Error('ListItemSection rows argument must be an array of List items')
+
+    if (secions && secions.length) {
+      for (let i = 0; i < sections.length; i++) {
+        if (!(sections[i] instanceof ListItemSection)) {
+          throw new Error('ListItemSection rows argument must be an array of List items')
+        }
       }
     }
+
     this.header = header || undefined
     this.button = buttonText
     this.body = body
     this.footer = footer
-    this.sections = sections
+    this.sections = sections || []
   }
   /**
    * Add a {@link ListItemSection} to the list of items
@@ -61,7 +64,7 @@ class List extends Template {
    * @return {List}
    **/
   addItem(item) {
-    if(!(item instanceof ListItemSection)) {
+    if (!(item instanceof ListItemSection)) {
       throw new Error('List addItem argument must be an instance of a ListItem')
     }
     this.sections.push(item)
@@ -89,10 +92,10 @@ class List extends Template {
       type: 'list'
     }
 
-    if(header){
+    if (header) {
       payload.header = header
     }
-    if(footer){
+    if (footer) {
       payload.footer = {
         text: footer
       }
