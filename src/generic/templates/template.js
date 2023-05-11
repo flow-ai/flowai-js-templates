@@ -1,7 +1,6 @@
 import BaseTemplate from '../../base/templates/template'
 import QuickReply from '../components/quickReply'
-import RBMQuickReply from '../../rbm/components/quickReply'
-
+import SuggestedAction from '../../rbm/components/suggestedAction'
 /**
  * Base class for all generic response templates
  * 
@@ -50,18 +49,18 @@ class Template extends BaseTemplate {
   }
 
   /**
-   * Add a {@link RBMQuickReply} to the template
-   * @param {RBMQuickReply} quickReply - Required
+   * Add a {@link SuggestedAction} to the template
+   * @param {SuggestedAction} suggestedAction - Required
    **/
-  addRBMQuickReply(quickReply) {
-    if(!(quickReply instanceof RBMQuickReply)) {
+  addSuggestedAction(suggestedAction) {
+    if(!(suggestedAction instanceof SuggestedAction)) {
       throw new Error('addRBMQuickReply argument must be an instance of a RBMQuickReply')
     }
 
     if(!this.quickReplies) {
       this.quickReplies = []
     }
-    this.quickReplies.push(quickReply)
+    this.quickReplies.push(suggestedAction)
 
     return this
   }

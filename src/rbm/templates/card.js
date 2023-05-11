@@ -92,7 +92,7 @@ class Card extends Template {
 
   set media(media) {
     if(media && !(media instanceof Media)) {
-      throw new Error('Card media must be an instance of Media')
+      throw new Error('RBM Card media must be an instance of RBM Media')
     }
 
     this._media = media
@@ -104,7 +104,7 @@ class Card extends Template {
 
   set action(action) {
     if(action && !(action instanceof Action)) {
-      throw new Error('Card action must be an instance of Action')
+      throw new Error('RBM Card action must be an instance of Action')
     }
 
     this._action = action
@@ -121,7 +121,7 @@ class Card extends Template {
    **/
   addButton(button) {
     if(!(button instanceof Button)) {
-      throw new Error('Card addButton argument must be an instance of a Button')
+      throw new Error('RBM Card addButton argument must be an instance of a Button')
     }
 
     if(!this.buttons) {
@@ -140,7 +140,7 @@ class Card extends Template {
    **/
     addRBMButton(button) {
       if(!(button instanceof RBMButton)) {
-        throw new Error('Card addRBMButton argument must be an instance of a RBM Button')
+        throw new Error('RBM Card addRBMButton argument must be an instance of a RBM Button')
       }
   
       if(!this.buttons) {

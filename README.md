@@ -228,6 +228,28 @@ const message = new Message("Want a cold beverage?")
 | --- | --- | --- |
 | quickReply | [<code>QuickReply</code>](#QuickReply) | Required |
 
+### *message*.addSuggestedAction(suggestedAction)
+
+A convenience method to add a Suggested Action to the last response template of a Message
+
+**Example**  
+```js
+const message = new Message("Put on some music please!")
+ .addSuggestedAction(new SuggestedAction({
+   "label": "test with code action",
+   "type": "calendar_action",
+   "title": "Party at Imran's",
+   "description": "party tonight",
+   "startTime": "2023-04-27T23:30",
+   "endTime": "2023-04-28T04:30",
+   "timezone": "(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi"
+ }))
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| suggestedAction | [<code>SuggestedAction</code>](#SuggestedAction) | Required |
+
 
 <a name="Text"></a>
 
@@ -1047,35 +1069,6 @@ text.addQuickReply(new QuickReply({
 | opts.value | <code>string</code> | Required, ignored if type is location |
 | opts.auto | <code>boolean</code> | Optional, flag for auto reply |
 | opts.stepId | <code>string</code> | Optional, step link for auto reply |
-| opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this QuickReply |
-
-### new QuickReply()
-
-**Example**  
-```js
-const text = new Text('We have a 40" screen for sale. Want to preorder it?')
-text.addQuickReply(new QuickReply({
-  label: '👍',
-  value: 'Yes'
-}))
-text.addQuickReply(new QuickReply({
-  label: '👎',
-  value: 'No'
-}))
-```
-
-| Param | Type | Description |
-| --- | --- | --- |
-| opts.label | <code>string</code> | Required |
-| opts.type | <code>string</code> | Optional type, default is text (text, location, user_email, user_phone_number, event, flow, step) |
-| opts.value | <code>string</code> | Required, ignored if type is location or calendar action (not for calendar action) |
-| opts.auto | <code>boolean</code> | Optional, flag for auto reply |
-| opts.stepId | <code>string</code> | Optional, step link for auto reply |
-| opts.title | <code>string</code> | Required |
-| opts.description | <code>string</code> | Optional |
-| opts.startTime | <code>string</code> | Required |
-| opts.endTime | <code>string</code> | Required |
-| opts.timezone | <code>string</code> | Required |
 | opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this QuickReply |
 
 

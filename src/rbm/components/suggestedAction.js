@@ -1,4 +1,5 @@
 import { parseParam, flattenParams } from '../../base/components/param'
+import QuickReply from '../../generic/components/quickReply'
 
 /**
  * Component placed on any Template. Represents a shortcut for a user to reply with. Ideal for yes / no type of questions.
@@ -12,16 +13,17 @@ import { parseParam, flattenParams } from '../../base/components/param'
  *
  * @example
  * const text = new Text('We have a 40" screen for sale. Want to preorder it?')
- * text.addQuickReply(new QuickReply({
- *   label: '👍',
- *   value: 'Yes'
- * }))
- * text.addQuickReply(new QuickReply({
- *   label: '👎',
- *   value: 'No'
+ * text.addSuggestedAction(new SuggestedAction({
+ *    "label": "test with code action",
+ *    "type": "calendar_action",
+ *    "title": "Party at Imran's",
+ *    "description": "party tonight",
+ *    "startTime": "2023-04-27T23:30",
+ *    "endTime": "2023-04-28T04:30",
+ *    "timezone": "(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi"
  * }))
  **/
-class QuickReply {
+class SuggestedAction extends QuickReply {
   /**
    * @param {string} opts.label - Required
    * @param {string} opts.type - Optional type, default is text (text, location, user_email, user_phone_number, event, flow, step)
@@ -36,7 +38,7 @@ class QuickReply {
    * @param {Base.Param|Base.Param[]} opts.param - Optional Param or array or Array of Params related to this QuickReply
    **/
   constructor({ label, type, value, param, params, auto, stepId, title, description, startTime, endTime, timezone}) {
-
+    super({ label, type, value, param, params, auto, stepId })
     if(type === 'text' && (typeof label !== 'string' || !label.length)) {
       throw new Error('QuickReply label when it has the type text must be as string')
     }
@@ -96,4 +98,4 @@ class QuickReply {
   }
 }
 
-export default QuickReply
+export default SuggestedAction
