@@ -39,9 +39,6 @@ class Buttons extends Template {
     if(typeof body !== 'string' || !body.length) {
       throw new Error('Buttons body is mandatory')
     }
-    if(!buttons || !buttons.length) {
-      throw new Error('Buttons are mandatory')
-    }
     if(header && !(header instanceof Header)) {
       throw new Error('Buttons header must be Header object')
     }
@@ -86,7 +83,7 @@ class Buttons extends Template {
 
     if(header){
       payload.header = header
-    }1
+    }
     if(footer){
       payload.footer = {
         text: footer
