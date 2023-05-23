@@ -44,7 +44,7 @@ class List extends Template {
       throw new Error('List header must be Header object')
     }
 
-    if (secions && secions.length) {
+    if (sections && sections.length) {
       for (let i = 0; i < sections.length; i++) {
         if (!(sections[i] instanceof ListItemSection)) {
           throw new Error('ListItemSection rows argument must be an array of List items')
