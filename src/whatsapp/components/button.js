@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 
-import { parseParam } from '../../base/components/param'
+import { parseParam, flattenParams } from '../../base/components/param'
 
 /**
  *
@@ -71,7 +71,7 @@ class Button {
             title,
             type,
             value,
-            params,
+            params: flattenParams(params),
             id
          }
       }
