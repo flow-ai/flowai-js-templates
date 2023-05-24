@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid'
 
-import { parseParam } from '../../base/components/param'
+import { parseParam, flattenParams } from '../../base/components/param'
 
 /**
  * Item within a {@link ListItemSection} template
@@ -52,7 +52,7 @@ class ListItem {
       description,
       postbackType,
       postbackValue,
-      params,
+      params: flattenParams(params),
       id
     }
   }
