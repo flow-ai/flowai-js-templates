@@ -926,6 +926,7 @@ Render a button inside [Card](#Card) or [Buttons](#Buttons) templates. Unlike [Q
 | label | <code>string</code> | Label of the button |
 | value | <code>string</code> | Value of the button |
 | params | [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional parameters associated with the button |
+| trigger | [<code>ButtonTrigger</code>](#ButtonTrigger) | Optional [ButtonTrigger](#ButtonTrigger) for specific type of button |
 
 ### new Button(opts)
 
@@ -934,7 +935,11 @@ Render a button inside [Card](#Card) or [Buttons](#Buttons) templates. Unlike [Q
 new Button({
  type: 'webview',
  label: 'More info'
- value: 'https://...'
+ value: 'https://...',
+ trigger: new ButtonTrigger({
+   type: 'event',
+   value: 'Event to Trigger'
+ })
 })
 ```
 
@@ -992,6 +997,36 @@ new Button({
 | opts.id | <code>string</code> | Optional, id of the button. If not passed will be automatically generated |
 | opts.param | <code>Param</code> | Optional, parameter to pass to the button |
 | opts.params | <code>Array.&lt;Param&gt;</code> | Optional, parameters to pass to the button |
+
+
+<a name="ButtonTrigger"></a>
+
+## ButtonTrigger
+
+Attach an optional trigger that can be applied to a [Button](#Button) if the type of the button is either 'url' or 'phone'.
+
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| type | <code>string</code> | Type of button trigger (event, flow) |
+| value | <code>string</code> | Value of the event/flow to be triggered |
+
+### new ButtonTrigger(opts)
+
+**Example**  
+```js
+new ButtonTrigger({
+ type: 'event',
+ value: 'event-to-trigger'
+})
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts | <code>object</code> | Required properties |
+| opts.type | <code>string</code> | Required, type of additional trigger (event, flow) |
+| opts.value | <code>string</code> | Required, name of the event/flow to be triggered |
 
 
 <a name="Media"></a>

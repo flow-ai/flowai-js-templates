@@ -1,5 +1,6 @@
 import { nanoid } from 'nanoid'
 
+import ButtonTrigger from '../components/buttonTrigger'
 import { parseParam, flattenParams } from '../../base/components/param'
 
 /**
@@ -11,11 +12,16 @@ import { parseParam, flattenParams } from '../../base/components/param'
  * @property {string} label - Label of the button
  * @property {string} value - Value of the button
  * @property {Base.Param[]} params - Optional parameters associated with the button
+ * @property {ButtonTrigger} trigger - Optional {@link ButtonTrigger} for specific type of button
  * @example
  * new Button({
  *  type: 'webview',
  *  label: 'More info'
- *  value: 'https://...'
+ *  value: 'https://...',
+ *  trigger: new ButtonTrigger({
+ *    type: 'event',
+ *    value: 'Event to Trigger'
+ *  })
  * })
  **/
 class Button {
@@ -27,7 +33,7 @@ class Button {
    * @param {string} opts.id - Optional, id of the button. If not passed will be automatically generated
    * @param {Base.Param|Base.Param[]} opts.param - Optional Param or array or Array of Params related to this button
    **/
-  constructor({ type, label, value, param, newTab, params, id }) {
+  constructor({ type, label, value, param, newTab, params, id, trigger }) {
 
     if(typeof type !== 'string' || type.length === 0) {
       throw new Error('Button type is mandatory')
@@ -37,6 +43,13 @@ class Button {
     }
     if(typeof value !== 'string' || value.length === 0) {
       throw new Error('Button value is mandatory')
+    }
+
+    const isTriggerValid = trigger instanceof ButtonTrigger && trigger.isValidTrigger()
+    if (trigger && !isTriggerValid) {
+      throw new Error(`Invalid Trigger type ${trigger instanceof ButtonTrigger}`)
+    } else if (trigger && isTriggerValid && type !== 'url' && type !== 'phone') {
+      throw new Error(`Additional Button Triggers are applicable only to Buttons of type \'url\' or \'phone\', got ${type}`)
     }
 
     this.id = id
@@ -50,6 +63,7 @@ class Button {
     this.label = label
     this.value = value
     this.newTab = Boolean(newTab)
+    this.trigger = trigger
   }
 
   static generateId() {
@@ -63,7 +77,8 @@ class Button {
       value,
       newTab,
       params,
-      id
+      id,
+      trigger
     } = this
 
     return {
@@ -72,7 +87,8 @@ class Button {
       value,
       newTab,
       params: flattenParams(params),
-      id
+      id,
+      trigger
     }
   }
 }

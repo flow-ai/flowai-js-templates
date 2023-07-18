@@ -18,6 +18,7 @@ import Button from './components/button'
 import Media from './components/media'
 import ListItem from './components/listItem'
 import QuickReply from './components/quickReply'
+import ButtonTrigger from './components/buttonTrigger'
 
 export default {
   Message,
@@ -40,4 +41,5 @@ export default {
   ListItem,
   Param,
   QuickReply,
+  ButtonTrigger
 }
