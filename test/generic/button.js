@@ -66,5 +66,25 @@ describe("Generic", () => {
       })).to.throw(Error)
     })
 
+    it("can create button without trigger and add it later", () => {
+      const button = new Button({
+        type: 'url',
+        label: 'Label',
+        value: 'https://google.com'
+      })
+
+      const triggerType = 'event', triggerValue  = 'value'
+
+      const buttonTrigger = new ButtonTrigger({
+        type: triggerType,
+        value: triggerValue
+      })
+
+      button.addTrigger(buttonTrigger)
+
+      expect(button.trigger.type).to.equal(triggerType)
+      expect(button.trigger.value).to.equal(triggerValue)
+    })
+
   })
 })

@@ -66,6 +66,17 @@ class Button {
     this.trigger = trigger
   }
 
+  addTrigger(trigger) {
+    const isTriggerValid = trigger instanceof ButtonTrigger && trigger.isValidTrigger()
+    if (trigger && !isTriggerValid) {
+      throw new Error(`Invalid Trigger type ${trigger instanceof ButtonTrigger}`)
+    } else if (trigger && isTriggerValid && this.type !== 'url' && this.type !== 'phone') {
+      throw new Error(`Additional Button Triggers are applicable only to Buttons of type \'url\' or \'phone\', got ${type}`)
+    }
+
+    this.trigger = trigger
+  }
+
   static generateId() {
     return `b${nanoid(8)}`
   }
