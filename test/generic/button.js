@@ -1,5 +1,5 @@
 import chai, { expect, assert } from 'chai'
-import { Param } from '../../src'
+import { Button, ButtonTrigger, Param } from '../../src'
 
 describe("Generic", () => {
   describe("Component param", () => {
@@ -36,6 +36,54 @@ describe("Generic", () => {
       const param = new Param('a', 'b')
       expect(param.label).to.equal("a")
       expect(param.value).to.equal("b")
+    })
+
+    it("can create with a trigger", () => {
+      const buttonTrigger = new ButtonTrigger({
+        type: 'event',
+        value: 'value'
+      })
+      const button = new Button({
+        type: 'url',
+        label: 'Label',
+        value: 'https://google.com',
+        trigger: buttonTrigger
+      })
+      expect(button.trigger.type).to.equal('event')
+      expect(button.trigger.value).to.equal('value')
+    })
+
+    it("cannot create with trigger if button type is anything except 'url' or 'phone'", () => {
+      const buttonTrigger = new ButtonTrigger({
+        type: 'event',
+        value: 'value'
+      })
+      expect(() => new Button({
+        type: 'postback',
+        label: 'Label',
+        value: 'Message to send',
+        trigger: buttonTrigger
+      })).to.throw(Error)
+    })
+
+    it("can create button without trigger and add it later", () => {
+      const button = new Button({
+        type: 'url',
+        label: 'Label',
+        value: 'https://google.com'
+      })
+
+      const triggerType = 'event', triggerValue  = 'value'
+
+      const buttonTrigger = new ButtonTrigger({
+        type: triggerType,
+        value: triggerValue
+      })
+
+      button.addTrigger(buttonTrigger)
+
+      expect(button.trigger.type).to.equal(triggerType)
+      expect(button.trigger.value).to.equal(triggerValue)
     })
 
   })
