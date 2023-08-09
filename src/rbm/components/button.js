@@ -70,6 +70,18 @@ class Button {
     this.endTime = endTime
     this.timezone = timezone
     this.newTab = Boolean(newTab)
+    this.trigger = trigger
+  }
+
+  addTrigger(trigger) {
+    const isTriggerValid = trigger instanceof ButtonTrigger && trigger.isValidTrigger()
+    if (trigger && !isTriggerValid) {
+      throw new Error(`Invalid Trigger type ${trigger instanceof ButtonTrigger}`)
+    } else if (trigger && isTriggerValid && this.type !== 'url' && this.type !== 'phone') {
+      throw new Error(`Additional Button Triggers are applicable only to Buttons of type \'url\' or \'phone\', got ${type}`)
+    }
+
+    this.trigger = trigger
   }
 
   addTrigger(trigger) {
@@ -99,7 +111,8 @@ class Button {
       endTime,
       timezone,
       params,
-      id
+      id,
+      trigger
     } = this
 
     return {
@@ -113,7 +126,8 @@ class Button {
       endTime,
       timezone,
       params: flattenParams(params),
-      id
+      id,
+      trigger
     }
   }
 }
