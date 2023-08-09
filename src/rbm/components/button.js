@@ -1,6 +1,7 @@
 import { nanoid } from 'nanoid'
 
 import { parseParam, flattenParams } from '../../base/components/param'
+import ButtonTrigger from '../../generic/components/buttonTrigger'
 
 /**
  * Render a button inside {@link Card} or {@link Buttons} templates. Unlike {@link QuickReply} templates, by default a button will remain on the screen even after a user presses them.
@@ -15,7 +16,11 @@ import { parseParam, flattenParams } from '../../base/components/param'
  * new Button({
  *  type: 'webview',
  *  label: 'More info'
- *  value: 'https://...'
+ *  value: 'https://...',
+ *  trigger: new ButtonTrigger({
+ *    type: 'event',
+ *    value: 'event-to-trigger'
+ *  })
  * })
  **/
 class Button {
@@ -30,15 +35,23 @@ class Button {
    * @param {string} opts.startTime - Required
    * @param {string} opts.endTime - Required
    * @param {string} opts.timezone - Required
+   * @param {ButtonTrigger} opts.trigger - Optional
    * @param {Base.Param|Base.Param[]} opts.param - Optional Param or array or Array of Params related to this button
    **/
-  constructor({ type, label, value, param, newTab, params, id, title, description, startTime, endTime, timezone}) {
+  constructor({ type, label, value, param, newTab, params, id, title, description, startTime, endTime, timezone, trigger}) {
 
     if(typeof type !== 'string' || type.length === 0) {
       throw new Error('Button type is mandatory')
     }
     if(typeof label !== 'string' || label.length === 0) {
       throw new Error('Button label is mandatory')
+    }
+
+    const isTriggerValid = trigger instanceof ButtonTrigger && trigger.isValidTrigger()
+    if (trigger && !isTriggerValid) {
+      throw new Error(`Invalid Trigger type ${trigger instanceof ButtonTrigger}`)
+    } else if (trigger && isTriggerValid && type !== 'url' && type !== 'phone') {
+      throw new Error(`Additional Button Triggers are applicable only to Buttons of type \'url\' or \'phone\', got ${type}`)
     }
 
     this.id = id
@@ -57,6 +70,17 @@ class Button {
     this.endTime = endTime
     this.timezone = timezone
     this.newTab = Boolean(newTab)
+  }
+
+  addTrigger(trigger) {
+    const isTriggerValid = trigger instanceof ButtonTrigger && trigger.isValidTrigger()
+    if (trigger && !isTriggerValid) {
+      throw new Error(`Invalid Trigger type ${trigger instanceof ButtonTrigger}`)
+    } else if (trigger && isTriggerValid && this.type !== 'url' && this.type !== 'phone') {
+      throw new Error(`Additional Button Triggers are applicable only to Buttons of type \'url\' or \'phone\', got ${type}`)
+    }
+
+    this.trigger = trigger
   }
 
   static generateId() {
