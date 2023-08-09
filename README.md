@@ -959,7 +959,11 @@ new Button({
 new Button({
  type: 'webview',
  label: 'More info'
- value: 'https://...'
+ value: 'https://...',
+ trigger: new ButtonTrigger({
+   type: 'event',
+   value: 'event-to-trigger'
+ })
 })
 ```
 
@@ -975,6 +979,7 @@ new Button({
 | opts.startTime | <code>string</code> | Required |
 | opts.endTime | <code>string</code> | Required |
 | opts.timezone | <code>string</code> | Required |
+| opts.trigger | [<code>ButtonTrigger</code>](#ButtonTrigger) | Optional |
 | opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this button |
 
 ### new Button(opts)
