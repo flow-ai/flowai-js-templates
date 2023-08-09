@@ -70,6 +70,7 @@ class Button {
     this.endTime = endTime
     this.timezone = timezone
     this.newTab = Boolean(newTab)
+    this.trigger = trigger
   }
 
   addTrigger(trigger) {
@@ -99,7 +100,8 @@ class Button {
       endTime,
       timezone,
       params,
-      id
+      id,
+      trigger
     } = this
 
     return {
@@ -113,7 +115,8 @@ class Button {
       endTime,
       timezone,
       params: flattenParams(params),
-      id
+      id,
+      trigger
     }
   }
 }
