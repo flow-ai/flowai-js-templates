@@ -1,5 +1,7 @@
 import Template from '../../base/templates/template'
 import Language from "../components/language";
+import Component from "../components/component";
+
 
 /**
  * A Whatsapp template that represents an array of {@link Buttonn}
@@ -76,16 +78,22 @@ class TemplateWA extends Template {
       namespace,
       name,
       language,
-      components
+      components,
+      fallback,
+      delay
     } = this
 
 
     return {
       type: 'whatsapp_template',
-      namespace,
-      name,
-      language,
-      components
+      payload: {
+        namespace,
+        name,
+        language,
+        components
+      },
+      delay: delay || undefined,
+      fallback
     }
   }
 }
