@@ -12,16 +12,12 @@ class Language {
    * @param {string} opts.code - Required, code of the language
    **/
   constructor({ policy, code }) {
-    const codePattern = /^[a-z]{2}_[A-Z]{2}$/
-
+    
     if(typeof policy !== 'string' || policy.length === 0){
       throw new Error('Policy is mandatory')
     }
     if(typeof code !== 'string' || code.length === 0){
       throw new Error('Code is mandatory')
-    }
-    if(!codePattern.test(code)){
-      throw new Error('Code should be in format your-language_locale-code')
     }
     
     this.policy = policy
