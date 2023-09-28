@@ -70,10 +70,6 @@ class Card extends Template {
   constructor({ title, subtitle, media, cardOrientation, thumbnailImageAlignment, action }) {
     super()
 
-    if(typeof title !== 'string' || !title.length) {
-      throw new Error('Card title is mandatory')
-    }
-
     if(typeof cardOrientation !== 'string' || !cardOrientation.length){
       throw new Error('Card orientation is mandatory')
     }
