@@ -19,6 +19,7 @@ import Media from './components/media'
 import ListItem from './components/listItem'
 import QuickReply from './components/quickReply'
 import ButtonTrigger from './components/buttonTrigger'
+import Webview from './templates/webview'
 
 export default {
   Message,
@@ -41,5 +42,6 @@ export default {
   ListItem,
   Param,
   QuickReply,
-  ButtonTrigger
+  ButtonTrigger,
+  Webview
 }

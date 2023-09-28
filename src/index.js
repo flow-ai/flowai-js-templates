@@ -20,6 +20,7 @@ import { Param } from './base/components/param'
 import QuickReply from './generic/components/quickReply'
 import Handover from './generic/templates/handover'
 import ButtonTrigger from './generic/components/buttonTrigger'
+import Webview from './generic/templates/webview'
 
 import Say from './phone/templates/say'
 import Hangup from './phone/templates/hangup'
@@ -216,5 +217,6 @@ export {
   Twitter,
   Khoros,
   Line,
-  Workflows
+  Workflows,
+  Webview
 }
