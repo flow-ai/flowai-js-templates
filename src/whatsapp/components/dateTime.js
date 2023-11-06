@@ -26,9 +26,6 @@ class DateTime {
     if(typeof fallback_value !== 'string' || fallback_value.length === 0){
       throw new Error('Fallback is mandatory')
     }
-    if(typeof day_of_week !== 'number'){
-      throw new Error('Day of week is mandatory')
-    }
     if(typeof day_of_month !== 'number'){
       throw new Error('Day of month is mandatory')
     }
