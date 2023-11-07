@@ -43,7 +43,7 @@ class DateTime {
     }
 
     this.fallback_value = fallback_value
-    this.day_of_week = day_of_week
+    this.day_of_week = day_of_week || undefined
     this.day_of_month = day_of_month
     this.year = year
     this.month = month
