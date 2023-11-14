@@ -16,8 +16,10 @@ class Header {
   /**
    * @param {string} opts.type - Required, type of the header
    * @param {string} opts.value - Required, value of the header
+   * @param {string} opts.filename - Optional
+   * @param {string} opts.providerName - Optional
    **/
-  constructor({ type, value }) {
+  constructor({ type, value, filename, providerName }) {
 
     if(typeof type !== 'string' || type.length === 0){
       throw new Error('Header type is mandatory')
@@ -31,18 +33,57 @@ class Header {
 
     this.type = type
     this.value = value
+    this.filename = filename
+    this.providerName = providerName
   }
 
   toJSON() {
     const {
       type,
-      value
+      value,
+      providerName,
+      filename
     } = this
 
     if(type === 'text'){
       return {
         type,
         text: value
+      }
+    }
+
+    if(providerName && filename){
+      return {
+        type,
+        [type]: {
+          link: value,
+          provider: {
+            name : providerName
+          },
+          filename
+        }
+      }
+    }
+
+    if(providerName){
+      return {
+        type,
+        [type]: {
+          link: value,
+          provider: {
+            name : providerName
+          }
+        }
+      }
+    }
+
+    if(filename){
+      return {
+        type,
+        [type]: {
+          link: value,
+          filename
+        }
       }
     }
 
