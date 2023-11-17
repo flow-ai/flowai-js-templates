@@ -16,10 +16,10 @@ class Header {
   /**
    * @param {string} opts.type - Required, type of the header
    * @param {string} opts.value - Required, value of the header
-   * @param {string} opts.filename - Optional
+   * @param {string} opts.fileName - Optional
    * @param {string} opts.providerName - Optional
    **/
-  constructor({ type, value, filename, providerName }) {
+  constructor({ type, value, fileName, providerName }) {
 
     if(typeof type !== 'string' || type.length === 0){
       throw new Error('Header type is mandatory')
@@ -33,7 +33,7 @@ class Header {
 
     this.type = type
     this.value = value
-    this.filename = filename
+    this.fileName = fileName
     this.providerName = providerName
   }
 
@@ -42,7 +42,7 @@ class Header {
       type,
       value,
       providerName,
-      filename
+      fileName
     } = this
 
     if(type === 'text'){
@@ -52,7 +52,7 @@ class Header {
       }
     }
 
-    if(providerName && filename){
+    if(providerName && fileName){
       return {
         type,
         [type]: {
@@ -60,7 +60,7 @@ class Header {
           provider: {
             name : providerName
           },
-          filename
+          fileName
         }
       }
     }
@@ -77,12 +77,12 @@ class Header {
       }
     }
 
-    if(filename){
+    if(fileName){
       return {
         type,
         [type]: {
           link: value,
-          filename
+          fileName
         }
       }
     }
