@@ -352,6 +352,24 @@ const file = new File({
 | opts.url | <code>string</code> | Required |
 | opts.action | <code>string</code> | Optional [Action](#Action) |
 
+### new File()
+
+**Example**  
+```js
+const file = new File({
+  url: "https://...",
+  action: new Action({
+    type: 'url',
+    value: 'https://...'
+  })
+})
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| opts.url | <code>string</code> | Required |
+| opts.action | <code>string</code> | Optional [Action](#Action) |
+
 
 <a name="Video"></a>
 
