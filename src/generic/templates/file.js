@@ -22,23 +22,18 @@ import Action from '../components/action'
 class File extends Template {
 
   /**
-   * @param {string} opts.title - Required
+   * @param {string} opts.title - Optional
    * @param {string} opts.url - Required
    * @param {string} opts.action - Optional {@link Action}
    **/
   constructor( { title, url, action }) {
     super()
-
-    if(typeof title !== 'string' || !title.length) {
-      throw new Error('File title is mandatory')
-    }
-
-    this.title = title
-
+    
     if(typeof url !== 'string' || !url.length) {
       throw new Error('File url is mandatory')
     }
-
+    
+    this.title = title
     this.url = url
 
     this.action = action || undefined

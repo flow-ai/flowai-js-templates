@@ -348,7 +348,7 @@ const file = new File({
 
 | Param | Type | Description |
 | --- | --- | --- |
-| opts.title | <code>string</code> | Required |
+| opts.title | <code>string</code> | Optional |
 | opts.url | <code>string</code> | Required |
 | opts.action | <code>string</code> | Optional [Action](#Action) |
 
