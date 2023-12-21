@@ -403,6 +403,7 @@ Send an audio file or show an audio player to a user. Optionally you can specify
 | title | <code>string</code> | Describes the audio |
 | url | <code>string</code> | URL to the audio file |
 | action | [<code>Action</code>](#Action) | Optional [Action](#Action) |
+| duration | <code>duration</code> | required for channels like 'LINE' otherwise optional |
 
 ### new Audio()
 
@@ -420,6 +421,7 @@ const audio = new Audio({
 | opts.title | <code>string</code> | Required |
 | opts.url | <code>string</code> | Required |
 | opts.action | <code>string</code> | Optional |
+| opts.duration | <code>number</code> | Optional |
 
 
 <a name="Location"></a>
