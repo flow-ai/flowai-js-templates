@@ -9,6 +9,7 @@ import Action from '../components/action'
  * @property {string} title - Describes the audio
  * @property {string} url - URL to the audio file
  * @property {Action} action - Optional {@link Action}
+ * @property {duration} duration - required for channels like 'LINE' otherwise optional
  * @example
  * // Generic audio
  * const audio = new Audio({
@@ -22,8 +23,9 @@ class Audio extends Template {
    * @param {string} opts.title - Required
    * @param {string} opts.url - Required
    * @param {string} opts.action - Optional
+   * @param {number} opts.duration - Optional
    **/
-  constructor( { title, url, action }) {
+  constructor( { title, url, action, duration }) {
     super()
 
     if(typeof title !== 'string' || !title.length) {
@@ -37,7 +39,7 @@ class Audio extends Template {
     }
 
     this.url = url
-
+    this.duration = duration
     this.action = action || undefined
   }
 
@@ -57,6 +59,7 @@ class Audio extends Template {
     const {
       title,
       url,
+      duration,
       action,
       quickReplies,
       delay,
@@ -68,12 +71,13 @@ class Audio extends Template {
       payload: {
         title,
         url,
+        duration,
         action,
         quickReplies
       },
       delay: delay || undefined,
       fallback
-    }
+    }  
   }
 }
 
