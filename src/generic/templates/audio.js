@@ -66,31 +66,18 @@ class Audio extends Template {
       fallback
     } = this
 
-    if(duration){
-      return {
-        type: 'audio',
-        payload: {
-          title,
-          url,
-          duration,
-          action,
-          quickReplies
-        },
-        delay: delay || undefined,
-        fallback
-      }  
-    }
     return {
       type: 'audio',
       payload: {
         title,
         url,
+        duration,
         action,
         quickReplies
       },
       delay: delay || undefined,
       fallback
-    }
+    }  
   }
 }
 
