@@ -1087,7 +1087,9 @@ Component placed on any Template. Represents a shortcut for a user to reply with
 | label | <code>string</code> | Label that is shown as a quick reply |
 | value | <code>string</code> | Value that is being send as the quick reply, empty if type is location |
 | type | <code>string</code> | Type of quick reply, default is text (text, location, user_email, user_phone_number, event, flow, step) |
+| quickReplyId | <code>string</code> | Type of quick reply, default is text (text, location, user_email, user_phone_number, event, flow, step) |
 | params | [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional parameters associated with the quick reply |
+| tags | [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional tags associated with the quick reply |
 
 ### new QuickReply()
 
@@ -1109,9 +1111,11 @@ text.addQuickReply(new QuickReply({
 | opts.label | <code>string</code> | Required |
 | opts.type | <code>string</code> | Optional type, default is text (text, location, user_email, user_phone_number, event, flow, step) |
 | opts.value | <code>string</code> | Required, ignored if type is location |
+| opts.quickReplyId | <code>string</code> | Required |
 | opts.auto | <code>boolean</code> | Optional, flag for auto reply |
 | opts.stepId | <code>string</code> | Optional, step link for auto reply |
 | opts.param | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Param or array or Array of Params related to this QuickReply |
+| opts.tags | [<code>Param</code>](#Base.Param) \| [<code>Array.&lt;Param&gt;</code>](#Base.Param) | Optional Tags or array or Array of Tags related to this QuickReply |
 
 
 ---
