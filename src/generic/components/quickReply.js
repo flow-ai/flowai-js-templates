@@ -8,8 +8,9 @@ import { parseParam, flattenParams } from '../../base/components/param'
  * @property {string} label - Label that is shown as a quick reply
  * @property {string} value - Value that is being send as the quick reply, empty if type is location
  * @property {string} type - Type of quick reply, default is text (text, location, user_email, user_phone_number, event, flow, step)
+ * @property {string} quickReplyId - Type of quick reply, default is text (text, location, user_email, user_phone_number, event, flow, step)
  * @property {Base.Param[]} params - Optional parameters associated with the quick reply
- *
+ * @property {Base.Param[]} tags - Optional tags associated with the quick reply
  * @example
  * const text = new Text('We have a 40" screen for sale. Want to preorder it?')
  * text.addQuickReply(new QuickReply({
@@ -26,11 +27,13 @@ class QuickReply {
    * @param {string} opts.label - Required
    * @param {string} opts.type - Optional type, default is text (text, location, user_email, user_phone_number, event, flow, step)
    * @param {string} opts.value - Required, ignored if type is location
+   * @param {string} opts.quickReplyId - Required
    * @param {boolean} opts.auto - Optional, flag for auto reply
    * @param {string} opts.stepId - Optional, step link for auto reply
    * @param {Base.Param|Base.Param[]} opts.param - Optional Param or array or Array of Params related to this QuickReply
+   * @param {Base.Param|Base.Param[]} opts.tags - Optional Tags or array or Array of Tags related to this QuickReply
    **/
-  constructor({ label, type, value, param, params, auto, stepId }) {
+  constructor({ label, type, value, param, params, tags, auto, stepId }) {
 
     if(type === 'text' && (typeof label !== 'string' || !label.length)) {
       throw new Error('QuickReply label when it has the type text must be as string')
@@ -51,7 +54,8 @@ class QuickReply {
       this.stepId = stepId
     }
 
-    this.params = parseParam(param || params)
+    this.params = parseParam(param || params || [])
+    this.tags = parseParam(tags || [])
     this.value = value || label
     this.label = label
   }
@@ -63,14 +67,16 @@ class QuickReply {
       type,
       auto,
       stepId,
-      params
+      params,
+      tags
     } = this
 
     return {
       label,
       value,
       type,
-      params: flattenParams(params),
+      params: flattenParams(params || []),
+      tags: flattenParams(tags || []),
       ...(auto && stepId ? { auto, stepId } : {})
     }
   }

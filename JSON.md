@@ -69,14 +69,14 @@ This example does not only send back a message, but will also trigger a flow wit
         "label": "Forecast for today",
         "value": "https://weatherforcastexample.com",
         "newTab": false,
-        "id": "bhvXXvdKi"
+        "id": "bbVAMvkUy"
        },
        {
         "type": "url",
         "label": "Weather this week",
         "value": "https://weatherforcastexample.com/week",
         "newTab": false,
-        "id": "bBB8GEznw"
+        "id": "brUono7ql"
        }
       ]
      },
@@ -122,12 +122,16 @@ Response templates are part of a message. The following is an example of a simpl
    {
     "label": "Yes",
     "value": "yes",
-    "type": "text"
+    "type": "text",
+    "params": {},
+    "tags": {}
    },
    {
     "label": "No",
     "value": "no",
-    "type": "text"
+    "type": "text",
+    "params": {},
+    "tags": {}
    }
   ]
  }
@@ -173,14 +177,14 @@ The following templates are supported
     "label": "View website",
     "value": "http://example.com",
     "newTab": false,
-    "id": "bC4SSFe4W"
+    "id": "bNeoNZdki"
    },
    {
     "type": "postback",
     "label": "Special offers",
     "value": "Show me special offers",
     "newTab": false,
-    "id": "bEWZgWe1P"
+    "id": "bCF6Sdg-o"
    }
   ]
  }
@@ -205,14 +209,14 @@ The following templates are supported
     "label": "Forecast for today",
     "value": "https://weatherforcastexample.com",
     "newTab": false,
-    "id": "bhvXXvdKi"
+    "id": "bbVAMvkUy"
    },
    {
     "type": "url",
     "label": "Weather this week",
     "value": "https://weatherforcastexample.com/week",
     "newTab": false,
-    "id": "bBB8GEznw"
+    "id": "brUono7ql"
    }
   ]
  },
@@ -265,7 +269,9 @@ The following templates are supported
    {
     "label": "Order now",
     "value": "order 35633123322",
-    "type": "text"
+    "type": "text",
+    "params": {},
+    "tags": {}
    }
   ]
  }
@@ -407,7 +413,7 @@ When these are triggered with the type event or postback you can also send data 
         }
        ]
       },
-      "id": "b9zTxizdp"
+      "id": "bZgJCgg-l"
      },
      {
       "type": "event",
@@ -421,7 +427,7 @@ When these are triggered with the type event or postback you can also send data 
         }
        ]
       },
-      "id": "bqPqPZood"
+      "id": "biWUDip5H"
      }
     ]
    }
@@ -456,12 +462,15 @@ Or with QuickReplies:
          "value": "123443211"
         }
        ]
-      }
+      },
+      "tags": {}
      },
      {
       "label": "No",
       "value": "No",
-      "type": "text"
+      "type": "text",
+      "params": {},
+      "tags": {}
      }
     ]
    }

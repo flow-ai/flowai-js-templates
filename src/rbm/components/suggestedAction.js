@@ -9,7 +9,9 @@ import QuickReply from '../../generic/components/quickReply'
  * @property {string} label - Label that is shown as a quick reply
  * @property {string} value - Value that is being send as the quick reply, empty if type is location or calendar action
  * @property {string} type - Type of quick reply, default is text (text, location, user_email, user_phone_number, event, flow, step)
+ * @property {string} quickReplyId - Id of quick reply, default is text (text, location, user_email, user_phone_number, event, flow, step)
  * @property {Base.Param[]} params - Optional parameters associated with the quick reply
+ * @property {Base.Param[]} tags - Optional tags associated with the quick reply
  *
  * @example
  * const text = new Text('We have a 40" screen for sale. Want to preorder it?')
@@ -28,6 +30,7 @@ class SuggestedAction extends QuickReply {
    * @param {string} opts.label - Required
    * @param {string} opts.type - Optional type, default is text (text, location, user_email, user_phone_number, event, flow, step)
    * @param {string} opts.value - Required, ignored if type is location or calendar action (not for calendar action)
+   * @param {string} opts.quickReplyId - Required
    * @param {boolean} opts.auto - Optional, flag for auto reply
    * @param {string} opts.stepId - Optional, step link for auto reply
    * @param {string} opts.title - Required
@@ -36,9 +39,10 @@ class SuggestedAction extends QuickReply {
    * @param {string} opts.endTime - Required
    * @param {string} opts.timezone - Required
    * @param {Base.Param|Base.Param[]} opts.param - Optional Param or array or Array of Params related to this QuickReply
+   * @param {Base.Param|Base.Param[]} opts.tags - Optional Tags or array or Array of Tags related to this QuickReply 
    **/
-  constructor({ label, type, value, param, params, auto, stepId, title, description, startTime, endTime, timezone}) {
-    super({ label, type, value, param, params, auto, stepId })
+  constructor({ label, type, value, param, params, tags, auto, stepId, title, description, startTime, endTime, timezone}) {
+    super({ label, type, value, param, params, tags, auto, stepId })
     if(type === 'text' && (typeof label !== 'string' || !label.length)) {
       throw new Error('QuickReply label when it has the type text must be as string')
     }
@@ -59,6 +63,7 @@ class SuggestedAction extends QuickReply {
     }
 
     this.params = parseParam(param || params)
+    this.tags = parseParam(tags)
     this.value = value || label
     this.label = label
     this.title = title
@@ -80,7 +85,8 @@ class SuggestedAction extends QuickReply {
       startTime,
       endTime,
       timezone,
-      params
+      params,
+      tags
     } = this
 
     return {
@@ -93,6 +99,7 @@ class SuggestedAction extends QuickReply {
       endTime,
       timezone,
       params: flattenParams(params),
+      tags: flattenParams(tags),
       ...(auto && stepId ? { auto, stepId } : {})
     }
   }
