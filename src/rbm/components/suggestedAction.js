@@ -41,8 +41,8 @@ class SuggestedAction extends QuickReply {
    * @param {Base.Param|Base.Param[]} opts.param - Optional Param or array or Array of Params related to this QuickReply
    * @param {Base.Param|Base.Param[]} opts.tags - Optional Tags or array or Array of Tags related to this QuickReply 
    **/
-  constructor({ label, type, value, param, params, tags, auto, stepId, title, description, startTime, endTime, timezone}) {
-    super({ label, type, value, param, params, tags, auto, stepId })
+  constructor({ label, type, value, param, params, tags, auto, stepId, title, description, startTime, endTime, timezone, quickReplyId }) {
+    super({ label, type, value, param, params, tags, auto, stepId, quickReplyId })
     if(type === 'text' && (typeof label !== 'string' || !label.length)) {
       throw new Error('QuickReply label when it has the type text must be as string')
     }
@@ -62,8 +62,8 @@ class SuggestedAction extends QuickReply {
       this.stepId = stepId
     }
 
-    this.params = parseParam(param || params)
-    this.tags = parseParam(tags)
+    this.params = parseParam(param || params || [])
+    this.tags = parseParam(tags || [])
     this.value = value || label
     this.label = label
     this.title = title
@@ -71,6 +71,7 @@ class SuggestedAction extends QuickReply {
     this.startTime = startTime
     this.endTime = endTime
     this.timezone = timezone
+    this.quickReplyId = quickReplyId
   }
 
   toJSON() {
@@ -86,20 +87,22 @@ class SuggestedAction extends QuickReply {
       endTime,
       timezone,
       params,
-      tags
+      tags,
+      quickReplyId
     } = this
 
     return {
       label,
       value,
       type,
+      quickReplyId,
       title,
       description,
       startTime,
       endTime,
       timezone,
-      params: flattenParams(params),
-      tags: flattenParams(tags),
+      params: flattenParams(params || []),
+      tags: flattenParams(tags || []),
       ...(auto && stepId ? { auto, stepId } : {})
     }
   }
