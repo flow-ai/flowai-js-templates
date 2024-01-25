@@ -54,8 +54,8 @@ class QuickReply {
       this.stepId = stepId
     }
 
-    this.params = parseParam(param || params)
-    this.tags = parseParam(tags)
+    this.params = parseParam(param || params || [])
+    this.tags = parseParam(tags || [])
     this.value = value || label
     this.label = label
   }
@@ -75,8 +75,8 @@ class QuickReply {
       label,
       value,
       type,
-      params: flattenParams(params),
-      tags: flattenParams(tags),
+      params: flattenParams(params || []),
+      tags: flattenParams(tags || []),
       ...(auto && stepId ? { auto, stepId } : {})
     }
   }
