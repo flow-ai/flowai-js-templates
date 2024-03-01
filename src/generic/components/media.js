@@ -36,8 +36,8 @@ class Media {
       throw new Error('Thumbnail should be of type string')
     }
 
-    if(type === 'video' && thumbnailUrl && thumbnailUrl.length && !/^https?:\/\//.test(thumbnailUrl)) {
-      throw new Error('Thumbnail should be valid url')
+    if(type === 'video' && thumbnailUrl && thumbnailUrl.length && !/^https?:\/\//.test(thumbnailUrl) && !/{{([^}]*)}}/.test(thumbnailUrl)) {
+      throw new Error('Thumbnail should be valid url or a param')
     }
 
     this.thumbnailUrl = thumbnailUrl
