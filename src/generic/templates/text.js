@@ -42,14 +42,16 @@ class Text extends Template {
       text,
       quickReplies,
       delay,
-      fallback
+      fallback,
+      citations
     } = this
 
     return {
       type: 'text',
       payload: {
         text,
-        quickReplies
+        quickReplies,
+        citations
       },
       delay: delay || undefined,
       fallback
