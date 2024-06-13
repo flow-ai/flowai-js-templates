@@ -33,7 +33,7 @@ class QuickReply {
    * @param {Base.Param|Base.Param[]} opts.param - Optional Param or array or Array of Params related to this QuickReply
    * @param {Base.Param|Base.Param[]} opts.tags - Optional Tags or array or Array of Tags related to this QuickReply
    **/
-  constructor({ label, type, value, param, params, tags, auto, stepId }) {
+  constructor({ label, type, value, param, params, tags, auto, stepId, quickReplyId }) {
 
     if(type === 'text' && (typeof label !== 'string' || !label.length)) {
       throw new Error('QuickReply label when it has the type text must be as string')
@@ -58,6 +58,7 @@ class QuickReply {
     this.tags = parseParam(tags || [])
     this.value = value || label
     this.label = label
+    this.quickReplyId = quickReplyId
   }
 
   toJSON() {
@@ -68,13 +69,15 @@ class QuickReply {
       auto,
       stepId,
       params,
-      tags
+      tags,
+      quickReplyId
     } = this
 
     return {
       label,
       value,
       type,
+      quickReplyId,
       params: flattenParams(params || []),
       tags: flattenParams(tags || []),
       ...(auto && stepId ? { auto, stepId } : {})

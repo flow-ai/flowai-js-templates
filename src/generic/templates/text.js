@@ -43,7 +43,8 @@ class Text extends Template {
       quickReplies,
       expirationTime,
       delay,
-      fallback
+      fallback,
+      citations
     } = this
 
     return {
@@ -51,7 +52,8 @@ class Text extends Template {
       payload: {
         text,
         quickReplies,
-        expirationTime
+        expirationTime,
+        citations
       },
       delay: delay || undefined,
       fallback
