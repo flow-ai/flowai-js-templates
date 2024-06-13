@@ -41,6 +41,7 @@ class Text extends Template {
     const {
       text,
       quickReplies,
+      expirationTime,
       delay,
       fallback
     } = this
@@ -49,7 +50,8 @@ class Text extends Template {
       type: 'text',
       payload: {
         text,
-        quickReplies
+        quickReplies,
+        expirationTime
       },
       delay: delay || undefined,
       fallback

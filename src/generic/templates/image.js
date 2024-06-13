@@ -62,6 +62,7 @@ class Image extends Template {
       url,
       action,
       quickReplies,
+      expirationTime,
       delay,
       fallback
     } = this
@@ -72,7 +73,8 @@ class Image extends Template {
         title,
         url,
         action,
-        quickReplies
+        quickReplies,
+        expirationTime
       },
       delay: delay || undefined,
       fallback

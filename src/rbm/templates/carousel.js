@@ -77,6 +77,7 @@ class Carousel extends Template {
       cardWidth,
       cards,
       quickReplies,
+      expirationTime,
       delay,
       fallback
     } = this
@@ -86,7 +87,8 @@ class Carousel extends Template {
       payload: {
         cardWidth,
         cards,
-        quickReplies
+        quickReplies,
+        expirationTime
       },
       delay: delay || undefined,
       fallback
