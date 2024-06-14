@@ -6,6 +6,10 @@
  * @property {string} type - Type of expiration either specific_date or ttl
  * @property {string} expireTime - The specific date time
  * @property {string} ttl - The ttl
+ * @property {string} expireSuccessTriggerType - The trigger type which is triggered for server event TTL_EXPIRATION_REVOKED
+ * @property {string} expireSuccessTriggerValue - The trigger value which is triggered for server event TTL_EXPIRATION_REVOKED
+ * @property {string} expireFailTriggerType - The trigger type which is triggered for server event TTL_EXPIRATION_REVOKED_FAILED
+ * @property {string} expireFailTriggerValue - The trigger value which is triggered for server event TTL_EXPIRATION_REVOKED_FAILED
  * @example
  * const text = new Text('We have a 40" screen for sale. Want to preorder it?')
  * text.addExpiration(new Expiration({
@@ -23,23 +27,35 @@ class ExpirationTime {
    * @param {string} opts.expireTime
    * @param {string} opts.ttl
    **/
-  constructor({ type, expireTime, ttl }) {
+  constructor({ type, expireTime, ttl, expireSuccessTriggerType, expireSuccessTriggerValue, expireFailTriggerType, expireFailTriggerValue }) {
     this.type = type
     this.expireTime = expireTime
     this.ttl = ttl
+    this.expireSuccessTriggerType = expireSuccessTriggerType,
+    this.expireSuccessTriggerValue = expireSuccessTriggerValue,
+    this.expireFailTriggerType = expireFailTriggerType,
+    this.expireFailTriggerValue = expireFailTriggerValue
   }
 
   toJSON() {
     const {
       type,
       expireTime,
-      ttl
+      ttl,
+      expireSuccessTriggerType,
+      expireSuccessTriggerValue,
+      expireFailTriggerType,
+      expireFailTriggerValue
     } = this
 
     return {
       type,
       expireTime,
-      ttl
+      ttl,
+      expireSuccessTriggerType,
+      expireSuccessTriggerValue,
+      expireFailTriggerType,
+      expireFailTriggerValue
     }
   }
 }
