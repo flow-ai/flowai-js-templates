@@ -72,6 +72,7 @@ class Location extends Template {
       long,
       action,
       quickReplies,
+      expirationTime,
       delay,
       fallback
     } = this
@@ -83,7 +84,8 @@ class Location extends Template {
         lat,
         long,
         action,
-        quickReplies
+        quickReplies,
+        expirationTime
       },
       delay: delay || undefined,
       fallback

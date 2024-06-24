@@ -1,6 +1,8 @@
 import BaseTemplate from '../../base/templates/template'
 import QuickReply from '../components/quickReply'
 import SuggestedAction from '../../rbm/components/suggestedAction'
+import ExpirationTime from '../../rbm/components/expirationtime'
+
 /**
  * Base class for all generic response templates
  * 
@@ -61,6 +63,20 @@ class Template extends BaseTemplate {
       this.quickReplies = []
     }
     this.quickReplies.push(suggestedAction)
+
+    return this
+  }
+
+  /**
+   * Add a {@link ExpirationTime} to the template
+   * @param {ExpirationTime} expirationTime - Required
+   **/
+  addExpirationTime(expirationTime) {
+    if(!(expirationTime instanceof ExpirationTime)) {
+      throw new Error('addExpirationTime argument must be an instance of a ExpirationTime')
+    }
+
+    this.expirationTime = expirationTime
 
     return this
   }

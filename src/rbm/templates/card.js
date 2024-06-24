@@ -158,6 +158,7 @@ class Card extends Template {
       action,
       buttons,
       quickReplies,
+      expirationTime,
       delay,
       fallback
     } = this
@@ -171,7 +172,8 @@ class Card extends Template {
         thumbnailImageAlignment,
         action,
         buttons,
-        quickReplies
+        quickReplies,
+        expirationTime
       }
     }
 
@@ -185,7 +187,8 @@ class Card extends Template {
         thumbnailImageAlignment,
         action,
         buttons,
-        quickReplies
+        quickReplies,
+        expirationTime
       },
       delay: delay || undefined,
       fallback

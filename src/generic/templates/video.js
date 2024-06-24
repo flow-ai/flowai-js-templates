@@ -74,6 +74,7 @@ class Video extends Template {
       url,
       action,
       quickReplies,
+      expirationTime,
       delay,
       fallback,
       thumbnailUrl
@@ -86,6 +87,7 @@ class Video extends Template {
         url,
         action,
         quickReplies,
+        expirationTime,
         thumbnailUrl
       },
       delay: delay || undefined,

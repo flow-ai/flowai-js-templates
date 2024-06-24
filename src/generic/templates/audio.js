@@ -62,6 +62,7 @@ class Audio extends Template {
       duration,
       action,
       quickReplies,
+      expirationTime,
       delay,
       fallback
     } = this
@@ -73,7 +74,8 @@ class Audio extends Template {
         url,
         duration,
         action,
-        quickReplies
+        quickReplies,
+        expirationTime
       },
       delay: delay || undefined,
       fallback

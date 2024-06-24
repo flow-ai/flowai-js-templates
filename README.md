@@ -250,6 +250,28 @@ const message = new Message("Put on some music please!")
 | --- | --- | --- |
 | suggestedAction | [<code>SuggestedAction</code>](#SuggestedAction) | Required |
 
+### *message*.addExpirationTime(expirationTime)
+
+A convenience method to add Expiration time to the last response template of a RBM Message
+
+**Example**  
+```js
+const message = new Message("Put on some music please!")
+ .addSuggestedAction(new SuggestedAction({
+   "label": "test with code action",
+   "type": "calendar_action",
+   "title": "Party at Imran's",
+   "description": "party tonight",
+   "startTime": "2023-04-27T23:30",
+   "endTime": "2023-04-28T04:30",
+   "timezone": "(UTC+05:30) Chennai, Kolkata, Mumbai, New Delhi"
+ }))
+```
+
+| Param | Type | Description |
+| --- | --- | --- |
+| expirationTime | [<code>ExpirationTime</code>](#ExpirationTime) | Required |
+
 
 <a name="Text"></a>
 
