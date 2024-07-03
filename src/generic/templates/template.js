@@ -1,7 +1,7 @@
 import BaseTemplate from '../../base/templates/template'
 import QuickReply from '../components/quickReply'
 import SuggestedAction from '../../rbm/components/suggestedAction'
-import ExpirationTime from '../../rbm/components/expirationtime'
+import ExpirationTime from '../../rbm/components/expirationTime'
 
 /**
  * Base class for all generic response templates
