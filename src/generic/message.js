@@ -2,7 +2,7 @@ import BaseMessage from '../base/message'
 import Text from './templates/text'
 import QuickReply from './components/quickReply'
 import SuggestedAction from '../rbm/components/suggestedAction'
-import ExpirationTime from '../rbm/components/expirationtime'
+import ExpirationTime from '../rbm/components/expirationTime'
 /**
  * Inherits from {@link Base.Message}.
  * 
