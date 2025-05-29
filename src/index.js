@@ -168,9 +168,11 @@ const Twitter = {
 
 // Khoros templates
 import Priority from './khoros/templates/priority'
+import { SystemReply } from './khoros'
 
 const Khoros = {
-   Priority
+   Priority,
+   SystemReply
 }
 
 const Line = {
