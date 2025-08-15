@@ -60,7 +60,7 @@ class Header {
           provider: {
             name : providerName
           },
-          fileName
+          filename: fileName
         }
       }
     }
@@ -82,7 +82,7 @@ class Header {
         type,
         [type]: {
           link: value,
-          fileName
+          filename: fileName
         }
       }
     }
